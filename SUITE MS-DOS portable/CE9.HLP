@@ -1,0 +1,295 @@
+\1
+   CE11 OVERVIEW
+
+   This software is used to program configuration and
+   channel data to the Vertex VX-200 portable radio.
+
+   On-line help is available by pressing F1 at any of
+   the main menu entry fields, or on any of the submenus.
+
+   CE9 Features
+
+	. Mouse support.  Please ensure that your mouse
+	  driver is installed correctly.
+	
+	. The status bar along the bottom of the screen
+          contains information such as function of the
+	  F keys, short help explanations, action keys or
+	  ranges of data entry.
+
+	. The hardware parameters are initialized to
+	  default values.  Make changes to these items
+	  only for custom applications.
+
+\2
+   OPEN FILE
+
+   This menu item allows one to open existing files with
+   information of VX-200 configurations.
+
+   <Path>      Use the mouse or press <ALT>-P to select
+		 the <Path> window.  Specify the directory
+		 path of which you wish to retrieve the
+		 file.
+
+   <Name>      Use the mouse or press <ALT>-N to select
+		 the <Name> window.  Provide a search
+		 pattern using wildcards <*> to obtain a
+		 set of files you wish to select.  The
+		 default search string is "*.CH".
+
+		 Optionally, you can enter the exact file
+		 name you wish to open and press <ENTER>
+		 to open the file.
+
+   <Files - #> Use the mouse or press <ALT>-F to select
+		 the <Files> window.  This window lists all
+		 subdirectories (indicated by a square
+		 prefix) and files under the directory path
+		 which match the search pattern.  The #
+		 indicates the number of files that match
+		 the search string.
+
+		 Use the Up/Down keys to select the
+		 subdirectory/file you wish to open, and
+		 press <ENTER>.  If you wish to cancel
+		 opening the file, press <ESC>.
+
+\3
+   SAVE FILE
+
+   This menu item allows one to save the configuration
+   information displayed on screen.
+
+   <Path>      Use the mouse or press <ALT>-P to select
+		 the <Path> window.  Specify the directory
+		 path of which you wish to save the
+		 file.
+
+   <Files - #> Use the mouse or press <ALT>-F to select
+		 the <Files> window.  This window lists all
+		 subdirectories (indicated by a square
+		 prefix) and files under the directory path
+		 which match the search pattern.  Use the
+		 Up/Down keys to select the subdirectory/
+		 file you wish to save the configuration
+		 in, and press <ENTER>.  Press <ESC> to
+		 cancel.
+
+   <Name>      Use the mouse or press <ALT>-N to select
+		 the <Name> window.  Enter the file name
+		 you wish to save the configuration in and
+		 press <ENTER>.  Press <ESC> to cancel.
+\4
+   PRINT
+
+   Choosing this submenu item prints a hard copy of the
+   configuration data presently displayed on screen.
+
+   Make sure that the printer port is set correctly by
+   specifying the correct port in the CONFIGURE submenu.
+
+\5
+   EXIT
+
+   This command terminates the program.  Make sure to
+   save any necessary configuration data prior to
+   exiting the program.
+
+\6
+   COMPUTER SETTING
+
+   Color/monochrome display can be chosen in this
+   submenu.  Communication ports to interface the radio,
+   and printer ports to print configuration data can
+   also be set.
+
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\7
+   HARDWARE PARAMETERS
+
+         Editing these parameters requires that this
+         program be started with the -m switch on the
+         command line. Otherwise the settings can only
+         be viewed.
+
+   NOTE: Do not change Hardware Environment Parameters
+         unless you are certain that the transceiver
+         hardware is suitable for the new value.
+
+\8
+   UPLOAD
+
+   Used to read information from the VX-200 unit to the
+   computer.  Existing data on screen will be overwritten
+   with the data of the radio unless properly saved.
+
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\9
+   DOWNLOAD
+
+   Used to write configuration data from the computer to
+   the connected VX-200 unit.  Data will be verified
+   for integrity by the program before downloading is
+   initiated.
+   
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\60
+   VDU TYPE
+
+   Choose between COLOR and MONOCHROME.
+
+\61
+   COM PORT
+
+   Choose between COM1 and COM2 serial ports.
+   
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\62
+   LPT PORT
+
+   Choose between LPT1 and LPT2 printer ports.
+
+\70
+   FREQ BAND
+
+   Displays the frequency band of the radio.
+
+\71
+   PRESCALAR
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing a special modification to the radio.
+
+\72
+   CHAN SPACING
+
+   Minimum channel step size.
+
+\73
+   IF (Intermediate Frequency)
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+   Divide by numbers are not downloaded to the radio,
+   but computed by the radio using this paramerter and
+   channel information.  If set improperly, the receiver
+   will not function.
+
+\74
+   LOCAL OFFSET
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+   Change this setting to eliminate image problems in
+   some service areas.  Radio will have to be retuned
+   after modification.  This information is used in
+   conjunction with IF, REF OSC FREQ and channel
+   information to compute divide by numbers.
+
+\75
+   REF XTAL
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+\77
+    DEFAULT SPLIT
+    
+    When setting Receive frequency, this offset will be 
+    applied to the Transmit frequency automatically.
+    This can be positive or negative.
+
+\100
+   EDIT RECEIVE FREQUENCY
+
+   Use 0 - 9 to enter the desired channel frequency, and
+   press <ENTER>. This frequency will be adjusted if it
+   does not match the Channel Step parameter (in Environ
+   Data), and will also appear in the Tx Freq field.
+
+   Pressing only the <SPACE> key without entering a number
+   toggles the data for the entire channel between 
+   activated and deactivated except the first channel,
+   Deactivated channels display "--" in place of field
+   entries, and are not used for operation.
+
+\101
+   CTCSS DECODE
+
+   Press the <SPACE> key to display the Tone Select
+   window, from which you may select a frequency with
+   the <ARROW> keys. Pressing <ENTER> to accept, or <ESC>
+   to cancel.
+
+   Setting CTCSS DECODE tone also sets CTCSS ENCODE tone.
+   
+   Turning on CTCSS turns off DCS (both cannot be on).
+
+\102
+   DCS DECODE
+
+   Press the <SPACE> key to display the Tone Select
+   window, from which you may select a code number with
+   the <ARROW> keys. Pressing <ENTER> to accept, or <ESC>
+   to cancel.
+
+   Setting DCS DECODE tone also sets DCS ENCODE tone.
+   
+   Turning on DCS turns off CTCSS (both cannot be on).
+
+\103
+   EDIT TRANSMIT FREQUENCY
+
+   Use 0 - 9 to enter the desired channel frequency, and
+   press <ENTER>. This frequency will be adjusted if it
+   does not match the Channel Step parameter (in Hardware
+   Environment windo).
+
+   Pressing only the <SPACE> key without entering a number
+   toggles the data for the Tx Freq field between
+   activated and inhibited, Inhibited Tx display "--" in
+   place of field entries, and are not allowed radio to
+   transmit.
+
+\104
+   CTCSS ENCODE
+
+   Press the <SPACE> key to display the Tone Select
+   window, from which you may select a frequency with
+   the <ARROW> keys. Pressing <ENTER> to accept, or <ESC>
+   to cancel.
+
+   Turning on CTCSS turns off DCS (both cannot be on).
+
+\105
+   DCS ENCODE
+
+   Press the <SPACE> key to display the Tone Select
+   window, from which you may select a code number with
+   the <ARROW> keys. Pressing <ENTER> to accept, or <ESC>
+   to cancel.
+
+   Turning on DCS turns off CTCSS (both cannot be on).

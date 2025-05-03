@@ -1,0 +1,458 @@
+        ;=======================================;
+        ; Base Items                            ;
+        ;=======================================;
+#version
+ %sEX-2095`Z Rev.1.1
+     for `gUT-105(SmarTrunk II)`Z
+
+
+#clmem
+118
+#Dprn
+prn
+#bg
+0M 
+#BcachD
+1
+#Bmindsp
+80,20
+#Bfini
+EX2095.STS
+#Bcursor
+1,2
+#hsort
+0
+#Bstat2ee
+1...(=0:adjust off, =1:on ; default = 1:on)
+
+        ;===== Color Set / Color (Sheet, Board, Bottom) =====;
+#Bcol0
+0123456789ABC0EF
+01134567894BC3EF
+HH9FE9CBENLI
+VNS0F14BENLI
+KJ11E9EFESSI
+#
+        ;===== Color Set / Monochrome 1 =====;
+#Bcol1
+0123456719ABC0EF
+01034667897BCAEF
+008FE17FENLI
+OGOFF877FNLI
+NN00F001FVVI
+#
+        ;===== Color Set / Monochrome 2 =====;
+#Bcol2
+0123456789ABC0EF
+01034667897BCAEF
+008F217F2NLI
+OGO7F877FNLI
+NN00F001FVVI
+#
+        ;===== Color Set (Topic) =====;
+#ColTpc
+VMSFF14BENLI
+OMOFF877FNLI
+OMOFF877FNLI
+#
+        ;=======================================;
+        ; Beep Tone                             ;
+        ;=======================================;
+#tbepre
+900,2
+#tbepkyo
+1000,1
+#tbepkyx
+500,2
+#tbepclo
+1000,1,0,1,1000,1
+#tbepclx
+500,8,0,2,500,8,0,2,500,8,0,2,500,8
+#
+        ;=======================================;
+        ; Opening title                         ;
+        ;=======================================;
+#opn
+N308   [atr][wait][frame][back atr]
+#opening
+`N`0                                                 
+`0                     `1`NEX-2095`0`N                     
+`0                                                 
+`4อออออออออออออออออออออออออออออออออออออออออออออออออ
+`0                 Cloning Software                
+`0                                                 
+`0อออออออออออออออออออออออออออออออออออออออออออออออออ
+`0  For `1UT-105(SmarTrunk II)`0                       
+`0                                                 
+`0                         Copyright 1997 Icom Inc.
+`0                                                 
+`0             `8Portions of the software copyrighted
+`0             `8by Microsoft Corporation 1982-1988  
+#
+        ;=======================================;
+        ; Top Titles                            ;
+        ;=======================================;
+
+        ;=======================================;
+        ; Key Menu                              ;
+        ;=======================================;
+#KM000
+`Z `hAlt`Z:Menu                                         
+`Z `hEnt`Z:Inp/Sel                                      
+`Z `hSpc`Z:Inp/Sel                                      
+#KM001
+`Z `hAlt`Z:Menu                                         
+`Z `hEnt`Z:Inp/Sel                                      
+                                                        
+#KM002
+`Z `hAlt`Z:Menu                                         
+                                                        
+                                                        
+#
+        ;=======================================;
+        ; Menu Items                            ;
+        ;=======================================;
+        ;===== Menu Items: Top Menu =====;
+#m_top
+ `eF`Zile @ `eS`Zcreen @ `eC`Zlone @ `eP`Zrint @ Set`eu`Zp 
+#h_top
+FSCPU
+#m_t_fil
+ `eL`Zoad @ `eS`Zave @ Delete @ `eD`Zos @ E`ex`Zit
+#m_t_prn
+ `eC`Zurrent @ `eA`Zll
+#m_t_sc
+ `eS`Zpeed Dial`Z
+ /* Dummy */
+
+ `eC`Zonfiguration`Z
+ /* Dummy */
+
+ `eD`Zummy`Z
+ /* Dummy */
+
+#m_t_cl
+ `eP`Zassword   @ `eR`Zead  <- TR@ `eW`Zrite -> TR
+#m_t_su
+ `eD`Zisplay Type @ R`eS`Z-232C     
+#m_232
+ Port #`e1`Z @ Port #`e2`Z 
+#m_onof
+OFF@ON 
+ OFF @ ON  
+#m_onof2
+   @ON 
+ OFF @ ON
+#m_ofon
+ON @OFF
+ ON  @ OFF 
+#m_noyes
+No @Yes
+ No  @ Yes 
+#m_selcol
+Color@Monochrome 1@Monochrome 2
+#Dchr
+$'(),-/<=>?@[\]^_`{|}~ !#"&.
+#DchrF
+$%'()*+,-/:;=?@[\]^_`{}~!#"&.
+        ;=======================================;
+        ; Titles: Dial Memory                   ;
+        ;=======================================;
+#Sdial
+           `iSpeed Dial`Z
+`hSpeed Dial 0`Z
+`h           1`Z
+`h           2`Z
+`h           3`Z
+`h           4`Z
+`h           5`Z
+`h           6`Z
+`h           7`Z
+`h           8`Z
+`h           9`Z
+`hTurbo SpeeDial A`Z
+`h               B`Z
+`h               C`Z
+`h               D`Z
+#
+        ;=======================================;
+        ; Titles: Common                        ;
+        ;=======================================;
+#Scom
+               `iConfiguration`Z
+`hSystem Tone`Z
+`hPrimary Code`Z
+`hSecondary Code`Z
+`hLower Block Decode`Z
+`hUpper Block Decode`Z
+`hPriority Subscriber Enable
+`hBusy Channel Detect`Z
+`hFive Digit Access Code`Z
+`hTrunking System ID Number`Z
+`hFleet Dispatch Mode`Z
+`hEmergency Call Override`Z
+`hClear Channel Alerting Mode`Z
+`hRadio-Kill`Z
+`hMemory Speed-dialing Programming`Z
+
+
+#
+        ;===== Common Items: =====;
+#SysTon
+0@1@2@3@4@5@6@*
+ 0:100.0Hz @ 1:107.2Hz @ 2:114.8Hz @ 3:123.0Hz @ 4:131.8Hz @ 5:141.3Hz @ 6.151.4Hz 
+#
+ Tone 0 @ Tone 1 @ Tone 2 @ Tone 3 @ Tone 4 @ Tone 5 @ Tone 6 
+#BusyCH
+Carrier    @System Tone
+ Carrier     @ System Tone 
+#RKill
+Active @Disable
+ Active  @ Disable 
+
+        ;=======================================;
+        ; Titles: Group Code                    ;
+        ;=======================================;
+#Sgrp
+    `iGroup Code`Z
+`hGroup Code  0`Z
+`h            1`Z
+`h            2`Z
+`h            3`Z
+`h            4`Z
+`h            5`Z
+`h            6`Z
+`h            7`Z
+`h            8`Z
+`h            9`Z
+`h           10`Z
+`h           11`Z
+`h           12`Z
+`h           13`Z
+`h           14`Z
+`h           15`Z
+#
+
+        ;=======================================;
+        ; Titles: Five Digit Access Code        ;
+        ;=======================================;
+#Scode
+ `iFive Digit Access Code`Z
+#
+        ;=======================================;
+        ; Topic                                 ;
+        ;=======================================;
+#Topic
+ษอออออออัออออออออออออออออออออออออออป
+บRoutingณ       Destination        บ
+บCode   ณ                          บ
+วฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ   1   ณSubscriber to Landline 1  บ
+บ   2   ณSubscriber to Landline 2  บ
+บ   3   ณSubscriber to Subscriber  บ
+บ   4   ณFleet-Dispatch(Group Call)บ
+บ   9   ณMobile Operator           บ
+บ   0   ณEmergency                 บ
+ศอออออออฯออออออออออออออออออออออออออผ
+#
+        ;=======================================;
+        ; System Error                          ;
+        ;=======================================;
+#e_nw
+target sheet has no window.
+
+;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+;                                                                                                       ;
+;       Report / Help / Error                                                                           ;
+;                                                                                                       ;
+;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+        ;=======================================;
+        ; Error Messages                        ;
+        ;=======================================;
+#Enomem
+`eError:`Z
+
+ Cannot execute the command.
+ Not enough conventional memory.
+
+#Etbase
+`eError:`Z
+
+ Cannot load the EX2095ST.EXE cloning program.
+ Copy the EX2095ST.EXE file from the original disk to the same
+ directory as the EX2095.EXE file or to the working disk.
+
+#Ecotf
+`eError:`Z
+
+ Cannot make a temporary file. Check the following:
+
+ - Is the program disk write-protected ?
+ - Is more than 20 k of disk space free ?
+ - That the attribute of the EX2095.STT temporary file
+   is not set as read-only.
+
+#Enout105
+`eError:`Z
+
+ No UT-105 Unit. 
+
+#Epwd
+`eError:`Z
+ 
+ Five Digit Access Code error. 
+ 
+#Enoticom
+`eError:`Z
+
+ Unknown Unit. 
+
+#
+        ;=======================================;
+        ; Bar Report                            ;
+        ;=======================================;
+#Rwait
+ Wait a moment... 
+#Runmodel
+`j`g Err`a: Connected transceiver is not compatible model.`Z
+#Rdifrev
+`j`g Err`a: Connected transceiver's revision number is unknown.`Z
+#Rfnerr
+`j`g Err`a: File is not exist.`Z
+#Rfrerr
+`j`g Err`a: Cannot load file.`Z
+#Rdpaterr
+`j`g Err`a: Illegal data.`Z
+#Rovmap
+`j`g Err`a: Data overflow.`Z
+#Rsmap
+`j`g Err`a: There is not enough data.`Z
+#Rfwerr
+`j`g Err`a: Cannot save file.`Z
+#Rfderr
+`j`g Err`a: Illegal file name.`Z
+#Rfkerr
+`j`g Err`a: Cannot delete file.`Z
+#Rdirerr
+`j`g Err`a: Illegal path name.`Z
+#Rfumod
+`j`g Err`a: This file is for a different transceiver.
+#Rprterr
+`j`g Err`a: Cannot use printer.`Z
+#Rnomem
+`j`g Err`a: Not enough conventional memory.`Z
+#Rcoerr
+`j`g Err`a: Cannot execute 'COMMAND.COM'.`Z
+#Rclok
+ Cloning completed.
+#Rcrerr
+`j`g Err`a: Cannot read cloning data.`Z
+#Rcwerr
+`j`g Err`a: Cannot write cloning data.`Z
+#Rcierr
+`j`g Err`a: Illegal information.`Z
+#Acierr
+The transceiver cannot be programmed. The cause may be:
+
+ 1) The transceiver has not been cloned.
+ 2) The transceiver's EEPROM is damaged.
+ 3) The transceiver's revision number is not compatible
+    with the programming software.
+
+ In cases 1 or 2, the transceiver requires factory
+ maintenance. In case 3, the transceiver cannot be
+ programmed using this program.
+
+#Rcerr1
+`a`g Terminated cloning.`Z
+#Rcerr81
+`j`g Err`a: Cannot access RS-232C port.`Z
+#Acerr81
+`eCheck the following:`Z
+
+ - The RS-232C port settings.
+ - Cloning cable connections.
+ - Transceiver power is ON.
+#Rcerr82
+`j`g Err`a: No answer from transceiver.`Z
+#Acerr82
+`eCheck the following:`Z
+
+ - The RS-232C port settings.
+ - Cloning cable connections.
+ - Appropriate cloning software for the transceiver is
+   being used.
+ - The revision number of the transceiver.
+ - Are more than 20 k of disk space free ?
+#Rcerr83
+ Cloning completed.
+#Acerr83
+ Clone writing succeeded. 
+
+ Turn the transceiver power off and on to use 
+ the transceiver under its new conditions.
+#Rcerr
+`j`g Err`a: Cannot clone.`Z
+#Einierr
+`eError:`Z
+
+ Cannot load initial files (EX2095.STS).
+ Copy the initial files from the original disk to the same
+ directory as the EX2095.EXE file or to the working disk.
+#Rallinh
+`j`g Err`a: Input channel data first.`Z
+#
+        ;=======================================;
+        ; Attention Messages                    ;
+        ;=======================================;
+#Acl_r
+ `iCloning`Z
+
+  Now reading `a<-`Z TR 
+
+#Acl_w
+ `iCloning`Z
+
+  Now writing `a->`Z TR 
+
+#Anprn
+
+ Now printing`a...`Z 
+
+#
+        ;=======================================;
+        ; Yes/No                                ;
+        ;=======================================;
+|----------------------------------|
+#Aexit
+                `eExit`Z
+        Data has been edited.
+                OK ?
+#Aload
+                `eLoad`Z
+        Data has been edited.
+                OK ?
+#Asave
+                `eSave`Z
+         File already exists.
+                OK ?
+#Adel
+            `gDelete file`Z
+
+                OK ?
+#Acread
+        `eRead from transceiver`Z
+        Data has been edited.
+                OK ?
+#Acwrite
+        `eWrite to transceiver`Z
+
+                OK ?
+#
+        ;=======================================;
+        ; Help Messages                         ;
+        ;=======================================;
+#
+

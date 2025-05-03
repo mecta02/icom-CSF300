@@ -1,0 +1,838 @@
+#-----------------------------------------------------------
+#
+#           Type <CE22> EEPROM DATA EDITOR HELP FILE 
+#                      Version 0.12
+#
+#         Copyright (c) 1998 by YAESU MUSEN Co., Ltd.
+#
+#-----------------------------------------------------------
+# 
+# Help File Format Information
+# 
+# Special characters at the beginning of each line determine
+# the function of that line:
+#       `#' = Comment line, ignored by program
+#       `:' = Control line. the program looks for these
+#             lines, and reads the following characters as a
+#             help subject label. One special case is
+#             ":page", which indicates a page break within a
+#             help subject. 
+# Maximum line length for help items is 61 chrs. Longer lines
+# are truncated. Maximum number of lines/screen is 16
+# (additional lines are automatically moved to the next
+# screen).
+# 
+#-----------------------------------------------------------
+#
+:chedit_chno
+      [Channel Number for Display on the Transceiver]
+
+ Pressing the Space Bar, toggles the data for the entire
+ channel between hidden and unhidden (except the first
+ channel, which cannot be hidden).
+ Hidden channels display "--" in place of field entries, and
+ are not used for operation (although they are still stored
+ in hidden form for possible recall later).
+
+
+ Space Bar:  Hide/Unhide entire channel (line).
+
+#
+#
+#
+:chedit_rxf
+   [Edit Rx/Simplex Frequency & Hide/Unhide Channel Data]
+
+ Use 0 - 9 to enter the desired channel frequency, and press
+ Enter. This frequency will be adjusted if it does not match
+ the Channel Step parameter, and will also appear in the Tx
+ Freq field. You do not need to enter all 8 digits: empty
+ digits to the right are zero-filled. Pressing [.] (period)
+ after several digits forces them to MHz. Press period first
+ to change only kHz.
+
+ Pressing only the Space Bar without entering a number
+ toggles the data for the entire channel between hidden and
+ unhidden (except the first channel, which cannot be hidden).
+ Hidden channels display "--" in place of field entries, and
+ are not used for operation (although they are still stored
+ in hidden form for possible recall later).
+#
+#
+#
+:page
+#
+
+ NOTE! Any entries or changes to this field will also occur
+       in the Tx Freq. field, so you may need to edit that
+       field after making any changes here.
+
+
+ Arrow Keys: Change field (before or after editing 
+                Frequency).
+ Space Bar:  Hide/Unhide entire channel (line).
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits as MHz, or
+                next digits as kHz (if pressed first).
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+
+#
+#
+#
+:chedit_txf
+  [Enter Transmit Frequency & Enable/Disable Transmission]
+
+ Use keys 0 - 9 to enter the desired transmitting frequency,
+ and press the Enter key to accept. If the frequency does not
+ match the Channel Step parameter, it will be adjusted to the
+ nearest valid step. You do not need to enter all 8 digits:
+ empty digits to the right are zero-filled.
+ Pressing [.] (period) after several digits forces them to
+ MHz, while pressing [.] first allows entering only kHz.
+ 
+ Pressing only the Space Bar without entering a number
+ toggles the the data for the entire channel between hidden
+ and unhidden(except the first channel, which cannot be 
+ hidden). Hidden channels display "--" in place of field
+ entries, and are not used for operation (although they are
+ still stored in hidden form for possible recall later).
+#
+#
+#
+:page
+#
+
+ NOTE! The Tx Freq is automatically copied from the Rx Freq,
+      so any changes here will be LOST if the Rx Freq is
+      changed. Therefore, the Rx Freq should be set first,
+      before editing the Tx Freq. 
+
+ Arrow Keys: Change field (before or after Editing Freq.)
+ Space Bar:  Hide/Unhide entire channel (line).
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits to MHz, or
+               next digits to kHz.
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+#
+#
+#
+:chedit_cdec
+ [Toggle Subaudible CTCSS Decoder, and set CTCSS frequency]
+
+ Press the Space Bar to toggle the decoder on/off, or press
+ Enter to display the Tone Select window, from which you may
+ select a frequency with the Arrow Keys (pressing Enter again
+ to accept, or Esc to cancel).
+
+ If you know the CTCSS frequency you want, you can enter it
+ directly with the 0 - 9 and [.] (period) keys. When the
+ desired CTCSS frequency is displayed, press Enter to accept.
+ If the frequency was invalid (not among the standard tones),
+ the Tone Select Window will appear as described above, with
+ the nearest valid frequency pre-selected.
+#
+:page
+#
+
+ Turning on CTCSS turns off DCS (both cannot be on).
+ CTCSS cannot be selected for use if ARTS is enabled (DCS 
+ only).
+
+ Arrow Keys: Change field, or select in Tone Select window.
+ Space Bar:  Toggle Decoder on/off (except during selection).
+ 0 - 9, [.]: Direct tone frequency entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+#
+:chedit_ddec
+          [Toggle DCS Decoder, and set DCS Code]
+
+ Press the Space Bar to toggle the decoder on/off, or press
+ Enter to display the Code Select window, from which you may
+ select a DCS Code with the Arrow Keys (pressing Enter again
+ to accept, or Esc to cancel).
+
+ If you know the 3-digit DCS Code you want, you can enter it
+ directly with the 0 - 9 keys. When the desired Code is
+ displayed, press Enter to accept. If the Code was invalid
+ (not among the standard Code numbers), the Code Select
+ window will appear as described above, with the nearest
+ valid Code pre-selected.
+#
+:page
+#
+
+ Turning on DCS turns off CTCSS (both cannot be on).
+ DCS encode and decode are both required for ARTS operation.
+
+ Arrow Keys: Change field, or select in Code Select window.
+ Space Bar:  Toggle Decoder on/off (except during selection).
+ 0 - 7:      Direct Code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Code Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_cenc
+   [Toggle Tone Squelch Encoder, and set CTCSS frequency]
+
+ Press Space to toggle the Encoder on/off, or press Enter to
+ display the Tone Select window (if not viewing it already),
+ from which you may select a frequency with the Arrow Keys
+ (pressing Enter again to accept, or Esc to cancel).
+
+ If you know the CTCSS frequency you want, you can enter it
+ directly with the 0 - 9 and [.] (period) keys (entering
+ a number or [.] forces the Encoder on). When the display
+ shows the desired CTCSS frequency, press Enter to accept.
+ If the frequency was invalid (not among the standard tones)
+ the Tone Select Window will appear as mentioned above.
+
+ NOTE! if the channel is hidden when you make an entry, it
+ will be unhidden. Edit the Rx Freq field to hide it again.
+#
+#
+#
+:page
+#
+
+ NOTE: Turning on the CTCSS Encoder automatically turns off
+ the DCS encoder, if it was on.
+ 
+ Arrow Keys: Change field, or select in Tone Select window.
+ Space Bar:  Toggle Encoder on/off (except during selection).
+ 0 - 9, [.]: Direct tone frequency entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_denc
+       [Toggle DCS Encoder, and set DCS Encoder Code]
+
+ Press Space to toggle the Encoder on/off, or press Enter to
+ display the Code Select window (if not viewing it already),
+ from which you may select a code with the Arrow Keys
+ (pressing Enter again to accept, or Esc to cancel).
+
+ If you know the DCS code you want, you can enter it directly
+ with the 0 - 7 keys (entering a number forces the Encoder
+ on). When the display shows the desired code, press Enter to
+ accept. If the code was invalid (not among the standard
+ codes) the Code Select Window will appear as mentioned
+ above.
+
+ NOTE! if the channel is hidden when you make an entry, it
+ will be unhidden. Edit the Rx Freq field to hide it again.
+#
+#
+#
+:page
+#
+
+ NOTE: Turning on the DCS Encoder automatically turns off
+ the CTCSS encoder, if it was on.
+ 
+ Arrow Keys: Change field, or select in Code Select window.
+ Space Bar:  Toggle Encoder on/off (except during selection).
+ 0 - 7:      Direct code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Code Select Window, and accept entry/
+                selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_artsmode
+                        [ARTS Mode]
+
+ ARTS (Automatic Range Transpond System) handshakes 
+ periodically with the user's ARTS-compatible portable radio.
+ If the portable fails to handshake with the VXR-1000 in two
+ successive handshake cycles, the PWR lamp begins blinking to
+ indicate out-of-range status.
+ The PWR lamp will return to steady-on once ARTS re-
+ establishes contact with the portable.
+#
+:page
+#
+ ARTS operates in one of four modes, described as follows:
+ 
+ - OFF:	ARTS is not active on this channel.  No handshaking
+   is performed.
+ - RX:	The VXR-1000 receives handshake signals from the
+   portable, but does not send them.  If an out-of-range
+   condition occurs, the VXR-1000 will indicate out-of-range
+   locally, but the portable user will NOT receive an 
+   out-of-range indication.
+ - TX:	The VXR-1000 sends handshake signals, but does not
+   receive them.  If an out-of-range condition occurs, the
+   portable user will receive an out-of-range indication
+   (if the portable is properly programmed), but the VXR-1000
+    will NOT indicate an out-of-range condition locally.
+ - TRX:	Both the RX and TX functions described above are 
+   active.
+#
+:page
+#
+
+ ARTS requires DCS encode and decode for operation.  It will
+ not operate in CTCSS or carrier squelch.  The portable 
+ radio's ARTS mode must be in complement in order for ARTS
+ to function correctly.
+
+ Arrow Keys: Change fields (after pressing Enter).
+ Space Bar:  Toggle ARTS mode.
+#
+#
+#
+:chedit_artsint
+                    [ARTS Tx Interval]
+
+ The ARTS TX interval is the amount of time between ARTS 
+ handshakes transmitted by the VXR-1000.  There are two 
+ selections, 25 or 55 seconds.  The portable radio's ARTS 
+ interval must match this in order for ARTS to function 
+ correctly.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle ARTS Tx Interval 25sec/55sec.
+#
+#
+#
+:chedit_dcstype
+                       [DCS Type]
+
+ Effective only when DCS is chosen as the coded squelch.
+ A = Normal DCS
+ B = Inverted (complement) DCS
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle A/B.
+#
+#
+#
+:chedit_ddectype
+                      [DCS Dec Type]
+  
+ Selects ability to decode the DCS complement.
+ Fixed = Decodes the selected type only (normal ORinverted)
+ Auto  = Decodes both types (normal AND inverted)
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle Auto/Fixed.
+#
+#
+#
+:chedit_sqlofst
+                     [Squelch Offset]
+
+ Provides a means to fine tune the VXR-1000 squelch level on
+ a per-channel basis without having to perform a full 
+ alignment.
+
+ Enter digital proportional values (0 to 255).  Squelch
+ threshold increases as the number entered increases.
+
+ Arrow Keys:          Change fields after selection.
+ Space Bar/Backspace: Increment/Decrement Squelch Offset 
+                      Level.
+ 0 - 9:               Input a digit.
+#
+:page
+#
+
+ NOTE:  Although Squelch Offset range is between 0 and 255,
+ however, squelch threshold will be close to saturation if
+ the value is set to 100 or above. Therefore there will be
+ no significant difference in squelch threshold between the
+ value of 100 and 255. 
+#
+#
+#
+:chedit_encrypt
+                       [Encryption]
+
+ When ON, the VXR-1000 operates in the encrypted mode on this
+ channel.
+ This encryption type is compatible with the encryption used
+ in the Vertex VX-10 (FTT-15), VX-200 (FSU-1083), 
+ VX-400 (FVP-25), VX-500 and -510 (FVP-22).
+
+ Arrow Keys: Change fields after setting on/off.
+ Space Bar:  Toggle on/off.
+#
+#
+#
+:chedit_wide
+                   [Wide/Narrow toggle]
+
+ Press the Space Bar to toggle the FM mode Wide or Narrow.
+ Wide = 25 kHz channel spacing, 5 kHz deviation.
+ Narrow = 12.5 kHz channel spacing, 2.5 kHz deviation.
+ 
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle wide/narrow.
+ 
+#
+#
+#
+:chedit_mod
+                        [MOD Input]
+
+ Selects how the VXR-1000 will manage audio signals being
+ input for transmission to the associated portable radio.
+
+ If MIX is selected, any audio being transmitted by the
+ microphone on the connected mobile radio will also be
+ transmitted to the portable on the other band.  If a second
+ microphone is connected to the VXR-1000 and is also keyed
+ at the same time, the audio from both microphones will be
+ mixed and transmitted to the portable.
+#
+:page
+#
+
+ If MONO is selected, the VXR-1000 will only select audio
+ from the microphone that first keyed it's PTT.  Audio from
+ the other microphone, if it is keyed while the first 
+ microphone remains keyed, will be ignored.
+
+ Arrow Keys: Change fields after setting MOD Inuput.
+ Space Bar:  Toggle Mix/Mono.
+#
+#
+#
+:chedit_mblmon
+                      [MBL Monitor]
+
+ Selects whether or not the receive audio from the connected
+ mobile radio will be routed to the VXR-1000's external
+ speaker jack.
+
+ Arrow Keys: Change fields after setting on/off.
+ Space Bar:  Toggle on/off.
+#
+#
+#
+:chedit_txpwrlv
+                     [Transmit Power]
+
+ Selects TX power settings for this channel. 
+ Choices are 0.5, 1.0, 2.5, and 5.0 watts.
+
+ Arrow Keys:          Change fields after selection.
+ Space Bar/Backspace: Increment/Decrement Transmit Power Level.
+
+#
+#
+#
+:chedit_trunk
+                        [Trunking]
+
+ Selects intercommunication protocol with the connected 
+ mobile radio.  
+
+ If the mobile radio is a conventional two-way radio, 
+ choose OFF.  
+
+ If the mobile radio is a trunked radio (SmarTrunk, LTR, 
+ etc.), choose ON.  Also, set the Trunking Data parameters
+ under Common Data as appropriate for operation with the 
+ mobile radio.  Consult the Service Manuals for the VXR-1000
+ and the trunked mobile radio to determine proper settings. 
+#
+:page
+#
+ 
+ Arrow Keys: Change fields after setting on/off.
+ Space Bar:  Toggle on/off.
+#
+#
+#
+:chedit_cblip
+                      [Courtesy Blip]
+
+ When ON, the VXR-1000 sends out a beep on the portable
+ radio frequency each time the portable radio is unkeyed.
+ This beep is not tranmsitted by the connected mobile radio. 
+ 
+ Arrow Keys: Change fields after setting on/off.
+ Space Bar:  Toggle on/off.
+#
+#
+#
+:chedit_mblmic
+                        [MBL Mic]
+
+ Selects whether the audio from the mobile radio's 
+ microphone will be transmitted by the VXR-1000 to the
+ portable radio.
+
+ If ON, audio from the mobile radio's microphone will be
+ transmitted by both the mobile radio and the VXR-1000.
+
+ If OFF, audio from the mobile radio's microphone will only
+ be transmitted by the mobile radio.  
+
+ Arrow Keys: Change fields after setting on/off.
+ Space Bar:  Toggle on/off.
+#
+#
+#
+:chedit_micctrl
+                       [Mic Control]
+
+ Selects which radio will transmit audio from the microphone
+ connected to the VXR-1000.
+
+ If INT, it will only transmit on the VXR-1000 to the 
+ portable radio.  It will not transmit on the connected 
+ mobile radio.
+
+ If EXT, it will only transmit on the connected mobile radio.
+ It will not tranmsit on the VXR-1000 to the portable radio.
+
+ If BOTH, both radios will transmit.
+#
+:page
+#
+
+ Arrow Keys: Change fields after setting Mic Control.
+ Space Bar:  Toggle Internal/Extenal/Both.
+#
+#
+#
+:chedit_extctrl
+                   [Ext. Radio Control]
+                    
+ Selects how the VXR-1000 will control and be controlled by
+ the connected mobile radio.
+
+ When ON, signals received by the mobile radio will be re-
+ transmitted to the portable radio AND signals from the 
+ portable radio will be re-transmitted by the mobile radio.
+
+ When RX, signals received by the mobile radio will be re-
+ transmitted to the portable radio, but signals from the 
+ portable radio will NOT be re-transmitted by the mobile 
+ radio.
+#
+:page
+#
+
+ When OFF, signals will not be re-transmitted by either 
+ radio in either direction.
+
+ In all cases, local receive audio is still active in the
+ radio receiving a signal.
+
+ Arrow Keys: Change fields (after pressing Enter).
+ Space Bar:  Toggle Ext. Radio Control mode.
+# Space Bar, Backspace: Toggle *** mode.
+#
+#
+#
+:chedit_pritmr
+                     [Priority Timer]
+
+ Effective when set to a value greater than 0.00 and when
+ the VXR-1000 is transmitting to the poprtable radio. 
+ This is the interval at which the VXR-1000 will momentarily
+ unkey it's transmitter and listen for a possible
+ transmission from the portable radio.  If a transmission
+ from the portable is detected, the VXR-1000 will cease
+ transmitting to the portable and will key up the connected
+ mobile radio to transmit to the "base".  This allows the
+ portable radio user to override an incoming transmission
+ from the "base" if desired.
+
+ Settings are 0.25 seconds thru 3.00 seconds.  0.00 = off.
+#
+:page
+#
+
+ Arrow Keys: Change fields (after pressing Enter).
+ Space Bar:  Incriment Priority Timer.
+ Backspace:  Decriment Priority Timer.
+#
+#
+#
+:chedit_mtone
+                       [Master Tone]
+
+ When Lktn is chosen in Master/Slave Mode, user has the
+ choices of 847.5Hz or 832.5Hz for the desired Master Tone.
+
+ Arrow Keys: Change field after selection.
+ Space Bar:  Toggle Master Tone 847.5Hz/832.5Hz.
+#
+#
+#
+:chedit_mstslv
+                      [Master/Slave]
+
+ Determines how this VXR-1000 will behave when it is in-
+ range of others operating on the same frequency, such as
+ when several mobile units are at a common location.  One
+ VXR-1000 must act as the Master to provide portable-to-base
+ relay for all portable users at the location.  All other
+ VXR-1000s that are present must revert to Slave(inactive)
+ status or they will cause a cacaphony of interference with
+ each other.
+#
+:page
+#
+
+ Ordinarily, the first VXR-1000 arriving at a location will
+ establish itself as the Master by periodically transmitting
+ a Master signal tone.  Any other VXR-1000 coming within
+ range will receive this tone and revert itself to Slave
+ status.  If the Master happens to leave the location, the
+ absence of it's Master signal tone will be detected by the
+ other Slaves.  The first Slave detecting the absence of the
+ Master will then transmit the Master signal tone.  If
+ unchallenged by any other VXR-1000 in range, this Slave
+ will then become the new Master for this location.  All of
+ these transactions occur automatically and without
+ interruption of voice communications occurring through the
+ VXR-1000 system.  
+
+ Select between the YAESU system (a Yaesu exclusive system
+ based on sub-audible DCS signalling) or the Lock Tone
+ system (employs audible tone bursts for signalling).
+#
+:page
+#
+
+ Important note:  If the YAESU system is used, you MUST
+ program only CTCSS or carrier squelch to be used for the
+ main coded squelch signal (items immediately to the left of
+ the operating frequencies).  The CE-22 software will not
+ allow use of DCS coded squelch if the YAESU system is
+ selected.
+
+ Arrow Keys: Change fields (after pressing Enter).
+ Space Bar:  Toggle Master/Slave mode.
+#
+#
+#
+:chedit_msdcs
+                 [Master/Slave DCS code]
+
+ Selects the DCS code to employ for the YAESU Master/Slave
+ signalling system.
+
+ Important note:  If the YAESU system is used, you MUST
+ program only CTCSS or carrier squelch to be used for the
+ main coded squelch signal (items immediately to the left of
+ the operating frequencies).  The CE-22 software will not
+ allow use of DCS coded squelch if the YAESU system is
+ selected.
+#
+:page
+#
+
+ Arrow Keys: Change field, or select in Code Select window.
+ 0 - 7:      Direct Code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Code Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+
+#
+#
+#
+:file_select
+                  [File Selection Window]
+
+ Select a filename (lower-case letters) or subdirectory
+ (upper-case, in angle brackets <>) using the Arrow Keys, and
+ then the Enter Key to accept your selection. If you selected
+ a subdirectory, the window contents will be replaced with
+ that subdirectory's contents, from which you can select
+ again. You can also delete a file or subdirectory with [F4].
+
+ You can also enter a new drive letter or filespec directly.
+ Pressing alphanumeric keys activates the filespec line
+ editor along the bottom of the window. You can use wildcards
+ ("*" or "?") to display only certain files (eg.,
+ B:\CHDATA\*.CH and Enter displays only files with the "CH"
+ extension in the CHDATA subdirectory on drive B). Tab
+ returns you to the upper half of the selection window.
+#
+:page
+#
+ (at any time in Selection Window)
+ Enter Key:  Accept selection.
+ Esc Key:    Cancel operation and return to Channel Editor.
+ Tab Key:    Switch between Selection Window and line editor.
+
+ (for selection in upper part of window)
+ Arrow Keys: Select filename/subdirectory.
+ Home/End:   Jump to first/last selection on screen.
+ [F4] Key:   Delete current file selection from disk.
+ PageDown:   Jump down one page (for large directories).
+ PageUp:     Jump up one page (for large directories).
+
+ (for filespec editor at bottom of window)
+ Delete:     Delete character under cursor.
+ Backspace:  Delete character to left.
+ Insert:     Toggle insert/overwrite modes.
+#
+#
+#
+:path_edit
+                  [File Selection Window]
+
+ Select a filename (lower-case letters) or subdirectory
+ (upper-case, in angle brackets <>) using the Arrow Keys, and
+ then the Enter Key to accept your selection. If you selected
+ a subdirectory, the window contents will be replaced with
+ that subdirectory's contents, from which you can select
+ again.  If you select a file, you can delete it with [F4].
+
+ You can also enter a new drive letter or filespec directly.
+ Pressing alphanumeric keys activates the filespec line
+ editor along the bottom of the window. You can use wildcards
+ ("*" or "?") to display only certain files (eg.,
+ B:\CHDATA\*.CH and Enter displays only files with the "CH"
+ extension in the CHDATA subdirectory on drive B). Tab 
+ returns you to the upper half of the selection window.
+#
+:page
+#
+ (at any time in Selection Window)
+ Enter Key:  Accept selection.
+ Esc Key:    Cancel operation and return to Channel Editor.
+ Tab Key:    Switch between Selection Window and line editor.
+
+ (for selection in upper part of window)
+ Arrow Keys: Select filename/subdirectory.
+ Home/End:   Jump to first/last selection on screen.
+ [F4] Key:   Delete current file selection from disk.
+ PageDown:   Jump down one page (for large directories).
+ PageUp:     Jump up one page (for large directories).
+
+ (for filespec editor at bottom of window)
+ Delete:     Delete character under cursor.
+ Backspace:  Delete character to left.
+ Insert:     Toggle insert/overwrite modes.
+#
+#
+#
+:read_rom
+     [Transfer data between PC and Transceiver's EEPROM]
+
+ The Space Bar is used to proceed with the transfer operation
+ after ensuring the hardware is set up for the transfer. To
+ cancel and return to the Channel Editor, press the Esc Key
+ instead.
+
+ The status of the transfer operation will be displayed when
+ finished (a few seconds after pressing the Space Bar).
+
+ NOTE! Press the Esc Key if the system appears to hang. Then
+ check the cables for a connection problem.
+#
+#
+#
+:write_rom
+    [Transfer data between PC and Transceiver's EEPROM]
+
+ The Space Bar is used to proceed with the transfer operation
+ after ensuring the hardware is set up for the transfer. To
+ cancel and return to the Channel Editor, press the Esc Key
+ instead.
+
+ The status of the transfer operation will be displayed when
+ finished (a few seconds after pressing the Space Bar).
+
+ NOTE! Press the Esc Key if the system appears to hang. Then
+ check the cables for a connection problem.
+#
+#
+#
+:edit_common
+               [Edit Common Data Parameters]
+
+ CAUTION: Do not change Hardware Environment Parameters
+ unless you are certain that the transceiver hardware is
+ suitable for the new value.
+
+ Editing these parameters requires that this program be
+ started with the -p switch on the command line. Otherwise
+ the settings can only be viewed.
+
+ Use the Arrow Keys to select the parameter to edit. Then use
+ the Space Bar or Backspace Key to toggle among all possible
+ settings for that parameter. When all parameters are set as
+ desired, press the Esc Key to return to the Channel Editor.
+#
+#
+#
+:edit_enviro
+      [Hardware Environment Common Parameter Editing]
+
+ CAUTION: Do not change Hardware Environment Parameters
+ unless you are certain that the transceiver hardware is
+ suitable for the new value.
+
+ Editing these parameters requires that this program be
+ started with the -f switch on the command line. Otherwise
+ the settings can only be viewed.
+
+ Use the Arrow Keys to select the parameter to edit. Then use
+ the Space Bar or Backspace Key to toggle among all possible
+ settings for that parameter.
+ When all parameters are set as desired, press the Esc Key to
+ return to the Common Data Editor.
+#
+#
+#
+:make_dir
+          [Make a new subdirectory on current Path]
+
+ Input the name of the new subdirectory (up to 8 characters),
+ then press Enter. Press Esc or F8 to cancel if you change
+ your mind.
+
+ Backspace: Delete character to left of cursor
+ Delete:    Delete character above cursor
+ Insert:    Toggle Insert/Overwrite mode (Insert is default,
+            Overwrite has block cursor)
+#
+#
+#
+:remove_dir
+       [Remove the named (or pointed-to) subdirectory]
+
+ Only empty child directories from the current subdirectory
+ can be removed. In the file list, the inverse box can be
+ positioned with the arrows to select a subdirectory to
+ remove, by pressing F4. If the file list selection is not
+ a subdirectory, a box will appear in which you can enter
+ the name of the subdirectory to be removed. This name must
+ be the same as one of the subdirectories displayed in the
+ file list, and any files in that subdirectory must have
+ already been deleted.
+
+ Backspace: Delete character to left of cursor
+ Delete:    Delete character above cursor
+ Insert:    Toggle Insert/Overwrite mode (Insert is default,
+               Overwrite has block cursor)
+#
+#

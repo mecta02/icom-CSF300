@@ -1,0 +1,401 @@
+
+
+
+
+
+			    CE6 Programming Manual
+				  Version 2.1
+
+
+	 The CE6 (Clone/Editor 6) is used to program the VX-500V and
+    VX-500U series radios.  The radio is connected to the computer by
+    the VPL-1 and appropriate cable.  To start the program, type the
+    following at the DOS prompt:
+
+	 C:>CE6
+
+	 The program will display the version number and frequency ranges
+    for different model of radio then goes to main channel data screen.
+
+	 The main channel data screen will allow you to enter all of the
+    channel and tone data as well as set some of the programmable options
+    like CTCSS, Time Out Timer, etc.  You can also access all of the other
+    functions from the main screen by pressing one of the 'F' keys:
+
+	 F1:  On-line help
+	 F2:  Common Data/Hardware Setup
+	 F3:  Load a file from disk
+	 F4:  Save a file to disk
+	 F5:  Read data from a radio
+	 F6:  Send data to a radio
+	 F7:  Print out configuration
+	 F8:  Return to DOS
+	 F9:  Change radio type/model
+
+	 The program starts with the default setting for VX-500V.  To
+    change the radio type use the F9 key and select the radio type.
+    Changing types will erase any previous data on the screen.
+
+	 Two information boxes appear at the top of the screen.  The left
+    box contains information about the common data and radio configuration.
+    The box on the right contains key help information for data entry such
+    as which keys to use and the upper and lower limits for data.
+
+
+	 Before programming the channel data, make sure that the COMMON
+    DATA and ENVIRONMENT settings are correct. The following items can be
+    entered from the channel data menu:
+
+    PRIORITY CHANNEL-One channel can be enabled as a priority; use the
+    <SPACE> bar to select.
+
+    CHANNEL NAME-This is the 4 digit alpha tag assigned to the channel
+    number.  Any character from A-Z, 0-9, and <=>*+-\/_<space> may be
+    entered.  The default tags are CH01 to CH32.  If DTMF TAG is selected
+    under COMMON DATA, this will be the DTMF encode/decode sequence.  Press
+    the <SPACE> bar to toggle between off, encode only, or encode decode
+    (displayed with "T" as the 4th digit).
+
+
+
+				       1
+
+
+
+
+
+
+
+
+
+
+    RX FREQ-Enter any frequency within the selected range (134-174 for VHF
+    400-512 for UHF) and channel spacing.  Pressing the <SPACE> bar will
+    toggle the "channel lock" on or off; if locked, the channel data will
+    not be displayed or accessed by the user, but will still be downloaded.
+
+    CTCSS/DCS Decode-Press <ENTER> to select the tone/code frequency from a
+    pop up table, or enter the tone/code directly.  Pressing <SPACE>
+    toggles the sub-audible selection on/off.
+
+    SCAN-Press the <SPACE> bar to change the scan list selection for this
+    channel.
+
+    POWER SAVE-Press the <SPACE> bar to toggle battery saver on/off.  The
+    on/off times can be altered under COMMON DATA.
+
+    TX FREQ-Enter any frequency within the selected range (134-174 for VHF
+    400-512 for UHF) and channel spacing.  Pressing the <SPACE> bar will
+    toggle the channel between receive only and TX/RX.
+
+    CTCSS/DCS Encode-Press <ENTER> to select the tone/code frequency from a
+    pop up table, or enter the tone/code directly.  Pressing <SPACE>
+    toggles the sub-audible selection on/off.
+
+    BCLO/BTLO-Press the <SPACE> bar to toggle between Busy Tone Lock Out,
+    Busy Carrier Lock Out, and None.  BTLO will inhibit the transmitter if
+    carrier is detected but the correct tone is not decoded.  BCLO will
+    inhibit the transmitter anytime carrier is detected.
+
+    TX POWER-Press the <SPACE> bar to toggle the channel between low power
+    only, or HI/LO power (selectable by the user).
+
+    TOT-Press the <SPACE> bar to toggle the TX Time Out Timer on/off. The
+    timer duration is set under COMMON DATA.
+
+    COMMON DATA
+
+    Pressing <F2> will allow you to view/edit the radio common data.  All
+    of the selections are altered using the <SPACE> bar.  The following
+    items can be accessed from this menu:
+
+    1.   Channel scan enable or disable.  If enabled, items 2 & 3 may be
+	 selected.
+
+    2.   Scan Stop Resume- Select either 5 Sec or CARRIER.  If set to
+	 CARRIER, scan will resume 2 Sec after carrier drops.  If set to 5
+         Sec, scan will pause only for that time, then resume regardless of
+	 activity.
+
+    3.   User Scan Program- If enabled, the user will be able select the
+         scan channels by pressing the DW/S button while turning power on.
+
+
+
+
+
+				       2
+
+
+
+
+
+
+
+
+
+
+    4.   Dual Watch- Enables or disables the dual watch feature.  If
+	 enabled the radio will sample the priority channel for activity
+	 when receiving a non-priority channel.  If this feature is enabled
+	 the  next 2 items may be selected.
+
+    5.   Power-On dual watch- If enabled, the radio will be in the dual
+         watch mode as soon as the power is turned on.
+
+    6.   Dual watch speed- Slow will sample the priority channel at 1.5
+         second intervals; Fast will sample at .5 second intervals.
+
+    7.   Channel after PTT- Select either Home, Last Busy or Priority.
+         When the PTT is pressed during scan, this is the channel that the
+         radio will revert to.  Home is the last channel selected before
+	 entering scan.
+
+    8.   Monitor- The monitor button on the side panel of the radio may
+         be enabled or disabled using this selection.
+
+    9.   Beep- The key beeps when pressing any of the radio buttons (except
+         PTT) may be enabled or disabled using this selection.
+
+    10.  Lighting Lock- The key lock may be enabled or disabled using this
+         selection.  If enabled, and the user presses the lighting/lock
+         button on the side panel, all of the buttons (except PTT and the
+	 channel selector) will be disabled until another long press of
+         the button.
+
+    11.  Power Save- Select the sleep time of the power save mode.  To
+         select the awake time, see ENVIRONMENT.
+
+    12.  TX Time Out- Select either enabled or disabled. If enabled, the
+         next 2 items may be selected.
+
+    13.  TX Time Out Time- Select either 30 Sec, 1 min, 2 min, or 3 min.
+
+    14.  Time Out Resume is the amount of penalty time that must expire
+         before the user can transmit again if they have exceeded the TOT.
+         Select either 0, 6, 20, or 60 Sec.
+
+    15   Squelch Tail Elimination- If enabled and CTCSS is programmed,
+	 releasing the PTT button will cause the radio to continue to
+         transmit for 400 mSec without tone to eliminate the squelch tail
+         on the receiving end.
+
+    16.  The "A" and "B" option buttons may be programmed for any of the
+         following: Change group (moves between channels 1-16 and 17-32)
+	 Hi/Lo transmit power, Talkaround, channel alpha/number display,
+         or Accessory.
+
+    17.  DTMF Sel Call/Ch Name- Toggles between displaying the channel
+         number/name and the DTMF decode/encode sequence.
+
+
+
+                                       3
+
+
+
+
+
+
+
+
+
+
+    18.  Power on Display- Select either channel number or channel alpha
+         tag.  This option will also be dependent upon the selection of
+         item 17.
+
+    19.  2-Tone Decoder- Select either groups 1,2,3/4,5,6 or custom tone.
+	 This option is used in conjunction with the F2D-5 2-Tone Decoder.
+
+    SERIAL PORT
+
+    Pressing <F4> in the COMMON DATA screen will allow you to change serial
+    port if computer has more than one serial port.
+
+    ENVIRONMENT
+
+    The following items can be displayed by pressing <F2> while in the
+    COMMON DATA menu.  Only the default split may be edited, and is pro-
+    vided as a programming aid.
+
+    1.   Prescalar-  1/64 (default).
+
+    2.   Channel step- Default depends on radio type.
+
+    3.   1st IF Freq- Default depends on radio type.
+
+    4.   Local Osc Offset- Default depends on radio type.
+
+    5.   Default split is applied to the receive frequency to automatically
+	 calculate the transmit frequency.  This setting does not affect
+	 the operation of the radio.
+
+    6.   Scan Speed- 150mSec/channel (default).
+
+    7.   Power Save time- 300 mSec.  This will determine how long the radio
+	 is "awake" during the power save mode to check for activity.
+
+	 To return to the COMMON DATA menu press <ESC>
+
+    TONE
+
+	 The 2-Tone and Burst Tone entries may be accessed  by pressing
+    <F3> while in the COMMON DATA menu. 2-Tone Decode and Burst Tone are
+    mutually exclusive functions since they both require an option board.
+    Enter the tone frequency in directly, or select from a pop up menu if
+    the wrong data is entered.  Pressing the <SPACE> bar will toggle the
+    selection on/off.
+
+	 To return to the COMMON DATA menu press <ESC>
+
+
+
+
+
+
+
+
+
+
+
+
+
+				       4
+
+
+
+
+
+
+
+
+
+
+    LOAD A FILE FROM DISK
+
+	 To load a previously saved configuration from disk, press <F3>
+    from the main channel menu.  A list of the current directory appears
+    with all files that end in the ".CH" extension.  To change directories,
+    or to search for other file extensions, enter the new path from the
+    keyboard and press <ENTER> and a new list should appear.
+
+         To select the desired file, use the arrow keys, or type the full
+    name plus extension and press <ENTER>.  The file must be of the correct
+    type (UHF/VHF) or you will get an error message.
+
+
+    SAVE A FILE TO DISK
+
+         To save a configuration to disk, press <F4> from the main channel
+    menu.  A list of the current directory appears with all files that end
+    in the ".CH" extension.  To change directories, or to search for other
+    file extensions, enter the new path from the keyboard and press <ENTER>
+    and a new list should appear.  Enter the name and extension and press
+    <ENTER> to save the file (file name and ext must be valid DOS types).
+
+         To save a configuration as a previously saved file, select the
+    desired file using the arrow keys, or type the full name plus extension
+    and press <ENTER>.  You will be prompted before overwriting an existing
+    file.
+
+    READ A CONFIGURATION FROM THE RADIO
+
+         Before any data can be read from the radio, it must be put into
+    the clone mode.  Press and hold the "Mon" and PTT buttons on the side
+    panel while turning the radio on.  The display should show "PROG".
+
+         Press <F5> from the main channel menu and press the <SPACE> bar.
+    Press the radio's PTT button to begin uploading.  The computer screen
+    will indicate when reading is complete.
+
+         The computer will prompt you to save the previously displayed
+    channel information before overwriting the newly uploaded data to the
+    screen.  If you wish to save the data, answer "Y" and enter a file name
+    as above.
+
+    PROGRAM A CONFIGURATION INTO THE RADIO
+
+         Before any data can be sent to the radio, it must be put into the
+    the clone mode.  Press and hold the "Mon" and PTT buttons on the side
+    panel while turning the radio on.  The display should show "PROG".
+
+         Press <F6> from the main channel menu and press the <SPACE> bar.
+    Press the radio's MON button, then the <SPACE> bar to begin sending.
+    The computer screen will indicate when the download is complete.
+
+
+
+
+                                       5
+
+
+
+
+
+
+
+
+
+
+    PRINTING
+
+         Press <F7> from the main channel menu to print the configuration.
+    The computer will prompt you to ready the printer and press "Y" to
+    continue or any other key to abort.
+
+    QUIT to DOS
+
+         Press <F8> from the main channel menu to quit CE6 and return to
+    DOS.  Computer will ask you to confirm.
+
+    RADIO TYPE
+
+         The CE6 software may be used to program either the VX500V or
+    VX500U. Press <F9> from the main channel menu to bring up the radio
+    type menu.  Use the up/down arrow keys and the <SPACE> bar to select.
+    Changing radio types will erase all previous data.  Press <ESC> to
+    return to the main menu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       6
+
+
+
+
+

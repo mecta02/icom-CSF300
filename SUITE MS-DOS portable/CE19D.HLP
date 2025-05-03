@@ -1,0 +1,1312 @@
+\1
+   CE19DOS OVERVIEW
+
+   This software is used to program the frequencies 
+   and operating parameters for the Vertex VX-3000 
+   series mobile radios.
+
+   On-line Help is available by pressing F1 at any
+   of the main menu entry fields, or on any of the
+   submenus.
+
+   This software is intended for use by radio systems
+   technicians who are familiar with the capabilities
+   and characteristics of the VX-3000 radios, and the
+   general requirements of the radio communications
+   systems in which they are used.  Programming by
+   other persons may result in unsatisfactory or un-
+   intended operation.  If in doubt, contact your
+   Vertex Dealer for assistance.
+
+   Minimum computer system requirement:  IBM PC or
+   clone, 80286/12MHz or equivalent processor,  MS-DOS
+   v5.0 or higher operating system.  Windows 3.x or
+   Windows 95 may also be used if running in DOS mode.
+
+   CE19DOS Features
+
+      . Mouse support.  Please ensure that your mouse
+        driver is installed correctly.  The mouse 
+	driver must not use the same serial com port 
+	used for radio programming.
+
+      . The status bar along the bottom of the screen
+        will contain brief information such as 
+	function of the F keys, action keys or ranges 
+	of data entry, or short Help explanations.
+
+      . CE19DOS performs best when used with the MS-DOS
+        Operating System, v5.0 or higher.  Operation is
+        also possible with Windows 3.x or Windows 95
+        using the DOS mode.
+
+              ** End of General Help **
+
+\2
+   HOW TO COMMUNICATE WITH VX-3000
+
+   A. Plug the VPL-1 cable into your computer's 9 pin
+      com (serial) port.  Use accessory connectors
+      and adapters (A/B switch boxes, serial extension
+      cables, 9-to-25 pin adapters, etc.) with caution,
+      as these items can sometimes cause communications
+      problems.
+   B. Using the VPL-1's DIN-to-RJ45 adapter cable, plug
+      the other end of the cable into the VX-3000's mic
+      jack.
+   C. Turn the VX-3000 on.
+      1. The TX/Busy lamp will glow orange to indicate
+         programming or "clone" mode on the 4 channel 
+         radio.
+      2. The display will read "CLN" to indicate program-
+         ming or "clone" mode on the 48 or 120 channel
+         radio.
+   D. If you are using a com port with a designation
+      other than Com 1, select the appropriate com port
+      from the Files -> Configure Menu.  Note that this
+      selection remains in effect until you select another
+      Com port.
+   E. Select Radio -> Upload to upload the programming
+      from the radio to the computer. You will receive a
+      confirmation box to acknowledge before the upload
+      actually begins.  During upload, the actual percen-
+      tage of completion will be shown in the Upload
+      window.
+      Note:  In order to ensure file compatibility with
+      the radio being programmed, it is usually necessary
+      to upload the default profile from the radio and use
+      that file for programming. We recommend this 
+      procedure be used until you gain sufficient 
+      familiarity with saving, recalling, and employing 
+      different files to attempt to recall and write saved
+      files into the radio.  It is usually not possible to
+      write a file from the default computer screen and 
+      successfully download it to a radio.
+   F. If an error message is received, or if communication
+      with the radio does not take place:
+      1. Double-check and correct all of the following
+         as needed:
+         a. The correct Com Port is selected.
+         b. The VPL-1 programming cable is properly
+            configured.  Adapters, etc. should be removed
+	    from the programming cable to eliminate them
+	    as potential sources of problems.
+         c. The radio is in programming or "clone" mode.
+         d. There is no other software running that uses
+            the same com port or IRQ that you are using
+            for the VX-3000.  Examples include mouse
+            driver, modem driver, infrared interface
+            driver, etc. This is by far the most common
+            source of communications difficulties. 
+	 e. The computer is using the MS-DOS Operating
+            System, v5.0 or higher.  On some occasions, if
+            it does not work properly under Windows 3.x or
+            Windows 95, we recommend switching to MS-DOS
+            mode.
+      2. After correcting all of the above as required,
+         switch the radio back on and repeat step E until
+	 a successful upload is obtained.
+      3. If error messages are still received, or if
+         communication still does not occur, advanced
+         communications problems probably exist.  Try
+         another computer, or obtain the services of a
+         local computer consultant to troubleshoot and
+         correct the problem(s).
+   G. Use the profile and screen obtained after the
+      upload to write your programming profile (freqs.,
+      operating parameters, etc.). 
+   H. To write the program into the radio, select Radio
+      -> Download.  Choose OK or press Enter to begin
+      the download process.  A scrolling count-up bar
+      will display the actual percentage of programming
+      completion.  Wait until this window clears.  If
+      problems occur during download, apply the appro-
+      priate cure(s) from section F above and continue.
+
+\3
+   OPEN FILE
+
+   This menu item allows the programmer to open existing 
+   VX-3000 configuration files.  The Open File box
+   appears in blue (as opposed to the similar-appearing
+   Save File box which appears in red).
+
+   <Path>      Use the mouse or press <ALT>-P to select
+               the <Path> window.  Specify the directory
+               path from which you wish to retrieve the
+               file.  The default path is to the same
+               directory in which the programming
+               software is installed.
+
+   <Name>      Use the mouse or press <ALT>-N to select
+               the <Name> window.  Provide a search
+               pattern using wildcards <*> to obtain a
+               set of files you wish to select.  The
+               default search string is "*.V3K".
+
+               Optionally, you can enter the exact file
+               name you wish to open and press <ENTER>
+               to open the file.
+
+   <Files - #> Use the mouse or press <ALT>-F to select
+               the <Files> window.  This window lists all
+               subdirectories (indicated by a square
+               prefix) and files under the directory path
+               which match the search pattern.  The #
+               indicates the number of files that match
+               the search string.
+
+               Use the Up/Down keys to select the
+               subdirectory/file you wish to open, and
+               press <ENTER>.  If you wish to cancel
+               opening the file, press <ESC>.
+
+\4
+   SAVE FILE
+
+   This menu item allows the programmer to save the 
+   configuration file information displayed on screen.
+   The Save File box appears in red to distinguish it
+   from the Open files box, which appears in blue.
+
+   <Path>      Use the mouse or press <ALT>-P to select
+               the <Path> window.  Specify the directory
+               path to which you wish to save the
+               file.
+
+   <Files - #> Use the mouse or press <ALT>-F to select
+               the <Files> window.  This window lists all
+               subdirectories (indicated by a square
+               prefix) and files under the directory path
+               which match the search pattern.  Use the
+               Up/Down keys to select the subdirectory/
+               file you wish to save the configuration
+               in, and press <ENTER>.  Press <ESC> to
+               cancel.
+
+   <Name>      Use the mouse or press <ALT>-N to select
+               the <Name> window.  Use the Delete key to
+               remove the "*", then enter the file name
+               to which you wish to save the configuration.  
+	       We recommend that you retain the ".V3K"
+               file name extension to facilitate easier
+               file retrieval later.  Press <ENTER> to
+               save the file.  Press <ESC> to cancel.
+\5
+   PRINT
+
+   Choosing this submenu item prints a hard copy of the
+   configuration data file presently displayed on screen.
+
+   Make sure that the printer port is set correctly by
+   specifying the correct port in the CONFIGURE submenu.
+
+\6
+   CONFIGURE
+
+   Color/monochrome display can be chosen in this submenu.
+   Com ports to interface the radio, and printer ports to
+   print configuration data can also be set.  Make changes
+   to these items as needed.
+
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 MAY LOCK-UP IF THERE IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\7
+   EXIT
+
+   This command terminates the program.  Make sure to save
+   any necessary configuration data prior to exiting the
+   program.
+
+\10
+   HARDWARE PARAMETERS
+
+   These parameters are related to the hardware of the
+   VX-3000.  Parameters to set the operating frequency 
+   band, Reference Xtal, First IF, Local Offset and 
+   Prescalar included in this category.  These will be
+   pre-set into the software when read (uploaded) from
+   the radio.  These items are read-only and are not
+   accessible for editing.
+
+\11
+   SCAN PARAMETERS
+
+   Allows you to set up variables for scan operation
+   and select various scan options, as well as revert 
+   channel selection and user scan edit authorizations.
+
+\12
+   SEQUENTIAL TONE
+
+   Programs the DTMF, 2 Tone, and 5/6 Tone format 
+   signaling parameters.  In addition to these items,
+   be sure to enable the desired tone format under
+   Group -> Channel Allocations -> Group Parameters,
+   and enable operation per channel by placing a check
+   mark in the SEQ column on the main screen.
+
+   Note:  4 channel versions of the VX-3000 can perform
+   DTMF ANI only.  48 and 120 channel versions can
+   perform all available sequential tone signaling
+   functions.  Many signaling functions work only in the
+   5/6 Tone formats.  2 Tone signaling is for decode only.
+
+\13
+   FRONT PANEL
+
+   Sets various operation parameters and selects different
+   options available for Accessory 1, Accessory 2, Mon
+   key, and Hook key.  See the Help file for each item for
+   more details.
+
+\15
+   MISCELLANEOUS
+
+   Selects various options like Switch-On Channel,
+   External PTT, DCS polarity, CTCSS TX delay, etc.
+
+\20
+   UPLOAD
+
+   Used to read programming data from the radio.  If
+   previous programming data is on the screen, the
+   software will ask whether the programmer wishes to
+   overwrite the existing data on screen.
+
+\21
+   DOWNLOAD
+
+   Used to write data on the screen to the radio.  This
+   will completely overwrite the current data in the 
+   radio.
+
+\22
+   GROUP PARAMETERS EDIT
+
+   This will allow user to allocate the number of channels
+   in each group, set TOT, penalty timer, release timer,
+   scan flag, tone signaling, 2 tone pair and channel step
+   for each group.
+
+
+\100
+   CHANNEL NUMBER
+
+   This column indicates the relative channel number in
+   this group.  Regardless of the number of channels in
+   any previous group, the first channel in the current
+   Group will be channel 1.
+
+   Press the space bar here to toggle between channel
+   locked (line appears in gray) and unlocked (line
+   appears in blue) conditions.  Locked channels can
+   be edited, and will automatically switch to unlocked
+   status when the receive frequency is edited.
+
+\101
+   DEALER PRIORITY
+
+   Each group can have up to 2 Dealer priorities.  Pri2
+   will take precedence over a non-priority channel, and
+   Pri1 will take precedence over Pri2.  Pri1 cannot be
+   interrupted.  Use the space bar or right mouse button
+   to change setting.
+
+   "Dealer" priority(ies) are established by the 
+   programmer only and cannot be edited by the end user.
+
+\102
+   USER PRIORITY
+
+   Each group can have up to 2 User priorities.  Pri2
+   will take precedence over a non-priority channel,
+   and Pri1 will take precedence over Pri2.  Pri1 cannot
+   be interrupted.  Use the space bar or right mouse 
+   button to change setting.
+
+   "User" priority(ies) are initially established by the
+   programmer, but may be edited by the end user if 
+   enabled under Common -> Scanning.
+
+\103
+   WIDE/NARROW
+
+   Press SPACE bar or right mouse button to select either
+   the Wide or Narrow. In Wide mode, this channel will
+   operate with 25 KHz parameters. In Narrow mode, this
+   channel will operate with 12.5 KHz parameters.
+
+\104
+   Channel Alpha Tag
+
+   This is the (up to) 8 character alphanumeric name for
+   the channel.  This will be displayed when the channel
+   is selected.  Type-in the characters desired for the
+   Tag display and press Enter.
+
+\105
+   RECEIVE FREQUENCY
+
+   Enter the receive frequency, which should be a 
+   multiple of the Spacing shown at the top of the
+   screen.  If an incorrect entry is made, the software
+   will round off the entry to the nearest valid
+   frequency.  In this column you can directly enter
+   the entire receive frequency, or press ENTER and
+   use the arrow keys to select any digit in the filed
+   to edit.  Press ENTER again to accept the new 
+   frequency.  The software automatically writes this
+   frequency (or a programmed offset of this frequency)
+   into the Transmit Frequency column.
+   
+\106
+   TRANSMIT FREQUENCY
+
+   Enter the transmit frequency, which should be a 
+   multiple of the Spacing shown at the top of the
+   screen.  If an incorrect entry is made, the software
+   will round off the entry to the nearest valid
+   frequency.  In this column you can directly enter
+   the entire transmit frequency, or press ENTER and
+   use the arrow keys to select any digit in the filed
+   to edit.  Press ENTER again to accept the new 
+   frequency.  
+
+   This entry may be programmed to shift automatically
+   to any offset of the receive frequency.  The offset
+   is programmed in the Common -> Misc menu.  When 
+   offset is programmed, the software automatically 
+   writes the TX frequency with the desired offset 
+   immediately after the RX frequency is entered.  
+   Negative offsets (TX frequency below RX frequency) 
+   are not available.  However, the TX frequency can 
+   be independently programmed to any valid frequency 
+   above or below the RX frequency.
+
+   The transmitter can be inhibited on any channel by
+   bringing the cursor to this column and pressing the
+   SPACE bar.  When TX inhibit is on, the frequency
+   numbers are replaced with dashed lines.
+
+\107
+   HIGH POWER SETTING
+
+   Each channel may be set to different High Power 
+   settings.  The choices are Low, Mid and High. 
+
+\108
+   LOW POWER SETTING
+
+   Each channel may be set to a different low power 
+   setting.  The choices are Low, Mid and High.  When 
+   the Accessory (A) key is programmed for Low Power 
+   switching, it only takes effect if the low power 
+   level is less than the programmed channel's High 
+   power setting.  For example, if the channel's High
+   power setting is set to Low, the Low Power setting
+   cannot switch it to Mid or High.
+
+\109
+   SUBAUDIO TYPE
+
+   Use the space bar or right mouse button to toggle
+   between CTCSS, DCS, or None (dashed lines)
+
+\110
+   DECODE
+
+   Select the CTCSS tone or DCS code to be decoded
+   (received) on this channel.  This can be done by
+   pressing the SPACE bar, then scrolling the list of 
+   tones (CTCSS) or codes (DCS) with the arrow keys.
+   When you have selected the correct tone or code, 
+   press Enter to accept.
+   
+\111
+   ENCODE
+
+   Select the CTCSS tone or DCS code to be encoded
+   (transmitted) on this channel.  This can be done by
+   pressing the SPACE bar, then scrolling the list of 
+   tones (CTCSS) or codes (DCS) with the arrow keys.
+   When you have selected the correct tone or code, 
+   press Enter to accept.
+   
+\112
+   TRANSMIT TIMEOUT TIMER FLAG
+
+    Toggle ON (û) or OFF (-) with the space bar or right
+    mouse button.  If ON, time out timer is in effect
+    for that channel.  Set the ToT time in the Group ->
+    Channel Allocation -> Group Parameters menu.
+
+\113
+   PENALTY TIMER FLAG
+
+   Toggle ON (û) or OFF (-) with space bar or right
+   mouse button.  If ON and time out timer is exceeded
+   this is the amount of time that must expire before
+   PTT will key the transmitter again.  Pressing the PTT
+   before the release time has expired will reset this
+   timer, thus increasing the total time before PTT is
+   active again.  Set the penalty time in the Group ->
+   Channel Allocation -> Group Parameters menu.
+
+   Note:  The PENALTY Timer has no effect if the TOT
+   flag is not selected.
+
+\114
+   RELEASE TIMER FLAG
+
+   Toggle ON (û) or OFF (-) with space bar or right
+   mouse button.  If ON, the amount of time that must
+   expire after unkeying the radio before PTT becomes
+   active again.  Keying the radio before the release
+   time has expired will reset the release timer, thus
+   increasing the total time before PTT is active again.
+   Set the release time in the Group -> Channel 
+   Allocation -> Group Parameters menu.
+
+
+\115
+   CHANNEL SCAN
+
+   Use the SPACE bar to select which scan list(s) this
+   channel is to be entered into.  D = Dealer list,
+   U = User list, B = both Dealer and User lists,
+   - (a dash) = neither list.
+
+\116
+   SEQUENTIAL TONE FLAG
+
+   Toggle ON (û) or OFF (-) with space bar or right
+   mouse button.  This item must be ON for any of the
+   programmed Sequential Tone signaling parameters to
+   be in operation on this channel.
+
+\117
+   TALK BACK
+
+   Toggle ON (û) or OFF (-) with space bar or right mouse
+   button.  When ON, if the radio is scanning and paused
+   on this channel, the user will be able to talk back on 
+   this channel.  If OFF, the radio will revert to another 
+   channel according to the setting of Revert Channel. 
+     
+\118
+   FSK
+
+   Use the space bar or right mouse button to select 
+   between 1200, 2400, or OFF (----) for this channel.  
+   If ON, data operation replaces voice operation on 
+   this channel.
+
+\119
+   LOCK OUT
+
+   Use the space bar or right mouse button to select
+   between Busy Channel Lock Out (BCLO), Busy Tone Lock
+   Out (BTLO), or OFF (----).  BCLO will not allow the 
+   user to transmit in the presence of any carrier.  BTLO 
+   will allow the user to transmit in the presence of 
+   carrier ONLY if proper tone is detected also. 
+   Selecting NONE allows the user to transmit anytime.
+
+\30
+   NUMBER OF CHANNELS ALLOCATED
+
+   Allocate the number of channels in each group.
+   Group 0 MUST have at least 1 channel.  The other
+   channels can be divided up in any configuration
+   among the other 9 groups.  If channels are
+   allocated to a group, you must program at least 1
+   of those channels before downloading the
+   information to the radio.
+
+   This value is fixed to 4 channels only in the
+   4 channel version.
+
+\31
+   Group Alpha Tag
+
+   This is the (up to) 8 character alphanumeric name for
+   the group.  This will be displayed when the group is
+   selected.  Type-in the characters desired for the Tag
+   display and press Enter.
+
+\32
+   DEALER GROUP SCAN
+
+   Select whether to include (Enabled) or exclude
+   (Disabled) this group of channels for the Dealer
+   Group Scan list (shows "GDS" in display).
+
+\33
+   USER GROUP SCAN
+
+   Select whether to include (Enabled) or exclude
+   (Disabled) this group of channels for the User
+   Group Scan list (shows "GUS" in display).
+
+\34
+   CTCSS TAIL
+
+   Select whether or not the CTCSS Reverse Burst is sent 
+   at the end of each transmission.  This is effective 
+   only on channels programmed with CTCSS encode.
+
+   Note:  See also Squelch Tail Elim and CTCSS TX Delay
+   under Common -> Misc.  Reverse Burst, if selected, 
+   will supersede Squelch Tail Elim.
+
+\35
+   TONE SIGNALING
+
+   Selects the tone signaling system type that will be
+   in effect in this group.  The choices are None, 
+   2 Tone (decode only), and 5Tone/DTMF.  Go to Common
+   -> Sequential Tone to program the operating parameters.
+
+\36
+   2 TONE PAIR
+
+   Selects which programmed 2 Tone paging pair (Pair 1,
+   2, or 3) will be used in this group.  Go to Common 
+   -> Sequential Tone -> 2 Tone Edit... to program each 
+   pair.
+
+\37
+   TX TIME-OUT TIMER
+
+   Programs the ToT time for all channels in this group
+   in which the ToT is checked.  Use the Enter key to
+   step through the available time settings.
+
+\38
+   PENALTY TIMER 
+
+   Programs the penalty time for all channels in this 
+   group in which the ToT and PEN items are checked.
+   If the user violates the ToT, Penalty is the amount
+   of time he must wait until allowed to transmit
+   again.  If the PTT is pressed during the Penalty
+   time, the timer resets and requires the user to
+   wait the full Penalty time again before being
+   allowed to transmit again.  Use the Enter key to
+   step through the available time settings.
+
+\39
+   RELEASE TIMER
+
+   Programs the release time for all channels in this
+   group in which the REL item is checked.  The user
+   must wait the period of the Release timer after
+   EVERY PTT release before being allowed to transmit
+   again.  If the PTT is pressed during the Release time,
+   the timer resets and requires the user to wait the
+   full Release time again before being allowed to
+   transmit.  Use the Enter key to step through the
+   available time settings.
+
+\40
+   CHANNEL STEP
+
+   Programs the minimum programmable channel step size.
+   The programmed frequency must be divisible by one of
+   these numbers.  The software will round off invalid
+   entries to the closest valid frequency.
+
+\41
+   VX TRUNK
+
+   Determines whether this group of channels is a 
+   trunked system (Enabled) or is in conventional 
+   operation (Disabled).  Trunked operation requires 
+   the installation of the optional trunking 
+   controller.
+
+\42
+   EXTERNAL MIC
+
+   When Enabled, the radio receives audio for trans-
+   mission only from the rear-mounted accessory 
+   connector.  When Disabled, the radio receives audio
+   for transmission only from the front-mounted mic
+   jack.
+
+   Note:  Simultaneous use of both the front and rear
+   TX audio inputs is not possible.
+
+\45     
+   RESUME TIMER 1
+
+   This is the period of time that the scanner will
+   remain paused on an active channel.  After this
+   period, regardless if there is activity or not, the
+   scanning will resume.  If the activity ceases before
+   the resume period expires, then the radio will remain
+   for two seconds (or less if the resume period expires
+   first), before resuming scan. 
+
+   If this parameter is set to Carrier, the radio will
+   remain paused on an active channel for as long as
+   there is activity. 
+
+   Press the Enter key to toggle through the available
+   time settings. 
+
+\46                   
+   RESUME TIMER 2
+
+   This is the amount of time the scanner will remain 
+   on the busy channel after the signal drops, if Resume 
+   Time 1 is set to Carrier and the PTT has not been 
+   pressed.  This is commonly referred to as "scan delay".  
+   It causes the scanner to wait for reply transmissions 
+   before resuming scan.
+
+   Press the Enter key to toggle through the available
+   time settings.
+   
+
+\47
+   PTT RESUME TIMER
+
+   This is the amount of time the scanner will remain 
+   on the busy channel after the signal drops, if Resume 
+   Time 1 is set to Carrier and the PTT HAS been pressed.  
+   It causes the scanner to wait for reply transmissions 
+   before resuming scan.  Most users will want a time 
+   longer than Resume Time 2 here.
+
+   Press Enter, enter the amount of time desired in
+   whole seconds, then press Enter again.  Maximum
+   time is 255 seconds.
+
+\48
+   PRIORITY TIMER
+
+   When paused on an active channel during scanning, 
+   the radio will sample the priority channel(s) 
+   (if any) once at each interval programmed here.
+
+   Press the Enter key to toggle through the available
+   time settings.  
+
+\49    
+   REVERT CHANNEL
+
+   This defines the channel to which the radio will
+   revert when the microphone is taken off-hook: 
+ 
+   - SCAN START will revert to the last group/channel
+     selected before starting scan.  (This can be used
+     as a Home Channel.) 
+   - LAST BUSY will revert to the group/channel where 
+     activity was last detected.  If no channel was 
+     received since power on, the radio will default to
+     the Scan Start channel.
+   - PRI 1 CHANNEL will revert to Pri1 in the current
+     group.  If no Pri1 is programmed, the radio will 
+     revert to the Scan Start channel.
+   - NONE will pause the scanner on the channel it was
+     checking at the instant the microphone is taken
+     off-hook.
+
+\50
+   SCAN SPEED
+
+   This sets the period that the radio will check each
+   channel for signals during scan.  If your radio is 
+   'missing' active channels, try increasing this
+   number.  50 to 60 mS usually yields best performance.
+
+   Press the Enter key to toggle through the available
+   time settings. 
+
+   Note:  The radio automatically adds the amount of
+   time programmed in CTCSS and DCS Scan Timers when 
+   checking channels that are programmed to decode CTCSS 
+   or DCS if a carrier is detected.  It will only pause 
+   on an active channel that has the appropriate
+   CTCSS/DCS tone/code. 
+
+\51
+   DCS SCAN TIMER
+
+   This is the amount of time the radio, when scanning,
+   will add to sample the detected carrier for the 
+   correct DCS code.  If the correct DCS code is decoded, 
+   the scanner will pause and the signal will be received.  
+   If the correct DCS code is not decoded, the scan will 
+   continue.  The busy lamp/icon will wink momentarily to 
+   indicate this (very brief) pause.  If your radio is
+   'missing' active (DCS decode) channels, try increasing
+   this number.  300 to 350 mS usually yields best
+   performance.
+
+   Press the Enter key to toggle through the available
+   time settings.
+
+\52
+   CTCSS SCAN TIMER
+
+   This is the amount of time the radio, when scanning,
+   will add to sample the detected carrier for the 
+   correct CTCSS tone.  If the correct CTCSS tone is 
+   decoded, the scanner will pause and the signal will 
+   be received.  If the correct CTCSS tone is not decoded, 
+   the scan will continue.  The busy lamp/icon will wink 
+   momentarily to indicate this (very brief) pause.  If 
+   your radio is 'missing' active (CTCSS decode) channels, 
+   try increasing this number.  250 to 300 mS usually 
+   yields best performance.
+
+   Press the Enter key to toggle through the available
+   time settings.
+
+\53
+   USER SCAN PROGRAM
+
+   When set to Disabled, the user cannot edit the User
+   Scan List.  When set to Enabled, the user can edit
+   the User Scan List from the front panel of the radio.
+
+   Note:  The user can never edit the Dealer Scan List.
+
+\54
+   USER PRIORITY PROGRAM
+
+   When set to Disabled, the user cannot edit the User
+   Priority Channel selection(s).  When set to Enabled,
+   the user can edit the User Priority Channel selection
+   (s) from the front panel of the radio.
+
+   Note:  The user can never edit the Dealer Priority
+   Channel selection(s).
+
+\60
+   TONE PROTOCOL
+
+   Selects among tables of standard 5/6 signaling 
+   tone formats.  Also includes the DTMF format.
+
+   Press the Enter key to toggle through the available
+   formats.  Also verify that the setting of Group ->
+   Channel Allocations -> Group Parameters -> Tone
+   Signaling agrees with the signaling format desired
+   here.
+
+   Note:  2 Tone paging is programmed at a different 
+   location.  See the bottom of the Sequential Tone
+   Parameters box for 2 Tone Edit.
+ 
+\61
+   DTMF TONE TIMER
+
+   Selects the speed at which DTMF digits are sent.
+   This is the time per digit.  
+
+   This is also the timing required for successful
+   decoding of incoming DTMF strings (48 and 120 channel
+   radios only).  The radio will NOT decode manually-
+   sent DTMF strings, or strings that are automatically
+   sent at per-digit speeds other than the speed set
+   here.
+
+   Note:  Encode and decode speeds for the 5/6 tone
+   formats (CCIR, EIA, etc.) are fixed according to the
+   parameters specified in each individual format.  
+   These timings cannot be edited.
+
+\62
+   DECODE IDs  (48 and 120 channel radios only)
+
+   These are the incoming signaling strings that will
+   be decoded and cause the action indicated.  If 
+   using any 5/6 tone format, the exact number of
+   characters prescribed by the format must be
+   programmed.  If using DTMF, the strings must be
+   at least 3 characters in length.  Digits 0 thru 9,
+   "*", "#", and letters A thru D are acceptable DTMF 
+   characters.
+
+   Note:  Decode IDs will only function on channels that
+   are programmed for carrier squelch only (no CTCSS or
+   DCS decode).  If CTCSS/DCS decode is programmed, the
+   radio will unmute immediately upon receipt of the
+   coded squelch and will NOT wait for the programmed
+   Decode ID signal.
+
+   - INDIVIDUAL CALL:  The individual paging call for
+     this radio only.  Also requires setting Indiv 
+     Call Alert to either One-time or Continuous for 
+     operation.
+
+   - GROUP CALL:  Same as INDIVIDUAL CALL, except this
+     ID will activate for a group call ID from the dis-
+     patcher.  Group calls can not be ACKed.  Also
+     requires setting Group Call Alert to Alert for
+     operation.
+
+   - REMOTE RESET: Decode sequence that will reset the 
+     radio after the individual or group call ID has 
+     been decoded.  Remote reset can be acknowledged 
+     (see Encode IDs and Auto Interrogate).  5/6 Tone 
+     formats only.
+
+   - PAGE TRIGGER: Decode sequence that will cause the 
+     radio to go to the paging channel (see Sequential 
+     Tone Parameters) and send the paging Encode ID (see 
+     ENCODE ID's).  5/6 Tone formats only.
+
+   - RESURRECT: Decode sequence to bring radio back into
+     operation after decoding a "Kill" sequence.  5/6
+     Tone formats only.
+
+   - KILL: Decode sequence that will cause the radio to
+     become totally inoperable until resurrected or re-
+     programmed.  Also known as "Deadbeat Disable".  The
+     radio will display "KIL" until reprogrammed or 
+     resurrected and will alert the user with an audible
+     indication.  5/6 Tone formats only. 
+     
+
+\63  
+   ENCODE IDs (48 and 120 channel radios only)
+              (4 channel radios will send DTMF ANI only)
+                
+   These are the outgoing signaling strings that are
+   sent in response to specific operations of the radio
+   as indicated.  If using any 5/6 tone format, the 
+   exact number of characters prescribed by the format 
+   must be programmed.  If using DTMF, the strings must 
+   be at least 3 characters in length.  Digits 0 thru 9,
+   "*", "#", and letters A thru D are acceptable DTMF 
+   characters.
+
+   NOTE: To disable any of these features, delete all
+   of the tone numbers from that item.  The function
+   will be disabled for ALL channels normally enabled
+   for sequential tone. See each ID for per channel
+   operation or radio wide operation.
+
+   - OFF HOOK:  If the A button is programmed for Call
+     /Reset, pressing the A button while the micro-
+     phone is off-hook will send this tone sequence.  
+     See Common -> Front Panel for A button 
+     ("Accessory 1/2") programming.  This feature
+     is set on a per channel basis by the SEQ flag on
+     the main programming screen.
+
+   - ON HOOK:  Same as OFF HOOK except the sequence will
+     be sent when the microphone is on hook.
+
+   - ACKNOWLEDGE:  The encode sequence that is sent in
+     response to decoding an Individual Call ID.  This
+     will only be sent if Transpond is set to Yes (see
+     Sequential Tone Parameters). This feature is set 
+     on a per channel basis by the SEQ flag on the main
+     programming screen.  5/6 Tone formats only.
+
+   - RESET ACK:  The encode sequence sent in response to
+     decoding a Remote Reset ID (see Decode IDs).  This
+     will only be sent if Auto Interrogate is set to Yes
+     (see Sequential Tone Parameters).  This feature is 
+     set on a per channel basis by the SEQ flag on the 
+     main programming screen.  5/6 Tone formats only.
+
+   - PAGE ID:  The tone sequence sent in response to
+     decoding a Page Trigger ID (see Decode IDs). It
+     will be sent on the Paging Channel selected in 
+     Sequential Tone Parameters. This feature is
+     dependent on the setting of the Page Trigger only
+     and is radio wide.  5/6 Tone formats only.
+
+   - PTT ID (ANI):  The tone sequence sent if ANI on 
+     PTT or ANI on Release is set to ON (see Sequential 
+     Tone Parameters).  This feature is dependent on 
+     the settings of the ANI selections only and is 
+     independent of the SEQ flag (radio wide).
+
+   - EMERGENCY ID: Encode sequence sent if the A button 
+     is programmed for Emergency (Accessory 2 only) and 
+     the Accessory 2 function is initiated.  The
+     Emergency sequence is sent once only.  See Common
+     -> Front Panel for Accessory 2 programming.  This 
+     feature is radio wide and dependent of the A
+     button programming only.
+
+   - LOG ON ID:  Tone sequence sent each time the radio
+     is switched on.  This feature is selectable on a 
+     per channel basis and is affected by the SEQ flag 
+     and Switch-On Channel setting (see Common ->
+     Miscellaneous).
+
+\64
+   CHANNEL ACCESS
+
+   This item determines whether the Channel Access
+   Parameters are in effect or ignored.  This should 
+   be set to Ignored in any radio that does not use
+   sequential tone signaling of any type.  This MUST
+   be set to In Effect in any radio that uses any
+   sequential tone signaling of any type.  If no
+   access restrictions are required (such as if using
+   DTMF ANI only), set all of the access parameters in
+   such a way that the receiver is never closed.
+
+\65
+   CHANNEL ACCESS PARAMETERS
+
+   The combination of these items determines when and
+   under what conditions the receiver is open or
+   muted on channels where sequential tone signal
+   decoding is in operation.
+   Closed = muted;  Open = unmuted.
+
+   - INITIAL CONDITION:  The status of the receiver
+     when the radio is first switched on.
+
+   - RESET TIMER:  If Initial Condition is set to
+     Open and Switch-On Reset is Enabled, the radio 
+     will switch on with the receiver open for the 
+     amount of time programmed here, then will 
+     automatically mute the receiver.  
+
+   - SWITCH-ON RESET:  Enables or Disables the Reset
+     Timer function.
+
+   - OPEN CHANNEL ON CALL:  Selects whether or not the
+     user can unmute the receiver by pressing the
+     A button (when programmed as Call/Reset).
+
+   - OPEN CHANNEL ON PTT:  Selects whether the
+     receiver will unmute when the PTT is pressed.
+
+   - OPEN CHANNEL OFF HOOK:  Selects whether the
+     receiver will unmute when the microphone is
+     taken off hook (Off Hook function must be
+     Enabled).
+
+   - CLOSE CHANNEL ON HOOK:  Selects whether the
+     receiver will be muted when the microphone is
+     placed on hook (Off Hook function must be
+     Enabled).
+
+   - CALL LITE ON RESET:  Selects whether or not the
+     Call indicator will be reset (shut off) upon
+     receipt of the Remote Reset ID.  5/6 Tone
+     formats only.
+
+   - 3RD TONE RESET:  Selects whether or not the 
+     decoder will reset, mute, and ignore a 5/6 Tone 
+     format signal not intended for this unit.
+
+\66
+   INDIVIDUAL CALL ALERT
+
+   Determines how the radio will alert the user when
+   the Individual Call ID is decoded.  If set to
+   Continuous, the beeper will sound continuously
+   until manually reset by the user by pressing the
+   A button (Call/Reset).
+
+\67                     
+   GROUP CALL ALERT
+
+   Determines whether or not the radio will alert the 
+   user when a Group Call ID is decoded.
+
+\68
+   PAGING CHANNEL
+
+   This is the channel that the radio will revert to
+   and send the PAGE ID (if programmed) after receipt
+   of the PAGE TRIGGER ID (if programmed).  See DECODE
+   and ENCODE ID's respectively.
+
+\69
+   ANI ON PTT
+
+   Determines whether PTT encode ID (ANI) is sent every 
+   time PTT is pressed.
+
+\70
+   ANI ON RELEASE
+
+   Determines whether PTT ID is sent every time PTT is
+   released (Send) or a single short burst tone is
+   sent on release (Pip only), or no ANI is sent on
+   release (None).
+
+\71
+   PTT DELAY
+    
+   The amount of delay after the PTT is keyed before
+   sending any encode ID's.  This is commonly known
+   as "front porch delay".  Range is 50 to 500 mS.
+
+   Press the Enter key to step through the available 
+   time settings.
+
+\72
+   TRANSPOND
+
+   Determines if the Acknowledge ID is sent in
+   response to an Individual Call ID being decoded.
+   5/6 Tone formats only.
+
+\73
+   AUTO INTERROGATE
+
+   Determines if the Reset Ack ID is sent in response
+   to a Remote Reset ID being decoded.  5/6 Tone
+   formats only.
+
+\74
+   HORN ALERT
+    
+   The amount of time that Horn will be honked to alert
+   the person who is away from radio. Range is 0 to 8
+   Seconds.
+
+   Press the Enter key to step through the available 
+   time settings.
+
+\75
+   2 TONE EDIT
+
+   Press the Enter key here to bring up a box in which
+   2 Tone (decode only) Pairs 1, 2, and 3 can be  
+   programmed.  Use the Enter and arrow keys to
+   maneuver within this box and program the desired
+   2 Tone pair(s).  Only fixed tone groups are able
+   to be selected.  Custom "mix-and-match" programming
+   is not possible.  See also Group -> Channel Alloca-
+   tions -> Group Parameters to choose the one 2 Tone
+   Pair (decode only) that will be in effect for that 
+   particular group of channels.
+
+\80
+   ACCESSORY 1
+
+   This selects the function of the A button when it
+   is pressed and released quickly (held down less than
+   one second).  
+
+   In the 4 channel radio, the A lamp is steady on to 
+   indicate that the Accessory 1 function is on.  The
+   Accessory 1 and 2 functions cannot both be on at
+   the same time.  One must be toggled off before the 
+   other can be toggled on.
+  
+   In the 48 or 120 channel radio, the display will
+   show a special indicator that varies with the
+   function specified.  Both functions may be on
+   at the same time.
+   
+   The choices are:
+
+   - CALL:  Toggles the selective call system on or
+     off (48 or 120 channel radios only).  When
+     pressed, the display briefly shows "CON" (for 
+     Call System On), or "COF" (for Call System Off).
+
+   - CALL/RESET:  Initiates outgoing tone signaling
+     or resets the radio after receipt of an incoming
+     tone signaling call (48 or 120 channel radios
+     only).
+
+   - LOW POWER:  Toggles the radio between the power 
+     levels programmed into the Low and High Power 
+     columns.  The "Low" indicator shows in the 48
+     or 120 channel radios.  
+
+     Note:  The value in the Low Power column must be
+     a lower setting than that set in the High Power
+     column in order for the change to take effect.
+
+   - TALK AROUND:  On repeater channels, this causes
+     the radio to transmit on the receive frequency,
+     allowing the user to "talk around" the repeater.
+     The "TA" indicator shows in the 48 or 120
+     channel radios.
+
+   - ENCRYPTION:  Toggles the (optional) FVP-26 
+     scrambler on and off.  A small "s" shows in the
+     48 or 120 channel radios.
+
+   - A-ON:  A switching function reserved for future
+     applications.  A small "a" shows in the 48 or
+     120 channel radios.     
+     
+\81
+   ACCESSORY 2
+
+   This selects the function of the A button when it
+   is pressed and held more than 1.5 seconds.
+
+   In the 4 channel radio, the A lamp blinks to 
+   indicate that the Accessory 2 function is on.  The
+   Accessory 1 and 2 functions cannot both be on at
+   the same time.  One must be toggled off before the 
+   other can be toggled on.
+  
+   In the 48 or 120 channel radio, the display will
+   show a special indicator that varies with the
+   function specified.  Both functions may be on
+   at the same time.
+
+   The choices are the same as Accessory 1 with one
+   additional function:
+
+   - EMERGENCY:  Sends the Emergency ID as programmed
+     in Common -> Sequential Tone -> Encode IDs.
+
+   Note:  This sequence is sent only once.  Requires
+   that the sequential tone signaling system be
+   properly programmed.
+
+\82
+   MONITOR
+
+   Enables or disables the function of the MONI
+   button.
+
+\83  
+   OFF HOOK
+
+   Enables or disables the hook switch function.  
+   If disabled, the radio will not go into carrier 
+   squelch monitor mode when the microphone is 
+   taken off hook.
+
+\84
+   KEY BEEP
+ 
+   Enables or disables the "beep" whenever a key 
+   is pressed. 
+
+\85
+   VOLUME 
+
+   Sets the minimum speaker volume level.  Any level
+   greater than 0 results in some speaker audio even
+   when the volume control is set to it's minimum
+   position.  Range is 0 to 255.  255 results in
+   maximum volume at all times.  This feature is
+   provided to allow the programmer to prevent the
+   user from reducing the receive audio below an
+   absolute minimum level.
+
+\86
+   MIC SENSITIVITY
+
+   Sets the sensitivity level for the incoming mic-
+   rophone audio via the front microphone jack only.
+   Set this to High when using the standard or 
+   optional Vertex microphones (MH-25 or MH-600).
+   If using another type of microphone, this item
+   gives you a choice to better match the selected
+   microphone to the radio.
+
+\90
+   SWITCH-ON CHANNEL
+
+   Defines the channel that will be first selected
+   when the radio is switched on.  The programmer
+   can choose any specific channel by group and 
+   channel number, or select Last Channel.  If Last
+   Channel is selected, the radio will switch on to
+   the channel it was last on when switched off.   
+
+\91
+   EXTERNAL PTT
+
+   Used to control PTT routing through the external 
+   Accessory Connector.  If set for Mic & Option, the 
+   radio will transmit if either the mic or accessory
+   connector PTT line is pulled low.  If set to Option 
+   Only, the radio will transmit only in response to 
+   the PTT on the accessory connector.  
+
+\92
+   DCS ENCODE POLARITY
+
+   Selects either the Normal or Inverted polarity for
+   transmitted DCS codes.
+
+\93
+   DCS DECODE POLARITY
+
+   Selects the polarity for received DCS codes.  
+   Complement means that both the normal and inverted 
+   programmed code will be decoded.
+
+\94
+   BUSY ALERT
+   
+   Determines whether alert tone is heard when user 
+   keys the radio and transmitter is inhibited by 
+   BCLO or BTLO. 
+
+\95
+   SQUELCH TAIL ELIMINATION
+
+   Selects whether the CTCSS TX Delay is Enabled or 
+   Disabled.  When Disabled, the transmission of 
+   carrier and CTCSS tone both cease immediately when 
+   the user releases the PTT.  When on, the trans-
+   mission of CTCSS tone ceases immediately when the 
+   PTT is released, but the transmitter remains 
+   active for the amount of time set in CTCSS TX 
+   Delay.  This allows the receiving radio (or 
+   repeater) to detect the end of the CTCSS tone and 
+   mute it's receiver before the carrier drops, thus 
+   avoiding the noisy squelch  tail "crash".
+
+   This feature is active only on channels in which
+   CTCSS encode is programmed.
+   
+\96
+   CTCSS TX DELAY
+
+   This sets the amount of time the transmitter will
+   remain on after release of the PTT on CTCSS encode
+   channels if Squelch Tail Elimination is Enabled.
+   The range is 50 to 500 mS.    
+
+   Press the Enter key to step through the available
+   time settings.
+
+\97
+   DEFAULT SPLIT
+  
+   This is the amount of frequency offset that will 
+   be applied to the transmit frequency after the
+   receive frequency is programmed.  For example, if
+   Default Split is set to 5.0 MHz and the receive
+   frequency is programmed to 460.125 MHz, the 
+   software will automatically write the transmit
+   frequency as 465.125 MHz.
+
+   The transmit frequency can still be edited after
+   the automatic offset is applied, if desired.
+
+   Negative offsets are not allowed. 
+
+
+
+
+
+
+
+
+
+
+

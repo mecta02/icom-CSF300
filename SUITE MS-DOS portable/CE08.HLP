@@ -1,0 +1,343 @@
+#-----------------------------------------------------------
+#
+#           Type <Repeater> EEPROM DATA EDITOR HELP FILE 
+#                      Version 1.00
+#
+#         Copyright (c) 1991 by YAESU MUSEN Co., Ltd.
+#
+#-----------------------------------------------------------
+# 
+# Help File Format Information
+# 
+# Special characters at the beginning of each line determine
+# the function of that line:
+#       `#' = Comment line, ignored by program
+#       `:' = Control line. the program looks for these
+#             lines, and reads the following characters as a
+#             help subject label. One special case is
+#             ":page", which indicates a page break within a
+#             help subject. 
+# Maximum line length for help items is 61 chrs. Longer lines
+# are truncated. Maximum number of lines/screen is 16
+# (additional lines are automatically moved to the next
+# screen).
+# 
+#-----------------------------------------------------------
+#
+:hc_hard
+            [HARDWARE PARAMETERS]
+
+ Environment (-p when booting program) From this screen you
+ may enter/change IF frequency, channel step size, upper or
+ lower carrier injection, and serial number.
+
+ 1st IF:
+ enter 1st IF frequency according to repeater version
+ (VHF=21.6 MHz, UHF 47.9 MHz), 
+
+ Injection Side:
+ select relationship between the 1st local oscillator
+ frequency and receiving frequency. Changing injection
+ side may reduce intermodulation experienced in some
+ areas. Note: adjusting the injection side requires
+ retuning. Normally the lower injection is selected.
+
+ Channel Step:
+ enter the appropriate channel step size as desired
+ (10.0 kHz or 12.5 kHz)
+
+ Serial Number:
+ enter this number as printed on the identification label
+ near the rear panel RX ANT jack.
+
+
+:hc_freq
+   [Edit Rx/Simplex Frequency & Hide/Unhide Repeater Data]
+
+ Use 0 - 9 to enter the desired channel frequency, and press
+ Enter. The frequency will be adjusted if it does not match
+ the Repeater channel step size (as set in Environ Data),
+ and will also appear in the Tx Freq field. You do not need
+ to  enter all 8 digits: empty digits to the right are zero-
+ filled.  Pressing [.] (period) after several digits forces
+ them to MHz.  Press period first to change only kHz.
+
+ NOTE! Any entries or changes to this field will also occur
+       in the Tx Freq. field, so you may need to edit the TX
+       field seperately after making any changes here.
+
+
+
+
+ Arrow Keys: Change field (before or after editing 
+                Frequency).
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits as MHz, or
+                next digits as kHz (if pressed first).
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+
+:hc_time
+            [SYSTEM TIMER SELECTIONS]
+
+ TIMER Three timer selections are available:
+ RPTR Hang-Time Timer, Time-Out Timer and Guard-Timer.
+
+ RPTR Hang-Time:
+ This is only used for repeater operation. Determines the
+ time delay the repeater will remain keyed after a stations
+ input signal (carrier) drops. Hang-Time duration is entered
+ in one-second increments (from 1-60 secs.) or disabled by
+ toggling the SPACE bar.
+
+ Time-Out Timer:
+ This can be set to limit the total transmission time the
+ repeater may remain keyed. The timer settings can be
+ individually configured for remote base or repeater
+ operation. Duration can be entered in 1-minute steps
+ (1-60 mins.) or disabled by the SPACE bar.
+
+ Guard Timer:
+ Assigns a penalty time after the Time-Out timer has expired
+ before an input signal will key the repeater again.
+ Duration is entered in 10-second steps (from 10-secs.-360
+ secs.). Individual guard-time duration can be entered for
+ remote base and repeater operation. Must be set with Time-
+ Out Timer enabled.
+
+:hc_misc
+             [MISC. SYSTEM SETTINGS]
+
+ SETUP
+ Five seperate operating modes can be configured from
+ this screen:
+
+ Mode:
+ select simplex/duplex operation (remote base/repeater),
+ when simplex mode is selected, repeater operation and
+ associated functions are disabled.
+
+ DC Low Power:
+ selectable normal/reduced TX output power during battery
+ power operation (low power extends battery life). Reduced
+ TX output power level is adjustable in the ALIGNMENT mode
+
+
+ HI TEMP Power Setting:
+ when enabled, operation at reduced TX output power level
+ is permitted when PA  HI-TEMP warning is received. After
+ 15 minutes of continued high-temperature operation, TX
+ output is disabled. Operation at normal power may resume
+ five minutes after the HI TEMP warning clears. When this
+ option is disabled,TX power is cut immediately (no
+ reduced power operation is possible) when a HI-TEMP alarm
+ is received. TX is enabled again (normal power) 5-minutes
+ after the HI TEMP alarm clears.
+
+ Beep Setting (enabled/disabled) With the Time-Out Timer
+ enabled, this beeper sounds 30 seconds before the transmit
+ time expires. High-pitch beeps are used in the repeater
+ mode, low-pitch beeps are for remote-base operation.
+
+ Hang Timer Mute: (noise out/mute) With Mute enabled, channel
+ noise is muted -20 dB for the duration of the carrier hang-
+ time after input signal drops, else Noise Out selection
+ permits incidental channel noise to be heard.
+
+#
+#
+#
+:hc_optn
+ [Toggle Subaudible CTCSS Decoder, and set CTCSS frequency]
+
+ Press the Space Bar to toggle the decoder on/off, or press
+ Enter to display the Tone Selection window, from which you
+ may select a frequency using the Arrow Keys (pressing Enter
+ again to accept, or Esc to cancel).
+
+ If you know the CTCSS frequency you want, you can enter it
+ directly with the 0 - 9 and [.] (period) keys. When the
+ desired CTCSS frequency is displayed, press Enter to accept.
+ If the frequency was invalid (not among the standard tones),
+ the Tone Select Window will appear as described above, with
+ the nearest valid frequency pre-selected.
+
+ Turning on CTCSS turns off DCS (both cannot be on).
+ Turning off CTCSS also turns off BTLO (tone) if it was on.
+#
+
+ Arrow Keys: Change field, or select in Tone Select window.
+ Space Bar:  Toggle Decoder on/off (except during selection).
+ 0 - 9, [.]: Direct tone frequency entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:ha_strd
+            [SYSTEM STATUS DISPLAY]
+
+ STATUS: shows present repeater and  I/O port status.
+
+:ha_adj
+            [TX POWER ADJUSTMENT]
+
+ ALIGNMENT: allows adjusting normal and low power output
+ (battery operation) level. Use the F5/F6 function keys to
+ raise/lower TX power.
+
+:file_select
+#
+                   [File Selection Window]
+
+ Select a filename (lower-case letters) or subdirectory
+ (upper-case, in angle brackets <>) using the Arrow Keys, and
+ then the Enter Key to accept your selection. If you selected
+ a subdirectory, the window contents will be replaced with
+ that subdirectory's contents, from which you can select
+ again. You can also delete a file or subdirectory with [F4].
+
+ You can also enter a new drive letter or filespec directly.
+ Pressing alphanumeric keys activates the filespec line
+ editor along the bottom of the window. You can use wildcards
+ ("*" or "?") to display only certain files (eg.,
+ :\CHDATA\*.CH and Enter displays only files with the "CH"
+ extension in the CHDATA subdirectory on drive B). Tab
+ returns you to the upper half of the selection window.
+#
+:page
+#
+         [EDITOR KEY FUNCTIONS]
+
+ (at any time in Selection Window)
+ Enter Key:  Accept selection.
+ Esc Key:    Cancel operation and return to Repeater Editor.
+ Tab Key:    Switch between Selection Window and line editor.
+
+ (for selection in upper part of window)
+ Arrow Keys: Select filename/subdirectory.
+ Home/End:   Jump to first/last selection on screen.
+ [F4] Key:   Delete current file selection from disk.
+ PageDown:   Jump back one page (for large directories).
+ PageUp:     Jump foward one page (for large directories).
+
+ (for filespec editor at bottom of window)
+ Delete:     Delete character under cursor.
+ Backspace:  Delete character to left.
+ Insert:     Toggle insert/overwrite modes.
+#
+#
+#
+:path_edit
+#
+                 [File Selection Window]
+
+ Select a filename (lower-case letters) or subdirectory
+ (upper-case, in angle brackets <>) using the Arrow Keys, and
+ then the Enter Key to accept your selection. If you selected
+ a subdirectory, the window contents will be replaced with
+ that subdirectory's contents, from which you can select
+ again.  If you select a file, you can delete it with [F4].
+
+ You can also enter a new drive letter or filespec directly.
+ Pressing alphanumeric keys activates the filespec line
+ editor along the bottom of the window. You can use wildcards
+ ("*" or "?") to display only certain files (eg.,
+ B:\CHDATA\*.CH and Enter displays only files with the "CH"
+ extension in the CHDATA subdirectory on drive B. Tab returns
+ you to the upper half of the selection window.
+#
+:page
+#
+ (at any time in Selection Window)
+ Enter Key:  Accept selection.
+ Esc Key:    Cancel operation and return to Repeater Editor.
+ Tab Key:    Switch between Selection Window and line editor.
+
+ (for selection in upper part of window)
+ Arrow Keys: Select filename/subdirectory.
+ Home/End:   Jump to first/last selection on screen.
+ [F4] Key:   Delete current file selection from disk.
+ PageDown:   Jump down one page (for large directories).
+ PageUp:     Jump up one page (for large directories).
+
+ (for filespec editor at bottom of window)
+ Delete:     Delete character under cursor.
+ Backspace:  Delete character to left.
+ Insert:     Toggle insert/overwrite modes.
+#
+#
+#
+:upload
+#
+     [Transfer data between PC and Repeater's EEPROM]
+
+ The Space Bar is used to proceed with the transfer operation
+ after ensuring the hardware is set up for the transfer. To
+ cancel and return to the Repeater Editor, press the Esc Key
+ instead.
+
+ The status of the transfer operation will be displayed when
+ finished (a few seconds after pressing the Space Bar).
+
+ NOTE! Press the Esc Key if the system appears to hang. Then
+ make sure the power indicator on the interface box is on,
+ and check the cables for a connection problem.
+#
+#
+#
+:download
+#
+     [Transfer data between PC and Repeater's EEPROM]
+
+ The Space Bar is used to proceed with the transfer operation
+ after ensuring the hardware is set up for the transfer. To
+ cancel and return to the Repeater Editor, press the Esc Key
+ instead.
+
+ The status of the transfer operation will be displayed when
+ finished (a few seconds after pressing the Space Bar).
+
+ NOTE! Press the Esc Key if the system appears to hang. Then
+ make sure the power indicator on the interface box is on,
+ and check the cables for a connection problem.
+#
+#
+#
+:make_dir
+#
+          [Make a new subdirectory on current Path]
+
+ Input the name of the new subdirectory (up to 8 characters),
+ then press Enter. Press Esc or F10 to cancel if you change
+ your mind.
+
+ Backspace: Delete character to left of cursor
+ Delete:    Delete character above cursor
+ Insert:    Toggle Insert/Overwrite mode (Insert is default,
+	   Overwrite has block cursor)
+#
+#
+#
+:remove_dir
+#
+       [Remove the named (or pointed-to) subdirectory]
+
+ Only empty daughter directories from the current subdirectory
+ can be removed. In the file list, the inverse box can be
+ positioned with the arrows to select a subdirectory to
+ remove, by pressing F4. If the file list selection is not
+ a subdirectory, a box will appear in which you can enter
+ the name of the subdirectory to be removed. This name must
+ be the same as one of the subdirectories displayed in the
+ file list, and any files in that subdirectory must have
+ already been deleted.
+
+ Backspace: Delete character to left of cursor
+ Delete:    Delete character above cursor
+ Insert:    Toggle Insert/Overwrite mode (Insert is default,
+	    Overwrite has block cursor)
+

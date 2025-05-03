@@ -1,0 +1,536 @@
+\1
+   CE18 OVERVIEW
+
+   This software is used to program configuration and
+   channel data to the Vertex VX-300 portable transceiver.
+
+   On-line help is available by pressing F1 at any of
+   the main menu entry fields, or on any of the submenus.
+
+   CE18 Features
+
+	. Mouse support.  Please ensure that your mouse
+	  driver is installed correctly.
+	
+	. The status bar along the bottom of the screen
+	  contains information such as function of the
+	  F keys, short help explanations, action keys or
+	  ranges of data entry.
+
+	. Many of the hardware parameters are initialized
+	  to default values.  Make changes to these items
+	  only for custom applications.
+
+\2
+   OPEN FILE
+
+   This menu item allows one to open existing files with
+   information of VX-300 configurations.
+
+   <Path>      Use the mouse or press <ALT>-P to select
+		 the <Path> window.  Specify the directory
+		 path of which you wish to retrieve the
+		 file.
+
+   <Name>      Use the mouse or press <ALT>-N to select
+		 the <Name> window.  Provide a search
+		 pattern using wildcards <*> to obtain a
+		 set of files you wish to select.  The
+		 default search string is "*.V10".
+
+		 Optionally, you can enter the exact file
+		 name you wish to open and press <ENTER>
+		 to open the file.
+
+   <Files - #> Use the mouse or press <ALT>-F to select
+		 the <Files> window.  This window lists all
+		 subdirectories (indicated by a square
+		 prefix) and files under the directory path
+		 which match the search pattern.  The #
+		 indicates the number of files that match
+		 the search string.
+
+		 Use the Up/Down keys to select the
+		 subdirectory/file you wish to open, and
+		 press <ENTER>.  If you wish to cancel
+		 opening the file, press <ESC>.
+
+\3
+   SAVE FILE
+
+   This menu item allows one to save the configuration
+   information displayed on screen.
+
+   <Path>      Use the mouse or press <ALT>-P to select
+		 the <Path> window.  Specify the directory
+		 path of which you wish to save the
+		 file.
+
+   <Files - #> Use the mouse or press <ALT>-F to select
+		 the <Files> window.  This window lists all
+		 subdirectories (indicated by a square
+		 prefix) and files under the directory path
+		 which match the search pattern.  Use the
+		 Up/Down keys to select the subdirectory/
+		 file you wish to save the configuration
+		 in, and press <ENTER>.  Press <ESC> to
+		 cancel.
+
+   <Name>      Use the mouse or press <ALT>-N to select
+		 the <Name> window.  Enter the file name
+		 you wish to save the configuration in and
+		 press <ENTER>.  Press <ESC> to cancel.
+\4
+   PRINT
+
+   Choosing this submenu item prints a hard copy of the
+   configuration data presently displayed on screen.
+
+   Make sure that the printer port is set correctly by
+   specifying the correct port in the CONFIGURE submenu.
+
+\5
+   CONFIGURE
+
+   Color/monochrome display can be chosen in this
+   submenu.  Communication ports to interface the radio,
+   and printer ports to print configuration data can
+   also be set.
+
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND CT-42 PORT.
+
+\6
+   EXIT
+
+   This command terminates the program.  Make sure to
+   save any necessary configuration data prior to
+   exiting the program.
+
+\7
+   HARDWARE PARAMETERS
+
+   These parameters are related to the hardware of the
+   VX-300 radio, and should be handled with care.
+   Parameters to set the operating frequency band,
+   channel spacing, power save off time, and DCS RX/TX
+   data polarity included in this category.
+
+\8
+   FREQ. CONTROL
+
+   These parameters allow user to configure the freq.
+   control mode of the radio unit.
+   
+\9
+   COMMON
+
+   These parameters are used to configure the common
+   settings of the radio unit.
+
+\10
+   POWER SAVING PARAMETERS
+
+   These parameters are used to configure the power
+   saving functions of the radio unit.
+
+\11
+   DTMF CODES
+
+   This will allow user to enter up to 10 DTMF numbers 
+   for the radio unit. Each number can accept up to 15 
+   DTMF digits.
+   
+\12
+   CHANNEL ALLOCATION
+
+   Allows the user to allocate any number of channels to
+   any or all groups, uo to 99 channels distributed
+   among uo to 9 groups. Always allocate channels to
+   groups in ascending group order. Do not skip over
+   unused (0 channel) groups.
+
+\13
+   MR MODE
+
+   Governs functions used in the Memory Recall mode.
+   
+\14
+   MISCELLANEOUS
+
+   Programmable variables that cannot be included in any
+   other category are gathered under this submenu.  These
+   parameters should be used to customize the radio to
+   your application needs.
+
+\15
+   HOME CHANNEL
+
+   Programs channel data for the Home Channel.
+   
+\16
+   VFO-A
+
+   Programs channel data for the VFO-A.
+   
+\17
+   VFO-B
+
+   Programs channel data for the VFO-B.
+
+\18
+   UPLOAD
+
+   Used to read information from the VX-300 raido to the
+   computer.  Existing data on screen will be overwritten
+   with the data of the radio unless properly saved.
+
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND CT-42 PORT.
+
+\19
+   DOWNLOAD
+
+   Used to write configuration data from the computer to
+   the connected VX-300 radio.  Data will be verified
+   for integrity by the program before downloading is
+   initiated.
+   
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND CT-42 PORT.
+
+\23
+   CPU CLOCK SHIFT
+
+   Putting a check mark for each channel, (by pressing 
+   ENTER key), will shift the CTCSS crystal frequency
+   during transmit mode. Usually, CE14 will set/reset
+   the check mark automatically after transmit frequency
+   is entered.
+    
+\50
+   FREQ BAND
+
+   Displays the frequency band of the radio.
+
+\51
+   REF XTAL
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+\52
+   INTERMEDIATE FREQUENCY
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+\53
+   LOCAL OFFSET
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+   Change this setting to eliminate image problems in
+   some service areas.  Radio will have to be retuned
+   after modification.  This information is used in
+   conjunction with IF, REF OSC FREQ and channel
+   information to compute divide by numbers.
+
+
+\70
+   LIGHTING
+
+   When ON, the display lamp and busy/TX lamps will
+   illuminate when appropriate. When OFF, the lamps
+   will never illuminate. 
+
+\71
+   BEEP
+
+   When ON, the radio beeps when keypad buttons are
+   pressed.
+   
+\72
+   TONE LOCK OUT
+
+   This will allow the user to choose between OFF
+   (normal PTT operation), BCLO (PTT is inhibited when
+   there is a signal on the receive frequency), and
+   BTLO (PTT is inhibited when there is a signal on
+   the receive frequency unless that signal has the
+   correct decode CTCSS).
+   
+\73
+   BELL
+
+   When ON, the bell will ring when the correct CTCSS
+   is decoded. When OFF, the bell will not ring.
+   
+\74
+   LOCK STATUS
+
+   When ON, the radio will power-on with the lock-
+   selected item(s) locked. When OFF, the radio will
+   power-on unlocked.
+   
+\75
+   PTT LOCK
+
+   When ON, the PTT will be locked when the lock
+   function is turned on.
+
+\76
+   KEY LOCK
+
+   When ON, the front panel keys will be locked when
+   the lock function is turned on.
+
+\77
+   DIAL LOCK
+
+   When ON, the dial (rotary channel selector) will be
+   locked when the lock function is turned on.
+
+\78
+   LAMP MODE
+
+   When Key ON, the display lamp will illuminate when
+   any button is pressed, and will remain on for 5
+   seconds. When 5 seconds, the display lamp will
+   illuminate for 5 seconds only when the Lamp button
+   is pressed. When Toggle, the display lamp will
+   illuminate only when the Lamp button is pressed,
+   and will remain on indefinitely until the Lamp
+   button is pressed again.
+   function is turned on.
+
+\79
+   SQUELCH LEVEL
+
+   Set the squelch threshold level. 0 is minimum, 8 is
+   maximum.
+
+\90
+   TRANSMIT TIMER
+
+   Set the TX timeout time. Minimum is 1 min., and 
+   maximum is 10 mins.
+
+\91
+   APO TIME MODE
+
+   Automatic Power Off. Radio will shut off if there is
+   no TX or button activity for the amount of time
+   programmed. Choices are OFF, 0.5 hr., 1.0 hr., or 8
+   hrs. 
+
+\92
+   RX SAVE MODE
+
+   Sets the timing ratio of the RX battery saver.
+   Choices are OFF (no save activity), ABS, and 1:1
+   (minimum save) thru 1:10 (maximun save). ABS is
+   Automatic Battery Save. When ABS is selected, the
+   radio will automatically select the most optimum
+   save ratio based on recent operating activity.
+
+
+\102
+   SKIP
+
+   When enabled, allows the user to delete channels
+   from the scan list.
+    
+\103
+   REVERSE
+
+   When enabled, allows the user to invoke the reverse
+   function (radio transmits on the receive frequency
+   and receives on the transmit frequency).
+    
+\104
+   SCAN
+
+   When enabled, allows the user to scan.
+    
+\105
+   DUAL WATCH
+
+   When enabled, allows the user to use the Dual Watch
+   function.
+   
+\106
+   HI/LOW
+
+   When enabled, allows the user to switch between High
+   and Low transmit power.
+
+\107
+   DTMF
+
+   When enabled, allows the user to transmit manual
+   DTMF signals from the key pad.
+   
+\108
+   DTMF MR
+
+   When enabled, allows the user to transmit the pre-
+   programmed DTMF autodial string(s).
+
+
+\120
+   SUB FREQUENCY DISPLAY
+    
+   When ON, the actual operating frequency is display
+   in the right half of the display.
+
+\121
+   SCAN STOP RESUME
+    
+   When in carrier, the radio will pause and remain on
+   an active received signal until the signal drops. 
+   When in 5 Sec., the radio will pause on an active
+   received signal for 5 seconds, and will then resume
+   scanning even if the received signal is still
+   present.
+
+\122
+   ANI FUNCTION
+
+   When enabled, the radio will transmit the programmed
+   ANI string each time the PTT is pressed.
+
+\123
+   DTMF MEMORY MODE
+
+   When ON, allows the user to program DTMF strings from
+   keypad.
+
+\124
+   MEMORY ONLY MODE
+
+   When ON, the user can not switch to VFO mode.
+
+\125
+   DUAL WATCH
+
+   When ON, the radio will power-on in the Dual Watch
+   mode.
+
+\126
+   DTMF SEQ. OUT
+
+   When enabled, allows the user to string together
+   and send multiple DTMF memory string.
+
+
+\300
+   CH#
+
+   This column indicates the absolute channel number. For
+   example; if there are 10 channels in Group 1, Group 2
+   will start at channel 11. Press the space bar in here
+   will toggle between channel locked (line appears in
+   gray) and unlocked (line appears in blue) conditions.
+
+\301
+   CHANNEL ALPHA TAGS
+
+   Enter a 4 character alphanumeric channel name here.
+   This name will appear on the left half of the radio's
+   display when this channel is selected.
+   
+\302
+   RECEIVE FREQUENCY
+
+   This entry will except the receive frequency which
+   should be a multiple of the Spacing shown at the top
+   of the screen. In this column you can directly enter
+   the exact receive frequency or press ENTER and use the
+   Arrow keys to edit any digit within the field. Press
+   ENTER to accept the frequency.
+   
+\303
+   TRANSMIT FREQUENCY
+
+   When RPT Shift shows DUP, you can directly enter the
+   exact transmit frequency or press ENTER and use the
+   Arrow keys to edit any digit within the field. Press
+   ENTER to accept the frequency. This entry may be
+   programmed to shift automatically to any offset of
+   the receive frequency. The offset is programmed in
+   the TX Offset column.
+
+\304
+   TRANSMIT OFFSET
+
+   Can be edit only when RPT Shift shows "-" or "+".
+   Enter the amount of offset (MHz.KHz) desired from
+   the Receive Frequency.
+   
+\305
+   REPEATER SHIFT
+
+   Select the offset for Transmit Frequency. SIMP means
+   radio will transmit on the receive frequency. "-"
+   means radio will transmit on a frequency that is
+   below the receive frequency the amount specified in
+   TX Offset. "+" means radio will transmit on a
+   frequency that is above the receive frequency the
+   amount specified in TX Offset. DUP means radio will
+   transmit on the frequency shown in the TX Freq.
+   column. Can not be edited when displayed in gray.  
+
+\306
+   CTCSS DECODE
+
+   In this column you will select the CTCSS tone to be
+   decoded on this channel. This can be done by pressing
+   the space bar, then scrolling the list of tones(CTCSS)
+   with the arrow keys. When you have select the correct
+   tone or code, press ENTER to accept. Make sure that
+   your radio is equipped with the CTCSS decode unit.
+   
+\307
+   CTCSS ENCODE
+
+   In this column you will select the CTCSS tone to be
+   encoded on this channel. This can be done by pressing
+   the space bar, then scrolling the list of tones(CTCSS)
+   with the arrow keys. When you have select the correct
+   tone or code, press ENTER to accept.
+   
+\308
+   CHANNEL SCAN
+
+   Press <SPACE> to select scan stop (a check mark
+   shows) or scan skip (s dash shows) for this channel.
+
+\309
+   POWER MODE
+
+   Press <SPACE> to select Hi (5 watts) or Lo (1 watt)
+   transmit power.
+
+\310
+   CHANNEL STEP
+
+   Press <SPACE> to select desired channel step size.
+
+\311
+   CPU CLOCK SHIFT
+
+   Press <SPACE> to select shift (a check mark shows) or
+   normal (a dash shows) for this channel. Changing the
+   clock shift setting can usually eliminate a parasitic
+   oscillation ("birdie") on a problem RX frequency.

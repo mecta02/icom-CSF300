@@ -1,0 +1,115 @@
+600 Series Dealer Programmer 
+-----------------------------
+
+The Dealer Programmer will allow you to configure the
+features of the 600 series radios.
+
+Windows and DOS versions of the Dealer Programmer are
+available.
+
+The Windows version can be invoked by 'double clicking'
+on the wdps_dp icon (from the group folder) or by double
+clicking on the 'wdps_dp.exe' file from the windows file
+manager.
+
+The DOS version can be invoked by entering 'ddps_dp' on
+the DOS command line (having firstly changed directory to
+that where the programmer is installed).
+
+Details of how to use the programmer can be found in
+the user manual and help text, both of which can be
+accessed from within the programmer (from the HELP
+menu).
+
+Recent enhancements
+-------------------
+
+The following enhancements have been made to the
+programmer since version R00.02.21 :-
+
+. It is now possible to save both network and personality
+  data in one file. The file type for the combined data
+  is 'Radio' and has default file extension of '.rad'.
+  The Format field on the File Save window must be set to
+  'Radio' when saving such a file.
+
+. Entry to the service windows is now password protected
+  (to discourage inadvertant modification of tuning data).
+
+. It is now possible to configure the programmer to search a
+  specified directory for data files (as opposed to looking
+  in the directory in which the DPS is installed). The
+  directory can be specified at installation and can be
+  modified from the programmer's Options/Configure menu.
+
+. The programmer supports a number of additional radio
+  models e.g. for VHF radios.
+
+. A second service window has been provided for tuning Bias
+  Voltage. The second window is only applicable to certain
+  radio models and will only be accessible when attempting
+  to tune such models (it will be 'greyed out' for models
+  that only have one bias voltage level).
+  Note that Bias Voltage tuning should only be necessary if
+  the radio's power transistors have been replaced.
+
+. Additional changes have been made to increase usability.
+  These include setting the main window to maximum size on
+  entry to the programmer, improvements to help text for
+  service windows and rearrangement of MPT personality
+  window.
+
+The following additional enhancements have been made to the
+programmer since version R00.03.02 :-
+
+. It is now possible to program data for one radio model
+  into a different radio model, provided that the data
+  to be programmed is compatible with the new model.
+
+. Once data has been read into the programmer it will be
+  possible to change the model number associated with that
+  data. The function to change model is accessible from the
+  programmer's EDIT menu.
+
+. After a file has been saved, the status bar will be
+  updated with the name of the saved file.
+
+. The programmer supports a number of additional radio
+  models e.g. for 300 MHz radios.
+
+
+Preferential NDD problem resolved
+---------------------------------
+
+The DPS has been modified to rectify a problem concerning
+the priority of Preferential NDD subset hunt.
+
+With the previous DPS, the priority of Preferential NDD
+subset hunt was reversed i.e. highest priority = 10,
+lowest priority = 1.
+
+This problem has now been corrected such that highest
+priority = 1 and lowest priority = 10.
+
+Please note that radios programmed with previous versions
+of the DPS will result in Preferential NDD subset hunt of
+reversed priority as compared to that which was programmed.
+On reading such radios the new DPS will show the actual
+Preferential NDD priority (highest = 1, lowest = 10), which
+may then be corrected as outlined below :-
+
+ 1. Read radio using the Dealer Programmer.
+ 2. Save Network data to disk.
+ 3. Exit from the Dealer Programmer.
+ 4. Invoke Network Programmer and read the saved network
+    data file.
+ 5. Open the 'Preferential NDD Data' window from the 'Edit'
+    menu of the Network Programmer and modify the priority
+    setting as required.
+ 6. Save the modified network data to disk.
+ 7. Exit from the Network Programmer.
+ 8. Read the radio using the Dealer Programmer and then
+    read the modified network data file.
+ 9. Program the radio.
+    
+                                                        13-Jan-97

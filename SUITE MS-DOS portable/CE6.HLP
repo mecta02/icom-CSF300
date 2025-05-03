@@ -1,0 +1,742 @@
+#-----------------------------------------------------------
+#
+#           Type <CE6> EEPROM DATA EDITOR HELP FILE 
+#                      Version 1.10
+#
+#         Copyright (c) 1990 by YAESU MUSEN Co., Ltd.
+#
+#	  Modified by YAESU U.S.A.(6/24/93)
+#
+#-----------------------------------------------------------
+# 
+# Help File Format Information
+# 
+# Special characters at the beginning of each line determine
+# the function of that line:
+#       `#' = Comment line, ignored by program
+#       `:' = Control line. the program looks for these
+#             lines, and reads the following characters as a
+#             help subject label. One special case is
+#             ":page", which indicates a page break within a
+#             help subject. 
+# Maximum line length for help items is 61 chrs. Longer lines
+# are truncated. Maximum number of lines/screen is 16
+# (additional lines are automatically moved to the next
+# screen).
+# 
+#-----------------------------------------------------------
+#
+:chedit_prich
+       [Priority Channel Selection/Unhide Channel Data]
+
+ Use the up and down arrow keys to highlight a Priority
+ Channel for scanning, and press the Space Bar.  
+
+ If the channel was hidden, it will be unhidden. Unless it
+ was already selected, it will be selected as the Priority 
+ Channel ("[]" around it). If it was already selected, it 
+ will be deselected and there will be NO Priority Channel.
+ A new selection supercedes any previous selection.
+
+ Select another field with the arrow keys when done.
+
+ NOTE: Dual Watch and Priority selection cannot both be
+ enabled (select in Common Data).
+#
+#
+#
+:chedit_name
+                     [Naming a Channel]
+
+ Use the up and down arrows to highlight a channel to name.
+ Then use up to 4 characters: "0 - 9", "A - Z", "< = > * - \
+ / _" and space(s) to enter a Name for the highlighted
+ channel. While entering, the highlighting is replaced by a
+ blinking cursor. Backspace deletes one character.
+
+ Press Enter to accept, or Esc to cancel.
+
+ NOTE: DTMF SelCall and Channel Names cannot both be enabled
+ (select in Common Data).
+#
+#
+#
+:chedit_dtmf
+                 [Setting DTMF SelCall Codes]
+
+ Use the up and down arrows to highlight a channel in which 
+ to program a 3-digit DTMF SelCall. Then press 0 - 9 to
+ enter (exactly 3) digits. Backspace deletes, Esc cancels. 
+
+ After entering the digits, you can press the Space Bar to
+ toggle the Transpond function on ("T" suffix displayed),
+ and again to disable the DMTF SelCall on this channel.
+
+ When set as desired, press Enter to accept the displayed
+ settings.
+ 
+ NOTE: DTMF SelCall and Channel Names cannot both be enabled
+ (select in Common Data).
+
+#
+#
+#
+:chedit_rxf
+   [Edit Rx/Simplex Frequency & Hide/Unhide Channel Data]
+
+ Use 0 - 9 to enter the desired channel frequency, and press
+ Enter. This frequency will be adjusted if it does not match
+ the Channel Step parameter (in Environ Data), and will also
+ copy Rx Freq + Default Split(in Environ Data) to Tx Freq
+ field. You do not need to enter all 8 digits: empty digits
+ to the right are zero-filled. Pressing [.] (period) after
+ several digits forces them to MHz. Press period first to
+ change only kHz.
+
+ Pressing only the Space Bar without entering a number
+ toggles the data for the entire channel between hidden and
+ unhidden (except channels 1-01, which cannot be hidden).
+ Hidden channels display "--" in place of field entries,
+ and are not used for operation (although they are still
+#
+:page
+#
+
+ stored in hidden form for possible recall later).
+
+ NOTE! Any entries or changes to this field will also occur
+       in the Tx Freq. field, so you may need to edit that
+       field after making any changes here.
+
+ Arrow Keys: Change field (before or after editing 
+                Frequency).
+ Space Bar:  Hide/Unhide entire channel (exc. 1-01 & 2-01).
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits as MHz, or
+                next digits as kHz (if pressed first).
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+#
+#
+#
+:chedit_cdec
+ [Toggle Subaudible CTCSS Decoder, and set CTCSS frequency]
+
+ Press the Space Bar to toggle the decoder on/off, or press
+ Enter to display the Tone Select window, from which you may
+ select a frequency with the Arrow Keys (pressing Enter again
+ to accept, or Esc to cancel).
+
+ If you know the CTCSS frequency you want, you can enter it
+ directly with the 0 - 9 and [.] (period) keys. When the
+ desired CTCSS frequency is displayed, press Enter to accept.
+ If the frequency was invalid (not among the standard tones),
+ the Tone Select Window will appear as described above, with
+ the nearest valid frequency pre-selected.
+
+ Turning on CTCSS turns off DCS (both cannot be on).
+ Turning off CTCSS also turns off BTLO (tone) if it was on.
+#
+:page
+#
+
+ Arrow Keys: Change field, or select in Tone Select window.
+ Space Bar:  Toggle Decoder on/off (except during selection).
+ 0 - 9, [.]: Direct tone frequency entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+#
+#
+#
+:chedit_ddec
+          [Toggle DCS Decoder, and set DCS Code]
+
+ Press the Space Bar to toggle the decoder on/off, or press
+ Enter to display the Code Select window, from which you may
+ select a DCS Code with the Arrow Keys (pressing Enter again
+ to accept, or Esc to cancel).
+
+ If you know the 3-digit DCS Code you want, you can enter it
+ directly with the 0 - 9 keys. When the desired Code is
+ displayed, press Enter to accept. If the Code was invalid
+ (not among the standard Code numbers), the Code Select
+ window will appear as described above, with the nearest
+ valid Code pre-selected.
+
+ Turning on DCS turns off CTCSS (both cannot be on).
+ Turning off DCS also turns off BTLO (tone), if it was on.
+#
+:page
+#
+
+ Arrow Keys: Change field, or select in Code Select window.
+ Space Bar:  Toggle Decoder on/off (except during selection).
+ 0 - 7:      Direct Code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Code Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_tone
+    [2-Tone Decoder On/Off Toggle & Frequency Selection]
+
+ Press the Space Bar to toggle the 2-Tone Decoder on/off, or
+ press Enter to display the 2-Tone Select window, from which
+ you may select a 2-Tone frequency with the Arrow Keys
+ (pressing Enter again to accept, or Esc to cancel). 
+
+ If you know the 2-Tone frequency you want, you can enter it
+ directly with the 0 - 9 and [.] keys. When the desired fre-
+ quency is displayed, press Enter to accept. If the frequency
+ was invalid (not among the standard frequencies), the 2-Tone
+ Select window will appear as described above, with the
+ nearest valid frequency pre-selected.
+#
+:page
+#
+ 
+ Note: A and B tones toggle together - you cannot activate
+ only one. Also, Burst and 2-Tone cannot both be enabled
+ (in Common Data).
+
+ Arrow Keys: Change field, or select in 2-Tone Select window.
+ Space Bar:  Toggle Decoder on/off (except during selection).
+ 0 - 9 & [.]: Direct Code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display 2-Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+
+ Select 2-Tone Decoder Group in Common Data.
+#
+#
+#
+:chedit_scan
+                 [Scan Stop/Skip Toggle]
+
+ If scanning is enabled in the Common Data, the Space Bar
+ selects whether this channel will be included in scanning
+ (stop), or be skipped over.
+
+ If "שששש" is displayed in this field, scanning is disabled
+ in the Common Data, and no selection is possible unless
+ Common Data is first edited to enable scanning.
+#
+#
+#
+:chedit_save
+                [Power Saver on/off toggle]
+
+Press the Space Bar to toggle the automatic Power Saver
+feature on and off. When on, the transceiver draws less
+current from the battery by turning itself off periodically
+during squelched monitoring on this channel, to prolong
+battery charge life. The Saving Interval (off time) can be
+set in the Common Data.
+
+Arrow Keys: Change fields after setting on/off.
+Space Bar:  Toggle on/off.
+
+NOTE! If "ששש" appears in the Power Save field, Power Saving
+      has been disabled (in Common Data). You must edit the
+      Common Data to enable it before setting this field.
+#
+#
+#
+:chedit_txf
+  [Enter Transmit Frequency & Enable/Disable Transmission]
+
+Use keys 0 - 9 to enter the desired transmitting frequency,
+and press the Enter key to accept. If the frequency does not
+match the Channel Step parameter (in Common Data), it will be
+adjusted to the nearest valid step. You do not need to enter
+all 8 digits: empty digits to the right are zero-filled.
+
+Pressing [.] (period) after several digits forces them to
+MHz, while pressing [.] first allows entering only kHz.
+
+Pressing only the Space Bar without entering a number toggles
+the this channel's transmit capability on and off (when off,
+previously set transmitting parameters are hidden until the
+transmitter is again enabled for this channel, and "Tx Inh"
+is displayed).
+#
+#
+#
+:page
+#
+
+NOTE! The Tx Freq is automatically copied from the Rx Freq,
+      so any changes here will be LOST if the Rx Freq is
+      changed. Therefore, the Rx Freq should be set first,
+      before editing the Tx Freq. 
+
+Arrow Keys: Change field (before or after Editing Freq.)
+Space Bar:  Enable/Disable Transmission on this channel.
+0 - 9:      Input a digit.
+[.]:        Set last three (or fewer) digits to MHz, or next
+                digits to kHz.
+Backspace:  Erase digit to the left, or cancel entry.
+Enter Key:  Accept displayed frequency, with zero-fill.
+Esc Key:    Cancel and return to previous frequency.
+#
+#
+#
+:chedit_cenc
+#
+   [Toggle Tone Squelch Encoder, and set CTCSS frequency]
+
+ Press Space to toggle the Encoder on/off, or press Enter to
+ display the Tone Select window (if not viewing it already),
+ from which you may select a frequency with the Arrow Keys
+ (pressing Enter again to accept, or Esc to cancel).
+
+ If you know the CTCSS frequency you want, you can enter it
+ directly with the 0 - 9 and [.] (period) keys (entering
+ a number or [.] forces the Encoder on). When the display
+ shows the desired CTCSS frequency, press Enter to accept.
+ If the frequency was invalid (not among the standard tones)
+ the Tone Select Window will appear as mentioned above.
+
+ NOTE! if the channel is hidden when you make an entry, it
+ will be unhidden. Edit the Rx Freq field to hide it again.
+#
+#
+#
+:page
+#
+
+ NOTE: Turning on the CTCSS Encoder automatically turns off
+ the DCS encoder, if it was on.
+ 
+ Arrow Keys: Change field, or select in Tone Select window.
+ Space Bar:  Toggle Encoder on/off (except during selection).
+ 0 - 9, [.]: Direct tone frequency entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_denc
+#
+       [Toggle DCS Encoder, and set DCS Encoder Code]
+
+ Press Space to toggle the Encoder on/off, or press Enter to
+ display the Code Select window (if not viewing it already),
+ from which you may select a code with the Arrow Keys
+ (pressing Enter again to accept, or Esc to cancel).
+
+ If you know the DCS code you want, you can enter it directly
+ with the 0 - 7 keys (entering a number forces the Encoder
+ on). When the display shows the desired code, press Enter to
+ accept. If the code was invalid (not among the standard
+ codes) the Code Select Window will appear as mentioned
+ above.
+
+ NOTE! if the channel is hidden when you make an entry, it
+ will be unhidden. Edit the Rx Freq field to hide it again.
+#
+#
+#
+:page
+#
+
+ NOTE: Turning on the DCS Encoder automatically turns off
+ the CTCSS encoder, if it was on.
+ 
+ Arrow Keys: Change field, or select in Code Select window.
+ Space Bar:  Toggle Encoder on/off (except during selection).
+ 0 - 7:      Direct code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Code Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_burst
+    [Transmitter Tone Burst Frequency Selection/Enable]
+
+ Press the Space Bar to toggle the Burst Encoder on/off, or
+ press Enter to display the Burst Tone Select window, from
+ which you may select a Burst frequency with the Arrow Keys
+ (pressing Enter again to accept, or Esc to cancel). 
+
+ If you know the Burst frequency you want, you can enter it
+ directly with the 0 - 9 and [.] keys. When the desired fre-
+ quency is displayed, press Enter to accept. If the frequency
+ was invalid (not among the standard frequencies), the Burst
+ Tone Select window will appear as described above, with the
+ nearest valid frequency pre-selected.
+
+ Note: Burst and 2-Tone cannot both be enabled (in Common
+ Data).
+#
+:page
+#
+
+ Arrow Keys: Change field, or select in Tone Select window.
+ Space Bar:  Toggle Encoder on/off (except during selection).
+ 0 - 9 & [.]: Direct Code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_bclo
+    [Busy Channel/Tone Lock-Out: Carrier/Tone/Off Toggle]
+
+ The Space Bar (or Backspace Key) toggles the BCLO/BTLO
+ selection between Carrier Control (cw), CTCSS/DCS Control
+ (tone), or off.
+
+ Note: You must press Enter after making a selection.
+
+ Arrow Keys: Change field (after pressing Enter).
+ Space Bar:  Toggle BCLO mode.
+# Space Bar, Backspace: Toggle BCLO mode.
+#
+#
+#
+:chedit_tpwr
+#
+              [Transmit Power high/low toggle]
+
+ Press the Space Bar to toggle the transmitter power between
+ high and low. If transmission on this channel was disabled,
+ it will now be enabled.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle high/low.
+#
+#
+#
+:chedit_tot
+#
+           [Transmit Time-Out Timer on/off toggle]
+
+ Press the Space Bar to toggle the Transmit Time-Out Timer on
+ and off. When on, the transmitting time on this channel is
+ limited to the Tx Time-Out Time set in Common Data (1/2 to
+ 7-1/2 minutes).
+
+ Arrow Keys: Change fields after setting on/off.
+ Space Bar:  Toggle on/off.
+
+ NOTE! If "..." appears in the Tx Timer field, the Time-Out
+       Timer has been disabled (in Common Data). You must
+       edit the Common Data to enable it before setting this
+       field.
+#
+#
+#
+:file_select
+#
+                   [File Selection Window]
+
+ Select a filename (lower-case letters) or subdirectory
+ (upper-case, in angle brackets <>) using the Arrow Keys, and
+ then the Enter Key to accept your selection. If you selected
+ a subdirectory, the window contents will be replaced with
+ that subdirectory's contents, from which you can select
+ again. You can also delete a file or subdirectory with [F4].
+
+ You can also enter a new drive letter or filespec directly.
+ Pressing alphanumeric keys activates the filespec line
+ editor along the bottom of the window. You can use wildcards
+ ("*" or "?") to display only certain files (eg.,
+ :\CHDATA\*.CH and Enter displays only files with the "CH"
+ extension in the CHDATA subdirectory on drive B). Tab
+ returns you to the upper half of the selection window.
+#
+:page
+#
+ (at any time in Selection Window)
+ Enter Key:  Accept selection.
+ Esc Key:    Cancel operation and return to Channel Editor.
+ Tab Key:    Switch between Selection Window and line editor.
+
+ (for selection in upper part of window)
+ Arrow Keys: Select filename/subdirectory.
+ Home/End:   Jump to first/last selection on screen.
+ [F4] Key:   Delete current file selection from disk.
+ PageDown:   Jump down one page (for large directories).
+ PageUp:     Jump up one page (for large directories).
+
+ (for filespec editor at bottom of window)
+ Delete:     Delete character under cursor.
+ Backspace:  Delete character to left.
+ Insert:     Toggle insert/overwrite modes.
+#
+#
+#
+:path_edit
+#
+                 [File Selection Window]
+
+ Select a filename (lower-case letters) or subdirectory
+ (upper-case, in angle brackets <>) using the Arrow Keys, and
+ then the Enter Key to accept your selection. If you selected
+ a subdirectory, the window contents will be replaced with
+ that subdirectory's contents, from which you can select
+ again.  If you select a file, you can delete it with [F4].
+
+ You can also enter a new drive letter or filespec directly.
+ Pressing alphanumeric keys activates the filespec line
+ editor along the bottom of the window. You can use wildcards
+ ("*" or "?") to display only certain files (eg.,
+ B:\CHDATA\*.CH and Enter displays only files with the "CH"
+ extension in the CHDATA subdirectory on drive B. Tab returns
+ you to the upper half of the selection window.
+#
+:page
+#
+ (at any time in Selection Window)
+ Enter Key:  Accept selection.
+ Esc Key:    Cancel operation and return to Channel Editor.
+ Tab Key:    Switch between Selection Window and line editor.
+
+ (for selection in upper part of window)
+ Arrow Keys: Select filename/subdirectory.
+ Home/End:   Jump to first/last selection on screen.
+ [F4] Key:   Delete current file selection from disk.
+ PageDown:   Jump down one page (for large directories).
+ PageUp:     Jump up one page (for large directories).
+
+ (for filespec editor at bottom of window)
+ Delete:     Delete character under cursor.
+ Backspace:  Delete character to left.
+ Insert:     Toggle insert/overwrite modes.
+#
+#
+#
+:read_rom
+#
+     [Transfer data between PC and Transceiver's EEPROM]
+
+ The Space Bar is used to proceed with the transfer operation
+ after ensuring the hardware is set up for the transfer. To
+ cancel and return to the Channel Editor, press the Esc Key
+ instead.
+
+ The status of the transfer operation will be displayed when
+ finished (a few seconds after pressing the Space Bar).
+
+ NOTE! Press the Esc Key if the system appears to hang. Then
+ make sure the power indicator on the interface box is on,
+ and check the cables for a connection problem.
+#
+#
+#
+:write_rom
+#
+    [Transfer data between PC and Transceiver's EEPROM]
+
+ The Space Bar is used to proceed with the transfer operation
+ after ensuring the hardware is set up for the transfer. To
+ cancel and return to the Channel Editor, press the Esc Key
+ instead.
+
+ The status of the transfer operation will be displayed when
+ finished (a few seconds after pressing the Space Bar).
+
+ NOTE! Press the Esc Key if the system appears to hang. Then
+ make sure the power indicator on the interface box is on,
+ and check the cables for a connection problem.
+#
+#
+#
+:edit_common
+#
+               [Edit Common Data Parameters]
+
+ Use the Arrow Keys to select the parameter to edit. Then use
+ the Space Bar or Backspace Key to toggle among all possible
+ settings for that parameter. When all parameters are set as
+ desired, press the Esc Key to return to the Channel Editor.
+
+ Channel Scan:
+ Enable/disable scanning
+
+ Scan Resume:
+ The "5s timer" selection causes scanning to resume after a 
+ 5-second pause. The "carrier" selection causes scanning to 
+ resume after squelch closes.
+#
+:page
+#
+
+ User Scan Program:
+ Enable/disable user selection of channels to scan.
+
+ Dual Watch:
+ Enable/disable dual watch (priority scanning).
+
+ Power On Dual Watch:
+ Activate dual watch whenever power switched on.
+
+ Dual Watch Speed:
+ Select slow or fast channel monitor toggling.
+#
+:page
+#
+
+ Channel after PTT:
+ Select one of priority channel, home channel or the last
+ busy channel to return to when PTT switch is pressed
+ during scanning or priority monitoring (dual watch).
+
+ Monitor:
+ Enable/disable MON button (to override squelch).
+
+ Beep:
+ When enabled, pressing a key on the radio produces a
+ beep in the loudspeaker.
+
+ Lighting Lock:
+ Enable/disable KEY LOCK button control over LCD lamp
+ and red TX/BUSY indicator.
+#
+:page
+#
+
+ Power Save:
+ Sets the "sleep/awake" ratio for the power save function.
+ The "awake" time is either 30 or 300 ms (selected in hard-
+ ware). The "sleep" time is 1 to 15 times the selected 
+ "awake" time. Select "Disabled" if the power save function 
+ is not desired.
+
+ Tx Timer-Out: 
+ Transmitter Time-Out Timer enabled (to or limit length of 
+ transmissions) or disabled.
+
+ Tx Timer-Out Time:
+ Maximum length of transmission (30 sec, 1 min, 2 min or 3  
+ min) when Tx Time-Out Timer (above) is enabled.
+#
+:page
+#
+
+ Time-Out Resume:
+ Minimum time to wait (none, or 6, 20 or 60 sec) after Tx 
+ Time-Out before transmitter can be reactivated.
+
+ Squelch Tail Elimination:
+ When the CTCSS option is installed and active and this
+ feature is enabled, releasing the PTT switch will leave
+ the transmitter active (without modulation) for an extra
+ 400ms, eliminating the squelch tail at the receiving end.
+
+ A/B Buttons:
+ Assign functions to A and B buttons: Channel Group Select,
+ High/Low Power, Talk-Around, Alphanumeric Channel Name
+ or Accessory.
+#
+:page
+#
+
+ DTMF SelCall/Channel Name Display:
+ Select display of either DTMF SelCall or Channel Name
+ on the main screen.
+
+ Power-on Display:
+ Select power-on display of either Channel Number or
+ SelCall/Channel Name (as selected above).
+
+ 2-Tone Group:
+ Select either Group 1-2-3, Group 4-5-6 or custom tone(
+ based on the location of PROM) decoding tone system.
+#
+#
+#
+:edit_environm
+#
+      [Hardware Environment Common Parameter Editing]
+
+ CAUTION: Do not change Hardware Environment Parameters
+ unless you are certain that the transceiver hardware is
+ suitable for the new value.
+
+ Editing these parameters requires that this program be
+ started with the -p switch on the command line. Otherwise
+ the settings can only be viewed.
+
+ Use the Arrow Keys to select the parameter to edit. Then use
+ the Space Bar or Backspace Key to toggle among all possible
+ settings for that parameter (except the numeric "IF" entry).
+ When all parameters are set as desired, press the Esc Key to
+ return to the Common Data Editor.
+
+#
+:page
+#
+
+ "IF" (Intermediate Frequency) entries are made with the
+ 0 - 9 keys and Backspace Key. Press the Enter Key to accept
+ your entry, or Esc to cancel.
+#
+#
+#
+:edit_enviro
+#
+		 [Default Split Editing]
+
+ "Default Split" is the freq difference between Rx Freq and
+ Tx Freq, i.e. Rx Freq + Default Split = Tx Freq. Use the
+ 0 - 9, '-' keys and Backspace Key to set the desired freq.
+ Press the Enter Key to accept your entry, or Esc to cancel.
+
+ When it is set as desired, press the Esc Key to return to
+ the Common Data Editor.
+#
+#
+#
+:make_dir
+#
+          [Make a new subdirectory on current Path]
+
+ Input the name of the new subdirectory (up to 8 characters),
+ then press Enter. Press Esc or F8 to cancel if you change
+ your mind.
+
+ Backspace: Delete character to left of cursor
+ Delete:    Delete character above cursor
+ Insert:    Toggle Insert/Overwrite mode (Insert is default,
+	   Overwrite has block cursor)
+#
+#
+#
+:remove_dir
+#
+       [Remove the named (or pointed-to) subdirectory]
+
+ Only empty child directories from the current subdirectory
+ can be removed. In the file list, the inverse box can be
+ positioned with the arrows to select a subdirectory to
+ remove, by pressing F4. If the file list selection is not
+ a subdirectory, a box will appear in which you can enter
+ the name of the subdirectory to be removed. This name must
+ be the same as one of the subdirectories displayed in the
+ file list, and any files in that subdirectory must have
+ already been deleted.
+
+ Backspace: Delete character to left of cursor
+ Delete:    Delete character above cursor
+ Insert:    Toggle Insert/Overwrite mode (Insert is default,
+	   Overwrite has block cursor)
+#
+#
+ 

@@ -1,0 +1,332 @@
+----- POPWARN MESSAGE ERROR -----
+Index into POPWARN message array has
+been exceeded by the RSS; Please Contact
+Motorola Service, and Report This Error.
+Codeplug Archive MAXTRACM.DBF -EXISTS-
+in DIRECTORY, and has VALID ENTRIES;
+-BACKUP- of this file and all CODEPLUG
+files is advised, before ARCHIVE REFORM
+!! ERROR !!  on DBFile Open/Write,
+--INVALID-- DataBase File Creation;
+Possible -DOS- Dir/File problem
+(e.g. Prior DBFile is READ-ONLY).
+CHECKSUM will be
+corrected ONLY for
+changes made to
+locations #B600 to #B62D.
+No Compatible Signalling
+System is Defined.
+
+
+Serial Bus Error.
+Radio NOT Programmed.
+Operation Aborted.
+
+You Do NOT Have Enough Memory To Run
+This Application. Please Check DOS
+Files CONFIG.SYS + AUTOEXEC.BAT, and
+Remove Unnecessary Memory Allocations.
+FTR Hardware Key
+Was NOT Attached.
+Operation Was Aborted
+
+FTR Hardware Key
+Is Attached
+
+
+
+
+
+
+No Codeplug Data To Save
+
+
+
+WARNING!!! Codeplug modifications
+have NOT been PROGRAMMED or SAVED.
+(F10) = Abort Read/Load Codeplug.
+(F2) = Continue Read/Load Codeplug.
+Archive File Does NOT exist
+Continue to Create New File
+-or-
+Exit to Abort.
+!!!! INITIALIZED BOARD !!!!!!.
+MUST have BLANK board to 
+continue.
+
+Help File MAXTRAC.HLP
+Cannot Be Found; Please
+Re-Install from INSTALLATION disk
+into this RSS working Directory.
+A CodePlug Must Be READ
+Via GET/SAVE Function
+Before Using This Function
+
+Model Definition File MAXTRAC.MDF
+Cannot Be Found; Please
+Re-Install from INSTALLATION disk
+into this RSS working Directory.
+Press -F2- to Exit to DOS or
+Press -F10- to Continue.
+
+
+This Will Erase Scan List
+On this Mode.
+
+
+CANNOT Process Entered Data
+Please Enter Again
+
+
+This Model Does NOT Allow
+Conventional Modes.
+
+
+!!  WARNING  !!  WARNING  !!
+Codeplug Modifications Have
+NOT Been PROGRAMMED or SAVED
+And Will Be Lost.
+!!  WARNING  !!  WARNING  !!
+Selected Frequency is outside
+of FCC limits; may NOT function
+properly. Use at your own discretion.
+Selected Frequency
+Is Outside Of Radio Bandwidth
+Limit; Cannot Be Programmed.
+
+Selected Frequency
+Is Outside Of Radio Bandwidth
+and FCC Limits.
+
+No Conventional Modes
+(F2) = CREATE a Mode
+
+
+!!! SPECIAL VERSION RADIO !!!
+A special version radio canNOT be
+programmed with this programmer
+
+!!! SPECIAL PROGRAMMER !!!
+A normal radio canNOT be programmed
+with SP-2 programmer
+
+!!! SPECIAL PROGRAMMER !!!
+A normal radio canNOT be programmed
+with SP-3 programmer
+
+Master Codeplug Data
+Must Be Read First.
+
+
+Trunked Radios
+CanNOT Be Cloned.
+
+
+(F2) = Complete Radio
+Programming
+
+
+No Codeplug Data To Program
+
+
+
+If Kit # HLE9310B is
+installed, it is NOT 
+necessary to calibrate
+points 1 - 5.
+Information about the
+radio CANNOT be retrieved
+after board is blanked.
+TUNING PARAMETERS WILL BE BLANKED!!!
+!! WARNING !!  CHECKSUM ERROR  !!
+Reprogramming radio with current data
+may DESTROY valid information in
+CODEPLUG and make RADIO UNUSABLE.
+This radio model CANNOT
+be upgraded.
+
+
+
+
+
+
+Press
+(F2)
+to
+cont.
+Voice Selcall
+is NOT allowed
+with MDC-1200.
+
+Since group id is LONGER
+than individual id,
+it will be blanked out.
+
+CanNOT change signalling type
+because it is used by a call block
+or by phone repertoire.
+
+Delete ALL references (emergency encode,
+encode, phone repertoire, personality,
+or call list entries) to this signalling
+system or INVALID data may appear.
+SERIAL BUS ERROR
+Check all connections
+and power; (F2)
+to retry programming.
+CODE PLUG DUMP
+routine is now
+OFF
+
+CODE PLUG DUMP
+routine is now
+ON
+
+LAB USE SOFTWARE
+(F2) = disregard
+previous error and continue.
+
+!!  WARNING  !!  WARNING  !!
+SERIAL NUMBER
+does NOT match radio.
+
+INVALID MASTER CODEPLUG DATA
+for Upgrade. Please load a valid
+32 Channel Model/Product Line
+for CLONE UPGRADE.
+MISMATCH between
+MASTER CODEPLUG DATA + RADIO.
+Check frequency range + product line
+of MASTER CODEPLUG DATA.
+SERIAL BUS ERROR
+Radio Model has NOT
+been checked.
+
+Information about the
+radio CANNOT be retrieved
+after board is blanked.
+TUNING PARAMETERS WILL REMAIN UNAFFECTED
+!!  WARNING  !!  WARNING  !!
+Close Emergency Switch or Radio will
+transmit immediately after being
+programmed.
+(F2) = ADD Phone Repertoire.
+     Earlier RSS versions will be
+     unusable.  This is IRREVERSABLE !!
+(F10) = Do NOT ADD Phone Repertoire.
+!!  WARNING  !!  WARNING  !!
+You will NO LONGER be able to use
+EARLIER Radio Service Software
+versions.
+!!  WARNING  !!  WARNING  !!
+EXCESSIVE POWER INCREASE !
+Transmitter operation above rated power
+levels may damage power amplifier.
+New values have NOT been saved.
+
+
+
+Wrong COMPENSATION ADDER values.
+Must readjust COMPENSATION ADDERS.
+
+
+A CODEPLUG must be READ
+via GET/SAVE function
+before printing.
+
+Function NOT SUPPORTED
+for this model.
+
+
+This ACC. EXTERNAL conflicts with DTMF.
+
+
+
+Is INTERNAL OPTION BOARD
+installed in your radio?
+If you continue, retrieved
+data from radio will be lost.
+If you continue, retrieved
+data from radio will be lost.
+
+
+External Accessory is
+NOT COMPATIBLE with DTMF.
+
+
+TIMING CALIBRATION VALUE OUT OF RANGE
+Valid range:  450 - 1500
+    Default:  910       
+See HELP for more information.
+Radio Updates Warp Values
+Every 10 Seconds, Therefore
+Measured Frequency Will 
+NOT Reflect Changes Immediately.
+No Tuning Is Affected By 
+Replacing This Board.
+
+
+An Archive File Or Codeplug
+From Another Radio Must Be Read
+Before Replacement Procedure
+for This Board Can Be Performed.
+Radio Calibration Is Complete !
+ARCHIVE Tuning Data via GET/SAVE Menu;
+-READ- Radio Codeplug -FIRST-,
+Then -SAVE- to ARCHIVE FILE !!!.
+Radio Calibration Is NOT Complete!
+
+
+
+Time Out Timer Expired
+
+Radio DeKeyed
+
+Radio MUST Be Connected
+AND Powered Up to Continue
+With This Procedure.
+
+A Replacement Logic Board Must Be
+Initialized.
+See Service Manual Procedures
+
+An Error Has Been Detected in Radio
+Code Plug.  Replace Logic Board
+Per Service Manual Procedures.
+
+Model NOT Supported.
+
+
+
+Version of Software In Your Radio
+Is NOT Supported. You May NOT Proceed.
+Contact MOTOROLA Comm. Parts Division
+For Current Radio Service Software
+Microprocessor Configuration Register
+Is Corrupted.  Replace Logic Board 
+Per Service Manual Procedures.
+
+-NO- VALID Comm. Port Address Found
+in BIOS DATA Area (40:0-7). Please Re-
+Configure PC for -1- Comm Port and Re-
+Boot. Use DOS 'MODE' to Validate Port.
+The SELECTED Comm. Port is INVALID;
+Using F9/F3 'SETUP/CONFIGURE COMPUTER',
+Please Select a VALID Comm. Port.
+
+--------TEST MESSAGE-------
+Testing POPWARN message
+DISPLAY -and- RESPOND code/text/function
+12345678 1 2345678 2 2345678 3 2345678 4
+(null)
+(null)
+(null)
+(null)
+(null)
+(null)
+(null)
+(null)
+(null)
+(null)
+(null)
+(null)

@@ -1,0 +1,294 @@
+
+
+
+
+                          FTH-2070 Programming manual
+				  Version 1.6
+
+
+			    ********* NOTE ********
+
+    To date there are 2 versions of the FTH-2070 which have different
+    frequency ranges.  The only sure way to determine the version of a
+    particular radio is to read the data in the radio first and examine the
+    COMMON DATA.  The channel data can then be altered and the radio re-
+    programmed.
+
+    IF YOU PROGRAM THE RADIO WITH THE WRONG COMMON DATA CONFIGURATION, THE
+    RADIO WILL NOT WORK.
+
+    The frequency range for both versions is as follows:
+
+    Prior to lot 3: VHF: 150 - 170 MHz   UHF: 450 - 470 MHz
+
+    Lot 3 and later: VHF: 134 - 174 MHz   UHF: 400 - 500 MHz
+
+
+	 The FTH-2070 is programmed using the 2070.EXE program.  To start
+    the software from the DOS prompt, type:
+
+	 C:> 2070
+
+	 The main menu will appear with the following selections:
+
+				YAESU FTH-2070
+			      EEPROM DATA EDITOR
+
+
+			 [1]  Add/Change Channel Data
+
+			 [2]  View/Change Common Data
+
+			 [3]  Send Data to Transceiver
+
+			 [4]  Read Data from Transceiver
+
+			 [5]  Load Channel Data from Disk
+
+			 [6]  Save Channel Data to Disk
+
+			 [7]  Display/Print All Data
+
+			 [8]  Quit
+
+			      Select a number [ ]
+
+
+	 Pressing <F2> will allow you to change serial port if computer
+    has more than one serial port.  Pressing any of the keys 1-8 will
+    select that function.  Each is explained in detail below.
+				       1
+
+
+
+
+
+
+
+
+
+
+
+	 Pressing <F1> at any point in the program will allow you to view
+    this file on screen for help.  Pressing <ESC> returns you to the 2070
+    program.
+
+    1.   ADD/CHANGE CHANNEL DATA
+
+         This portion of the program allows you to edit or create the
+    channel data configuration.  If creating a new configuration, make sure
+    that the COMMON DATA is set up correctly first (item 2) before entering
+    the channel data. Changing COMMON DATA will erase all channel data.
+
+         The channel data screen will appear as follows:
+
+
+	   Add/Change Channel Data            ÉÍÍÍÍÍÍÍÍÍ¹ KEY HELP ÌÍÍÍÍÍÍÍÍÍ»
+                                              º [ESC] = Quit to Main Menu    º
+ VHF: 134-174 MHz         UHF: 400-500 MHz    º [PgDn] next page [PgUp] prev º
+ VHF REF: 5.00 KHz        UHF REF: 12.50 KHz  º [SPACE] Erase/Restore Channelº
+ Tone Option: None                            º Entry Fmt: 2 Digits (00-63)  º
+                                              ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+
+                    CTCSS   Opt             CTCSS    Opt        Hi/Low
+ Ch  Name  RX Freq.  DEC    DEC    TX Freq.  ENC     ENC  Burst  Pwr   TxTimer
+ 01  VHFL  134.0000  OFF    -----  134.0000  OFF     ---  OFF    HIGH   OFF
+ 02  VHFM  154.0000  32     -----  154.0000  32      ---  OFF    HIGH   OFF
+ 03  VHFH  174.0000  OFF    -----  174.0000  OFF     ---  OFF    HIGH   OFF
+ 11  UHFL  450.0000  OFF    -----  450.0000  OFF     ---  OFF    HIGH   OFF
+ 12  UHFM  460.0000  32     -----  460.0000  32      ---  OFF    HIGH   OFF
+ 13  UHFH  470.0000  OFF    -----  470.0000  OFF     ---  OFF    HIGH   OFF
+ 14  WX    162.5500  0FF    -----  TX OFF    ---     ---  ---    ----   ---
+ --  ----  ---.----  ---    -----  ---.----  ---     ---  ---    ----   ---
+              .                       .
+              .                       .
+              .                       .
+ --  ----  ---.----  ---    -----  ---.----  ---     ---  ---    ----   ---
+
+
+         The KEY HELP box will indicate what values are expected, which
+    keys will perform different functions or how to return to the main
+    menu.  The items that appear in this box will change with the high-
+    lighted item in the channel display.
+
+         Using the keyboard arrows, move the highlight to the desired item
+    and enter the data directly (as with frequencies & channel numbers) or
+    use the space bar to toggle selections as indicated in the KEY HELP
+    box.  The data entered must be within the range indicated in the upper
+    left portion of the screen (frequencies, channel spacing, etc.) and
+    must fill up the entry field (do not use <ENTER> to terminate data
+    entry.
+
+
+
+
+				       2
+
+
+
+
+
+
+
+
+
+
+
+         The CTCSS tones are entered as a tone # rather than the actual
+    CTCSS frequency.  Use the following table to determine the tone #:
+
+      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+      ³  Freq   #       Freq   #       Freq    #      Freq    #   ³
+      ³  67.0 - 64      97.4 - 59      136.5 - 25     192.8 - 20  ³
+      ³  71.9 - 32     100.0 - 14      141.3 - 09     203.5 - 04  ³
+      ³  74.4 - 63     103.5 - 29      146.2 - 24     210.7 - 19  ³
+      ³  77.0 - 16     107.2 - 13      151.4 - 08     218.1 - 03  ³
+      ³  79.7 - 62     110.9 - 28      156.7 - 23     225.7 - 18  ³
+      ³  82.5 - 31     114.8 - 12      162.2 - 07     233.6 - 02  ³
+      ³  85.4 - 61     118.8 - 27      167.9 - 22     241.8 - 17  ³
+      ³  88.5 - 15     123.0 - 11      173.8 - 06     250.3 - 01  ³
+      ³  91.5 - 60     127.3 - 26      179.9 - 21     None  - 49  ³
+      ³  94.8 - 30     131.8 - 10      186.2 - 05                 ³
+      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         If more than 16 channels are to be programmed, the <PGUP> and
+    <PGDN> keys will switch between channels 1-16 and 17-32.
+
+         Press <ESC> to return to the main menu.
+
+
+    2.   COMMON DATA
+
+         Common data should be set up first before programming any channel
+    data.  CHANGING THE COMMON DATA SETTINGS WILL ERASE ALL CHANNEL DATA.
+    The following items can be altered under common data; use the <SPACE>
+    bar or <BACKSPACE> to toggle the settings for all items:
+
+    TX Time Out: The amount of time the user can key the radio continuous-
+    ly before the radio automatically unkeys.  The range is 30-450 seconds
+    in 30 second increments.
+
+    Time Out Resume: The amount of penalty time that the user must wait
+    before re-keying the radio after the TOT has expired.  The range is
+    0-150 seconds in 10 second increments.
+
+    Power Save: Power save reduces the amount of battery drain by turning
+    off the receiver and periodically checking for the presence of carrier.
+    If carrier is detected, the receiver will come back to life and remain
+    so until activity ceases.  The sleep times are as follows:  xx seconds
+    off, xx mSec on, xx seconds resume delay.  Use the <SPACE> bar to
+    toggle this selection ON or OFF.
+
+    TX Lock Out: The radio can be inhibited from transmitting in the
+    presence of carrier (Busy Carrier Lock Out) or in the presence of
+    carrier with the wrong tone.  Use the <SPACE> bar to toggle this item.
+
+    Tone Opt: Use the <SPACE> bar to select the installed tone options.
+    The possible selections are: DPL, 2-Tone Dec, Burst, or None.
+
+
+
+                                       3
+
+
+
+
+
+
+
+
+
+
+
+    Freq Range: Changes the setting of the Min-Max frequencies.  This
+    setting must be correct or the radio will not work.  Use the <SPACE>
+    bar to toggle this setting.
+
+    VHF/UHF Ref: Changes the minimum channel step of the frequencies
+    entered.  VHF range is 5/6.25 kHz, UHF range is 10/12.5 kHz.
+
+    Press <ESC> to return to the main menu.
+
+
+    3.   SEND DATA TO RADIO
+
+         Send data to the radio using the VPL-1 programming lead with a
+    VPL-2070 cable, or use the FRB-2.  Make the proper connections to the
+    radio and computer per the programmer instructions.
+
+         Before sending data to the radio, make sure that it is in the
+    CLONE mode.  Press and hold the PRI button on the radio while turning
+    it on;  the display will flash "TXRX".  Press <SPACE> bar then the MON
+    button on the radio; the display will show "RX". Press the space bar to
+    start sending data.  When transfer is complete, the radio display will
+    will show the lowest programmed channel.
+
+
+    4.   READ DATA FROM RADIO
+
+         Read data from the radio using the VPL-1 programming lead with a
+    VPL-2070 cable, or use the FRB-2.  Make the proper connections to the
+    radio and computer per the programmer instructions.
+
+         Before reading data from the radio, make sure that it is in the
+    CLONE mode.  Press and hold the PRI button on the radio while turning
+    it on; the display will flash "TXRX".  Press the <SPACE> bar then the
+    CM button on the radio; the display will show "TX".  When transfer is
+    complete, the radio display will again flash "TXRX".
+
+
+    5.   LOAD DATA FROM DISK
+
+         Reads a previously saved configuration from disk.
+
+         Press <5> at the main menu and enter the file name and extension
+    or <.> and <ENTER> to get a listing of the current directory.  The file
+    name and extension MUST BE VALID DOS NAMES (no spaces or special char-
+    acters).  If the file does not exist or is the wrong type, you will be
+    prompted to enter another selection.
+
+         Press <ESC> to return to the main menu.
+
+
+
+
+
+                                       4
+
+
+
+
+
+
+
+
+
+
+
+    6.   SAVE DATA TO DISK
+
+         Saves the current configuration to disk under the file name and
+    extension that you specify.
+
+         Press <6> at the main menu and enter the file name and extension
+    or <.> and <ENTER> to get a listing of the current directory.  The file
+    name and extension MUST BE VALID DOS NAMES (no spaces or special char-
+    acters).  If you try to overwrite an existing file, you will be prompt-
+    ed to confirm.
+
+         Press <ESC> to return to the main menu.
+
+
+    7.   PRINTOUT
+
+         Print the current configuration.  Press <7> at the main menu and
+    set up printer to the top of the page.  Answer "Y" at the prompt when
+    printer is ready or press <ESC> to return to the main menu.  Program
+    assumes printer is connected to LPT1.
+
+    8.   RETURN TO DOS
+
+         Press <8> at the main menu to quit the program and return to DOS.
+    Program will ask you to confirm;  answer "Y" to quit or any other key
+    to abort.

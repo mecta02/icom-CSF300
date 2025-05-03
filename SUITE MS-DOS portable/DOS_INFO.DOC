@@ -1,0 +1,707 @@
+   ==================================================================
+   DOS / PC / RSS Information                  For Motorola RSS Users
+
+   DOS_INFO.DOC   15jun97                  Copyright(c) Motorola Inc.
+   Radio Software Technology Center        LMPS, Ft. Lauderdale,  FLA
+   ==================================================================
+
+   This information is intended to aid our RSS Users in understanding
+   how the PC, DOS and the RSS work together to program and service
+   Motorola Radio Products.  No representation is made that this
+   information is complete or accurate.  Motorola expressly disclaims
+   any liability for the accuracy or completeness of the information, or
+   for any damages resulting from the use or misuse of the information.
+
+   Please refer to the manufacturer's documents for your particular
+   system.  Additional information on the use of PCs and DOS can be
+   found in commonly-available DOS/PC references.  Later versions of
+   DOS (5.x and 6.x) include the "HELP [command]" command.
+
+   Copyrights, Trademarks, and Service Marks for various companies and
+   products mentioned below are the sole property of the manufacturers,
+   and are hereby acknowledged as such.
+
+
+   ==================================================================
+   This file contains the following topics:
+
+   (1)     DOS / PC (Troubleshooting) Setup Checklist
+   (2)     Multiple DOS Configurations
+               (Multiple CONFIG.SYS / AUTOEXEC.BAT files)
+   (3)     Attempting to Execute RSS Under WINDOWS
+   (4)     CAUTIONS When Using FLOPPY DISKETTES for Archiving Codeplugs
+   (5)     "Sorting" Codeplug-File Directory Entries, for Faster Finding
+   (6)     DOS Extended Error Codes
+   ==================================================================
+
+
+
+   ==================================================================
+   ==================================================================
+   SECTION (1)
+
+   DOS / PC (Troubleshooting) Setup Checklist
+   ==================================================================
+
+   If you are having difficulty running RSS products on newer PCs -or-
+   Laptop PCs, especially older versions of the RSS products, the tips
+   below may help you.  We strongly suggest trying these items
+   -PRIOR- to calling Motorola Customer Service for aid.
+
+   Because PCs and DOS are rapidly changing and expanding their
+   architectures, it may not be possible for older RSS versions to
+   successfully run on the latest machines.  If these tips don't work
+   for your old versions, we suggest contacting Motorola Americas Parts
+   Division for an RSS upgrade.  If you have the latest version and
+   still have problems after trying these tips, please contact Motorola
+   Customer Service.
+
+   The items below are suggested as a starting place.  You must consult
+   your manufacturer's manuals for details on how to access your CMOS
+   setup, and other PC-specific operations.  Your DOS manual must be
+   consulted for DOS version-specific information.  Also, consult the
+   README.TXT file on the RSS installation disk for the most current RSS
+   information.
+
+   -------------------------------------------------
+   (-A-)   VERIFY RIB, CABLES and SETUP are OK:
+   -------------------------------------------------
+   Using your older PC, verify that the RIB, CABLE and Radio setup is
+   working correctly.  After this step, move the PC-to-RIB cable from
+   your original PC to you new PC's Comm. Port, remembering that the
+   Comm. Port number (COM1 or COM2) may be different. See RSS Manual for
+   Comm. Port selection and the "COMMUNICATIONS TEST" function.
+
+   If no older PC is available, try changing the RIB, CABLES and Radio
+   to verify proper hardware operation; also, ensure proper Comm. Port
+   selection.
+
+   ----------------------------
+   (-B-)  MEMORY CONFIGURATION:
+   ----------------------------
+   Modern PCs and DOS can support four types of memory;
+
+       (1) CONVENTIONAL - The lowest 640 KB of memory address space. This
+       is the primary memory of all PCs.  Those RSS products that do
+       -not- use EXTENDED memory need as much of this space as possible.
+
+       (2) UPPER - The next-highest 384 KB memory address space.
+       Application programs normally do not access this memory.  This space
+       contains VIDEO/DISPLAY and other device data.  It also can be used to
+       load certain device drivers "HIGH", to free-up some CONVENTIONAL
+       memory.  !! CAUTION !! Some driver programs do not run in the UPPER
+       memory area. On 80386 (and above) PCs, access to UPPER memory requires
+       use of the EMM386.EXE memory manager.
+
+       (3) EXTENDED/HIGH - Together, CONVENTIONAL and UPPER memory take up
+       the first 1 MB of memory.  EXTENDED memory is all memory above the
+       1 MB address.  The HIGH memory area is actually the first 64KB of
+       EXTENDED memory space.  Loading DOS "HIGH" puts most of DOS in this
+       HIGH area.  On 80286 (and above) PCs, the EXTENDED/HIGH memory can be
+       accessed using an extended memory manager such as HIMEM.SYS.  Many
+       RSS products require EXTENDED memory.
+
+       (4) EXPANDED - This type of memory is not directly accessable to
+       programs.  It normally was installed using an expanded-memory board,
+       and required an expanded-memory manager to "map" the physical memory
+       into the program's address space.  Today, EXPANDED memory can be
+       "emulated" by managers such as EMM386.EXE, which use EXTENDED memory
+       to emulate the expanded-memory card.  EMM386.EXE can also be used
+       to load certain device drivers "HIGH", into the UPPER memory.
+
+   Memory management begins with statements placed in the CONFIG.SYS
+   and AUTOEXEC.BAT files.  Memory configuration should ideally
+   maximize the amount of CONVENTIONAL and EXTENDED memory available, by
+   using HIMEM.SYS and loading "DOS=HIGH" (in CONFIG.SYS).
+
+   To repeat for clarity, loading DOS "HIGH" actually puts DOS into the
+   HIGH portion of EXTENDED memory.  Loading device drivers "HIGH" puts
+   them into the UPPER memory area (requires EMM386.EXE).  Both techniques
+   can be used to free-up CONVENTIONAL memory, if needed.
+
+   !! NOTE !! The DOS 5.x/6.x command "MEM /C | MORE" can be used to profile
+   your memory configuration, and monitor changes in memory allocation when
+   CONFIG.SYS and AUTOEXEC.BAT are changed.
+
+   RSS products do -NOT- require EXPANDED memory, and if EMM386.EXE is
+   used for either EXPANDED -or- UPPER memory access, enough EXTENDED
+   memory must be left free for RSS allocation.  Consult the RSS User's
+   Guide or the README.TXT file on the RSS installation disk to
+   determine how much EXTENDED memory is required.
+
+   Additional CONVENTIONAL memory can be freed by using EMM386.EXE to
+   load selected device drivers into the UPPER area, using the "ram 64"
+   switch (see DOS "HELP EMM386.EXE").  The "noems" switch can prevent
+   some RSS products from executing properly on some machines, under
+   some DOS versions.
+
+   ----------------------------
+   (-C-)   CONFIG.SYS
+   ----------------------------
+   As part of your troubleshooting, remember that DOS does -NOT- require
+   CONFIG.SYS and AUTOEXEC.BAT to be present at startup.  When these two
+   files are absent, this gives you a "clean start" (e.g. -NO-
+   conflicting drivers, and -NO- "Terminate, Stay Memory Resident" (TSR)
+   programs). Any RSS -not- requiring EXTENDED memory should be able to
+   run with -no- CONFIG.SYS / AUTOEXEC.BAT.
+
+   !! CAUTION !! There are some PC "security" programs that don't allow
+   the CONFIG.SYS and/or AUTOEXEC.BAT files to be missing or altered.
+   Check with your PC System Administrator if this is the case.
+
+   !! CAUTION !! For ultimate safety, create a "bootable" floppy
+   diskette, using the DOS "FORMAT /S" command, and copy your original
+   CONFIG.SYS / AUTOEXEC.BAT files to the formatted floppy diskette.
+
+   Do NOT delete your original CONFIG.SYS and AUTOEXEC.BAT files; instead,
+   rename them (DOS "REN" command) to CONFIG.001 and AUTOEXEC.001.  Then,
+   later, you can "COPY" them back to the standard names, and edit them
+   for changes.
+
+   For PCs with EXTENDED memory, the following -minimal- CONFIG.SYS
+   should work for -all- RSS products, and HIMEM.SYS is REQUIRED for RSS
+   products that need EXTENDED memory;
+
+       DEVICE=C:\DOS\HIMEM.SYS /V
+       DOS=HIGH
+       BUFFERS=20
+       FILES=20
+       STACKS=9,512
+       ( Device=C:\DOS\.... no entries at start of troubleshooting )
+
+   !! CAUTION !! It is (Microsoft) recommended practice to always load
+   HIMEM.SYS as the  -1st-  line of the CONFIG.SYS;   -IF-   EMM386.EXE
+   is used, it should be the  -2nd-  line, with "DOS=HIGH,UMB" as the
+   -3rd-  line.  ALWAYS put the "memory manager" entries -prior- to the
+   "memory user" entries.  Reversing them may appear to work, but is not
+   a stable configuration.  HIMEM should be -prior- to EMM386.
+
+   For maximum availability of CONVENTIONAL memory, EMM386.EXE can be used
+   to load device drivers "HIGH" into Upper Memory Blocks:
+
+       DEVICE=C:\DOS\HIMEM.SYS /V
+       DEVICE=C:\DOS\EMM386.EXE RAM 64
+       DOS=HIGH,UMB
+       BUFFERS=20
+       FILES=20
+       STACKS=9,512
+       ( DeviceHIGH=C:\DOS\.... no entries at start of troubleshooting )
+
+   If you are able to find the simplest CONFIG.SYS (with -NO- AUTOEXEC.BAT)
+   that enables RSS execution, then lines from the original CONFIG.SYS can
+   be restored one at a time to resolve which element is in conflict with
+   the RSS execution. Use DOS 5.x/6.x "MEM /C | MORE" to view memory area
+   allocation, as you make changes.
+
+   Once a stable CONFIG.SYS is established, begin building back the
+   AUTOEXEC.BAT, starting with the "SET PATH=C:\DOS;C:\....." line.
+
+   Some drivers/utilities to watch for in CONFIG.SYS and AUTOEXEC.BAT;
+
+       1)  The DOS "SHARE" Program causes problems with some RSS products.
+       2)  The DOS "GRAPHICS" Program causes problems with some RSS products.
+       3)  The DOS "EMM386" Expanded Memory Mgr. "noems" switch can conflict
+           with some RSS products.
+       4)  The DOS "POWER.EXE Program can interfere with some LapTop power
+           management systems (see below).
+
+   ----------------------------
+   (-D-)   CMOS SETUP
+   ----------------------------
+   Most modern PCs have CPU speed selection and "caching" options as
+   part of their CMOS setup.  To begin your troubleshooting, set CPU to
+   the lowest possible speed, and turn -all- cache (internal and
+   external) off.  Both the high speed and caching can interfere with
+   timing when reading/writing the Radio through the RIB box.
+
+   ----------------------------
+   (-E-)   POWER MANAGEMENT
+   ----------------------------
+   LAPTOPS (and some newer desktops as well) have power management
+   features to conserve operating power. The interrupt used in this
+   process cannot be turned off by applications, and typically takes a
+   -long- time to service the various devices, and this can interfere
+   with timing when reading/writing the Radio through the RIB box.  Turn
+   the power management OFF, or to the least-active mode allowed.
+
+   There are some PC manufacturers who are advising that the Microsoft
+   POWER.EXE driver be REMOVED from the CONFIG.SYS file, because it may
+   interfere with the PC's internal power management functions.  Consult
+   your manufacturer's literature.
+
+   In some cases, power management must be disabled at several different
+   levels; the PC's CMOS setup, the CONFIG.SYS/AUTOEXEC.BAT files, and
+   the Windows environemnt.
+
+   -------------------------------------------------
+   (-F-)  8250/16450/16550 Communications Port UARTs
+   -------------------------------------------------
+   The 16550 UART (Universal Async. Receive/Transmit) is functionally
+   equivalent to the 8250 and 16450 UARTs, with the addition of 16-byte
+   XMIT/RECV FIFO buffers.  To conserve power and chip count, many
+   manufacturers are using custom-ICs to -emulate- the 16550 UART.  Some
+   emulations are variants, such as powering up with the FIFO enabled (a
+   true 16550 powers up with FIFO -disabled-).
+
+   The symptom would be repeated errors while trying to READ/WRITE the
+   Radio Codeplug via the RIB box.  This is most likely to be seen on
+   LAPTOP PCs, but can occur on some DESKTOPs as well.
+
+   Some manufacturers are supplying a utility program that allows the
+   user to -disable- the FIFOs, for backwards compatibility.  For
+   example, COMPAQ supplies "COMFIFO.EXE" (c) for their "Contura Aero (c)"
+   Laptop series.  Consult your manufacturer's literature and/or THEIR
+   Customer Service.
+
+   Motorola LMPS Product Services can supply a utility called COMMCHEK.EXE
+   which can report/change the FIFO state if the UART(s) are 16550 or
+   compatible.
+
+
+   ==================================================================
+   ==================================================================
+   SECTION (2)
+
+   Multiple DOS Configurations (Multiple CONFIG.SYS / AUTOEXEC.BAT files)
+   ==================================================================
+
+   It may be that you will need to keep more than one set of CONFIG.SYS and
+   AUTOEXEC.BAT files, switching to one set for a specific applications'
+   use, then switching to another set for use with RSS programs. A sample
+   "batch" file, SWITCH.BAT, is shown below, and can be used to quickly
+   switch to a desired pair of CONFIG/AUTOEXEC files:
+
+   e.g. '\SWITCH RSS' switches to the RSS pair of configuration files, then
+   the PC is re-booted with CTL-ALT-DEL.
+
+       @echo OFF
+       echo   -SWITCH-    autoexec + config   to  %1
+       if %1- == rss-  GOTO DO_RSS
+       if %1- == act-  GOTO DO_ACT
+       echo ERROR !!   arg1 value -NOT- equal to;
+       echo   rss      Motorola Radio Service Software
+       echo   act      For Accounting/Payroll Applications
+       GOTO   END
+
+       :DO_RSS
+       copy   C:\autoexec.RSS   C:\*.bat
+       copy   C:\config.RSS     C:\*.sys
+       echo   READY FOR --RSS--
+       GOTO   END
+
+       :DO_ACT
+       copy   C:\autoexec.ACT   C:\*.bat
+       copy   C:\config.ACT     C:\*.sys
+       echo   READY FOR --ACCOUNTING--
+       GOTO   END
+
+       rem    additional applications can be added....
+
+       :END
+       echo   READY FOR -- SYSTEM RE-BOOT --
+       echo   END of -SWITCH-
+
+   A more general (and cryptic) method is the following non-specific
+   version which would accept any 3-letter file suffix, but requires
+   that all users remember which file pair is for a specific
+   application:
+
+       @echo   off
+       echo    SWITCH_2
+       echo    Arg_1 = %1
+
+       if %1- == - goto ERROR
+       if NOT EXIST    autoexec.%1   goto ERROR_2
+       if NOT EXIST    config.%1     goto ERROR_2
+       goto DOIT
+
+       :ERROR
+       echo ERROR: NEEDS -3- letter suffix argument as Arg1
+       goto END
+
+       :ERROR_2
+       echo ERROR: CANNOT find autoexec/config  - .%1 -
+       goto END
+
+       :DOIT
+       echo    copy C:\autoexec.%1   c:\autoexec.BAT
+       copy    C:\autoexec.%1   c:\autoexec.BAT
+       echo    copy C:\config.%1     c:\config.SYS
+       copy    C:\CONFIG.%1     c:\config.SYS
+
+       :END
+       echo    READY FOR -- SYSTEM RE-BOOT --
+       echo    END of SWITCH_2
+
+   Advanced Users may wish to consult DOS 6.xx "HELP MULTI-CONFIG" for
+   information on using MENU commands within a single CONFIG.SYS and
+   AUTOEXEC.BAT pair, which allows different DOS configurations by
+   user's choice from a menu, at boot-up time.
+
+
+       REM    WINDOWS 3.1 / DOS   MENU CONFIG.SYS
+
+       [menu]
+       menuitem=WIN_31, Windows-3.1
+       menuitem=DOS,    MS-DOS 6.22
+       menudefault=WIN_31
+
+       [WIN_31]
+       Device=C:\WINDOWS\HIMEM.SYS /V /TESTMEM:OFF
+       Device=C:\WINDOWS\EMM386.EXE RAM 64
+
+       [DOS]
+       Device=C:\DOS\HIMEM.SYS /V /TESTMEM:OFF
+       Device=C:\DOS\EMM386.EXE RAM 64
+
+       [common]
+       DOS=HIGH,UMB
+       STACKS=9,512
+       LASTDRIVE=E
+       DeviceHIGH=C:\MOUSE\LMOUSE.COM
+
+       --------------------------------------------
+
+       @ECHO   OFF
+       REM     Windows-3.1 -or- DOS 6.22 --- MENU AUTOEXEC.BAT
+
+       prompt  $P$G
+       SET     TEMP=C:\temp
+       SET     TMP=C:\temp
+       SET     COPYCMD=/Y
+
+       rem CONFIG.SYS sets -menu- Value in DOS ENV. Var. "CONFIG"
+       GOTO    %CONFIG%
+
+       :WIN_31
+       SET     PATH=C:\WINDOWS;C:\WINDOWS\SYSTEM;.;C:\dos;C:\utils;
+       goto    END
+
+       :DOS
+       SET     PATH=.;C:\dos;C:\utils;
+       goto    END
+
+       :END
+       DOSKEY
+
+
+   ==================================================================
+   ==================================================================
+   SECTION (3)
+
+   Attempting to Execute RSS Under WINDOWS    [*]=(tm) Microsoft Corp
+   ==================================================================
+
+   The original PC/DOS design is based on the assumptions of:
+       1)  Single User.
+       2)  Single Application/Task active at one time.
+       3)  Direct access to hardware by Application software.
+
+   Communications applications, such as the RSS, rely on these
+   assumptions to give them the priority (no multi-user, multi-tasking
+   interference) and speed (direct hardware access) to maintain the
+   critical timing needed to sustain a communications protocol.
+
+   Windows (and many networked environments) must assume:
+       1)  Multiple Users possible (e.g. networking).
+       2)  Multiple Tasks "Active" at same time. (multi-tasking)
+       3)  Direct access to hardware by applications not allowed.
+
+   We cannot guaruntee successful operation of any RSS under Microsoft
+   Windows[*].  Windows will not allow programs direct access to the
+   Comm. Port and Timer hardware; these functions are emulated by
+   Windows, hence they are slower than under DOS, and this could
+   interfere with critical communications timing.  Higher-speed CPUs/PCs
+   (80486+ at 66 MHz and above) have the best chance of success.
+
+   Any setup for RSS within Windows 3.1 [*] or Windows 95 [*] should be
+   done in the DOS FULL-SCREEN Mode, as opposed to the DOS WINDOW Mode.
+   Communications programs (i.e. RSS Reading / Writing the Radio
+   Codeplug) cannot be executed successfully in WINDOW "background"
+   mode, and the WINDOW "foreground" mode may not sufficiently support
+   the critical timing needed to consistently communicate with the
+   RIB/Radio. FULL-SCREEN Mode gives higher priority (speed) to the RSS
+   than the DOS WINDOW Mode.
+
+    For Windows 3.1, use the PIF EDITOR to open the DOSPRMPT.PIF file.
+       Set "Display Usage" to FULL SCREEN and "Execution" to EXCLUSIVE.
+       Under "ADVANCED", set "Foreground Priority" to 10,000, and set the
+           "Detect Idle Time" box OFF.  SAVE the file before using the
+           "MS-DOS PROMPT" icon.
+
+    For Windows 95, create an icon/shortcut.  Under PROPERTIES:
+       Select PROGRAM Sheet;
+           set "CLOSE ON EXIT" box TRUE.
+       Under "ADVANCED";
+           set "PREVENT PROGRAM FROM DETECTING WINDOWS" to TRUE.
+           set "SUGGEST MS-DOS MODE" to FALSE.
+           set "MS-DOS MODE" to FALSE.
+       Select SCREEN Sheet;
+           set "USAGE" to FULL SCREEN.
+       Select MISC Sheet;
+           set "ALLOW SCREENSAVER" to FALSE.
+           set "IDLE SENSITIVITY" to LOW.
+
+   If the above does not allow the RSS to function properly, then;
+       a) EXIT Windows 3.1 and use normal DOS.
+       b) Set Windows 95 PROGRAM/ADVANCED Sheet to "MS-DOS Mode".
+
+
+   ==================================================================
+   ==================================================================
+   SECTION (4)
+
+   CAUTIONS When Using FLOPPY DISKETTES for Archiving Codeplugs
+   ==================================================================
+
+   If you are using FLOPPY DISKETTES for archiving your codeplug files,
+   please keep the following in mind;
+
+   A)  Due to ambiguities in the (extended) error codes returned to an
+   RSS from DOS/BIOS (See "DOS Extended Error Codes" below), the RSS
+   cannot always properly report the precise nature of an error while
+   reading/writing disk files.
+
+   One example is using an UN-FORMATTED Floppy Diskette.  The DOS error
+   code returned is "31", "GENERAL FAILURE" (type unknown).  This type
+   of failure usually is interpreted by the RSS as an "immediate exit"
+   situation, because the error could be from other resources, such as
+   your -fixed- disk, and continuing could jeapordize your system/data.
+
+   B)  Due to (A) above, you should ensure that -all- your diskettes are NEW
+   and PROPERLY FORMATTED prior to using them for codeplug archives.
+
+   C)  Floppy diskettes and -drives- are exposed to DIRT and MOISTURE.  Keep
+   your diskettes in their sleeves and away from contaminants. Clean your
+   -drives- periodically with commercially-available cleaning kits.
+
+   D)  You should check the condition of your floppy diskettes PERIODICALLY,
+   by running DOS "CHKDSK (A: -or- B:)" or (DOS 6.x) "SCANDISK (A: -or- B:)".
+   If these DOS programs detect problems, even if "corrected", we recommend
+   copying that diskette to a NEWLY FORMATTED diskette before continuing,
+   and using the NEW diskette for future archiving.
+
+   If problems persist, the diskette may be defective, -or- your -drive-
+   may need cleaning or repair.
+
+   E)  Using a floppy diskette that is ALMOST FULL can cause problems,
+   such as not leaving enough room for renamed backups (the old version
+   stays and the new version is added), not enough room for the next RSS
+   database entry (into the *.DBF file), etc.  After each RSS session,
+   perform a DOS "DIR (A:  -or- B:)"; the last entry of the report tells
+   how many bytes are "free" on the diskette.  We recommend leaving at
+   least 10,000 bytes free at all times.
+
+   F)  An alternative to floppy diskettes is re-organizing the archive
+   system on your -FIXED- disk.  The RSS allows multiple CODEPLUG or
+   ARCHIVE subdirectories, under unique names, such that each sub-dir. can
+   be organized by model number, customer, department, etc.  Create the
+   sub-dirs. via DOS "mkdir -name-" command.  Then access each sub-dir.
+   from the RSS using the "(F2) Change Archive" on the GET or SAVE screen.
+
+   This offers the advantages of greater speed in finding files and in
+   reading / writing files, much quicker access to various archives
+   without changing diskettes, and higher limits on how many files can
+   be in a single archive.
+
+   These archives need periodic BACKUP to floppy diskettes (or -tapes-).
+   Make sure you save -all- files in the archive sub-dir., to include some
+   RSS "database" files (*.DBF).  Large sets of archive files can be backed
+   up to floppy diskettes via "compression" programs that create "*.zip"
+   files.  !! CAUTION !! The first file you should save to a compressed
+   backup diskette is the version-matching "uncompress/unzip" program file.
+
+
+   ==================================================================
+   ==================================================================
+   SECTION (5)
+
+   "Sorting" Codeplug-File Directory Entries, for Faster Finding
+   ==================================================================
+
+   Many RSS programs were not designed to "sort" the file entries in a
+   codeplug archive into an "ascending" number order, by serial number.
+   Quickly finding a particular serial number from 100+ entries can be a
+   problem. There are utilities available that can sort directory entries
+   into ascending number order, making it easier to find particular serial
+   numbers.
+
+   One such utility is Peter Norton's (c) "DS" (Directory Sort, Version
+   4.50).  It will read directory entries, sort them by several
+   different user-chosen orders, and re-write the directory entries
+   permanently in the new order.
+
+   Another method is the DOS Version 6.x "DEFRAG" command, similar to
+   Peter Norton's (c) "SPEEDISK" (Version 5.0);  both offer an option to
+   sort files into ascending order while de-fragmenting your disk files.
+
+   All of the above (and others) can be used on both -fixed- and -floppy-
+   disk archive directories.  Please read the appropriate documents carefully.
+
+   !! CAUTION !! Always backup your disk(ette) -prior- to first use of
+   these utilities.
+
+   NOTE !! These utilities will -not- change the order of files
+   displayed with any RSS that requires a *.DBF file in the Archive
+   sub-directory.  E.g. MaxTrac Conventional RSS always requires that a
+   file "MAXTRACM.DBF" be present in any sub-directory that contains
+   "valid" archive files.  The order of files displayed is determined by
+   the order in which the files were saved and entered into the *.DBF file.
+
+
+   ==================================================================
+   ==================================================================
+   SECTION (6)
+
+   DOS Extended Error Codes
+   ==================================================================
+
+   The RSS Program is an application program that must use the PC's DOS
+   (Disk Operating System) and BIOS Interfaces for access to computer
+   resources such as memory, disk drives, disk files, printers,
+   communication ports (e.g.  COM1), etc.
+
+   If the RSS performs an operation on a resource, and DOS/BIOS detects an
+   error, DOS will return an error code to the RSS.  This will most
+   often (but not always) be reported in the form;
+
+       Error Code          - nn    Gives Specific Error Information
+       Error Class         - xx    Gives General Situation Information
+       Locus               - yy    Gives General Source (Device) of Error
+       Recommended Action  - zz    Gives Recommended (Recovery) Action
+
+   In some cases, only the Error Code is shown.
+
+   To aid users in resolving problems with computer resources, the
+   following list of DOS Error Codes is given.  These Codes are commonly
+   documented elsewhere as "DOS Extended Error Codes", under INT 59(hex)
+   "GET EXTENDED ERROR INFORMATION".  Also shown are the CLASS and LOCUS
+   Codes.
+
+   The ACTION Codes are not shown.  The RSS has limited options to take
+   any system-level "recovery action" without jeapordizing your data or
+   your system. Some Codes are ambiguous.  Each new version of DOS can
+   expand the number of defined Error Codes and/or expand the current
+   definitions.  Also, various VERSIONS of DOS/BIOS can return different
+   Codes, depending on their implementation.  E.g., a common return for
+   attempting access to an un-formatted floppy disk is (CODE-CLASS-LOCUS)
+   31-13-2 "GENERAL FAILURE",  not the possible  11-9-2  or  26-11-2.
+
+   No representation is made that this list is complete or accurate.  Further
+   information on the codes and terms shown below can be found in
+   commonly-available DOS references.  Using the three Codes together may
+   help you to find/correct any resource problems you are having.
+
+   The Codes are shown as DECIMAL values.
+
+   DOS EXTENDED ERROR CODES:
+   =========================
+   001 -   Invalid Function Number
+   002 -   File Not Found
+   003 -   (Dir/File) Path Not Found
+   004 -   No (File) Handles Available (Too Many Files Open)
+   005 -   Access Denied (e.g. Attempt to Write a Read-Only File)
+   006 -   Invalid (File) Handle
+   007 -   Memory Control Blocks Destroyed
+   008 -   Insufficient (Not Enough) Memory
+   009 -   Invalid Memory Block Address
+   010 -   Invalid Environment Block
+
+   011 -   Invalid Format
+   012 -   Invalid (File) Access Code
+   013 -   Invalid Data
+   014 -   (RESERVED)
+   015 -   Invalid (Disk) Drive (Specification)
+   016 -   Attempt To Remove Current Directory
+   017 -   Not The Same Device
+   018 -   No More Files
+   019 -   Disk Is Write Protected
+   020 -   Unknown Disk Unit ID
+
+   021 -   (Disk) Drive Not Ready
+   022 -   Unknown Disk Command
+   023 -   CRC Error (Disk File Data Error)
+   024 -   Bad Disk Request Structure Length
+   025 -   (Disk) Seek Error
+   026 -   Unknown Media Type (e.g. Non-DOS Disk)
+   027 -   (Disk) Sector Not Found
+   028 -   (Printer) Out Of Paper
+   029 -   Write Fault/Error
+   030 -   Read  Fault/Error
+
+   031 -   General Failure (Exact Nature UNKNOWN)
+   032 -   (File) Sharing Violation (e.g. DOS "SHARE")
+   033 -   (File) Locking Violation
+   034 -   Invalid Disk Change
+   035 -   (File) FCB Unavailable
+   036 -   Sharing Buffer Overflow
+   037 -   (RESERVED)
+   038 -   Unable To Complete (Disk) File Operation
+   039 -   (RESERVED)
+   :::
+   049 -   (RESERVED)
+
+   050 -   Network Request Not Supported
+   051 -   Remote Computer Not Listening
+   052 -   Duplicate Name On Network
+   053 -   Network Name Not Found
+   054 -   Network Busy
+   055 -   Network Device No Longer Exists
+   056 -   Net BIOS Command Limit Exceeded
+   057 -   Network Adapter (Hardware) Error
+   058 -   Incorrect Network Response
+   059 -   Unexpected Network Error
+   060 -   Incompatible Remote Adapter
+
+   061 -   Print Queue Full
+   062 -   Not Enough Space For Print File
+   063 -   Print File Deleted
+   064 -   Network Name Deleted
+   065 -   Access Denied
+   066 -   Network Device Type Incorrect
+   067 -   Network Name Not Found
+   068 -   Network Name Limit Exceeded
+   069 -   Net BIOS Session Limit Exceeded
+   070 -   (Sharing) Temporarily Paused
+
+   071 -   Network Request Not Accepted
+   072 -   Print or Disk Redirection Is Paused
+   073 -   (RESERVED)
+   :::
+   079 -   (RESERVED)
+
+   080 -   File Already Exists
+   081 -   (RESERVED)
+   082 -   Cannot Make Directory Entry
+   083 -   Fail On INT 24 (Critical Error Interrupt)
+   084 -   Too Many Redirections (Out Of Network Structures)
+   085 -   Duplicate Redirection (Network Device Already Assigned)
+   086 -   Invalid Password
+   087 -   Invalid Parameter
+   088 -   Network Data Fault
+   089 -   Function Not Supported By Network
+   090 -   Required System Component Not Installed
+
+   DOS ERROR CLASS CODES:
+   ======================
+   01  -   Out Of Resource; No More Left Of Whatever You Asked For
+   02  -   Temporary Situation (e.g. Locked File); Try Again Later
+   03  -   Authorization (Access Rights - Permissions)
+   04  -   Internal DOS Error (Not User/Application);     CAUTION, SERIOUS !!
+   05  -   Hardware Failure (Whatever Resource You Are Accessing). SERIOUS !!
+   06  -   System Software Failure; Other DOS Problems;   CAUTION, SERIOUS !!
+   07  -   Application Program (Software) Error
+   08  -   Item (Resource) Requested Not Found
+   09  -   Bad (Disk) Format ( e.g. Non-DOS Disk )
+   10  -   Item (e.g. File) Locked
+   11  -   Bad Media (e.g. Disk Sees CRC Errors On File Read, File Corrupted)
+   12  -   Already Exists
+   13  -   Error Class Is UNKNOWN
+
+   DOS LOCUS CODES:
+   ================
+   01  -   Locus is UNKNOWN
+   02  -   Block  (Data Transfer) Device (e.g. Disk Drive/RAM Disk Emulator)
+   03  -   Network Device/Resource/Operation
+   04  -   Serial (Data Transfer) Device (e.g. Comm. Port (COM1), Printer)
+   05  -   Memory Related

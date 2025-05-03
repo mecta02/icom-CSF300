@@ -1,0 +1,527 @@
+
+
+
+
+
+			    CE2 Programming Manual
+				  Version 2.1
+
+
+         The CE2 (Clone/Editor 2) is used to program the FTH-x008 and
+    FTH-x009 series radios.  The radio is connected to the computer by
+    using the FRB-2 programming interface box, or the VPL-1 and appro-
+    priate cable.  To start the program, type the following at the DOS
+    prompt:
+
+	 C:>CE2
+
+	 The program will display the version number and frequency ranges
+    for different model of radio then goes to main channel data screen.
+
+	 The main channel data screen will allow you to enter all of the
+    channel and tone data as well as set some of the programmable options
+    like CTCSS, Time Out Timer, etc.  You can also access all of the other
+    functions from the main screen by pressing one of the 'F' keys:
+
+	 F1:  On-line help
+	 F2:  Common Data/Hardware Setup
+	 F3:  Load a file from disk
+	 F4:  Save a file to disk
+	 F5:  Read data from a radio
+	 F6:  Send data to a radio
+	 F7:  Print out configuration
+	 F8:  Return to DOS
+	 F9:  Change radio type/model
+
+	 The program starts with the default setting for FTH-2008.  To
+    change the radio type (VHF/UHF, x009 series) use the F9 key and select
+    the radio type.  Changing types will erase any previous data on the
+    screen.  When changing between x008 series radios and x009 series, the
+    data entry screens will change to reflect the different features
+    available for each radio.
+
+	 Two information boxes appear at the top of the screen.  The left
+    box contains information about the common data and radio configuration.
+    The box on the right contains key help information for data entry such
+    as which keys to use and the upper and lower limits for data.
+
+
+				 FTH-2008/7008
+
+	 Before programming the channel data, make sure that the COMMON
+    DATA and ENVIRONMENT settings are correct. The following items can be
+    entered from the channel data menu:
+
+    PRIORITY CHANNEL-One channel can be enabled as a priority; use the
+    <SPACE> bar to select.
+
+
+
+				       1
+
+
+
+
+
+
+
+
+
+
+
+    CHANNEL NUMBER-This is the number that is displayed on the LCD front
+    panel.  Any number can be entered between 00-99 in any order.  If left
+    blank (--) the physical channel # (1-14) will be displayed by default.
+
+    RX FREQ-Enter any frequency within the selected range (134-174 for VHF
+    400-512 for UHF) and channel spacing.  Pressing the <SPACE> bar will
+    toggle the "channel lock" on or off; if locked, the channel data will
+    not be displayed or accessed by the user, but will still be downloaded.
+
+    CTCSS DECODE-Press <ENTER> to select the tone frequency from the CTCSS
+    table, or press the <SPACE> bar to toggle CTCSS decode on/off.
+
+    BCLO-Press the <SPACE> bar to toggle between Busy Tone Lock Out, Busy
+    Carrier Lock Out, and None.  BTLO will inhibit the transmitter if
+    carrier is detected but the correct tone is not decoded.  BCLO will
+    inhibit the transmitter anytime carrier is detected.
+
+    SCAN-Press the <SPACE> bar to change the scan list selection for this
+    channel.
+
+    POWER SAVE-Press the <SPACE> bar to toggle battery saver on/off.  The
+    on/off times can be altered under COMMON DATA.
+
+    TX FREQ-Enter any frequency within the selected range (134-174 for VHF
+    400-512 for UHF) and channel spacing.  Pressing the <SPACE> bar will
+    toggle the channel between receive only and TX/RX.
+
+    CTCSS ENCODE-Press <ENTER> to select the tone frequency from the CTCSS
+    table, or press the <SPACE> bar to toggle CTCSS encode on/off.
+
+    TX POWER-Press the <SPACE> bar to toggle the channel between low power
+    only, or HI/LO power (selectable by the user).
+
+    TX TIMER-Press the <SPACE> bar to toggle the TX Time Out Timer on/off.
+    The timer duration is set under COMMON DATA.
+
+    COMMON DATA
+
+    Pressing <F2> will allow you to view/edit the radio common data.  All
+    of the selections are altered using the <SPACE> bar.  The following
+    items can be accessed from this menu:
+
+    1.   Channel scan enable or disable.
+
+    2.   Priority key enable or disable.
+
+    3.   Power on Priority enable disable (whether priority scan is in
+	 effect at radio power on).
+
+    4.   Scan resume time; select either 5 Sec or CARRIER.  If set to
+	 CARRIER, scan will resume 2 Sec after carrier drops.  If set to 5
+	 Sec, scan will pause only for that time, then resume regardless of
+	 activity.
+
+				       2
+
+
+
+
+
+
+
+
+
+
+
+    5.   PTT during scan; select either PAUSE or PAUSE & TX.  If set to
+	 pause, you will have to press PTT twice in order to transmit when
+	 the radio has stopped on a busy channel.  If set to PAUSE & TX,
+	 pressing PTT wil transmit on the first press (if the radio has
+	 already stopped on a busy channel.  In either case, you will
+	 have to press PTT twice in order to transmit if the radio has not
+	 stopped scanning on a busy channel.
+
+	 If during active scan the PTT is pressed and a priority channel is
+	 tagged, the radio will revert to that channel and pause as above.
+	 If no priority channel is selected, the radio will pause on any
+	 random channel in the scan list.
+
+    6.   TX Time Out; select either enabled or disabled.
+
+    7.   TX Time Out Time; select either 30 Sec, 1 min, 2 min, or 3 min.
+
+    8.   Time Out Resume is the amount of penalty time that must expire
+	 before the user can transmit again if they have exceeded the TOT.
+	 Select either 0, 6, 20, or 60 Sec.
+
+    9.   TX Carrier Delay can be enabled or disabled;  if enabled, the
+	 CTCSS option is installed, releasing the PTT button will cause the
+	 radio to continue to transmit for 400 mSec without tone to elimin-
+	 ate the squelch tail on the receiving end.
+
+   10.   Power Save: determines how often the radio goes into the low power
+	 standby mode.  Range is 300 mSec to 4.5 Sec in 300 mSec increments
+	 To select the duration of the "wake up" time, see the next section
+	 under ENVIRONMENT.
+
+   11.   Key Beep can be enabled or disabled.
+
+   12.   Reset/Mon Key can be programmed for momentary or toggle.  If set
+	 for momentary, the radio will only be in monitor for as long as
+	 the button is held.
+
+	 Press <ESC> to return to the main channel menu.
+
+    SERIAL PORT
+
+    Pressing <F4> in the COMMON DATA screen will allow you to change serial
+    port if computer has more than one serial port.
+
+    ENVIRONMENT
+
+    The following items can be accessed  by pressing <F2> while in the
+    COMMON DATA menu.  The first 4 items can only be accessed if the
+    program is started with the -P option (C:> CE2 -P).  Changing any of
+    these 4 items requires hardware modifications to the  radio and should
+    not be altered from their default settings under normal conditions.
+    Use the <SPACE> bar to toggle all of the ENVIRONMENT settings.
+
+
+				       3
+
+
+
+
+
+
+
+
+
+
+
+    1.   PLL IC type: select MC145156 (default) or MB87076.
+
+    2.   Prescalar: select 1/64 (default) or 1/128.
+
+    3.   Channel step; select 5, 6.25, 10 or 12.5 kHz.  Default depends on
+	 radio type.
+
+    4.   1st IF Freq; Enter 00.00 to 99.99.  Default depends on radio type.
+
+    5.   Local Osc Offset; select either higher or lower.  Default depends
+	 on radio type.  If changed from default to eliminate image
+	 problems, radio will need retuning and possible modification.  It
+	 is not recommended to alter this setting in the field.
+
+    6.   Default split is applied to the receive frequency to automatically
+	 calculate the transmit frequency.  This setting does not affect
+	 the operation of the radio.
+
+    7.   Power Save time; select 30 or 300 mSec.  This will determine how
+         long the radio is "awake" during the power save mode to check for
+         activity.
+
+    8.   Scan Speed; select 50, 150, 200 or 250 mSec/channel.
+
+    9.   LCD display can be enabled or disabled.
+
+	 To return to the COMMON DATA menu press <ESC>
+
+    LOAD A FILE FROM DISK
+
+	 To load a previously saved configuration from disk, press <F3>
+    from the main channel menu.  A list of the current directory appears
+    with all files that end in the ".CH" extension.  To change directories,
+    or to search for other file extensions, enter the new path from the
+    keyboard and press <ENTER> and a new list should appear.
+
+	 To select the desired file, use the arrow keys, or type the full
+    name plus extension and press <ENTER>.  The file must be of the correct
+    type (UHF/VHF/x008/x009, etc.) or you will get an error message.
+
+
+    SAVE A FILE TO DISK
+
+	 To save a configuration to disk, press <F4> from the main channel
+    menu.  A list of the current directory appears with all files that end
+    in the ".CH" extension.  To change directories, or to search for other
+    file extensions, enter the new path from the keyboard and press <ENTER>
+    and a new list should appear.  Enter the name and extension and press
+    <ENTER> to save the file (file name and ext must be valid DOS types).
+
+	 To save a configuration as a previously saved file, select the
+    desired file using the arrow keys, or type the full name plus extension
+    and press <ENTER>.  You will be prompted before overwriting an existing
+    file.
+				       4
+
+
+
+
+
+
+
+
+
+
+
+    READ A CONFIGURATION FROM THE RADIO
+
+	 Before any data can be read from the radio, it must be put into
+    the clone mode.  Remove the rubber boot covering the PTT button and
+    move the small slide switch into the down position.  Insert the cloning
+    cable into the mic jack and turn the radio on.  The LCD display should
+    show a partial frequency.  The radio is now ready to send data.
+
+         Press <F5> from the main channel menu and press the <SPACE> bar.
+    Press the radio's PTT button to begin uploading.  The computer screen
+    will indicate when reading is complete.
+
+         The computer will prompt you to save the previously displayed
+    channel information before overwriting the newly uploaded data to the
+    screen.  If you wish to save the data, answer "Y" and enter a file name
+    as above.
+
+	 Be sure to restore the slide switch to the up position before
+    putting the radio into service.
+
+    PROGRAM A CONFIGURATION INTO THE RADIO
+
+         Before any data can be sent to the radio, it must be put into the
+    clone mode.  Remove the rubber boot covering the PTT button and move
+    the small slide switch into the down position.  Insert the cloning cable
+    into the mic jack and turn the radio on.  The LCD display should show a
+    partial frequency.  The radio is now ready to accept data.
+
+         Press <F6> from the main channel menu and press the <SPACE> bar.
+    Press the radio's MON button, then the <SPACE> bar to begin sending.
+    The computer screen will indicate when the download is complete.
+
+	 Be sure to restore the slide switch to the up position before
+    putting the radio into service.
+
+    PRINTING
+
+	 Press <F7> from the main channel menu to print the configuration.
+    The computer will prompt you to ready the printer and press "Y" to
+    continue or any other key to abort.
+
+    QUIT to DOS
+
+         Press <F8> from the main channel menu to quit CE2 and return to
+    DOS.  Computer will ask you to confirm.
+
+    RADIO TYPE
+
+         Four types of radios can be programmed using the CE2 software:
+    FTH-2008, FTH-7008, FTH-2009, and FTH-7009.  Press <F9> from the main
+    channel menu to bring up the radio type menu.  Use the up/down arrow
+    keys and the <SPACE> bar to select.  Changing radio types will erase
+    all previous data.  Press <ESC> to return to the main menu.
+
+				       5
+
+
+
+
+
+
+
+
+
+
+
+				 FTH-2009/7009
+
+
+	 Before programming the channel data, make sure that the ENVIRON-
+    MENT settings are correct.  The following items can be entered from the
+    channel data menu:
+
+    RX FREQ-Enter any frequency within the selected range (134-174 for VHF
+    400-512 for UHF) and channel spacing.  Pressing the <SPACE> bar will
+    toggle the "channel lock" on or off; if locked, the channel data will
+    not be accessed by the user, but will still be downloaded.
+
+    CTCSS DECODE-Press <ENTER> to select the tone frequency from the CTCSS
+    table, or press the <SPACE> bar to toggle CTCSS decode on/off.
+
+    TX FREQ-Enter any frequency within the selected range (134-174 for VHF
+    400-512 for UHF) and channel spacing.  Pressing the <SPACE> bar will
+    toggle the channel between receive only and TX/RX.
+
+    CTCSS ENCODE-Press <ENTER> to select the tone frequency from the CTCSS
+    table, or press the <SPACE> bar to toggle CTCSS encode on/off.
+
+    ENVIRONMENT
+
+    The following items can be accessed  by pressing <F2> while at the
+    main channel menu.  The first 4 items can only be accessed if the
+    program is started with the -P option (C:> CE2 -P).  Changing any of
+    these 4 items requires hardware modifications to the radio and should
+    not be altered from their default settings under normal conditions.
+    Use the <SPACE> bar to toggle all of the ENVIRONMENT settings.
+
+    1.   PLL IC type: select MC145156 (default) or MB87076.
+
+    2.   Prescalar: select 1/64 (default) or 1/128.
+
+    3.   Channel step: select 5, 6.25, 10 or 12.5 kHz. Default depends on
+	 radio type.
+
+    4.   1st IF Freq: Enter 00.00 to 99.99.  Default depends on radio type.
+
+    5.   Local Osc Offset: select either higher or lower.  Default depends
+	 on radio type.  If changed from default to eliminate image
+	 problems, radio will need retuning and possible modification.  It
+	 is not recommended to alter this setting in the field.
+
+    6.   Default split is applied to the receive frequency to automatically
+	 calculate the transmit frequency.  This setting does not affect
+	 the operation of the radio.
+
+    SERIAL PORT
+
+    Pressing <F4> in the ENVIRONMENT screen will allow you to change serial
+    port if computer has more than one serial port.
+
+				       6
+
+
+
+
+
+
+
+
+
+
+
+    LOAD A FILE FROM DISK
+
+	 To load a previously saved configuration from disk, press <F3>
+    from the main channel menu.  A list of the current directory appears
+    with all files that end in the ".CH" extension.  To change directories,
+    or to search for other file extensions, enter the new path from the
+    keyboard and press <ENTER> and a new list should appear.
+
+         To select the desired file, use the arrow keys, or type the full
+    name plus extension and press <ENTER>.  The file must be of the correct
+    type (UHF/VHF/x008/x009, etc.) or you will get an error message.
+
+
+    SAVE A FILE TO DISK
+
+         To save a configuration to disk, press <F4> from the main channel
+    menu.  A list of the current directory appears with all files that end
+    in the ".CH" extension.  To change directories, or to search for other
+    file extensions, enter the new path from the keyboard and press <ENTER>
+    and a new list should appear.  Enter the name and extension and press
+    <ENTER> to save the file (file name and ext must be valid DOS types).
+
+         To save a configuration as a previously saved file, select the
+    desired file using the arrow keys, or type the full name plus extension
+    and press <ENTER>.  You will be prompted before overwriting an existing
+    file.
+
+
+    READ A CONFIGURATION FROM THE RADIO
+
+         Before any data can be read from the radio, it must be put into
+    the clone mode.  Insert the cloning cable into the mic jack and select
+    channel 6; press and hold the PTT lever while turning the radio on.
+    While holding the PTT lever, switch the radio to channel 1.  Release
+    the PTT lever; the radio should beep to indicate programming mode.
+
+	 Press <F5> from the main channel menu and press the <SPACE> bar
+    to begin uploading.  The computer screen will indicate when reading is
+    complete.
+
+	 The computer will prompt you to save the previously displayed
+    channel information before overwriting the newly uploaded data to the
+    screen.  If you wish to save the data, answer "Y" and enter a file name
+    as above.
+
+
+    PROGRAM A CONFIGURATION INTO THE RADIO
+
+	 Before any data can be sent to the radio, it must be put into the
+    clone mode. Insert the cloning cable into the mic jack and select
+    channel 6; press and hold the PTT lever while turning the radio on.
+    While holding the PTT lever, switch the radio to channel 1.  Release
+    the PTT lever; the radio should beep to indicate programming mode.
+
+				       7
+
+
+
+
+
+
+
+
+
+
+
+	 Press <F6> from the main channel menu and press the <SPACE> bar
+    to begin sending data to the radio.  The computer screen will indicate
+    when the download is complete and the radio will beep to confirm data
+    transfer.
+
+
+    PRINTING
+
+	 Press <F7> from the main channel menu to print the configuration.
+    The computer will prompt you to ready the printer and press "Y" to
+    continue or any other key to abort.
+
+
+    QUIT to DOS
+
+	 Press <F8> from the main channel menu to quit CE2 and return to
+    DOS.  Computer will ask you to confirm.
+
+
+    RADIO TYPE
+
+	 Four types of radios can be programmed using the CE2 software:
+    FTH-2008, FTH-7008, FTH-2009, and FTH-7009.  Press <F9> from the main
+    channel menu to bring up the radio type menu.  Use the up/down arrow
+    keys and the <SPACE> bar to select.  Changing radio types will erase
+    all previous data.  Press <ESC> to return to the main menu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       8
+
+
+
+
+

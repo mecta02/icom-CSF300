@@ -1,0 +1,799 @@
+\1
+   CE11 OVERVIEW
+
+   This software is used to program configuration and
+   channel data to the Vertex FTL-8011 trunking radio.
+
+   On-line help is available by pressing F1 at any of
+   the main menu entry fields, or on any of the submenus.
+
+   CE11 Features
+
+	. Mouse support.  Please ensure that your mouse
+	  driver is installed correctly.
+	
+	. The status bar along the bottom of the screen
+	  contains information such as function of the
+	  F keys, short help explanations, action keys or
+	  ranges of data entry.
+
+	. Many of the hardware parameters are initialized
+	  to default values.  Make changes to these items
+	  only for custom applications.
+
+\2
+   OPEN FILE
+
+   This menu item allows one to open existing files with
+   information of FTL-8011 configurations.
+
+   <Path>      Use the mouse or press <ALT>-P to select
+		 the <Path> window.  Specify the directory
+		 path of which you wish to retrieve the
+		 file.
+
+   <Name>      Use the mouse or press <ALT>-N to select
+		 the <Name> window.  Provide a search
+		 pattern using wildcards <*> to obtain a
+		 set of files you wish to select.  The
+		 default search string is "*.VTX".
+
+		 Optionally, you can enter the exact file
+		 name you wish to open and press <ENTER>
+		 to open the file.
+
+   <Files - #> Use the mouse or press <ALT>-F to select
+		 the <Files> window.  This window lists all
+		 subdirectories (indicated by a square
+		 prefix) and files under the directory path
+		 which match the search pattern.  The #
+		 indicates the number of files that match
+		 the search string.
+
+		 Use the Up/Down keys to select the
+		 subdirectory/file you wish to open, and
+		 press <ENTER>.  If you wish to cancel
+		 opening the file, press <ESC>.
+
+\3
+   SAVE FILE
+
+   This menu item allows one to save the configuration
+   information displayed on screen.
+
+   <Path>      Use the mouse or press <ALT>-P to select
+		 the <Path> window.  Specify the directory
+		 path of which you wish to save the
+		 file.
+
+   <Files - #> Use the mouse or press <ALT>-F to select
+		 the <Files> window.  This window lists all
+		 subdirectories (indicated by a square
+		 prefix) and files under the directory path
+		 which match the search pattern.  Use the
+		 Up/Down keys to select the subdirectory/
+		 file you wish to save the configuration
+		 in, and press <ENTER>.  Press <ESC> to
+		 cancel.
+
+   <Name>      Use the mouse or press <ALT>-N to select
+		 the <Name> window.  Enter the file name
+		 you wish to save the configuration in and
+		 press <ENTER>.  Press <ESC> to cancel.
+\4
+   PRINT
+
+   Choosing this submenu item prints a hard copy of the
+   configuration data presently displayed on screen.
+
+   Make sure that the printer port is set correctly by
+   specifying the correct port in the CONFIGURE submenu.
+
+\5
+   CONFIGURE
+
+   Color/monochrome display can be chosen in this
+   submenu.  Communication ports to interface the radio,
+   and printer ports to print configuration data can
+   also be set.
+
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\6
+   EXIT
+
+   This command terminates the program.  Make sure to
+   save any necessary configuration data prior to
+   exiting the program.
+
+\7
+   SYSTEM PARAMETERS
+
+   These parameters are used to configure the radio with
+   system-related data.  Menus to program parameters such
+   as trunking/conventional setting, system alpha tag,
+   system scan options, and pre-stored telephone numbers
+   and alpha tags are included in this category.  It is a
+   good idea to set these parameters prior to programming
+   the radio with group data in order to ensure proper
+   setup.
+
+\8
+   HARDWARE PARAMETERS
+
+   These parameters are related to the hardware of the
+   FTL-8011 unit, and should be handled with care.
+   Parameters to set the operating frequency band,
+   minimum volume setting, and volume of beep tones are
+   included in this category.
+
+\9
+   SCAN PARAMETERS
+
+   These parameters are used to configure the scan
+   setting of the radio unit.
+
+\10
+   MARKETING
+
+   These parameters are used for various dealer specific
+   functions.
+
+\11
+   MISCELLANEOUS
+
+   Programmable variables that cannot be included in any
+   other category are gathered under this submenu.  These
+   parameters should be used to customize the radio to
+   your application needs.
+
+\12
+   UPLOAD
+
+   Used to read information from the FTL-8011 unit to the
+   computer.  Existing data on screen will be overwritten
+   with the data of the radio unless properly saved.
+
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\13
+   DOWNLOAD
+
+   Used to write configuration data from the computer to
+   the connected FTL-8011 unit.  Data will be verified
+   for integrity by the program before downloading is
+   initiated.
+   
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\50
+   VDU TYPE
+
+   Choose between COLOR and MONOCHROME.
+
+\51
+   COM PORT
+
+   Choose between COM1 and COM2 serial ports.
+   
+   NOTE: MAKE SURE TO SELECT THE CORRECT COMMUNICATIONS
+	 PORT TO ENSURE PROPER OPERATION.  THE PROGRAM
+	 WILL LOCK-UP IF THEIR IS A CONFLICT BETWEEN THE
+	 MOUSE PORT AND VPL-1 PORT.
+
+\52
+   LPT PORT
+
+   Choose between LPT1 and LPT2 printer ports.
+
+\70
+   SYSTEM FORMAT/ALLOCATIONS
+
+   The P2 version is capable of allocating 10 groups per
+   system.  The P3 version can allocate 100 groups
+   distributed among 10 systems (no 10 groups/system
+   limit).
+
+   NOTE: SYSTEMS MUST BE ASSIGNED IN SEQUENCE (i.e.
+	 SYSTEM 1, SYSTEM 2, SYSTEM 3, etc.)  NO GAPS ARE
+	 ALLOWED BETWEEN SYSTEM ASSIGNMENTS. 
+
+
+   TYPE     Select among "NOT USED", "TRUNKING", and
+	    "CONVENTIONAL" for each system.
+
+   GROUPS   Enter the number of groups to be included
+	    in the system.  Remember not to exceed the
+	    maximum limit of 100 groups among all
+	    systems.
+
+   F4       Press this key to copy all parameters of one
+	    system to another.
+
+\71
+   SYSTEM ALPHA TAGS
+
+   Enter the system alpha tags which are displayed on
+   the LCD screen of the P3 version for two seconds
+   whenever the current system is altered.
+
+\72
+   SYSTEM SCAN FLAGS
+
+   For each programmed systems, choose between SCAN or
+   SKIP for SYSTEM SCAN operation.  The default setting
+   is SKIP.
+
+\73
+   RADIO PHONE TAGS/NUMBERS
+
+   Enter the alpha tags and their associated phone
+   numbers here.  Only 7 digits are allowed for phone
+   numbers.  This feature is available only for the 
+   P3 version radios.  
+
+   Press <ENTER> once to modify the alpha tag, and once
+   again to modify the phone number.
+
+\80
+   FREQ BAND
+
+   Displays the frequency band of the radio.
+
+\81
+   REF XTAL
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+\82
+   FIRST IF
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+   Divide by numbers are not downloaded to the radio,
+   but computed by the radio using this paramerter and
+   channel information.  If set improperly, the receiver
+   will not function.
+
+\83
+   INJECT SIDE
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing special modifications to the radio.
+
+   Change this setting to eliminate image problems in
+   some service areas.  Radio will have to be retuned
+   after modification.  This information is used in
+   conjunction with FIRST IF, REF OSC FREQ and channel
+   information to compute divide by numbers.
+
+\84
+   PRESCALAR
+
+   Do not alter this setting after the frequency band
+   selection has automatically set the value unless you
+   are performing a special modification to the radio.
+
+\85
+   CHAN SPACING
+
+   Minimum channel step size.
+
+\86
+   MIN VOLUME
+
+   Allows the dealer to set a minimum volume level.
+   This prevents the operator from turning the volume
+   level completely down.
+
+\87
+   BEEP VOLUME
+
+   Sets the volume of error tones, beeps, and DTMF tones.
+
+\88
+   CALIBRATION
+
+   After transmitter output power has been calibrated,
+   one can read the DAC conversion number for each power
+   setting.  These numbers are internal to the radio for
+   setting appropriate power levels.  There should be no
+   need to modify these numbers in normal use.
+
+   The default values are as follows:
+
+	 0 Watts      0
+	 2 Watts     20
+	 5 Watts     40
+	10 Watts     80
+	15 Watts    110
+
+\89
+   WRITE COUNT
+
+   The radio keeps track of the number of times the
+   radio was reprogrammed.  As the EEPROM nears its
+   life cycle (approximately 10,000 writes), the
+   front panel will alert the operator to contact the
+   Vertex dealer for service to prevent misoperation.
+
+\90
+   DWELL TIMER
+
+   This parameter sets the amount of time the radio
+   stays on a scanning group after activity ceases.
+
+\91
+   SCAN SPEED
+
+   This parameter sets the period the radio stays on a
+   group to check for activity in scan operations.  If
+   the radio tends to skip active channels, lengthening
+   the period should resolve the problem.
+
+\92
+   PRIORITY TIMER
+
+   If a priority group is selected in a conventional
+   system, and the radio stops on a non-priority group
+   during group scanning, the radio monitors the
+   priority group every fixed interval.
+
+   Adjust this parameter to determine the best interval
+   for your application.
+
+\93
+   CONTINUE SCAN TIMER
+
+   Set this parameter to a value greater than 0 to
+   enable CONTINUE SCAN mode.  In this mode, the radio
+   stops on an active group for a fixed period and
+   resumes scanning regardless of activity/inactivity.
+   In other words, CONTINUE SCAN mode operates the same
+   way as the scan feature of radio broadcast receivers.
+
+   Adjust this parameter to set the amount of time the
+   radio stays on an active group.
+
+\94
+   DCS SCAN TIMER
+
+   This parameter, in conjunction with SCAN SPEED, sets
+   the amount of time the radio stays on an active DCS-
+   protected group during scanning.  This parameter is
+   needed to allow the radio to decode DCS of DCS-
+   protected groups.  The default setting is 375 ms.
+
+\95
+   CTCSS SCAN TIMER
+
+   This parameter, in conjunction with SCAN SPEED, sets
+   the amount of time the radio stays on an active CTCSS
+   protected group during scanning.  This parameter is
+   needed to allow the radio to decode CTCSS of CTCSS
+   protected groups.  The default setting is 300 ms.
+
+\96
+   LTR SCAN TIMER
+
+   This parameter, in conjunction with SCAN SPEED, sets
+   the amount of time the radio stays on an active
+   trunking group during scanning.  This parameter is
+   needed to allow the radio to decode LTR data of
+   trunking groups.  The default is 500 ms.
+
+\97
+   CANCEL SCAN ON CALL
+
+   By enabling this parameter, the radio terminates
+   scanning once an active group is detected.
+
+\99
+   OFF HOOK REVERT
+
+   Whenever the microphone is removed from the hook, the
+   radio reverts to one of the three groups: HOME,
+   PRIORITY, and LAST BUSY.  Set this parameter that best
+   suits your application.
+
+\100
+   USER SCAN PROG
+
+   By enabling this parameter, the user can use the SCAN
+   EDIT feature from the radio's front panel.
+
+\101
+   USER PRIORITY
+
+   By enabling this parameter, the user is capable of
+   selecting the priority group of conventional systems
+   from the radio's front panel.
+
+\110
+   USER DEFINED CTCSS
+
+   By selecting this parameter, the programmer can create
+   an original CTCSS tone for his application.  Up to
+   three tones can be created for use.
+
+   The three tones are labeled USER1, USER2, and USER3
+   in the CTCSS table of the main screen.
+
+\111
+   AUTO SWITCH OFF
+
+   By enabling this parameter, the radio will shut off
+   after 8 hours of continuous use.
+
+\112
+   BUSY ALERT
+
+   This parameter enables a beep to be heard when PTT is
+   depressed during activity.
+
+\113
+   EXTERNAL PTT
+
+   An external device can be attached to control the
+   keying of PTT.
+
+   Press <SPACE> to toggle between MIC & OPTION and
+   OPTION ONLY.  By selecting MIC & OPTION, the radio
+   accepts PTT keying from both, the microphone and the
+   optional equipment.  By selecting OPTION ONLY, the
+   radio will accept only the keying of PTT by the
+   optional device.
+
+\114
+   TOT-NORMAL
+
+   This parameter sets the time-out timer to limit
+   transmit time per call.  A warning beep sounds 10
+   seconds and 5 seconds before timeout occurs.  This
+   timer can be enabled/disabled on a per group basis
+   from the main screen.
+
+\115
+   TOT-PHONE
+
+   This parameter sets the time-out timer for phone
+   interconnect transmit time.  A warning beep sounds
+   10 seconds and 5 seconds before timeout occurs.
+   This timer can be enabled/disabled on a per group
+   basis from the main screen.
+
+\116
+   CALL LIMIT TIMER
+
+   This parameter sets the call limit timer for entire
+   phone interconnect operation (transmit time and
+   receive time).  A warning beep (double blips) sounds
+   10 seconds and 5 seconds before timeout occurs.
+
+\117
+   PENALTY TIMER
+
+   Set this parameter to inhibit transmission after time-
+   out timer expiration.   If the PTT is keyed within the
+   PENALTY TIMER expiration time, a beep sounds and the
+   timer is reset.  This timer can be enabled on a per
+   group basis via the main screen.
+
+\118
+   RELEASE TIMER
+
+   Set this parameter to inhibit transmission for a
+   short interval after PTT has been released.  If PTT
+   is keyed within the RELEASE TIMER expiration time, a
+   beep sounds and the timer is reset.  This timer can be
+   enabled only if the PENALTY TIMER has been enabled.
+   
+\119
+   SWITCH-ON SYS/GRP
+
+   Upon power-up, the radio is capable of tuning into
+   either the last system/group prior to shut-down or a
+   specific system/group.  Select this item to choose the
+   setting.
+
+\120
+   A-KEY FUNCTION
+
+   Select between TALK AROUND and HORN-HONK for the A-Key
+   function.  Note that TALK AROUND can only be used for
+   conventional systems, and HORN-HONK for trunking
+   systems.
+
+\121
+   BUSY RING BACK
+
+   Enable this parameter when you wish to have the radio
+   notify that the group is clear for transmission; the
+   BUSY RING BACK occurs only after a failed attempt to
+   access the group has been made.
+
+\122
+   LTR OPTIONS
+
+   Allow user to enable/disable FAILSOFT Mode, select RX
+   data and TX data Polarities. This can only be used 
+   for trunking systems.
+   
+\2000
+   GRP TAG
+
+   Enter a GROUP ALPHA TAG for easy identification of
+   groups.  The tag should not exceed 8 characters.
+   This feature is applicable only for P3 versions.
+
+\2001
+   RX_ID
+
+   Enter RECEIVE ID (1 through 250) here.  0 indicates
+   that a RECEIVE ID is yet to be assigned.
+
+\2002
+   TX_ID
+
+   Enter TRANSMIT ID (1 through 250) here.  0 indicates
+   that a TRANSMIT ID is yet to be assigned.
+
+\2003
+   PWR
+
+   Select the transmit power level among 0, 2, 5, 10 and
+   15 Watts.  Use the space key to cycle through the
+   options.
+
+\2004
+   CALL
+
+   Check this item to enable CALL ALERT for the selected
+   group.
+   
+   CALL ALERT informs the user with a flashing "CALL"
+   icon whenever a call is received.
+
+\2005
+   TRNSPND
+
+   Check this item if you wish to have the TRANSPOND
+   feature enabled for the particular group.
+
+\2006
+   HORN
+
+   Check this item if you wish to have the HORN-HONK
+   enabled for the particular group.
+
+\2007
+   PHONE
+
+   Check this item if the RX_ID is a PHONE INTERCONNECT
+   ID.  This item must be checked for PHONE INTERCONNECT
+   operation.
+
+\2008
+   SCAN
+
+   Check this item if you wish to have the group included
+   in the scan table.
+
+\2009
+   TOT
+
+   Check this item if you wish to have the TIME-OUT
+   TIMER enabled for the particular group.  This item
+   must be check marked to enable the PENALTY TIMER.
+
+   The TIME OUT TIMER limits transmit time per call.  A
+   warning beep sounds 10 seconds and 5 seconds before
+   timeout occurs.
+
+\2010
+   PEN_T
+
+   Check this item if you wish to enable the PENALTY
+   TIMER for the particular group.  This timer can be
+   enabled only if the TIME OUT TIMER has been enabled.
+
+   The PENALTY TIMER inhibits transmission after time-
+   out timer expiration.   If the PTT is keyed within the
+   PENALTY TIMER expiration time, a beep sounds and the
+   timer is reset.
+
+\2011
+   REL_T
+
+   Check this item to enable the RELEASE TIMER for the
+   particular group.
+
+   The RELEASE TIMER inhibits transmission for a short
+   interval after PTT has been released.  If PTT is keyed
+   within the RELEASE TIMER expiration time, a beep
+   sounds and the timer is reset.
+
+\2020
+   HOME REPEATER
+
+   Enter the HOME REPEATER channel number from one of
+   the numbers listed below (0-20).  Note that the
+   channel number refers to the left number in the list
+   and not the FREQUENCY NUMBER.
+
+\2021
+   AREA CODE
+
+   Enter the AREA CODE bit here.  This bit is usually
+   coded "0" unless there are two trunking systems close
+   enough to interfere with each other.
+
+\2022
+   SYSTEM INTERCONNECT ID
+
+   Enter the SYSTEM INTERCONNECT ID here.
+
+\2023
+   OFF HOOK REVERT GROUP
+
+   When OFF HOOK REVERT GROUP is set to PRIORITY, it
+   serves no purpose in trunking systems, for there are
+   no priority groups available.  This parameter allows
+   the user to revert to a specific group in a trunking
+   system, when PRIORITY is selected as the OFF HOOK
+   REVERT GROUP.
+
+   Enter one of the group numbers (GR#) listed on the far
+   left of the main screen (1 - 10) if you intend to use
+   this feature.  Otherwise, enter 0.
+
+\2024
+   FREQ
+
+   Designate all 800 MHz trunked channels in the system 
+   by entering FCC channel numbers.  The receiver
+   frequency will appear on the screen for each FCC
+   channel number.
+
+\3000
+   P
+
+   Check this item for the group you wish to have
+   PRIORITY.  During scanning, the PRIORITY group is
+   polled for activity every other group.  When scanning
+   stops on an active group, the radio polls the
+   PRIORITY group periodically.
+
+\3001
+   GROUP TAG
+
+   Enter a GROUP ALPHA TAG for easy identification of
+   groups.  The tag should not exceed 8 characters.
+   This feature is applicable only for P3 versions.
+
+\3002
+   FREQ
+
+   Enter the frequency for the particular group.  Make
+   sure that the frequency lies within the boundaries
+   of the frequency band.
+
+\3003
+   B_O
+
+   Check this item whenever you wish to apply the BORDER
+   OFFSET (-12.5 kHz) from the particular frequency.
+
+\3004
+   POWER
+
+   Select the transmit power level among 0, 2, 5, 10 and
+   15 Watts.  Use the space key to cycle through the
+   options.
+
+\3005
+   TONE
+
+   Select between CTCSS and DCS for protecting group
+   access.  This item must be selected to choose ENCODE
+   and DECODE values.
+
+\3006
+   DEC
+
+   Press the <SPACE> key to open up the CTCSS/DCS table.
+   Choose from one of the values for CTCSS/DCS DECODING.
+   User defined CTCSS tones are at the bottom of the
+   tone table.
+
+\3007
+   ENC
+
+   Press the <SPACE> key to open up the CTCSS/DCS table.
+   Choose from one of the values for CTCSS/DCS ENCODING.
+   User defined CTCSS tones are at the bottom of the
+   tone table.
+
+\3008
+   SCAN
+
+   Check this item if you wish to have the group included
+   in the scan table.
+
+\3009
+   TOT
+
+   Check this item if you wish to have the TIME-OUT
+   TIMER enabled for the particular group.  This item
+   must be check marked to enable the PENALTY TIMER.
+
+   The TIME OUT TIMER limits transmit time per call.  A
+   warning beep sounds 10 seconds and 5 seconds before
+   timeout occurs.
+
+\3010
+   PEN_T
+
+   Check this item if you wish to enable the PENALTY
+   TIMER for the particular group.
+
+   The PENALTY TIMER inhibits transmission after time-
+   out timer expiration.   If the PTT is keyed within the
+   PENALTY TIMER expiration time, a beep sounds and the
+   timer is reset.  This timer can be enabled on a per
+   group basis via the main screen.
+
+\3011
+   REL_T
+
+   Check this item to enable the RELEASE TIMER for the
+   particular group.
+
+   The RELEASE TIMER inhibits transmission for a short
+   interval after PTT has been released.  If PTT is keyed
+   within the RELEASE TIMER expiration time, a beep
+   sounds and the timer is reset.
+
+\3012
+   CALL
+
+   Check this item to enable CALL ALERT for the
+   particular group.  CALL ALERT informs the user with a
+   flashing "CALL" icon whenever a call is received.
+
+\3013
+   TA
+
+   Check this item to enable TALK AROUND for a particular
+   group.
+
+   TALK AROUND allows simplex communication whenever the
+   radio is beyond the service area of the repeater, or
+   when the repeater is out of service.
+
+\3014
+   LOCK
+
+   Choose between BCLO and BTLO for lock-out capability.
+
+   BCLO (BUSY CARRIER LOCK OUT) inhibits the radio
+   operator from transmitting when a carrier is present
+   on the particular channel.
+
+   BTLO (BUSY TONE LOCK OUT) inhibits the radio operator
+   from transmitting whenever the appropriate CTCSS/DCS
+   cannot be decoded.

@@ -1,0 +1,1977 @@
+#-----------------------------------------------------------
+#
+#           Type <CE22> EEPROM DATA EDITOR HELP FILE 
+#                      Version 0.11
+#
+#         Copyright (c) 1998 by YAESU MUSEN Co., Ltd.
+#
+#-----------------------------------------------------------
+# 
+# Help File Format Information
+# 
+# Special characters at the beginning of each line determine
+# the function of that line:
+#       `#' = Comment line, ignored by program
+#       `:' = Control line. the program looks for these
+#             lines, and reads the following characters as a
+#             help subject label. One special case is
+#             ":page", which indicates a page break within a
+#             help subject. 
+# Maximum line length for help items is 61 chrs. Longer lines
+# are truncated. Maximum number of lines/screen is 16
+# (additional lines are automatically moved to the next
+# screen).
+# 
+#-----------------------------------------------------------
+#
+:chedit_chno
+
+      [Channel Number for Display on the Transceiver]
+
+ Pressing the Space Bar toggles the data for the entire
+ channel between hidden and unhidden (except the first
+ channel, which cannot be hidden).
+
+ Hidden channels display "--" in place of field entries, and
+ are not used for operation (although they are still stored
+ in hidden form for possible recall later).
+
+ Channel numbers cannot be edited.
+
+ Space Bar:  Hide/Unhide entire channel (line).
+#
+#
+#
+:chedit_rxf
+   [Edit Rx/Simplex Frequency & Hide/Unhide Channel Data]
+
+ Use 0 - 9 to enter the desired channel frequency, and press
+ Enter. This frequency will be adjusted if it does not match
+ the Channel Step parameter, and will also appear in the Tx
+ Freq field. You do not need to enter all 8 digits: empty
+ digits to the right are zero-filled. Pressing [.] (period)
+ after several digits forces them to MHz. Press period first
+ to change only kHz.
+
+ Pressing only the Space Bar without entering a number
+ toggles the data for the entire channel between hidden and
+ unhidden (except the first channel, which cannot be hidden).
+ Hidden channels display "--" in place of field entries, and
+ are not used for operation (although they are still stored
+ in hidden form for possible recall later).
+#
+:page
+#
+
+ NOTE! Any entries or changes to this field will also occur
+       in the Tx Freq. field, so you may need to edit that
+       field after making any changes here.
+
+
+ Arrow Keys: Change field (before or after editing 
+                Frequency).
+ Space Bar:  Hide/Unhide entire channel (line).
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits as MHz, or
+                next digits as kHz (if pressed first).
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+
+#
+#
+#
+:chedit_txf
+
+  [Enter Transmit Frequency & Enable/Disable Transmission]
+
+ Use keys 0 - 9 to enter the desired transmitting frequency,
+ and press the Enter key to accept. If the frequency does 
+ not match the Channel Step parameter, it will be adjusted 
+ to the nearest valid step. You do not need to enter all 8 
+ digits.  Empty digits to the right are zero-filled.
+ Pressing [.] (period) after several digits forces them to
+ MHz, while pressing [.] first allows entering only kHz.
+ 
+ Pressing the Space Bar without entering a number toggles
+ the Tx Inhibit to On, and disables all of the remaining
+ transmitter-specific items.
+#
+:page
+#
+
+ Arrow Keys: Change field (before or after editing 
+                Frequency).
+ Space Bar:  Toggle Tx Inhibit
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits as MHz, or
+                next digits as kHz (if pressed first).
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+#
+#
+#
+:chedit_cdec
+
+ [Toggle Subaudible CTCSS Decoder, and set CTCSS frequency]
+
+ Press the Space Bar to toggle the decoder on/off, or press
+ Enter to display the Tone Select window, from which you may
+ select a frequency with the Arrow Keys (pressing Enter again
+ to accept, or Esc to cancel).
+
+ If you know the CTCSS frequency you want, you can enter it
+ directly with the 0 - 9 and [.] (period) keys. When the
+ desired CTCSS frequency is displayed, press Enter to accept.
+ If the frequency was invalid (not among the standard tones),
+ the Tone Select Window will appear as described above, with
+ the nearest valid frequency pre-selected.
+#
+:page
+#
+
+ 47 CTCSS tones, including eight non-standard tones, are
+ available for programming.
+
+ Turning on CTCSS turns off DCS (both cannot be on).
+
+
+ Arrow Keys: Change field, or select in Tone Select window.
+ Space Bar:  Toggle Decoder on/off (except during selection).
+ 0 - 9, [.]: Direct tone frequency entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+#
+:chedit_ddec
+
+           [Toggle DCS Decoder, and set DCS Code]
+
+ Press the Space Bar to toggle the decoder on/off, or press
+ Enter to display the Code Select window, from which you may
+ select a DCS Code with the Arrow Keys (pressing Enter again
+ to accept, or Esc to cancel).
+
+ If you know the 3-digit DCS Code you want, you can enter it
+ directly with the 0 - 9 keys. When the desired Code is
+ displayed, press Enter to accept. If the Code was invalid
+ (not among the standard Code numbers), the Code Select
+ window will appear as described above, with the nearest
+ valid Code pre-selected.
+#
+:page
+#
+
+ 104 DCS codes are available for programming.
+
+ Turning on DCS turns off CTCSS (both cannot be on).
+ 
+
+ Arrow Keys: Change field, or select in Code Select window.
+ Space Bar:  Toggle Decoder on/off (except during selection).
+ 0 - 7:      Direct Code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Code Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_cenc
+
+ [Toggle Subaudible CTCSS Encoder, and set CTCSS frequency]
+
+ Press the Space Bar to toggle the encoder on/off, or press
+ Enter to display the Tone Select window, from which you may
+ select a frequency with the Arrow Keys (pressing Enter 
+ again to accept, or Esc to cancel).
+
+ If you know the CTCSS frequency you want, you can enter it
+ directly with the 0 - 9 and [.] (period) keys. When the
+ desired CTCSS frequency is displayed, press Enter to accept.
+ If the frequency was invalid (not among the standard tones),
+ the Tone Select Window will appear as described above, with
+ the nearest valid frequency pre-selected.
+#
+:page
+#
+
+ 47 CTCSS tones, including eight non-standard tones, are
+ available for programming.
+
+ Turning on CTCSS turns off DCS (both cannot be on).
+ 
+ Arrow Keys: Change field, or select in Tone Select window.
+ Space Bar:  Toggle Encoder on/off (except during selection).
+ 0 - 9, [.]: Direct tone frequency entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_denc
+
+            [Toggle DCS Encoder, and set DCS Code]
+
+ Press the Space Bar to toggle the encoder on/off, or press
+ Enter to display the Code Select window, from which you may
+ select a DCS Code with the Arrow Keys (pressing Enter again
+ to accept, or Esc to cancel).
+
+ If you know the 3-digit DCS Code you want, you can enter it
+ directly with the 0 - 9 keys. When the desired Code is
+ displayed, press Enter to accept. If the Code was invalid
+ (not among the standard Code numbers), the Code Select
+ window will appear as described above, with the nearest
+ valid Code pre-selected.
+#
+:page
+#
+
+ 104 DCS codes are available for programming.
+
+ Turning on DCS turns off CTCSS (both cannot be on).
+ 
+
+ Arrow Keys: Change field, or select in Code Select window.
+ Space Bar:  Toggle Encoder on/off (except during selection).
+ 0 - 7:      Direct Code number entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Code Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_wide
+
+                   [Wide/Narrow toggle]
+
+ Press the Space Bar to toggle the FM mode Wide or Narrow.
+ Wide = 25 kHz channel spacing, 5 kHz deviation.
+ Narrow = 12.5 kHz channel spacing, 2.5 kHz deviation.
+ Both the transmitter deviation and the receiver bandwidth
+ are changed.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle wide/narrow.
+ 
+#
+#
+#
+:chedit_clksft
+
+                     [CPU Clock Shift]
+
+ The software automatically assigns clock shift status as 
+ may be needed for the programmed frequency.  If a 
+ noticeable buzz is heard on the signal (Tx or Rx), 
+ changing the status of the CPU Clock Shift will usually 
+ cure it.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle on/off.
+
+#
+#
+#
+:chedit_nsqmd
+
+                   [Noise Squelch Mode]
+
+ Press the Space Bar to toggle the repeater noise squelch 
+ selection mode between Prpgm or User.
+
+ "Prpgm" selects the factory's pre-set level, which is 
+ about the 12dB SINAD point and is equal to User setting
+ 48. "User" lets the programmer change this threshold
+ level on a per-channel basis. 
+
+#
+:page
+#
+ 
+ Note: The repeater's front panel Squelch knob only
+ controls the squelch of the local receiver.  It does not
+ adjust the internal repeater squelch threshold.
+
+ 
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle Prpgm (Pre Program)/User.
+
+#
+#
+#
+:chedit_nsqfxlv
+
+                   [Noise Squelch Level]
+
+ Press the Space Bar to increment, or the Backspace key
+ to decrement, the Noise Squelch Level when the Noise 
+ Squelch Mode is set to "User".  You may also enter
+ numeric digits (0 - 9) followed by the Enter key.
+ 
+ Numeric values of 0 to 255 are available.  Lower numbers
+ set a "loose" squelch, higher numbers set a "tight"
+ squelch.  Values over 100 usually result in saturation
+ of the squelch threshold circuit.  Very little change is
+ observed with values over 100.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar/Backspace: Increment/Decrement NSQ Level.
+#
+#
+#
+:chedit_cblip
+
+                      [Courtesy Blip]
+
+ When ON, the VXR-7000 sends out a Courtesy Beep each 
+ time a user unkeys their radio.  The Beep indicates 
+ that the Time-Out Timer has reset, and the next user
+ may begin transmitting. 
+ 
+ Arrow Keys: Change fields after setting on/off.
+ Space Bar:  Toggle on/off.
+#
+#
+#
+:chedit_revbst
+
+                      [Reverse Burst]
+
+
+ Press the Space Bar to toggle the Reverse Burst on/off.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle on/off.
+
+#
+#
+#
+:chedit_dcstype
+
+                        [DCS Type]
+
+ Effective only when DCS is chosen as the coded squelch.
+ A = Normal DCS
+ B = Inverted (complement) DCS
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle A/B.
+#
+#
+#
+:chedit_ddectype
+
+                       [DCS Dec Type]
+  
+ Selects ability to decode the DCS complement.
+ Fixed = Decodes the selected type only (normal OR inverted)
+ Auto  = Decodes both types (normal AND inverted)
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle Auto/Fixed.
+#
+#
+#
+:chedit_mlttone
+
+                   [Multi Tone Signaling]
+
+ Press the Space Bar to toggle the Multi Tone feature 
+ on/off. If necessary, press the Enter key to bring up the 
+ Multi Tone programming table.
+
+ Use the Arrow keys, Enter key, and numeric digits to
+ make entries into the Multi Tone table.  Table entries
+ are made in the same manner as the single tone (code)
+ entries made under CTCSS (DCS) Encode and Decode on the 
+ Main Programming Screen. 
+#
+:page
+#
+
+ Up to 16 different Encode and Decode tones (CTCSS) or codes 
+ (DCS) can be entered into the table. Tones or codes can be 
+ mixed. For example, a decoded CTCSS tone of 100.0 Hz can 
+ activate the repeater and cause it to transmit a DCS code 
+ of 051 if desired.  The repeater will decode and repeat on
+ any tone (code) programmed into the Decode column, and will
+ transmit the one tone (code) programmed into the corresp-
+ onding Encode column.  If a tone (code) is entered on the 
+ Main Programming Screen, it will be used in the Tone 01
+ position in the table.  
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle on/off.
+ Enter Key:  Display Multi-Tone Select window.
+ 
+#
+#
+#
+:chedit_mtonesel
+                    [Multi Tone Select]
+
+ If you know the CTCSS frequency or DCS code you want, you 
+ can enter it directly with the 0 - 9 and [.] (period) keys.
+ When the display shows the desired CTCSS frequency or DCS 
+ code, press Enter to accept.
+ If the frequency was invalid (not among the standard tones)
+ the Tone/Code Select Window will appear as mentioned above.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle on/off.
+ 0 - 9, [.]: Direct tone frequency entry.
+ Backspace:  Delete digit to left during direct entry.
+ Enter Key:  Display Tone Select Window, and accept entry/
+               selection.
+ Esc Key:    Cancel input or selection.
+#
+#
+#
+:chedit_cwanisel
+
+                  [CW-ID or ANI/ENI select]
+
+ If CW-ID is desired, go to Common Data (F2) and set the CW 
+ ID to On.  Also, program the CW-ID settings (F5) as
+ desired.  Further Help is available for these items.
+
+ If DTMF or 5 Tone signaling is desired, go to Common Data
+ (F2) and set the DTMF ANI/ENI or 5 Tone ANI/ENI to the
+ Enabled state as desired.  Also, program the DTMF or
+ 5 Tone settings (F4) as desired.  Further Help is
+ available for these items.
+#
+:page
+#
+
+ Note: CWID and ANI/ENI cannot both be enabled on the same
+ channel at the same time.
+
+ Press the Space Bar to toggle the CW-ID or ANI/ENI to On.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle CW-ID, ANI/ENI and off.
+
+#
+#
+#
+:chedit_actmode
+
+                       [Action Mode]
+
+
+ Press the Space Bar to toggle the Action Mode between 
+ Simplex/Duplex.
+
+ Simplex is for fixed base or remote base use only.
+ Duplex is for repeater operation.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle Duplex/Simplex.
+
+#
+#
+#@
+:chedit_basetotuse
+
+                      [Base Mode ToT]
+
+ Press the Space Bar to toggle the Base Mode ToT yes/no.
+
+ When Yes, the Base Mode Time-out Timer is in use.  The
+ Repeater must be in Base mode (front panel switch in the
+ "BASE" position).  The Base ToT time period is set in
+ the Common Data window.
+ 
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:chedit_basegtuse
+
+                     [Base Guard Timer]
+
+ Press the Space Bar to toggle the Base Guard Timer 
+ yes/no.  When Yes, the Base Mode Guard Timer is in use.  
+ The repeater must be in Base mode (front panel switch in 
+ the "BASE" position).  The Base Guard time period is set 
+ in the Common Data window.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:chedit_lout
+
+                 [Lock Out - BCLO and BTLO]
+
+ The Space Bar toggles the transmitter Lock Out selection 
+ between Carrier Control (BCLO), CTCSS/DCS Control (BTLO), 
+ or off.  Lock Out is only in effect when the repeater is
+ operating in the Base mode (front panel switch in the
+ "BASE" position).
+
+ Note: You must press Enter after making a selection.
+
+ Arrow Keys: Change field (after pressing Enter).
+ Space Bar:  Toggle BCLO mode.
+#
+#
+#
+:chedit_txpwrsel
+
+                   [Transmit Power Select]
+
+ Selects the Tx power level for this channel.  Choices 
+ are High (normally 50 watts) and Low (10 watts).
+
+ Arrow Keys:          Change fields after selection.
+ Space Bar/Backspace: Increment/Decrement Transmit Power
+                      Level.
+#
+#
+#
+:chedit_totmute
+
+                      [ToT Beep Mute]
+
+ Press the Space Bar to toggle the ToT Beep Mute on/off.
+ When On, the ToT warning beep will not be heard in the
+ Repeater's local speaker.  The warning beep WILL still be
+ heard by other radios on the air.
+
+ Arrow Keys:          Change fields after selection.
+ Space Bar/Backspace: Toggle on/off.
+#
+#
+#
+:chedit_rpttotuse
+
+                     [Repeat ToT Use]
+
+ Press the Space Bar to toggle the Repeat ToT Use
+ yes/no.  When Yes, the Repeater Mode Time-out Timer is
+ active (front panel switch in the "REPEATER" position).
+ The Repeater Time-out time period is set in the
+ Common Data window.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:chedit_rpttotbp
+
+                     [Repeat ToT Beep]
+
+ Press the Space Bar to toggle the Repeat ToT Beep
+ yes/no.  When Yes, the Time-out Timer warning beep
+ will be tranmitted a few seconds prior to time-out.
+ When No, the warning beep will not be transmitted.
+ Of course, the Repeat ToT Use must be set to Yes for
+ this to be active.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:chedit_rpthtuse
+
+                    [Repeat Hang Timer]
+
+ Press the Space Bar to toggle the Repeat Hang Timer 
+ yes/no.  When Yes, the transmitter will remain on after
+ a user unkeys for the amount of time programmed in the
+ Common Data window under Repeat HangOn Time.  When No,
+ the transmitter will drop immediately when a user unkeys
+ his radio.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+
+#
+#
+#
+:chedit_rptgtuse
+
+                    [Repeat Guard Timer]
+
+ Press the Space Bar to toggle the Repeat Guard Timer 
+ yes/no.  When Yes, the Guard Time function is active.
+ The Repeat Guard Time period is set in the Common Data
+ window.  
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#REM: The following 27 items appear in the Common Data Window
+#
+#
+:comd_bandsel
+
+                       [Band Select]
+
+ Press the Space bar to toggle between VHF and UHF.  The
+ new selection will take effect after the Esc. key is
+ pressed to exit the Common Data window.  When the 
+ opposite band range is selected, any previously programmed 
+ channel data will be erased after a warning screen is 
+ presented.  The correct IF frequency is automatically 
+ selected for the band range.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle VHF/UHF.
+#
+#
+#
+:comd_dupxinst
+
+                    [Duplexer Installed]
+
+ This item only serves as a reminder to the programmer of
+ the presence of the internal duplexer.  It does not have
+ any other programming or operating effect.
+
+ If the internal duplexer is installed, the repeater should
+ only be programmed to transmit and receive on the exact
+ frequencies to which the duplexer is aligned.
+
+ Reminder:  If the VXD internal duplexer is installed, the
+ transmitter power output must be reduced to not more than
+ 40 watts input to the duplexer.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:comd_beepen
+
+                       [Beep Enable]
+
+ This item enables or disables the audible beeps for the 
+ front panel control buttons.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:comd_monen
+
+                     [Monitor Enable]
+
+ This item enables or disables the front panel Monitor
+ button.  If enabled, pressing this button will temporarily
+ place the repeater's receiver in carrier squelch mode.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:comd_1stofst
+
+                    [1st Local Offset]
+
+ This item changes the 1st local oscillator offset between 
+ Lower and Higher.
+
+ DO NOT CHANGE THIS SETTING UNLESS YOU HAVE MODIFIED THE
+ REPEATER'S HARDWARE APPROPRIATELY.  THIS IS AN ADVANCED
+ PROCEDURE.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle Lower/Upper.
+#
+#
+#
+:comd_2ndofst
+
+                    [2nd Local Offset]
+
+ This item changes the 2nd local oscillator offset between 
+ Lower and Higher.
+
+ DO NOT CHANGE THIS SETTING UNLESS YOU HAVE MODIFIED THE
+ REPEATER'S HARDWARE APPROPRIATELY.  THIS IS AN ADVANCED
+ PROCEDURE.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle Lower/Upper.
+#
+#
+#
+:comd_accy
+
+                        [Accessory]
+
+ This item selects the function of the repeater's Accessory
+ Button.  Two choices are available:  High/Low transmit 
+ Power, or Acc.
+
+ High/Low power is self-explanatory.  When set to Acc, the
+ button switches the logic state of pin 21 on the ACCY
+ connector on the rear of the repeater.  This is available
+ to provide logic switching for activation of whatever
+ device may be connected to pin 21.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle High/Low or Acc
+#
+#
+#
+:comd_micmoni
+
+                   [Mic Monitor Enable]
+
+ This item enables or disables the monitor function of the
+ optional desktop microphone (if one is used).  If enabled,
+ Pressing the microphone's monitor button will temporar-
+ ily place the repeater's receiver in carrier squelch mode.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:comd_fanalrt
+
+                    [Fan Alert Enable]
+
+ This item enables or disables the fan stoppage alert.  
+ When enabled, a warning beep will sound if the cooling fan
+ Stops running (for example, if dirt or another obstruction 
+ jams and stops the fan from turning).
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:comd_tempalrt
+
+                      [Hi-Temp Alert]
+
+ This item enables or disables the high-temperature alert.
+ When enabled, a warning beep will sound if the heatsink
+ overheats for any reason (for example, if the cooling
+ fan is unable to sufficiently cool the heatsink).
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:comd_hngaudio
+
+                      [Hang On Audio]
+
+ This item selects the audio that will be heard after a
+ user unkeys his radio and the repeater is transmitting
+ during the hang time.  The "Noise" setting will allow
+ unsquelched channel audio to be transmitted during the
+ hang time.  The "Quiet" setting will allow only squelched
+ audio, effectively silence in most cases, to be trans-
+ mitted during the hang time.  Most users will want this
+ set to "Quiet".
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle Noise/Quiet.
+#
+#
+#
+:comd_chstep
+
+                       [Channel Step]
+
+ This item selects the step size for the programmed TX
+ and RX frequencies.  Frequencies must be divisible by at
+ least one of the selected resolution numbers.  Any 
+ entered frequency that is not divisible by one of these
+ numbers will be rounded-off to the nearest valid
+ frequency.
+
+ Available choices are 2.5/6.25 kHz or 5/6.25 kHz for VHF, 
+ and 5/6.25 kHz (only) for UHF.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle 2.5/6.25 or 5/6.25 (VHF only)
+#
+#
+#
+:comd_comport
+
+                         [Com Port]
+
+ This item selects the serial port for computer programming
+ to the repeater.  COM1 or COM2 are supported.
+
+ Reminder: PCs running the Windows operating system must
+ have Windows SHUT DOWN and the PC restarted in the MS DOS
+ mode in order to successfully communicate with the
+ repeater.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle COM1/COM2.
+#
+#
+#
+:comd_if
+
+                           [IF]
+
+ This item displays the Intermediate Frequency in use for 
+ the selected band range.  The VHF IF is 21.40 MHz.  The 
+ UHF IF is 73.35 MHz.
+
+ It is possible to edit these selections by using the 
+ number keys.  Be aware that an incorrect IF setting will
+ result in no receiver operation.
+
+ DO NOT CHANGE THIS SETTING UNLESS YOU HAVE MODIFIED THE
+ REPEATER'S HARDWARE APPROPRIATELY.  THIS IS AN ADVANCED
+ PROCEDURE.
+#
+:page
+#
+
+ Arrow Keys: Change field (before or after editing 
+                frequency).
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits as MHz, or
+                next digits as kHz (if pressed first).
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+#
+#
+#
+:comd_rxref
+
+                      [RX Reference]
+
+ This item sets the receiver's reference frequency.  The
+ RX reference is 14.40 MHz for both VHF and UHF repeaters.
+
+ It is possible to edit these selections by using the 
+ number keys.  Be aware that an incorrect RX reference 
+ setting will result in no receiver operation.
+
+ DO NOT CHANGE THIS SETTING UNLESS YOU HAVE MODIFIED THE
+ REPEATER'S HARDWARE APPROPRIATELY.  THIS IS AN ADVANCED
+ PROCEDURE.
+#
+:page
+#
+
+ Arrow Keys: Change field (before or after editing 
+                frequency).
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits as MHz, or
+                next digits as kHz (if pressed first).
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+#
+#
+#
+:comd_txref
+
+                      [TX Reference]
+
+ This item sets the transmitter's reference frequency.  The
+ TX reference is 14.40 MHz for both VHF and UHF repeaters.
+
+ It is possible to edit these selections by using the 
+ number keys.  Be aware that an incorrect TX reference 
+ setting will result in no transmitter operation.
+
+ DO NOT CHANGE THIS SETTING UNLESS YOU HAVE MODIFIED THE
+ REPEATER'S HARDWARE APPROPRIATELY.  THIS IS AN ADVANCED
+ PROCEDURE.
+#
+:page
+#
+
+ Arrow Keys: Change field (before or after editing 
+                frequency).
+ 0 - 9:      Input a digit.
+ [.]:        Set last three (or fewer) digits as MHz, or
+                next digits as kHz (if pressed first).
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed frequency, with zero-fill.
+ Esc Key:    Cancel and return to previous frequency.
+#
+#
+#
+:comd_txpwrtyp
+
+                      [TX Power Type]
+
+ This item selects the transmitter's high power setting.
+ Toggle between 50 W (USA market) and 25 W (other markets).
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle 50W/25W.
+#
+#
+#
+:comd_dcpwrlo
+
+                     [DC TX Power Low]
+
+ This item selects whether the repeater will automatically
+ switch to low transmit power (10 watts) when AC power is 
+ lost and it switches to the backup battery for power.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no
+#
+#
+#
+:comd_hitmppwr
+
+                    [Hi-Temp TX Pwr Low]
+
+ This item selects whether the repeater will automatically
+ switch to low transmit power (10 watts) when the heatsink
+ becomes overheated.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle yes/no.
+#
+#
+#
+:comd_basetot
+
+                        [Base ToT]
+
+ This item programs the time period for the Base Mode Time-
+ out Timer.  See Base ToT on the Main Programming Screen
+ for the on/off selection for this feature.
+
+ Use the number keys to program this value in 0.5 minute
+ intervals from 0.5 through 60.0 minutes.
+
+ Arrow Keys: Change field (before or after editing time).
+ 0 - 9:      Input a digit.
+ [.]:        Input the decimal point.
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed time, with zero-fill.
+ Esc Key:    Cancel and return to previous time.
+#
+#
+#
+:comd_basegd
+
+                     [Base Guard Time]
+
+ This item programs the time period for the Base Mode
+ Guard Time.  See Base Guard on the Main Programming
+ Screen for the on/off selection for this feature.
+
+ Use the number keys to program this value in 2 second
+ increments from 2 through 360 seconds.
+
+ Arrow Keys: Change field (before or after editing time).
+ 0 - 9:      Input a digit.
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed time, with zero-fill.
+ Esc Key:    Cancel and return to previous time.
+#
+#
+#
+:comd_rpttot
+
+                       [Repeat ToT]
+
+ This item programs the time period for the Repeater Mode
+ Time-out Timer.  See RptToT on the Main Programming
+ Screen for the on/off selection for this feature.
+
+ Use the number keys to program this value in 0.5 minute
+ increments from 0.5 through 60.0 minutes. 
+
+ Arrow Keys: Change field (before or after editing time).
+ 0 - 9:      Input a digit.
+ [.]:        Input the decimal point.
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed time, with zero-fill.
+ Esc Key:    Cancel and return to previous time.
+#
+#
+#
+:comd_rpthngtm
+                    [Repeat Hang On Time]
+
+ This item programs the time period for the Repeater Hang
+ Timer.  See RPT HT on the Main Programming Screen for the
+ on/off selection for this feature.  Also, set the Hang 
+ On audio to either Noise or Quiet as desired.
+
+ Use the number keys to program this value in 0.5 second
+ increments from 0.5 through 60.0 seconds.
+
+ Arrow Keys: Change field (before or after editing time).
+ 0 - 9:      Input a digit.
+ [.]:        Input the decimal point.
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed time, with zero-fill.
+ Esc Key:    Cancel and return to previous time.
+#
+#
+#
+:comd_rptgrdtm
+
+                    [Repeat Guard Time]
+
+ This item programs the time period for the Repeater
+ Guard Timer.  See RPT GT on the Main Programming Screen
+ For the on/off selection for this feature.
+
+ Use the number keys to program this value in 2 second
+ increments from 2 through 360 seconds.
+
+ Arrow Keys: Change field (before or after editing time).
+ 0 - 9:      Input a digit.
+ [.]:        Input the decimal point.
+ Backspace:  Erase digit to the left, or cancel entry.
+ Enter Key:  Accept displayed time, with zero-fill.
+ Esc Key:    Cancel and return to previous time.
+#
+#
+#
+:comd_cwid
+
+                         [CW ID]
+
+ This item toggles the CW ID (automatic Morse code 
+ identifier) on/off.  When toggled on, the F5 key (see
+ the red boxes at the bottom of the screen) allows access
+ to the CW-ID Settings window, where the ID parameters
+ can be programmed.  Also see CWID ANI/ENI on the Main
+ Programming Screen to select the item that will be in 
+ use on any particular channel.  CWID and ANI/ENI cannot
+ both be active on any one channel.
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle on/off
+#
+#
+#
+:comd_dtmfa/e
+
+                       [DTMF ANI/ENI]
+
+ This item toggles the DTMF ANI/ENI feature between three
+ On states (RX enable, TX enable, and TRX enable) and off.
+ When RX, the repeater will only receive, decode and
+ display incoming DTMF ANI/ENI signals.  When TX, the
+ repeater will only transmit it's programmed DTMF ANI/ENI
+ signals.  When TRX, both of the above are active.
+#
+:page
+#
+
+ When any of the On states are selected, the F4 key (see
+ the red boxes at the bottom of the screen) allows access
+ to the DTMF Settings window, where the ANI/ENI parameters
+ can be programmed.  Note: The Mark and Space Time 
+ parameters affect both the RX (decode) and TX (encode)
+ operation.  Incoming ID strings from other radios must
+ match the Mark and Space Time settings here to be 
+ reliably decoded.
+
+ DTMF ANI strings must always be 5 characters in length.  
+ The first incoming character must be the ANI Header Code 
+ character.
+#
+:page
+#
+
+ Alphanumeric displays for up to 48 incoming IDs can be
+ programmed into the repeater.  The F6 key (see the red 
+ boxes at the bottom of the screen) allows access to the
+ Alpha Tag table for programming.  This table does not
+ use the Header Code digit.  When an incoming (numeric) 
+ ID matches an entry in this table, the programmed Alpha 
+ Tag is displayed instead of the actual number.  If an 
+ incoming ID is not in the table (but does have the 
+ correct header character), the numeric ID is displayed.
+#
+:page
+#
+
+ Also see CWID ANI/ENI on the Main Programming Screen to 
+ select the item that will be in use on any particular 
+ channel.  CWID and ANI/ENI cannot both be active on any 
+ one channel. 
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle RX Enable/TX Enable/TRX Enable/off
+#
+#
+#
+:comd_5tonea/e
+
+                     [5-Tone ANI/ENI]
+
+ This item toggles the 5 Tone ANI/ENI feature between three
+ On states (RX enable, TX enable, and TRX enable) and off.
+ When RX, the repeater will only receive, decode and
+ display incoming 5 Tone ANI/ENI signals.  When TX, the
+ repeater will only transmit it's programmed 5 Tone ANI/ENI
+ signals.  When TRX, both of the above are active.
+#
+:page
+#
+
+ When any of the On states are selected, the F4 key (see
+ the red boxes at the bottom of the screen) allows access
+ to the 5-Tone Settings window, where the ANI/ENI 
+ parameters can be programmed.  Note: The Mark and Space 
+ Time parameters affect both the RX (decode) and TX 
+ (encode) operation.  Incoming ID strings from other 
+ radios must match the Mark and Space Time settings here 
+ to be reliably decoded.
+
+ 5-Tone ID strings are (of course) always 5 characters in 
+ length.  The first incoming character must be the ANI 
+ Header Code character.
+#
+:page
+#
+
+ Alphanumeric displays for up to 48 incoming IDs can be
+ programmed into the repeater.  The F6 key (see the red 
+ boxes at the bottom of the screen) allows access to the
+ Alpha Tag table for programming.  This table does not
+ use the Header Code digit.  When an incoming (numeric) 
+ ID matches an entry in this table, the programmed Alpha 
+ Tag is displayed instead of the actual number.  If an 
+ incoming ID is not in the table (but does have the 
+ correct header character), the numeric ID is displayed.
+#
+:page
+#
+
+ Also see CWID ANI/ENI on the Main Programming Screen to 
+ select the item that will be in use on any particular 
+ channel.  CWID and ANI/ENI cannot both be active on any 
+ one channel. 
+
+ Arrow Keys: Change fields after selection.
+ Space Bar:  Toggle RX Enable/TX Enable/TRX Enable/off
+#
+#
+#
+:dmarkt
+
+                      [DTMF Mark Time]
+
+ This is the amount of time that each tone is actually
+ transmitted.  Use the number keys to program this
+ value in 1 mS increments from 1 mS to 600 mS.
+
+ Incoming ANI and ENI strings to be decoded must match
+ this timing as closely as possible for reliable decode.
+#
+#
+#
+:dspacet
+
+                     [DTMF Space Time]
+
+ This is the amount of space time between each tone.
+ Use the number keys to program this value in 1 mS
+ increments from 1 mS to 600 mS.
+
+ Incoming ANI and ENI strings to be decoded must match
+ this timing as closely as possible for reliable decode.
+#
+#
+#
+:danion
+
+                         [ANI ON]
+
+ This selects the time at which the ANI string is
+ transmitted by the repeater.  Use the Space bar to
+ select TX Off (when PTT is unkeyed), TX On (when PTT
+ is first keyed, plus the programmed Delay Time),Both,
+ or None.  Note: The ANI is only transmitted when the
+ repeater is in Base mode.
+#
+#
+#
+:danidly
+
+                     [ANI Delay Time]
+
+ This is the amount of time delay between PTT press
+ (or release, as appropriate) and the start of the
+ ANI transmission.  This is commonly known as "Front
+ Porch Delay".  Use the number keys to program this
+ Value in 5 mS increments from 20 mS to 1275 mS.
+#
+#
+#
+:denidly
+
+                     [ENI Delay Time]
+
+ This is the amount of time delay between ENI
+ triggering and the start of the ENI sequence.  This 
+ is commonly known as "Front Porch Delay".  Use the 
+ number keys to program this value in 5 mS increments 
+ from 50 mS to 12750 mS (12.75 seconds).
+#
+#
+#
+:denitx
+
+                       [ENI TX Time]
+
+ After the ENI sequence is triggered, this is the 
+ amount of time that the transmitter will remain on.
+ If a local microphone is connected to the repeater,
+ any local ambient audio will be transmitted during
+ this time.  Use the number keys to program this
+ value in 1 second increments from 1 second to 255
+ seconds.
+#
+#
+#
+:denirx
+
+                       [ENI RX Time}
+
+ After the ENI TX time, this is the amount of
+ time that the repeater will be in normal receive
+ mode.  Any on-channel traffic will be heard through
+ the repeater's speaker during this period.  Use the
+ number keys to program this value in 1 second
+ increments from 1 second to 255 seconds.
+#
+#
+#
+:denirxd
+
+                    [ENI RX Dead Time]
+
+ After the ENI RX time, this is the amount of
+ time that the repeater will be in receive dead
+ mode.  Nothing will be heard through the repeater's 
+ speaker during this period.  Use the number keys to 
+ program this value in 1 second increments from 1 
+ second to 255 seconds.
+#
+#
+#
+:denirp
+
+                     [ENI Repeat Count]
+
+ This is the number of times that the ENI sequence
+ will be automatically repeated.  Use the number keys
+ to program this value in increments of 1 event
+ from 1 time to 255 times.
+#
+#
+#
+:danihead
+
+                     [ANI Header Code]
+
+ This programs the ONE leading character for all
+ incoming (received) and outgoing (transmitted) ANIs.
+ All incoming ANIs must have this character in the
+ first position in order to be decoded.  This will 
+ also be the first character in all outgoing ANIs.
+ Use the number or letter keys to program any one of
+ the 16 standard DTMF characters.  E=*, F=#.
+#
+#
+#
+:denihead
+
+                     [ENI Header Code]
+
+ This programs the ONE leading character for the
+ incoming (received) and outgoing (transmitted) ENI.
+ The incoming ENI must have this character in the
+ first position in order to be decoded.  This will 
+ also be the first character in the outgoing ENI.
+ Use the number or letter keys to program any one of
+ the 16 standard DTMF characters.  E=*, F=#.
+#
+#
+#
+:danicode
+
+                        [ANI Code]
+
+ This programs the trailing four characters of the
+ repeater's outgoing ANI.  The ANI Header Code is
+ always added to the beginning of this string, making
+ it a five character ANI.  Use the number or letter
+ keys to program any four character DTMF sequence.
+ E=*, F=#.
+#
+#
+#
+:denicode
+
+                         [ENI Code]
+
+ This programs the trailing four characters of the
+ repeater's incoming and outgoing ENI.  The ENI Header 
+ Code is always added to the beginning of this string, 
+ making it a five character ENI.  Use the number or 
+ letter keys to program any four character DTMF 
+ sequence.  E=*, F=#.
+#
+#
+#
+:5markt
+
+                     [5 Tone Mark Time]
+
+ This is the amount of time that each tone is actually
+ transmitted.  Use the number keys to program this
+ value in 1 mS increments from 1 mS to 600 mS.
+
+ Incoming ANI and ENI strings to be decoded must match
+ this timing as closely as possible for reliable decode.
+#
+#
+#
+:5spacet
+
+                     [5 Tone Space Time]
+
+ This is the amount of space time between each tone.
+ Use the number keys to program this value in 1 mS
+ increments from 1 mS to 600 mS.
+
+ Incoming ANI and ENI strings to be decoded must match
+ this timing as closely as possible for reliable decode.
+#
+#
+#
+:5anihead
+
+                      [ANI Header Code]
+
+ This programs the ONE leading character for all
+ incoming (received) and outgoing (transmitted) ANIs.
+ All incoming ANIs must have this character in the
+ first position in order to be decoded.  This will 
+ also be the first character in all outgoing ANIs.
+ Use the number or letter keys to program any one of
+ the characters for the 5 tone system in use.
+#
+#
+#
+:5enihead
+
+                      [ENI Header Code]
+
+ This programs the ONE leading character for the
+ incoming (received) and outgoing (transmitted) ENI.
+ The incoming ENI must have this character in the
+ first position in order to be decoded.  This will 
+ also be the first character in the outgoing ENI.
+ Use the number or letter keys to program any one of
+ the characters for the 5 tone system in use.
+#
+#
+#
+:5anicode
+
+                         [ANI Code]
+
+ This programs the trailing four characters of the
+ repeater's outgoing ANI.  The ANI Header Code is
+ always added to the beginning of this string, making
+ it a five character ANI.  Use the number or letter
+ keys to program any of the characters for the 5 tone
+ system in use.
+#
+#
+#
+:5enicode
+
+                         [ENI Code]
+
+ This programs the trailing four characters of the
+ repeater's incoming and outgoing ENI.  The ENI Header 
+ Code is always added to the beginning of this string, 
+ making it a five character ENI.  Use the number or 
+ letter keys to program any of the characters for the
+ 5 tone system in use.
+#
+#
+#
+:5rptcod
+
+                     [5 Tone Repeat Code]
+
+ This selects the one 5 tone character that will serve
+ as the repeat code character for the 5 tone system in
+ use.  Use the number or letter keys to program one
+ character for repeat code.
+#
+#
+#
+:5toneset
+
+                        [5 Tone Set]
+
+ This selects the 5 tone system (EIA, CCIR, etc.) to
+ be used for signaling in this repeater.  Press the
+ Space bar to scroll through the various pre-programmed
+ systems.
+#
+:page
+#
+
+ When the "USER" set is selected, the programmer can
+ edit each individual tone frequency as desired to
+ customize the tone signaling system.  Use the arrow keys 
+ to move the cursor.  Use the number keys to enter a new
+ tone frequency for any character(s).
+#
+#
+#
+:edit_enviro
+              [Hardware Environment Settings]
+
+ CAUTION: Do not change Hardware Environment Parameters 
+ unless you are certain that the transceiver hardware is
+ suitable for the new value.
+
+ Editing these parameters requires that this program be
+ started with the -f switch on the command line.  
+ Otherwise the settings can only be viewed.
+
+ Use the arrow keys to select the parameter to edit.  Then 
+ Use the Space bar or Backspace key to toggle among all 
+ Possible settings for this parameter.
+
+ When all parameters are set as desired, press the Escape
+ key to return to the Common Data Editor.
+#
+#
+#
+:edit_common
+
+               [Edit Common Data Parameters]
+
+ CAUTION: Do not change Common Parameters unless you are
+ certain that the transceiver hardware is suitable for 
+ the new value.
+
+ Editing these parameters requires that this program be
+ started with the -f switch on the command line. Otherwise
+ the settings can only be viewed.
+
+ Use the Arrow Keys to select the parameter to edit. Then use
+ the Space Bar or Backspace Key to toggle among all possible
+ settings for that parameter. When all parameters are set as
+ desired, press the Esc Key to return to the Channel Editor.
+#
+#
+#
+:txpwradj
+
+                      [TX Power Adjust]
+
+ This window allows the programmer to adjust the 
+ transmitter high power output on a per-channel basis.  
+
+ This does not provide real-time adjustments.  Upload (F5)
+ the program from the repeater.  Bring up the TX Power 
+ Adjust window.  Use the Arrow keys to select the channel 
+ to adjust.  Use the Space bar to increment, or the 
+ Backspace key to decrement, the transmitter power setting 
+ to the desired numeric level.  Escape back to the Main 
+ Programming Screen and download (F6) the program back to 
+ the repeater.  Check the transmitter output power.  If 
+ further adjustment is required, repeat the above steps.
+#
+:page
+#
+ The FRB-4 Tuning I/F Box may be used for this procedure
+ if desired, but it is not required.  It will save you
+ considerable time because you will not have to swap
+ cables back and forth.
+
+ When using the VXD-40xx internal duplexer, the transmit
+ power must be reduced to 40 watts.  A power setting of 
+ -28(E4h) will usually reduce the output to 40 watts.  
+ This must be adjusted and verified BEFORE the duplexer 
+ is installed. 
+
+ Programmed power levels will be saved to disk when the
+ repeater's program is saved (F4 at the Main Programming
+ Screen).
+#
+#
+#
+:alphatag
+
+                      [ANI Alpha Tag]
+
+ The ANI readout can be programmed to "alias" any
+ incoming ANI number sequence and display instead any
+ alphanumeric name up to 8 characters.  Enter the
+ 4 digit ANI code (this is the last 4 digits...the first
+ digit must always be the ANI Header Code digit) into
+ the left side of the table, then enter the desired
+ alphanumeric name for display on the right side of
+ the table.  Up to 48 entries can be made.
+
+ If an ANI number is received that does not have a
+ programmed name, the actual decoded DTMF or 5 tone
+ digits will be displayed.
+#
+#
+#
+:iddottim
+
+                        [ID Dot Time]
+
+ This sets the speed of the Morse station ID.  A dot
+ time of 50 mS is equivalent to a Morse speed of
+ approximately 25 words per minute.
+#
+#
+#
+:idintvtim
+
+                     [ID Interval Timer]
+
+ This sets the time interval between station IDs.
+ When this time expires, the identifier will wait 
+ until the current user unkeys his radio before 
+ sending the ID.  ID will not be sent if there has
+ been no radio activity since the last ID was sent.
+#
+#
+#
+:idtonfrq
+ 
+                     [ID Tone Frequency]
+
+ This selects the tone frequency ("pitch") for the
+ Identifier.
+#
+#
+#
+:idcwid
+
+                         [CW-ID]
+
+ This is the ID string that will be sent in Morse
+ code.  Use the letter and number keys to enter up
+ to 16 characters for transmission.  The Space bar
+ will enter a word space (Dot Time x 3) between
+ characters if desired.
+#
+#
+#
+:envsqwn
+
+                   [Squelch W/N Adjust]
+
+ This parameter adjusts the difference in the squelch
+ noise level relationship between channels programmed
+ in Wide mode and those programmed in Narrow mode. 
+
+ In most cases, the factory default setting should
+ not be changed.
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+#
+#
+#
+:envsqhy
+
+                    [Squelch Hysteresis]
+
+ This parameter adjusts the width of the squelch
+ hysteresis, from point of opening to point of
+ closing.  
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+#
+#
+#
+:envnsqth
+
+                   [NSQ Threshold Level]
+
+ This parameter adjusts the master repeat squelch
+ threshold level.  This item sets the threshold for
+ the "Prpgm" squelch level as seen on the main 
+ programming screen.  
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+
+ Info:  From this half of the Environment screen, 
+ press the Tab key to move the cursor to the other 
+ half of the screen.
+#
+#
+#
+:envrxfrq
+
+                      [RX Freq (MHz)]
+
+ This half of the screen allows adjustment of 
+ various parameters that are linked to the 
+ repeater's receive frequency.  Think of these 
+ adjustments as being similar to those found
+ on a graphic equalizer.  For example, the setting
+ of the TX Power parameter under the Lowest (150.0
+ MHz) column will have effect on operating 
+ frequencies at and near 150 MHz.  It will have no
+ effect on the same parameter when the repeater is
+ operating at 170 MHz.
+#
+:page
+#
+
+ Ordinarily, these frequency band settings should
+ not be changed, as they do affect the repeater's
+ performance across it's entire frequency range.
+ However, if this repeater is to be operated only
+ on one set RX/TX frequency (pair) that will NEVER 
+ be changed throughout it's operating life, and if
+ the technician desires a very high level of
+ alignment response only at one particular
+ RX/TX frequency (pair), the desired exact frequency 
+ may be input here in the column most closely
+ associated with that frequency.  For example, if
+ the exact frequency is 153.530 MHz, enter 153.5 in
+ the Lowest (150.0) column header.  This entry is
+ limited to a resolution of 100 kHz.  
+#
+#
+#
+:envsqllvl
+
+                       [SQL Level]
+
+ This item sets the relative repeat squelch 
+ threshold level for each frequency range.  This
+ setting can also be offset by the "User" squelch
+ setting on the main programming screen on a per-
+ channel basis.
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+#
+#
+#
+:envrxt
+
+                        [RX Tune]
+
+ This item tunes the receiver front end for each
+ frequency range.  Lower numbers generally provide
+ better sensitivity for lower frequencies, and higher
+ numbers generally provide better sensitivity for
+ higher frequencies.
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+#
+#
+#
+:envtxfreq
+
+                      [TX Freq (MHz)]
+
+ This half of the screen allows adjustment of 
+ various parameters that are linked to the 
+ repeater's transmit frequency.  Think of these 
+ adjustments as being similar to those found
+ on a graphic equalizer.  For example, the setting
+ of the TX Power parameter under the Lowest (150.0
+ MHz) column will have effect on operating 
+ frequencies at and near 150 MHz.  It will have no
+ effect on the same parameter when the repeater is
+ operating at 170 MHz.
+#
+:page
+#
+
+ Ordinarily, these frequency band settings should
+ not be changed, as they do affect the repeater's
+ performance across it's entire frequency range.
+ However, if this repeater is to be operated only
+ on one set RX/TX frequency (pair) that will NEVER 
+ be changed throughout it's operating life, and if
+ the technician desires a very high level of
+ alignment response only at one particular
+ RX/TX frequency (pair), the desired exact frequency 
+ may be input here in the column most closely
+ associated with that frequency.  For example, if
+ the exact frequency is 153.530 MHz, enter 153.5 in
+ the Lowest (150.0) column header.  This entry is
+ limited to a resolution of 100 kHz.   
+#
+#
+#
+:envtxpwr
+
+                     [TX Pwr Hi / Lo]
+
+ These items adjust the transmitter's master high and 
+ low power output.  These settings can then be offset
+ (plus or minus) on a per-channel basis in the TXP 
+ Adj table.  It is best to set all the offsets in 
+ the TXP Adj table to 0 before aligning TX power here.
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+#
+#
+#
+:envmaxd
+
+                      [Max Dev W / N]
+
+ These items adjust the transmitter's overall
+ maximum total deviation.  Inject a 1kHz audio
+ test tone at 77mV into the microphone jack
+ (the FRB-4 Interface Box is very helpful for this),
+ key the transmitter, and align the deviation to the 
+ desired level.
+
+ Hint:  If transmitting CTCSS or DCS, it is wise
+ to align these sub-audio deviation levels BEFORE
+ aligning the Maximum Deviation.
+#
+:page
+#
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+#
+#
+#
+:envctcd
+
+                   [CTC (CTCSS) Dev W / N]
+
+ These items adjust the transmitter's CTCSS
+ deviation.  Be sure that the selected channel is
+ programmed to transmit CTCSS.  Key the transmitter 
+ and align the deviation to the desired level.
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+#
+#
+#
+:envdcsd
+
+                      [DCS Dev W / N]
+
+ These items adjust the transmitter's DCS
+ deviation.  Be sure that the selected channel is
+ programmed to transmit DCS.  Key the transmitter
+ and align the deviation to the desired level.
+
+ Use the number keys to type numeric entries, or
+ use the Space bar and Backspace keys to increment
+ or decrement the setting.  Download the changed
+ data to the repeater to effect the change.
+#
+:file_select
+                  [File Selection Window]
+
+ Select a filename (lower-case letters) or subdirectory
+ (upper-case, in angle brackets <>) using the Arrow Keys, and
+ then the Enter Key to accept your selection. If you selected
+ a subdirectory, the window contents will be replaced with
+ that subdirectory's contents, from which you can select
+ again. You can also delete a file or subdirectory with [F4].
+
+ You can also enter a new drive letter or filespec directly.
+ Pressing alphanumeric keys activates the filespec line
+ editor along the bottom of the window. You can use wildcards
+ ("*" or "?") to display only certain files (eg.,
+ B:\CHDATA\*.CH and Enter displays only files with the "CH"
+ extension in the CHDATA subdirectory on drive B). Tab
+ returns you to the upper half of the selection window.
+#
+:page
+#
+ (at any time in Selection Window)
+ Enter Key:  Accept selection.
+ Esc Key:    Cancel operation and return to Channel Editor.
+ Tab Key:    Switch between Selection Window and line editor.
+
+ (for selection in upper part of window)
+ Arrow Keys: Select filename/subdirectory.
+ Home/End:   Jump to first/last selection on screen.
+ [F4] Key:   Delete current file selection from disk.
+ PageDown:   Jump down one page (for large directories).
+ PageUp:     Jump up one page (for large directories).
+
+ (for filespec editor at bottom of window)
+ Delete:     Delete character under cursor.
+ Backspace:  Delete character to left.
+ Insert:     Toggle insert/overwrite modes.
+#
+#
+#
+:path_edit
+                   [File Selection Window]
+
+ Select a filename (lower-case letters) or subdirectory
+ (upper-case, in angle brackets <>) using the Arrow Keys, and
+ then the Enter Key to accept your selection. If you selected
+ a subdirectory, the window contents will be replaced with
+ that subdirectory's contents, from which you can select
+ again.  If you select a file, you can delete it with [F4].
+
+ You can also enter a new drive letter or filespec directly.
+ Pressing alphanumeric keys activates the filespec line
+ editor along the bottom of the window. You can use wildcards
+ ("*" or "?") to display only certain files (eg.,
+ B:\CHDATA\*.CH and Enter displays only files with the "CH"
+ extension in the CHDATA subdirectory on drive B). Tab 
+ returns you to the upper half of the selection window.
+#
+:page
+#
+ (at any time in Selection Window)
+ Enter Key:  Accept selection.
+ Esc Key:    Cancel operation and return to Channel Editor.
+ Tab Key:    Switch between Selection Window and line editor.
+
+ (for selection in upper part of window)
+ Arrow Keys: Select filename/subdirectory.
+ Home/End:   Jump to first/last selection on screen.
+ [F4] Key:   Delete current file selection from disk.
+ PageDown:   Jump down one page (for large directories).
+ PageUp:     Jump up one page (for large directories).
+
+ (for filespec editor at bottom of window)
+ Delete:     Delete character under cursor.
+ Backspace:  Delete character to left.
+ Insert:     Toggle insert/overwrite modes.
+#
+#
+#
+:read_rom
+
+     [Transfer data between PC and Transceiver's EEPROM]
+
+ The Space Bar is used to proceed with the transfer operation
+ after ensuring the hardware is set up for the transfer. To
+ cancel and return to the Channel Editor, press the Esc Key
+ instead.
+
+ The status of the transfer operation will be displayed when
+ finished (a few seconds after pressing the Space Bar).
+
+ NOTE! Press the Esc Key if the system appears to hang. Then
+ make sure the power indicator on the interface box is on,
+ and check the cables for a connection problem.
+#
+#
+#
+:write_rom
+
+    [Transfer data between PC and Transceiver's EEPROM]
+
+ The Space Bar is used to proceed with the transfer operation
+ after ensuring the hardware is set up for the transfer. To
+ cancel and return to the Channel Editor, press the Esc Key
+ instead.
+
+ The status of the transfer operation will be displayed when
+ finished (a few seconds after pressing the Space Bar).
+
+ NOTE! Press the Esc Key if the system appears to hang. Then
+ make sure the power indicator on the interface box is on,
+ and check the cables for a connection problem.
+#
+#
+#
+:make_dir
+
+          [Make a new subdirectory on current Path]
+
+ Input the name of the new subdirectory (up to 8 characters),
+ then press Enter. Press Esc or F8 to cancel if you change
+ your mind.
+
+ Backspace: Delete character to left of cursor
+ Delete:    Delete character above cursor
+ Insert:    Toggle Insert/Overwrite mode (Insert is default,
+            Overwrite has block cursor)
+#
+#
+#
+:remove_dir
+       [Remove the named (or pointed-to) subdirectory]
+
+ Only empty child directories from the current subdirectory
+ can be removed. In the file list, the inverse box can be
+ positioned with the arrows to select a subdirectory to
+ remove, by pressing F4. If the file list selection is not
+ a subdirectory, a box will appear in which you can enter
+ the name of the subdirectory to be removed. This name must
+ be the same as one of the subdirectories displayed in the
+ file list, and any files in that subdirectory must have
+ already been deleted.
+
+ Backspace: Delete character to left of cursor
+ Delete:    Delete character above cursor
+ Insert:    Toggle Insert/Overwrite mode (Insert is default,
+               Overwrite has block cursor)
+#
+#
+

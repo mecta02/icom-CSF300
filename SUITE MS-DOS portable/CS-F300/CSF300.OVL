@@ -1,0 +1,3934 @@
+        ;=======================================;
+        ; General Items                         ;
+        ;=======================================;
+#version
+`Z CS-F300 Rev.2.1 (`gIC-F300 Rev.1-2`Z)
+`Z [%s]
+
+`Z`hF1`Z:Help 
+#Bstat2ee
+1...(=0:adjust off, =1:on ; default = 1:on)
+
+        ;=======================================;
+        ; System                                ;
+        ;=======================================;
+#comset
+/C?:9600,N,8,1
+#clmem
+118
+#Dprn
+prn
+#BcachD
+1
+#Bmindsp
+80,25
+#Bcursor
+1,2
+#Bfini
+CSF300L.ICS
+CSF300P.ICS
+        ;=======================================;
+        ; Background                            ;
+        ;=======================================;
+#bgnum
+1
+#bg0
+Metallic ground
+`8`GÛ
+#
+        ;=======================================;
+        ; Display Items                         ;
+        ;=======================================;
+        ;===== Color Set / Color (Sheet, Board, Bottom) =====;
+#Bcol0
+0123456789ABCDEF
+01134567894BC3EF
+HH9FE9CBENLI
+VN00F04EENLI
+KJ11F1EFFSLI
+#
+        ;===== Color Set / Monochrome 1 =====;
+#Bcol1
+0123456719ABC0EF
+01034667897BCAEF
+008FE17FENLI
+OG8FF877FNLI
+NN00F001FVVI
+#
+        ;===== Color Set / Monochrome 2 =====;
+#Bcol2
+0123456789ABC0EF
+01034667897BCAEF
+008F217F2NLI
+OG87F877FNLI
+NN00F001FVVI
+#
+        ;=======================================;
+        ; Opening title                         ;
+        ;=======================================;
+#opn
+N308   [atr][wait][frame][back atr]
+#opening
+`N`0                                                 
+`0                     `1`NCS-F300`0`N                     
+`0                                                 
+`4ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+`0  ICF-3(Icom Cloning Format-3) Cloning Software  
+`0                                                 
+`0ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+`0  For `1IC-F300 series`0                             
+`0                                                 
+`0                   Copyright 1997-1998 Icom Inc. 
+`0                                                 
+`0             `8Portions of the software copyrighted
+`0             `8by Microsoft Corporation 1982-1988  
+#
+	;=======================================;
+	; Top Titles                            ;
+	;=======================================;
+
+	;===== Memory CH =====;
+#T158
+`hCH@Atr`Z
+#T001
+`h   Frequency (MHz)@   RX`Z
+#T002
+`h@   TX`Z
+#T003
+`hCTCSS/DTCS@ RX`Z
+#T004
+`h@ TX`Z
+#T022
+`h Scrambler@ON/OFF
+#T023
+`h@Code
+#T005
+`h Text@`Z
+#T006
+`hTOT@`Z
+#T007
+`hRF@PWR`Z
+#T008
+`hLock@-out`Z
+#T159
+`h Scan@ 12345`Z
+#T009
+`iSW Action@`hMoni`Z
+#T010
+`h@Up/Dn`Z
+#T011
+`h@Call`Z
+#T012
+`h@PTT`Z
+#T013
+`hLog@IN/OFF`Z
+#T014
+`hAuto@Reset`Z
+#T015
+`hCH@Mute`Z
+#T016
+`i5Tone Signaling@`hForm`Z
+#T017
+`h@RPT`Z
+#T018
+`h@STN`Z
+#T019
+`h@ID`Z
+#T020
+`h@Pos`Z
+#T021
+`h  (R-NR)@RX C-No`Z
+#T025
+`h2Tone@`Z
+        ;===== Top Title: RX Code CH =====;
+#T030
+`i RX Freq(Hz)@`h  1st`Z
+#T031
+`h@  2nd`Z
+#T032
+`hGroup@Call`Z
+#T033
+`h@ Text`Z
+#T034
+`h@ANS`Z
+#T082
+`iRX@Code`Z
+#T083
+`h Text or@ ID-Dec`Z
+#T084
+`h@Bell`Z
+#T085
+`hEmer@Cancel`Z
+#T086
+`h@ABC`Z
+#T087
+`h@EXO`Z
+#T088
+`h@Beep`Z
+#T089
+<`hAuto@ TX`Z
+#T090
+`hAud@Mode`Z
+#T091
+`h@Stun`Z
+#T092
+`h@Scan`Z
+#
+        ;===== Top Title: TX Code CH =====;
+#T064
+`iTX@Code`Z
+#T065
+`hInput@Digit`Z
+#T066
+`h@ Text`Z
+#T067
+<`h Up-@Date`Z
+#T068
+`h  ABC@Dec`Z
+#T069
+`h@Aud`Z
+#T070
+`h@Sel`Z
+#
+        ;===== Top Title: User Tone =====;
+#T150
+`i     User Tone@`hEncode@`Z
+#T151
+`h@    Decode@  Low`Z
+#T152
+`h@@ High`Z
+#
+        ;=======================================;
+        ; Key Menu                              ;
+        ;=======================================;
+#KM000
+`Z `hAlt`Z:Menu                           
+`Z `hEnt`Z:Inp/Sel
+`Z `hSpc`Z:Inp/Sel
+#KM100
+`Z `hAlt`Z:Menu                    `hF8`Z:Copy CH
+`Z `hEnt`Z:Inp/Sel                 `hF9`Z:Paste CH
+`Z `hSpc`Z:Inp/Sel                 
+#KM101
+`Z `hAlt`Z:Menu  `hPage Up/Dn`Z:Bank   `hF8`Z:Copy CH
+`Z `hEnt`Z:Inp/Sel                 `hF9`Z:Paste CH
+`Z `hSpc`Z:Inp/Sel                 
+#KM002
+
+`Z `hEnt`Z:Inp/Sel  `h123...`Z:ON/OFF
+`Z `hSpc`Z:All ON/OFF
+#KM003
+
+`Z              `h123...`Z:ON/OFF
+`Z `hSpc`Z:All ON/OFF
+#KM004
+`Z `hAlt`Z:Menu                           
+`Z `hEnt`Z:Inp/Sel
+`Z                           
+#KM005
+
+`Z `hEnt`Z:Inp/Sel  `hIns`Z:Insert CH
+`Z              `hDel`Z:Delete CH
+#KM006
+
+`Z `hEnt`Z:Inp/Sel                 `hF9`Z:Paste CH
+`Z `hSpc`Z:Long Tone ON/OFF
+#KM007
+
+
+`Z `hSpc`Z:Inp/Sel  `h+`Z:Status Digit
+#KM008
+
+
+`Z `hSpc`Z:Inp/Sel      `h*No effect at LMR`Z
+#KM009
+
+`Z `hEnt`Z:Inp/Sel  `h=`Z:Simplex
+`Z `hSpc`Z:Inhibit               
+#KM010
+
+`Z `hEnt`Z:Inp/Sel
+`Z `hSpc`Z:Inhibit  `hBackspace`Z:Wide/Narrow
+#KM011
+`Z `hAlt`Z:Return
+`Z `ha-n`Z:ON/OFF
+`Z `hSpc`Z:All ON/OFF
+#
+        ;=======================================;
+        ; Menu Items                            ;
+        ;=======================================;
+        ;===== Menu Items: Top Menu =====;
+#m_top
+ `eF`Zile @ `eS`Zcreen @ `eC`Zlone @ `eP`Zrint @ `eM`Zodel @ Set`eu`Zp 
+#sc_top
+FSCPMU
+#sc_file
+LS DX
+#sc_screen
+MKDOS2RTUCEV
+#sc_clone
+RWI
+#sc_print
+CA
+#sc_setup
+DR
+
+        ;===== Menu Items: Mch =====;
+#m_chatrB
+ 'A':Priority A@ 'B':Priority B@ 'E':Emergency@ Emergency OFF@ @ SmarTrunk ON/OFF @ Insert CH (Ins)@ Delete CH (Del) @ Return
+#m_chatrF
+ 'A':Priority A@ 'B':Priority B@ 'E':Emergency@ Emergency OFF@ @ `fSmarTrunk ON/OFF`Z @ Insert CH (Ins)@ Delete CH (Del) @ Return
+#m_onof
+OFF@ON 
+ OFF @ ON
+#m_onof2
+   @ON 
+ OFF @ ON
+#m_rfp
+ L1@ L2@ H 
+ L1:Low1@ L2:Low2@ H :High 
+#m_loutL
+    @Busy@Rpt 
+ OFF@ Busy:Busy Lockout@ Rpt :Repeater Lockout 
+#m_loutP
+    @Busy@Rpt1@Rpt2
+ OFF@ Busy:Busy Lockout@ Rpt1:Repeater Lockout(1)@ Rpt2:Repeater Lockout(2) 
+#m_scainc
+dummy@dummy
+ Scan List Include: ( Inhibit ) @         "        :   Enable
+#m_scan
+   @Tag
+ Skip @ Tag  
+#m_aresL
+Tim-A@Tim-B
+ Tim-A: Timer A @ Tim-B: Timer B
+#m_aresP
+Tim-A@Tim-B@TimAI@TimBI
+ Tim-A: Timer A@ Tim-B: Timer B@ TimAI: Timer A + Inactive@ TimBI: Timer B + Inactive 
+#m_moni
+       @Aud    @In_A   @In_A+R1@In_A+R2@Both   @Both+R1@Both+R2@`g*******`Z@`g*******`Z
+ OFF@ Aud    :Audible@ In_A   :Inaudible@ In_A+R1:Inaudible + Reset Code 1(32)@ In_A+R2:Inaudible + Reset Code 2(31)@ Both   :Audible & Inaudible@ Both+R1:Audible & Inaudible + Reset Code 1(32)@ Both+R2:Audible & Inaudible + Reset Code 2(31)
+#m_updn
+    @Aud @In_A
+ OFF@ Aud :Audible@ In_A:Inaudible 
+#m_aud
+    @Aud 
+ OFF@ Aud :Audible 
+#m_loginL
+      @L-IN  @L-OFF @Both  
+ OFF@ L-IN  :Log-IN@ L-OFF :Log-OFF@ Both  :Log-IN/OFF 
+#m_loginP
+      @L-IN  @L-INA @L-INI @L-OFF @L-OFFA@Both  @BothA1@BothA2
+ OFF@ L-IN  :Log-IN @ L-INA :Log-IN at Audible@ L-INI :Log-IN at Inaudible@ L-OFF :Log-OFF@ L-OFFA:Log-OFF at Audible @ Both  :Log IN/OFF@ BothA1:Log IN/OFF at Audible @ BothA2:BothA1 and L-INI
+#m_chmut
+CONT@SGL 
+ CONT: Continuous Tone @ SGL : Single Tone
+#m_t5form
+USER @CCIR @ZVEI1@ZVEI2@DZVEI@EEA  @EEA2 @DAPL @EIA  @DTMF 
+ USER  @ CCIR  @ ZVEI1 @ ZVEI2 @ DZVEI @ EEA   @ EEA2  @ DAPL  @ EIA   @ DTMF  
+#m_pos
+   @BTM@TOP
+ OFF: (RPT)+ STN@ BTM: (RPT)+ STN + ID@ TOP: (RPT)+ ID  + STN 
+#m_scrm
+      @ON    @INH
+ OFF @ ON  @ INH 
+
+        ;===== Menu Items: Key & Display Assign =====;
+		l:LMR simple, L:LMR multi, p:PMR simple, P:PMR multi
+		B:bank mode, F:free ch mode
+#m_kerr
+`g******************  `Z
+#m_kass
+Null              @  0 @ lp BF
+CH Up             @  1 @ lp BF
+CH Down           @  2 @ lp BF
+Bank              @  3 @ lp B 
+Scan A Start/Stop @  4 @ lp BF
+Scan B Start/Stop @  5 @ lp BF
+Scan Add/Del(Tag) @  6 @ lp BF
+Prio A            @  7 @ lp BF
+Prio A (Rewrite)  @  8 @ lp BF
+Prio B            @  9 @ lp BF
+MR-CH 1           @ 10 @ lp BF
+MR-CH 2           @ 11 @ lp BF
+MR-CH 3           @ 12 @ lp BF
+MR-CH 4           @ 13 @ lp BF
+Moni              @ 14 @ l  BF
+Moni(Audi)        @ 14 @  p BF
+RF ATT            @ 22 @ lp BF
+Lock              @ 15 @ lp BF
+Beep              @ 43 @ lp BF
+Light             @ 44 @ lp BF
+High              @ 16 @ lp BF
+Low2              @ 17 @ lp BF
+Low1              @ 18 @ lp BF
+C.Tone CH Ent     @ 19 @ lp BF
+Talk Around       @ 20 @ lp BF
+Wide/Narrow       @ 21 @ lp BF
+DTMF Autodial     @ 23 @ lp BF
+Call              @ 24 @ lp BF
+Call A (Code 30)  @ 25 @  p BF
+Call B (Code 29)  @ 26 @  p BF
+Emergency Single  @ 27 @ lp BF
+Emergency Repeat  @ 28 @ lp BF
+TX Code           @ 29 @  p BF
+TX Code CH Up     @ 30 @  p BF
+TX Code CH Down   @ 31 @  p BF
+ID-MR Select      @ 32 @  p BF
+Scrambler         @ 46 @ lp BF
+OPT1 Out          @ 34 @ lp BF %1
+OPT2 Out          @ 35 @ lp BF %2
+OPT3 Out          @ 36 @ lp BF %3
+OPT1 Momentary Out@ 37 @ lp BF %1
+OPT2 Momentary Out@ 38 @ lp BF %2
+OPT3 Momentary Out@ 39 @ lp BF %3
+Trunking Group SW @ 33 @ lp BF
+#
+#m_phl
+/L@/H
+ /L: Output "L" at Active@ /H: Output "H" at Active 
+#m_light
+ON  @OFF @Auto
+ ON@ OFF@ Auto 
+#m_scrmtyp
+Rolling    @Non-rolling
+ Rolling     @ Non-rolling 
+#m_syncap
+Standard  @Continuous
+ Standard   @ Continuous 
+#m_tontim
+OFF    @  0.300@  0.600@  1.100
+ OFF   @ 0.300 @ 0.600 @ 1.100 
+#m_phold
+MR CH Individual@Override        
+ MR CH Individual @ Override
+#m_dtype
+ `g******************`Z @ MR CH              @ TX Code CH         @ MR CH + TX Code CH 
+#m_chType
+Bank(8CH*4Bank) @Bank(16CH*2Bank)@Bank(20CH+12CH) @Free            
+ Bank(8CH*4Bank)  @ Bank(16CH*2Bank) @ Bank(20CH+12CH)  @ Free             
+
+	;===== Menu Items: Scan list =====;
+#m_scanm
+           @ M1(Normal)@ M2(Prio-A)@ M3(Prio-A)
+ Scan OFF@ Mode 1: Normal@ Mode 2: Prio-A@ Mode 3: Prio-A 
+
+	;===== Menu Items: RX Code CH =====;
+#m_t2gcall
+1st@2nd
+ 1st @ 2nd 
+#m_bell
+     @OFF  @ON   @Blink
+ Null  : Retain bell status @ OFF   : Turn off bell@ ON    : Turn on bell@ Blink : Bell blinks
+#m_abcL
+   @ON 
+ OFF :No Answerback @ ON  :Single Tone
+#m_abcP
+   @STN@SGL@%3d
+ OFF    :No Answerback@ STN    :Station Code CH @ SGL    :Single Tone@ xx(num):Each Code
+#m_beep
+      @OFF   @Pi    @PiPi  @PiRo  @Pi  /R@PiPi/R@PiRo/R
+ Null: Retain beep@ OFF : Turn off beep @ Pi     (Single)@ PiPi   (Single)@ PiRo   (Single)@ Pi  /R (Repeat)@ PiPi/R (Repeat)@ PiRo/R (Repeat)
+#m_audmod
+    @In_A@Aud 
+ Null: Retain audible status @ In_A: Inaudible@ Aud : Audible
+#m_stun
+    @Kill@Stun
+ OFF@ Kill @ Stun 
+#m_scans
+      @Cancel@Start 
+ Null @ Cancel @ Start 
+#m_t2encT
+Individual@Group     
+Individual: Encode both 1st and 2nd tone@Group     : Encode 1st tone only
+
+	;===== Menu Items: Common =====;
+#m_ie
+Inhibit@Enable 
+ Inhibit @ Enable
+#m_inv
+Normal @Inverse
+ Normal  @ Inverse 
+
+	;===== Menu Items: Maker =====;
+#m_burst
+Notone@Phase 
+ Notone @ Phase
+#m_+-
++(Plus) @-(Minus)
+ +(Plus)  @ -(Minus) 
+#m_pllref
+ 15.30 MHz@ 15.45 MHz
+ 15.30 MHz @ 15.45 MHz 
+
+	;===== PCG shape =====;
+#cs_pcg
+`Z `Za`Za`Za`Za`Za`Za`Za`Za`Za`Z `Z
+`Zf`Zg`Z `Z `Z `Zh`Z `Z `Z `Zi`Zb`Z
+`Zf`Z `Zg`Z `Z `Zh`Z `Z `Zi`Z `Zb`Z
+`Zf`Z `Z `Zg`Z `Zh`Z `Zi`Z `Z `Zb`Z
+`Zf`Z `Z `Z `Zg`Zh`Zi`Z `Z `Z `Zb`Z
+`Z `Zj`Zj`Zj`Zj`Z `Zk`Zk`Zk`Zk`Z `Z
+`Ze`Z `Z `Z `Zl`Zm`Zn`Z `Z `Z `Zc`Z
+`Ze`Z `Z `Zl`Z `Zm`Z `Zn`Z `Z `Zc`Z
+`Ze`Z `Zl`Z `Z `Zm`Z `Z `Zn`Z `Zc`Z
+`Ze`Zl`Z `Z `Z `Zm`Z `Z `Z `Zn`Zc`Z
+`Z `Zd`Zd`Zd`Zd`Zd`Zd`Zd`Zd`Zd`Z `Z
+
+
+        ;===== Menu Items: Top Menu =====;
+#m_t_fil
+ `eL`Zoad @ `eS`Zave @ Delete @ `eD`Zos @ E`ex`Zit
+#m_t_prn
+ `eC`Zurrent @ `eA`Zll
+#m_t_sc
+ `eM`Zemory Channel
+ `eK`Zey & Display Assign
+ `eD`ZTMF Autodial
+ C`eo`Zntinuous Tone
+ `eS`Zcan List
+ `e2`ZTone Code CH
+ `eR`ZX Code CH
+ `eT`ZX Code CH
+ `eU`Zser Tone
+ `eC`Zommon
+ `eE`Zxpert
+ Maker Reser`ev`Zed
+#m_t_cl
+ `eR`Zead  <- TR@ `eW`Zrite -> TR@ `eI`Znformation
+#m_t_md
+ LMR @ PMR 
+#m_t_su
+ `eD`Zisplay Type@ `eR`ZS-232C
+#m_selcol
+Color@Monochrome 1@Monochrome 2
+#m_232
+ Port #`e1`Z @ Port #`e2`Z 
+#
+        ;===== Menu Items: others =====;
+#Dchr
+ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~€
+#DchrF
+$%'()*+,-/:;=?@[\]^_`{}~!#"&.
+#
+        ;=======================================;
+        ; Sheet index                           ;
+        ;=======================================;
+
+	;===== Select 2tone =====
+#Ssel2t
+      `i2Tone Code Select`Z
+`h No.  1st     2nd     Text`Z
+#
+	;===== Select 5tone =====
+#Ssel5t
+    `iTX Code Select`Z
+`h No.   Code    Text`Z
+#
+	;===== Key & Display Assign =====
+#Skey
+          `iKey & Display Assign`Z
+`hKey Assign ( Up )`Z
+`h           (Down)`Z
+`h           ( P0 )`Z
+`h           ( P1 )`Z
+`h           ( P2 )`Z
+`h           ( P3 )`Z
+`hHanger Action`Z
+
+`hBeep ON/OFF`Z
+`hLight`Z
+`hRF PWR Selection`Z
+`hMR-CH  Bank/Free`Z
+
+`hOpening Text`Z
+`hMR/Code Display`Z
+#
+	;===== Hanger =====
+#Shang
+`i    Hanger`Z
+`hMoni`Z
+`hScan`Z
+`hPrio A`Z
+#
+	;===== DTMF =====
+#SdtmfL
+        `iDTMF Autodial`Z
+`hAutodial  1`Z
+`h          2`Z
+`h          3`Z
+`h          4`Z
+`h          5`Z
+`hEmergency`Z
+`hLog / ID`Z
+#SdtmfP
+        `iDTMF Autodial`Z
+`hAutodial  1`Z
+`h          2`Z
+`h          3`Z
+`h          4`Z
+`h          5`Z
+`h          6`Z
+`h          7`Z
+#Sdtcom
+`hDTMF Timer`Z
+`h1st Timer`Z
+`h[*][#] Timer`Z
+#
+	;===== Continuous tone ch ====
+#Sctch
+  `iContinuous Tone`Z
+`h  No.    RX    TX`Z
+#
+	;===== Scan list =====
+#Ssclst
+    `iScan Mode List / Text`Z
+#
+	;===== Scan list common =====
+#Ssccom
+`hStop Timer`Z
+`hResume Timer`Z
+`hPower ON Scan`Z
+`hAuto CH Call`Z
+#
+	;===== RX Code common =====
+#SrxcomL
+       `iRX Code Common`Z
+`hNotone Timer`Z
+`hGroup Timer`Z
+`hEXO Timer`Z
+`hBeep Repeat Timer`Z
+`hAuto TX Timer`Z
+#SrxcomP0
+`hLink A Timer`Z
+`hCompare Digit`Z
+`hID Decode Timer`Z
+#SrxcomP1
+`hEXO Timer`Z
+`hBeep Repeat Timer`Z
+`hAuto TX Timer`Z
+#
+	;===== Encode 2tone =====
+#Senc2t
+           `iTX Code`Z
+`hCode Type`Z
+`h1st Tone Frequency`Z
+`h         Period`Z
+`h2nd Tone Frequency`Z
+`h         Period`Z
+#
+	;===== TX Code common =====
+#Stxcom
+        `iTX Code Common
+
+`hLong Tone Timer`Z
+`hLink R Timer`Z
+`hLink 1 Timer`Z
+`hLink 2 Timer`Z
+`hLead out Delay Timer`Z
+`hABC Decode Timer`Z
+`hDisplayed Digit`Z
+`hSpecial Tone (Group)`Z
+`hSpecial Tone (Repeat)`Z
+`hSpecial Tone (Link2)`Z
+`hPTT Call at Inaudible`Z
+#
+	;===== User Tone Common =====
+#Sutcom
+            `iCommon Data`Z
+`h         Tone     Notone   Tone`Z
+`dFormat`h   Period   Timer    Length`Z
+#
+	;===== Common =====
+#Scom0L
+               `iCommon 1`Z
+`hUser Password`Z
+`hClone Comment (1)`Z
+`h              (2)`Z
+`hAF min Level`Z
+`hSQL Level`Z
+`hRX AF Switch(Low cut)`Z
+`hAuto Reset Timer A`Z
+`hAuto Reset Timer B`Z
+`hInactive Timer`Z
+
+`hTOT Timer`Z
+`h    Penalty Timer`Z
+`h    ID Out (DTMF)`Z
+`h    Beep`Z
+`hLockout Penalty Timer`Z
+`hCTCSS Reverse Burst`Z
+#
+#Scom0P
+               `iCommon 1`Z
+`hUser Password`Z
+`hClone Comment (1)`Z
+`h              (2)`Z
+`hAF min Level`Z
+`hSQL Level`Z
+`hRX AF Switch(Low cut)`Z
+`hAuto Reset Timer A`Z
+`hAuto Reset Timer B`Z
+`hInactive Timer`Z
+
+`hTOT Timer`Z
+`h    Penalty Timer`Z
+`h    ID Out`Z
+`h    Beep`Z
+`hLockout Penalty Timer`Z
+`hCTCSS Reverse Burst`Z
+#
+#Scom1
+            `iCommon 2`Z
+`hPWR ON Password`Z
+@`hDealer Passcode`Z
+@`hSet Mode Access`Z
+
+`hTransceiver Data Out`Z
+
+`hScrambler Type`Z
+`hScrambler Group Code`Z
+`hSynchronous Capture`Z
+`hTone Start Timing`Z
+#
+	;===== Expert =====
+#Sexp0
+             `iExpert`Z
+`hFast Scan Timer`Z
+`hSlow Scan Timer`Z
+`hTX DTCS Inverse`Z
+`hRX DTCS Inverse`Z
+`hUser CTCSS Freq(Hz)`Z
+`hEmer SW ON  Timer`Z
+`hEmer SW OFF Timer`Z
+`hEmer Start/Repeat`Z
+`hRX EXO`Z
+`hRX EXO Delay Timer`Z
+`hEXPTT Delay Timer`Z
+`hTone Mute EXPTT`Z
+`hLow Beep Frequency`Z
+`hHigh beep Frequency`Z
+`hMic Hanger Hook`Z
+`iCharacter Editor    >`Z
+#
+	;===== PCG =====
+#Spcg
+        `iCharacter Editor`Z
+               `kA`Z
+               `kB`Z
+               `kC`Z
+               `kD`Z
+               `kE`Z
+               `kF`Z
+               `kG`Z
+               `kH`Z
+               `kI`Z
+               `kJ`Z
+               `kK`Z
+               `kL`Z
+               `kM`Z
+               `kN`Z
+               `kO`Z
+               `kP`Z
+#
+	;===== Maker =====
+#Smaker0
+`i        Maker Reserved 1`Z
+`hSQL Delay`Z
+`hSQL Delay Reset Timer`Z
+`hSignal Detect Timer`Z
+`hNoise Detect Timer`Z
+`hCTCSS Tone Burst`Z
+`h      Decode Attack`Z
+`h             Release`Z
+`h             PS`Z
+`hTX DTCS Polarity`Z
+`hRX DTCS Polarity`Z
+`hDTCS Decode`Z
+
+`hBPF1 Slant`Z
+`hBPF2 Slant`Z
+`hBPF3 Slant`Z
+`hBPF4 Slant`Z
+#
+#Smaker1
+`i         Maker Reserved 2`Z
+`hIF Frequency(MHz)`Z
+`hPLL Reference`Z
+`hTX PLL Fast Timer`Z
+`hRX PLL Fast Timer`Z
+`hPLL Option
+`hTX Mute Timer`Z
+`hRX Mute Timer`Z
+
+`hSet Mode Access`Z
+
+`hRF Power Slant 1`Z
+`hRF Power Slant 2`Z
+`hDeviation Slant 1`Z
+`hDeviation Slant 2`Z
+`hDTCS Balance Slant 1`Z
+`hDTCS Balance Slant 2`Z
+#
+        ;=======================================;
+        ; Beep Tone                             ;
+        ;=======================================;
+#tbepkyo
+1000,1
+#tbepkyx
+500,2
+#tbepclo
+1000,1,0,1,1000,1
+#tbepclx
+500,8,0,2,500,8,0,2,500,8,0,2,500,8
+
+        ;=======================================;
+        ; Information                           ;
+        ;=======================================;
+#info
+ `iInformation`Z
+
+ Model     : `e%s`Z
+ Revision  : `e%d.%d`Z        
+
+ Comment   : `e%s`Z
+             `e%s`Z
+                                 
+ Option    :
+ 
+ 
+ 
+ 
+ 
+#
+        ;=======================================;
+        ; System Error                          ;
+        ;=======================================;
+#e_nw
+target sheet has no window.
+
+;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+;                                                                                                       ;
+;       Report / Error                                                                                  ;
+;                                                                                                       ;
+;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%;
+        ;=======================================;
+        ; Error Messages                        ;
+        ;=======================================;
+#Enomem
+`eError:`Z
+
+ Cannot execute the command.
+ Not enough conventional memory.
+
+#Etbase
+`eError:`Z
+
+ Cannot load the EX2057CL.EXE cloning program.
+ Copy the EX2057CL.EXE file from the original disk to the same
+ directory as the EX2057.EXE file or to the working disk.
+
+#Ecotf
+`eError:`Z
+
+ Cannot make a temporary file. Check the following:
+
+ - Is the program disk write-protected ?
+ - Is more than 20 k of disk space free ?
+
+#
+        ;=======================================;
+        ; Bar Report                            ;
+        ;=======================================;
+#Rwait
+ Wait a moment... 
+#Rnoeff
+ No effect.
+#RexcP
+`j`g Err`a: This item has effect at only PMR model.`Z
+#R2te
+`j`g Err`a: Set Code Type 'Individual' to edit 2nd tone.`Z
+#Rchinh
+`j`g Err`a: Undefined channel. Input RX frequency first.`Z
+#Ralne
+ Emergency channel has disappeared. 
+#Rcopy
+ Copy: CH -> Clipboard`Z 
+#Rpaste
+ Paste: Clipboard -> CH`Z 
+#Rc_emp
+`j`g Err`a: Clipboard is empty or not matching this sheet.`Z
+#Runmodel
+`j`g Err`a: Connected transceiver is not compatible model.`Z
+#Reeovr
+`j`g Err`a: Connected transceiver does not have 160ch. EX-1761(EEPROM) is required.`Z
+#Rnoee
+`j`g Err`a: Connected transceiver does not have a standard EEPROM.`Z
+#Rfnerr
+`j`g Err`a: File is not exist.`Z
+#Rfrerr
+`j`g Err`a: Cannot load file.`Z
+#Rdpaterr
+`j`g Err`a: Illegal data.`Z
+#Rovmap
+`j`g Err`a: Data overflow.`Z
+#Rsmap
+`j`g Err`a: There is not enough data.`Z
+#Rfwerr
+`j`g Err`a: Cannot save file.`Z
+#Rfderr
+`j`g Err`a: Illegal file name.`Z
+#Rfkerr
+`j`g Err`a: Cannot delete file.`Z
+#Rdirerr
+`j`g Err`a: Illegal path name.`Z
+#Rprterr
+`j`g Err`a: Cannot use printer.`Z
+#Rnomem
+`j`g Err`a: Not enough conventional memory.`Z
+#Rcoerr
+`j`g Err`a: Cannot execute 'COMMAND.COM'.`Z
+#Rclok
+ Cloning completed.
+#Rcrerr
+`j`g Err`a: Cannot read cloning data.`Z
+#Rcwerr
+`j`g Err`a: Cannot write cloning data.`Z
+@@@@@ #Rcierr
+`j`g Err`a: Illegal information.`Z
+@@@@@ #Acierr
+The transceiver cannot be programmed. The cause may be:
+
+ 1) The transceiver has not been cloned.
+ 2) The transceiver's EEPROM is damaged.
+ 3) The transceiver's revision number is not compatible
+    with the programming software.
+
+ In cases 1 or 2, the transceiver requires factory
+ maintenance. In case 3, the transceiver cannot be
+ programmed using this program.
+
+#Rcerr1
+`a`g Terminated cloning.`Z
+#Rcerr81
+`j`g Err`a: Cannot access RS-232C port.`Z
+#Acerr81
+`eCheck the following:`Z
+
+ - The RS-232C port settings.
+ - Cloning cable connection.
+ - Transceiver power is ON.
+
+#Rcerr82
+`j`g Err`a: No answer from transceiver.`Z
+#Acerr82
+`eCheck the following:`Z
+
+ - The RS-232C port settings.
+ - Cloning cable connections.
+ - Are more than 20 k of disk space free ?
+
+#Acerr83
+ Clone writing succeeded. 
+
+ Turn the transceiver power off and on to use 
+ the transceiver under its new conditions.
+#Rcerr
+`j`g Err`a: Cannot clone.`Z
+#Rallinh
+`j`g Err`a: Input channel data first.`Z
+#Rinvarea
+`j`g Err`a: Invalid area.`Z
+#
+        ;=======================================;
+        ; Attention Messages                    ;
+        ;=======================================;
+#VRS
+                                             
+
+
+
+#
+#Acl_r
+ `hCloning`Z
+
+  Now reading `a<-`Z TR 
+
+#Acl_w
+ `hCloning`Z
+
+  Now writing `a->`Z TR 
+
+#Anprn
+
+ Now printing`a...`Z 
+
+#
+        ;=======================================;
+        ; Yes/No                                ;
+        ;=======================================;
+|----------------------------------|
+#Achange
+           `eChange model`Z
+      Some data will be lost.
+                OK ?
+#Achins
+            `eCH overflow`Z
+   Last channel will be deleted.
+                OK ?
+#Achdel
+             `eDelete CH`Z
+
+                OK ?
+#Aexit
+                `eExit`Z
+        Data has been edited.
+                OK ?
+#Aload
+                `eLoad`Z
+        Data has been edited.
+                OK ?
+#Asave
+                `eSave`Z
+         File already exists.
+                OK ?
+#Adel
+            `gDelete file`Z
+
+                OK ?
+#Acread
+        `eRead from transceiver`Z
+        Data has been edited.
+                OK ?
+#Acwrite
+        `eWrite to transceiver`Z
+
+                OK ?
+#
+;=======================================================================;
+;									;
+;	Help etc.							;
+;									;
+;=======================================================================;
+#230
+//// File ////
+
+Loads an ICF (Icom Cloning Format) file, saves the current
+file, deletes a file, activates a DOS command interpreter,
+or quits this program.
+
+When saving an ICF file, any cloning comment specified in
+the Common screen is also saved in the file for further
+reference.
+#231P
+//// Screen ////
+
+Sets transceiver data in several screens.
+Open a screen, then set data.
+
+
+In addition, once a screen is opened, the following method
+is available to select other screens:
+
+     Push [SHIFT] + [Page Up]
+       or [SHIFT] + [Page Dn]
+
+
+* NOTE
+1.An optional UT-96 is necessary to use the
+  settings in the RX Code CH screen.
+
+2.Wide/Narrow selection
+
+  Each channel can be set to wide/narrow for both receive
+   IF bandwidth and transmitter modulation.  Note that
+   this capability is not available for some versions.
+
+  Push [Backspace] to select bandwidth when Rx frequency
+   is entered.
+   * "n" appears between Rx frequency and Tx frequency,
+     when the narrow width is selected.
+
+   RELATED SETTING
+   ------------+-----------------------------------------------
+   Wide/Narrow | Key Assign screen.
+   ------------+-----------------------------------------------
+
+3.An optional UT-105 is necessary to use the SmarTrunk mode.
+  Set MR-CH Bank/Free to Bank in the Key & Display Assign screen
+  before setting the channel attribute in the Memory Channel screen.
+  SmarTrunk mode can be selected for each bank.
+  "SmarTrunk (or SmTr)" appears at the left side of the screen, when
+  SmarTrunk mode is selected.
+
+4.An optional UT-109(#02) or UT-110(#02) Voice Scrambler unit is necessary
+  to use the voice scrambler function.
+  Set [Scrambler] in the Key & Display Assign screen.
+  UT-109(#01) and UT-110(#01) are designed for IC-F3/S series. Make sure
+  the unit's version(#) number before installation.
+#231L
+//// Screen ////
+
+Sets transceiver data in several screens.
+Open a screen, then set the data.
+
+
+In addition, once a screen is opened, the following method
+is available to select other screens:
+
+     Push [SHIFT] + [Page Up]
+       or [SHIFT] + [Page Dn]
+
+
+* NOTE
+1.An optional UT-96 is necessary to use the settings in the RX
+  Code CH screen.
+
+2.Wide/Narrow selection
+
+  Each channel can be set to wide/narrow for both receive
+   IF bandwidth and transmitter modulation.  Note that
+   this capability is not available for some versions.
+
+  Push [Backspace] to select bandwidth when Rx frequency
+   is entered.
+   * "n" appears between Rx frequency and Tx frequency,
+     when the narrow width is selected.
+
+   RELATED SETTING
+   ------------+-----------------------------------------------
+   Wide/Narrow | Key Assign screen.
+   ------------+-----------------------------------------------
+
+3.An optional UT-105 is necessary to use the SmarTrunk mode.
+  Set MR-CH Bank/Free to Bank in the Key & Display Assign screen
+  before setting the channel attribute in the Memory Channel screen.
+  SmarTrunk mode can be selected for each bank.
+  "SmarTrunk (or SmTr)" appears at the left side of the screen, when
+  SmarTrunk mode is selected.
+
+4.An optional UT-109(#02) or UT-110(#02) Voice Scrambler unit is necessary
+  to use the voice scrambler function.
+  Set [Scrambler] in the Key & Display Assign screen.
+  UT-109(#01) and UT-110(#01) are designed for IC-F3/S series. Make sure
+  the unit's version(#) number before installation.
+#232
+//// Clone ////
+
+Connect the transceiver with the following cloning cables:
+
+     OPC-478 + OPC-592
+
+For reading or writing data between the transceiver and PC.
+
+
+"Information" allows you to read the connected transceiver
+type, installed option(s) as well as any programmed comments
+(set in the Common screen), etc.
+#233
+//// Print ////
+
+Prints the current screen data or all screen data.
+#234
+//// Model ////
+
+Selects the transceiver model.
+ LMR
+ PMR
+
+
+"Model" is automatically selected during clone read or file
+load, therefore, this selection is not usually necessary.
+
+However, it can be helpful when you want to change the model
+(version) while retaining the same frequencies and some
+other settings.
+#235
+//// Setup ////
+
+Sets the display type and selects an RS-232C port.
+
+Color is recommended for a color CRT display and monochrome
+1/2 is recommended for a monochrome LCD display.
+#158P
+//// Channel Attribute ////
+
+-----------+------------------------------------------------
+Priority   |[] One push selection with the [PRI A]
+channel A  |   or [PRI A(Rewrite)] key.
+           |[] Automatic selection with the hanger function.
+           |[] Monitored during priority scan.
+           |[] Priority channel A can be reassigned by
+           |   pushing the [PRI A(Rewrite)] key for 1 sec.
+-----------+------------------------------------------------
+Priority   | One push selection with the [PRI B] key.
+channel B  |
+-----------+------------------------------------------------
+Emergency  | Emergency transmission channel with the
+channel    | [Emergency Single] or [Emergency Repeat] key.
+-----------+------------------------------------------------
+Emergency  | When there is no emergency channel, emergency
+channel OFF| transmission is performed on the operating
+           | channel.
+-----------+------------------------------------------------
+SmarTrunk  | Push the [Enter] key to toggle the SmarTrunk
+ON/OFF*    | function ON/OFF.
+-----------+------------------------------------------------
+Channel    | Inserts a line space at the cursor position.
+insert     |
+-----------+------------------------------------------------
+Channel    | deletes the line at the cursor position.
+delete     |
+-----------+------------------------------------------------
+
+* NOTE
+1:Set MR-CH Bank/Free to Bank in the Key & Display Assign screen
+  before setting the channel attribute in the Memory Channel screen.
+  SmarTrunk mode can be selected for each Bank.
+  "SmarTrunk (or SmTr)" appears at the left side of the screen, when
+  SmarTrunk mode is selected.
+
+2:When turning SmarTrunk mode ON, set all functions which will not be
+  used for trunking operations OFF.
+  Otherwise, the SmarTrunk system will not function properly.
+
+
+
+
+RELATED SETTINGS:
+--------------------+---------------------------------------
+[PRI A], [PRI B]    |  Key assignment in the
+[Emergency Single]  |  Key & Display Assign screen
+[Emergency Repeat]  |
+--------------------+---------------------------------------
+Hanger function     |  Key & Display Assign screen
+--------------------+---------------------------------------
+Priority scan       |  Scan List screen
+--------------------+---------------------------------------
+Emergency function  |  Expert screen
+ (detailed settings)|
+--------------------+---------------------------------------
+Emergency cancel    |  RX Code CH screen
+--------------------+---------------------------------------
+#158L
+//// Channel Attribute ////
+
+-----------+------------------------------------------------
+Priority   |[] One push selection with the [PRI A]
+channel A  |   or [PRI A(Rewrite)] key.
+           |[] Automatic selection with the hanger function.
+           |[] Monitored during priority scan.
+           |[] Priority channel A can be reassigned by
+           |   pushing the [PRI A(Rewrite)] key for 1 sec.
+-----------+------------------------------------------------
+Priority   | One push selection with the [PRI B] key.
+channel B  |
+-----------+------------------------------------------------
+Emergency  | Emergency transmission channel with the
+channel    | [Emergency Single] or [Emergency Repeat] key.
+-----------+------------------------------------------------
+Emergency  | When there is no emergency channel, emergency
+channel OFF| transmission is performed on the operating
+           | channel.
+-----------+------------------------------------------------
+SmarTrunk  | Push the [Enter] key to toggle the SmarTrunk
+ON/OFF*    | function ON/OFF.
+-----------+------------------------------------------------
+Channel    | Inserts a line space at the cursor position.
+insert     |
+-----------+------------------------------------------------
+Channel    | deletes the line at the cursor position.
+delete     |
+-----------+------------------------------------------------
+
+
+* NOTE
+1:Set MR-CH Bank/Free to Bank in the Key & Display Assign screen
+  before setting the channel attribute in the Memory Channel screen.
+  SmarTrunk mode can be selected for each Bank.
+  "SmarTrunk (or SmTr)" appears at the left side of the screen, when
+  SmarTrunk mode is selected.
+
+2.When turning SmarTrunk mode ON, set all functions which will not be
+  used for trunking operations OFF.
+  Otherwise, the SmarTrunk system will not function properly.
+
+
+
+RELATED SETTINGS:
+--------------------+---------------------------------------
+[PRI A], [PRI B]    |  Key assignment in the
+[Emergency single]  |  Key & Display Assign screen
+[Emergency repeat]  |
+--------------------+---------------------------------------
+Hanger function     |  Key & Display Assign screen
+--------------------+---------------------------------------
+Priority scan       |  Scan List screen
+--------------------+---------------------------------------
+Emergency code set  |  DTMF autodialing screen
+--------------------+---------------------------------------
+Emergency function  |  Expert screen
+ (detailed settings)|
+--------------------+---------------------------------------
+#001L
+//// Frequency ////
+
+[] Usable frequency coverage:
+                                           -+
+   IC-F320    L-band type   136 to 155 MHz  |
+              H-band type   146 to 174 MHz  | in 5 kHz,6.25 kHz
+                                            | or 7.5 kHz steps
+   IC-F420    L-band type   400 to 430 MHz  | only
+              ML-band type  450 to 470 MHz  |
+              MH-band type  470 to 490 MHz  |
+              H-band type   490 to 512 MHz  |
+                                           -+
+
+[] Wide/Narrow selection
+
+  Each channel can be set to wide/narrow for both receive
+   IF bandwidth and transmitter modulation.  Note that
+   this capability is not available for some versions.
+
+  Push [Backspace] to select bandwidth when Rx frequency
+   is entered.
+   * "n" appears between Rx frequency and Tx frequency,
+     when the narrow width is selected.
+
+RELATED SETTING
+------------+-----------------------------------------------
+Wide/Narrow | Key Assign screen.
+------------+-----------------------------------------------
+
+
+[] NOTES:
+
+  "Transmit inhibit" is available by pushing [Space].
+
+  When no receive frequency is entered, other data
+     cannot be programmed in the line.
+
+  "<-" in the transmit column indicates simplex.
+#001P
+//// Frequency ////
+
+[] Usable frequency coverage:
+                                           -+
+   IC-F310    L-band type   136 to 155 MHz  |
+              H-band type   146 to 174 MHz  | in 5 kHz, 6.25 kHz
+                                            | or 7.5 kHz steps
+   IC-F410    L-band type   400 to 430 MHz  | only
+              ML-band type  440 to 470 MHz  |
+              MH-band type  470 to 490 MHz  |
+              H-band type   490 to 520 MHz  |
+                                           -+
+
+[] Wide/Narrow selection
+
+  Each channel can be set to wide/narrow for both receive
+   IF bandwidth and transmitter modulation.  Note that
+   this capability is not available for some versions.
+
+  Push [Backspace] to select bandwidth when Rx frequency
+   is entered.
+   * "n" appears between Rx frequency and Tx frequency,
+     when the narrow width is selected.
+
+ RELATED SETTING
+------------+-----------------------------------------------
+Wide/Narrow | Key Assign screen.
+------------+-----------------------------------------------
+
+
+[] NOTES:
+
+  "Transmit inhibit" is available by pushing [Space].
+
+  When no receive frequency is entered, other data
+     cannot be programmed in the line.
+
+  "<-" in the transmit column indicates simplex.
+#003
+//// CTCSS/DTCS ////
+
+For CTCSS frequency selection:
+
+[] Push [Enter] to indicate the frequency list window,
+   then make a selection.
+
+[] Directly input the tone frequency.
+   (Input a decimal, otherwise, a DTCS code is selected.)
+
+[] Use [Space] or [Backspace] to increase or decrease the
+   frequency respectively.
+
+
+
+
+For DTCS selection:
+
+[] Enter the desired 3-digit code number directly.
+     N: for normal polarity,  I: for Inverse polarity
+
+[] Push [Space] or [Backspace] to toggle the polarity.
+
+[] When the [C.Tone CH Ent] key is assigned to the
+   transceiver, the C. Tone memory has priority than
+   this setting.
+
+
+
+
+NOTES:
+
+  []  "<-" indicates the same frequencies are used for both
+      the tone encoder and decoder.
+
+  []  See one of the document files for usable DTCS codes.
+
+
+
+RELATED SETTINGS:
+---------------------------+--------------------------------
+CTCSS reverse burst        | Common screen (lower left)
+---------------------------+--------------------------------
+RX AF switch(Low cut)      | Common screen (middle left)
+---------------------------+--------------------------------
+#005L
+//// Text ////
+
+Appears when the operating channel is selected.
+
+When no text is programmed, channel number appears.
+
+
+       ** USABLE CHARACTERS                      **
+       **                                        **
+       **     A to Z (upper- and lowercase)      **
+       **     0 to 9                             **
+       **     $ % ' ( ) * + , - / < = > ? @      **
+       **     [ \ ] ^ _ ` { | } ~                **
+       **                                        **
+       **     ":" = transmit mark (upper arrow)  **
+       **     ";" = receive mark  (lower arrow)  **
+       **                                        **
+
+* NOTE
+1:Some lowercase letters may be difficult to read on the transceiver's
+  display.
+
+2:To eliminate display flickering in SmarTrunk mode, use the same text for
+  channels with the same bank number.
+
+3:The programmable character generator's character can not be used for the
+  1st and 2nd text letters. (See Expert screen; Character Editor)
+  In such cases no character appears in the above positions.
+#005P
+//// Text ////
+
+Appears briefly or permanently when the operating channel is
+selected.
+
+When no text is programmed, channel number appears.
+
+
+       ** USABLE CHARACTERS                      **
+       **                                        **
+       **     A to Z (upper- and lowercase)      **
+       **     0 to 9                             **
+       **     $ % ' ( ) * + , - / < = > ? @      **
+       **     [ \ ] ^ _ ` { | } ~                **
+       **     ":" = transmit mark (upper arrow)  **
+       **     ";" = receive mark  (lower arrow)  **
+       **                                        **
+
+* NOTE
+1:Some lowercase letters may be difficult to read on the transceiver's
+  display.
+
+2:To eliminate display flickering in SmarTrunk mode, use the same text
+  for channels with the same bank number.
+
+3:The programmable character generator's character can not be used for
+  the 1st and 2nd text letters. (See Expert screen; Character Editor)
+  In such cases no character appears in the above positions.
+#006P
+//// TOT (Time-out Timer) ////
+
+The time-out timer function inhibits continuous
+transmissions longer than this set period.
+
+
+RELATED SETTINGS:
+---------------------------+--------------------------------
+Time-out time              |
+         Penalty timer     | Common screen (lower left)
+         ID out            |
+         Beep              |
+---------------------------+--------------------------------
+ID setting (for TOT ID out)| "Signaling ID" item
+                           | in this screen
+---------------------------+--------------------------------
+#006L
+//// TOT (Time-out Timer) ////
+
+The time-out timer function inhibits continuous
+transmissions longer than this set period.
+
+
+RELATED SETTINGS:
+---------------------------+--------------------------------
+Time-out time              |
+         Penalty timer     | Common screen (lower left)
+         ID out            |
+         Beep              |
+---------------------------+--------------------------------
+ID setting (for TOT ID out)| "Log/ID" item
+                           | in DTMF autodial screen
+---------------------------+--------------------------------
+#007
+//// RF Power ////
+
+Selects the RF output power for individual channels.
+
+
+RELATED SETTINGS:
+ RF PWR Selection
+  in the Key & Display Assign screen
+#008P
+//// Lockout ////
+
+This function restricts transmission as follows:
+----------+------------------------------------------------------
+OFF       | No restriction for receiving signal.
+----------+------------------------------------------------------
+Busy      | Transmission is inhibited while receiving a
+          | signal.
+----------+------------------------------------------------------
+Repeater  | Transmission is permitted only while:
+  (1)     |   [] receiving a matched CTCSS (or DTCS)
+          |   [] receiving no signal
+----------+------------------------------------------------------
+Repeater  | "Audible" mode :
+  (2)     |  ş the same as Repeater 1 above.
+          |
+(reverse  | "Inaudible" mode :
+ repeater |  ş transmission is permitted only while receiving an
+ lockout) |    unmatched CTCSS ( or DTCS).
+----------+------------------------------------------------------
+
+
+
+
+
+
+RELATED SETTINGS:
+----------------------+-------------------------------------
+Lockout penalty timer |  Common screen (lower left)
+----------------------+-------------------------------------
+#008L
+//// Lockout ////
+
+This function restricts transmission under the following
+conditions:
+----------+-------------------------------------------------
+OFF       | No restriction for receiving signal.
+----------+-------------------------------------------------
+Busy      | Transmission is inhibited while receiving a
+          | signal.
+----------+-------------------------------------------------
+Repeater  | Transmission is permitted only while:
+          |   [] receiving a matched CTCSS (or DTCS)
+          |   [] receiving no signal
+----------+-------------------------------------------------
+
+
+RELATED SETTINGS:
+----------------------+-------------------------------------
+Lockout penalty timer |  Common screen (lower left)
+----------------------+-------------------------------------
+#159
+//// Scan ////
+
+This item assigns scan list number(s) to a selected channel.
+Channels in scan lists align vertically in the column.
+
+In addition, the [Scan add/del (Tag)] key modifies the
+assignment from the transceiver front panel.  This item
+includes inhibition of such modification.
+
+
+
+SELECTION METHOD:
+
+  [] Push [1] to [5] to toggle the
+     selection.
+     The indicated number is assigned scan list number.
+
+  [] Push [Backspace] to toggle scan list modification
+       "inhibit" (bracket appears)
+       "Enable"  (bracket disappears)
+
+
+RELATED SETTINGS:
+------------------------+-----------------------------------
+Type of scan            | Scan List screen
+ and its condition      |
+------------------------+-----------------------------------
+Hanger action (Scan)    | Key & Display Assign screen
+------------------------+-----------------------------------
+Power ON scan           | Scan List screen
+------------------------+-----------------------------------
+#009
+//// SW Action Moni ////
+
+------------+-----------------------------------------------
+OFF         | [] No function during "Inaudible" mode.
+            | [] Push and hold to open any mute condition.
+------------+-----------------------------------------------
+Audible     | [] Push to select "Audible" mode.
+            | [] Push and hold to open any mute condition.
+------------+-----------------------------------------------
+Inaudible   | [] Select "Inaudible" mode.
+------------+-----------------------------------------------
+Inaudible + | [] Select "Inaudible" mode.
+ Reset 1(32)| [] Transmits reset code (see below)
+    or      |
+Inaudible + |
+ Reset 2(31)|
+------------+-----------------------------------------------
+Both        | [] Push to toggle between "Inaudible" and
+            |    "Audible".
+            | [] Push and hold to open any mute condition.
+------------+-----------------------------------------------
+Both +      | [] Push to toggle between "Inaudible" and
+ Reset 1(32)|    "Audible".
+    or      | [] Push and hold to open any mute condition.
+Both +      | [] Transmits reset code (see below)
+ Reset 2(31)|
+------------+-----------------------------------------------
+
+Reset code  : Transmit Tx code channel 32 (for reset code 1)
+              or 31 (for reset code 2) when switching from
+              "Audible" to "Inaudible" by the [Moni] key to
+              set the other station to "Inaudible" mode.
+
+
+
+
+RELATED SETTINGS:
+------------------------+-----------------------------------
+[Moni] key assignment   | Key & Display Assign screen
+------------------------+-----------------------------------
+Hanger function (Moni)  | Key & Display Assign screen
+------------------------+-----------------------------------
+Auto reset timer        | In this screen
+------------------------+-----------------------------------
+Auto reset time         | Common screen (middle left)
+ and inactive time      |
+------------------------+-----------------------------------
+Audible mode selection  | RX Code CH screen (Aud Mode item)
+ when receiving a call  |
+------------------------+-----------------------------------
+#010
+//// SW action UP/DN ////
+
+----------+-------------------------------------------------
+Audible   | Selects "Audible" mode when selecting the
+          | channel.
+----------+-------------------------------------------------
+Inaudible | Selects "Inaudible" mode when selecting the
+          | channel.
+----------+-------------------------------------------------
+OFF       | Does not change even when selecting the channel.
+----------+-------------------------------------------------
+#011
+//// SW Action Call ////
+
+-----------+------------------------------------------------
+Audible    | Selects "Audible" mode after [Call]
+           | transmission.
+-----------+------------------------------------------------
+OFF        | Does not change even when transmitting with
+           | [Call].
+-----------+------------------------------------------------
+
+
+
+RELATED SETTINGS:
+------------------------+-----------------------------------
+[Call] key assignment   | Key & Display Assign screen
+------------------------+-----------------------------------
+PTT call at inaudible   | TX Code CH screen (lower right)
+------------------------+-----------------------------------
+Auto CH call            | Scan List screen
+                        |  * Transmit a call on a non-busy
+                        |    channel.
+------------------------+-----------------------------------
+Auto reset timer        | in this screen
+------------------------+-----------------------------------
+Auto reset time         | Common screen (middle left)
+ and inactive time      |
+------------------------+-----------------------------------
+Audible mode selection  | RX Code CH screen (Aud Mode item)
+ when receiving a call  |
+------------------------+-----------------------------------
+#012
+//// SW Action PTT ////
+
+-----------+------------------------------------------------
+Audible    | Selects "Audible" mode at the moment the [PTT]
+           | is pushed.
+-----------+------------------------------------------------
+OFF        | Does not change even when [PTT] is pushed.
+           |   *This means [PTT] transmission is inhibited
+           |    in "Inaudible" mode when using a 5-tone
+           |    signaling system.
+-----------+------------------------------------------------
+
+
+
+
+RELATED SETTINGS:
+------------------------+-----------------------------------
+PTT call at inaudible   | TX Code CH screen (lower right)
+                        |  *[PTT] activates for the Call key
+------------------------+-----------------------------------
+CH mute                 | in this screen
+                        |  *When "Continuous" is selected,
+                        |   this setting has no meaning.
+------------------------+-----------------------------------
+Auto reset timer        | in this screen
+------------------------+-----------------------------------
+Auto reset time         | Common screen (middle left)
+ and inactive time      |
+------------------------+-----------------------------------
+
+
+            ³ Voice transmission is impossible when "Inaudible"
+            ³  mode is selected and "CH Mute = Single".
+#013P
+//// Log IN/OFF ////
+
+ID code is transmitted in relation to the PTT switch.
+------------+-----------------------------------------------
+OFF         | No ID is transmitted with the [PTT].
+------------+-----------------------------------------------
+Log IN      | ID is transmitted each time [PTT] is pushed.
+------------+-----------------------------------------------
+Log IN at   | ID is transmitted when [PTT] is pushed
+ Inaudible  | in "Inaudible" mode.
+            | *Voice transmission is impossible when
+            |  "Inaudible" mode is selected.
+------------+-----------------------------------------------
+Log OFF     | ID is transmitted each time [PTT] is released.
+------------+-----------------------------------------------
+Log OFF at  | ID is transmitted when [PTT] is released
+ inaudible  | in "Inaudible" mode.
+            | *Voice transmission is impossible when
+            |  "Inaudible" mode is selected.
+------------+-----------------------------------------------
+Both Log IN | ID is transmitted each time PTT is pushed and
+ and Log OFF| released.
+------------+-----------------------------------------------
+
+
+
+RELATED SETTINGS:
+----------------+-------------------------------------------
+ID code setting | Code assign: in this screen.
+                | Code contents: TX Code CH screen.
+----------------+-------------------------------------------
+SW action PTT   | in this screen
+                |  *When "Audible" is selected, setting to
+                |   "at Inaudible" in this item does not
+                |   function.
+----------------+-------------------------------------------
+TOT ID out      | Common screen (lower left)
+----------------+-------------------------------------------
+#013L
+//// Log IN/OFF ////
+
+ID code (specified with DTMF code) is transmitted in
+relation to the PTT switch.
+------------+-----------------------------------------------
+OFF         | No ID is transmitted with the [PTT].
+------------+-----------------------------------------------
+Log IN      | ID is transmitted each time [PTT] is pushed.
+------------+-----------------------------------------------
+Log OFF     | ID is transmitted each time [PTT] is released.
+------------+-----------------------------------------------
+Both Log IN | ID is transmitted each time PTT is pushed and
+ and Log OFF| released.
+------------+-----------------------------------------------
+
+
+RELATED SETTINGS:
+----------------+-------------------------------------------
+ID code setting | DTMF autodial screen
+----------------+-------------------------------------------
+TOT ID out      | Common screen (lower left)
+----------------+-------------------------------------------
+#014L
+//// Auto Reset ////
+
+The transceiver restarts the PWR ON Scan for specified time (Timer A
+or Timer B) after signal disappears or key operation is finished.
+
+NOTE: To turn OFF the auto reset function, set the timer (Time A
+      or Time B) to OFF (set to 0 sec.) in the Common screen.
+
+RELATED SETTINGS:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Timer A and Timer B setting ³ Common screen (middle left)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+OTHER METHODS FOR MUTE FUNCTION MODE SELECTION
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Moni key                    ³ Key & Display Assign screen
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+#014P
+//// Auto Reset ////
+
+The transceiver returns to "Inaudible" mode* under the following
+conditions:
+ÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Timer A   ³ Returns to "Inaudible" mode* for specified time
+  or      ³ (Timer A or Timer B) after signal disappears or key
+Timer B   ³ operation is finished.
+ÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Timer A + ³ Returns to "Inaudible" mode* for a shorter period
+ Inactive ³ than above or "Inactive timer" from the time of
+   or     ³ "Audible" mode selection.
+Timer B + ³   During transmission, returns to "Inaudible" mode*
+ Inactive ³    as soon as transmit is finished.
+ÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+*"Inaudible" means:
+ 5-tone mute is effective when "CH Mute =  Single"
+ CTCSS (or DTCS) is turned ON when "CH Mute = Continuous".
+
+
+NOTE: To turn OFF the auto reset function, set the timer (Time A
+      or Time B) to OFF (set to 0 sec.) in the Common screen.
+
+
+
+RELATED SETTINGS:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Timer A and Timer B setting ³ Common screen (middle left)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Inactive timer              ³ Common screen (middle left)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+CH mute selection           ³ in this screen
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+OTHER METHODS FOR INAUDIBLE MODE SELECTION
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Moni key                    ³ Key & Display Assign screen
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Receiving an "audible" code ³ RX Code CH screen
+                            ³ "Aud Mode" setting
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Channel selection           ³ SW action Sel in this screen
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+#015
+//// Channel Mute ////
+
+This item selects:
+1) Receive 5-tone mute is turned ON or OFF.
+2) PTT transmission is inhibited in "Inaudible" mode.
+
+-----------+------------------------------------------------
+Continuous | 5-tone mute is OFF / PTT mute is OFF
+           | (CTCSS or DTCS is usable for receive mute.)
+-----------+------------------------------------------------
+Single     | 5-tone mute is ON / PTT mute is ON
+           | (CTCSS or DTCS can be used together with 5-tone
+           |  mute.)
+-----------+------------------------------------------------
+
+
+NOTES:
+
+[] To use 5-tone mute ("Single" selection), the optional
+   UT-96 5-tone decoder unit is necessary.
+
+[] 5-tone decoder is activated for operation in the RX Code
+   CH screen even when "Continuous" is selected in this
+   item.
+
+
+
+RELATED SETTINGS:    All of the settings in this program.
+#016
+//// 5-tone Signaling Form ////
+
+Selects the 5-tone format. A user tone can be specified in
+the USER TONE screen.
+#017
+//// 5-tone Signaling RPT/STN/ID ////
+
+When the [Call] key is pushed, the following 5-tone codes
+are transmitted in sequence.  These columns specify the
+TX code channel number used.
+
+
+RPT : Repeater code
+                    -+
+STN : Station code   |  Sequence of these codes can be
+ID  : ID code        |  changed in "ID Pos" column.
+                    -+
+
+
+SELECTION METHOD:
+
+(1) Set the TX code contents in the TX Code CH screen in
+    advance.
+
+(2) Assign a TX code channel number to these codes.
+     * Enter "0" to turn OFF the specified code.
+
+(3) Push [Space] or [Backspace] to turn the long tone ON and
+    OFF.
+     * "L" appears when the long tone is turned ON.
+
+
+
+NOTES:
+
+[] When STN (station) is turned OFF, the [Call] key does not
+   function.
+
+[] ID code can be turned OFF in the next column, "ID Pos".
+   If ID code is turned OFF in this column, "Log IN/OFF"
+   and "TOT ID" function cannot be used.
+
+
+
+RELATED SETTINGS:
+-----------------------+------------------------------------
+Contents of 5-tone code| TX Code CH screen
+-----------------------+------------------------------------
+[Call] key assignment  | Key & Display Assign screen
+-----------------------+------------------------------------
+[TX Code CH up/down],  |Key & Display Assign screen
+or [Tx Code] key       |
+assignment.            |
+ (for station code)    |
+-----------------------+------------------------------------
+PTT call at inaudible  | TX Code CH screen (lower right)
+                       |  *[PTT] activates for the Call key
+-----------------------+------------------------------------
+Auto CH call           | Scan List screen
+                       |  * Call transmission on a non-busy
+                       |    channel.
+-----------------------+------------------------------------
+#020
+//// 5-tone Signaling POS //// (ID position)
+
+Sets the sequence of the 5-tone code.
+
+In addition, the 5-tone decoder (in RX Code CH) screen
+detects the station code (mute release) and ID code (for
+indication) in this sequence.
+#021
+//// RX C-No //// (Receive 5-tone code)
+
+Each RX Code channel has some functions, such as answer
+back, beep, indication, etc., when a matched 5-tone code
+(station code) is received.
+
+This column assigns the RX Code channel to the operating
+channel.  Up to 8 kinds of channel numbers can be assigned.
+The group code channel is assigned regardless of this
+column's settings.
+
+
+
+SELECTION METHOD:
+  Push [1] to [8] to toggle the selection.
+   *Indicated channels are effective
+    Non-indicated channels are not effective.
+
+
+
+RELATED SETTINGS:
+--------------------+---------------------------------------
+Contents of RX code | RX Code CH screen
+--------------------+---------------------------------------
+[ID-MR] select key  | Key & Display Assign screen
+--------------------+---------------------------------------
+#025
+//// 2-tone Code ////
+
+Turns ON the 2-tone receive mute and specifies the RX code
+channel to the operating channel.
+
+To turn OFF the setting, enter "0".
+
+
+NOTE: An optional unit UT-96 is necessary for 2-tone mute function.
+
+
+
+RELATED SETTINGS:
+------------------------+-----------------------------------
+Contents of 2-tone code | RX Code CH screen
+------------------------+-----------------------------------
+[Moni] key assignment   | Key & Display Assign screen
+                        | for releasing the 2-tone mute.
+------------------------+-----------------------------------
+Hanger function (Moni)  | Key & Display Assign screen
+------------------------+-----------------------------------
+#022
+//// Scrambler ON/OFF/INH ////
+
+Turns the scrambler function "ON" or "OFF" as a initial setting.
+This item can also be turned "ON" or "OFF" with a program function switch
+when the function is assigned to a switch.
+"INH" : This means the scrambler function selection is inhibited.
+Optional UT-109(#02) or UT-110(#02) Voice Scrambler unit is required.
+#023
+//// Scrambler code ////
+
+Set the scrambler code number.
+Selectable value;
+    UT-109: 1 to 32
+    UT-110: 1 to 255
+* Set the scrambler group code in the Common screen in advance.
+  (UT-110 only)
+#043P
+//// Key Assign ////
+------------+-----------------------------------------------
+Null        | No function.
+------------+-----------------------------------------------
+CH up       | [] Used for channel selection
+CH down     | [] Several other settings after pushing
+            |    specified keys.
+------------+-----------------------------------------------
+Bank        | Selects bank using [CH Up] and [CH Down] keys.
+            |  NOTE: "Bank" must be selected in the "MR-CH
+            |  Bank/Free" item in advance.
+------------+-----------------------------------------------
+Scan A,     | [] Push to starts or cancels a scan.
+Scan B      | [] Push and hold to selects the scan list.
+Start/stop  |  NOTE: Scan starts only when the microphone is
+            |  placed in the hanger
+------------+-----------------------------------------------
+Scan        | Adds or deletes the operating channel to the
+add/del(Tag)| scan list.
+------------+-----------------------------------------------
+Prio A      | Selects the priority channel A.
+------------+-----------------------------------------------
+Prio A      | [] Push to select the priority channel A.
+ (Rewrite)  | [] Push and hold to reassign the priority
+            |    channel A.
+------------+-----------------------------------------------
+Prio B      | Selects the priority channel B.
+------------+-----------------------------------------------
+MR-CH 1     | Selects the operating channel 1 to 4,
+MR-CH 2     | respectively.
+MR-CH 3     |
+MR-CH 4     |
+------------+-----------------------------------------------
+Moni (Audi) | [] Activates a function specified in the
+            |    "Switch action Moni" item in the Memory
+            |    Channel screen.
+            | [] Releases any receive mutes when the key is
+            |    pushed and held. (If the key has
+            |    "Audible" mode selection capability.)
+------------+-----------------------------------------------
+RF ATT      | Turns the RF attenuator ON and OFF.
+------------+-----------------------------------------------
+Lock        | Turns the lock function ON and OFF.
+------------+-----------------------------------------------
+Beep        | Turns the beep function ON and OFF.
+------------+-----------------------------------------------
+Light       | Push to select the backlight condition.
+            |  ON  : Turns ON the backlight continuously.
+            |  OFF : Turns OFF the backlight.
+            |  AUTO: Turns ON/OFF depends on the ACC socket
+            |        pin 1 voltage.
+            |        ON: low(0 V), OFF: high(12 V)
+------------+-----------------------------------------------
+High        | Changes the output power from the independent
+Low2, Low1  | setting of each channel.
+------------+-----------------------------------------------
+C.Tone      | Push this key then input a continuous tone
+  CH Ent    | memory channel number via the keypad to change
+            | the tone frequency.
+------------+-----------------------------------------------
+Talk around | Turns the talk around function ON and OFF.
+------------+-----------------------------------------------
+Wide/Narrow | Push [W/N]. A single beep sounds.
+            | Toggles bandwidth between wide or narrow.
+            | * This function is available for W/N versions
+            |   only.
+------------+-----------------------------------------------
+DTMF        | [] Push to select the DTMF channel.
+ autodial   | [] Push and hold to transmit the selected
+            |    DTMF code.
+------------+-----------------------------------------------
+Call        | [] Transmits the 5-tone codes on the selected
+            |    channel.
+            | [] Transmits the 5-tone codes on an empty
+            |    channel when the key is pushed during scan.
+            |    (according to "Auto CH Call" setting
+            |     in the Scan List screen.)
+------------+-----------------------------------------------
+Call A      | Transmits the 5-tone codes using TX code
+ (Code 30), | channels 30 or 29 for a station code.
+Call B      |
+ (Code 29)  |
+------------+-----------------------------------------------
+Emergency   | Transmits an emergency call once or
+  single,   | repeatedly.
+Emergency   |  * The emergency channel is specified in the
+  repeat,   |    Memory CH screen (CH Atr column).
+------------+-----------------------------------------------
+TX Code     |[] Push and hold to changes the contents of the
+            |   station code using [CH Up]/[CH Dn] keys.
+            |   * Acceptable input digits and update can be
+            |     specified in the TX Code CH screen.
+            |
+            |[] Push to selects a TX 5-tone code channel using
+            |   [CH Up]/[CH Dn] keys after pushing this key.
+            |   * Selectable channel can be specified in the
+            |     TX Code CH screen.
+------------+-----------------------------------------------
+TX code CH  | Selects a TX code channel directly.
+  up        | * Selectable channel can be specified in the
+TX code CH  |   TX Code CH screen.
+  down      |
+------------+-----------------------------------------------
+ID-MR select| [] Push to recalling previously received ID
+            |    code and memory channel number.
+            |    Use [CH Up]/[CH Dn] keys for selection.
+            |    * Up to 5 IDs can be memorized.
+            | [] Push and hold to erase all of the received
+            |    ID.
+            | [] Push [CALL] to transmit the recalled ID as
+            |    a station code.
+------------+-----------------------------------------------
+Scrambler   | Turns the scrambler function ON or OFF.
+            | [] Optional scrambler unit UT-109(#02) or UT-110(#02)
+            |    is required.
+            | [] Set the scrambler group code in the Common
+            |    screen.
+------------+-----------------------------------------------
+OPT1 out    | Sets an optional output port "High" or "Low".
+OPT2 out    |  * A 30-pin connector inside the transceiver
+OPT3 out    |    has 3 ports for these outputs.
+------------+-----------------------------------------------
+OPT1, OPT2, | Outputs a "High" or "Low" pulse from an
+OPT3        | optional output port.
+momentary   |
+------------+-----------------------------------------------
+Trunking    | Push to select the Trunking Group.
+group SW    |
+------------+-----------------------------------------------
+#043L
+//// Key Assign ////
+------------+-----------------------------------------------
+Null        | No function.
+------------+-----------------------------------------------
+CH up       | [] Used for channel selection
+CH down     | [] Several other settings after pushing
+            |    specified keys.
+------------+-----------------------------------------------
+Bank        | Selects bank using [CH Up] and [CH Down] keys.
+            |  NOTE: "Bank" must be selected in the "MR-CH
+            |  Bank/Free" item in advance.
+------------+-----------------------------------------------
+Scan A,     | [] Push to starts or cancels a scan.
+Scan B      | [] Push and hold to selects the scan list.
+Start/stop  |  NOTE: Scan starts only when the microphone is
+            |  placed in the hanger
+------------+-----------------------------------------------
+Scan        | Adds or deletes the operating channel to the
+add/del(Tag)| scan list.
+------------+-----------------------------------------------
+Prio A      | Selects the priority channel A.
+------------+-----------------------------------------------
+Prio A      | [] Push to select the priority channel A.
+ (Rewrite)  | [] Push and hold to reassign the priority
+            |    channel A.
+------------+-----------------------------------------------
+Prio B      | Selects the priority channel B.
+------------+-----------------------------------------------
+MR-CH 1     | Selects the operating channel 1 to 4,
+MR-CH 2     | respectively.
+MR-CH 3     |
+MR-CH 4     |
+------------+-----------------------------------------------
+Moni        | [] Turn the CTCSS (or DTCS) function ON and
+            |    OFF.
+            | [] Turn the 2-tone mute ON and OFF when used.
+            |    (In this case, CTCSS or DTCS selection is
+            |     according to "Moni SW for CTCSS" setting
+            |     in the Common screen.)
+            | [] Push and hold to open any receive mute (any
+            |    squelch).
+------------+-----------------------------------------------
+RF ATT      | Turn the RF attenuator ON.
+------------+-----------------------------------------------
+Beep        | Turn the Beep function ON and OFF.
+------------+-----------------------------------------------
+Lock        | Turns the lock function ON and OFF.
+------------+-----------------------------------------------
+Light       | Push to select the backlight condition.
+            |  ON  : Turns ON the backlight continuously.
+            |  OFF : Turns OFF the backlight.
+            |  AUTO: Turns ON/OFF depends on the ACC socket
+            |        pin 1 voltage.
+            |        ON: low(0 V), OFF: high(12 V)
+------------+-----------------------------------------------
+High        | Changes the output power from the independent
+Low2, Low1  | setting of each channel.
+------------+-----------------------------------------------
+C.Tone      | Push this key then input a continuous tone
+  CH Ent    | memory channel number via the keypad to change
+            | the tone frequency.
+------------+-----------------------------------------------
+Talk around | Turns the talk around function ON and OFF.
+------------+-----------------------------------------------
+Wide/Narrow | Push [W/N]. A single beep sounds.
+            | Toggles bandwidth between wide or narrow.
+            | * This function is available for W/N versions
+            |   only.
+------------+-----------------------------------------------
+DTMF        | [] Push to select the DTMF channel.
+ autodial   | [] Push and hold to transmit the selected
+            |    DTMF code.
+------------+-----------------------------------------------
+Call        | [] Transmits the 2-tone codes on the selected
+            |    channel.
+            | [] Transmits the 2-tone codes on an empty
+            |    channel when the key is pushed during scan.
+            |    (according to "Auto CH Call" setting
+            |     in the Scan List screen.)
+------------+-----------------------------------------------
+Emergency   | Transmits an emergency call (DTMF) once or
+  single,   | repeatedly.
+Emergency   |  * The emergency channel is specified in the
+  repeat,   |    Memory CH screen (CH Atr column).
+------------+-----------------------------------------------
+Scrambler   | Turns the scrambler function ON or OFF.
+            | [] Optional scrambler unit UT-109(#02) or UT-110(#02)
+            |    is required.
+            | [] Set the scrambler group code in the Common
+            |    screen.
+------------+-----------------------------------------------
+OPT1 out    | Sets an optional output port "High" or "Low".
+OPT2 out    |  * A 30-pin connector inside the transceiver
+OPT3 out    |    has 3 ports for these outputs.
+------------+-----------------------------------------------
+OPT1, OPT2, | Outputs a "High" or "Low" pulse from an
+OPT3        | optional output port.
+momentary   |
+------------+-----------------------------------------------
+Trunking    | Push to select the Trunking Group.
+group SW    |
+------------+-----------------------------------------------
+#049P
+//// Hanger Action ////
+
+Several functions are available for the hanger function when
+taking the microphone from its hanger (hanger-off) and/or
+returning it to the hanger (hanger-on).
+
+-------+---------------------------------------------------
+Moni   | [] Selects "Audible" at hanger-off
+       | [] Selects "Inaudible" at hanger-on
+       | (according to the "SW Action Moni" column in the
+       |  Memory CH screen.)
+-------+---------------------------------------------------
+Scan   | Starts scan at hanger-on.
+-------+---------------------------------------------------
+Prio A | Selects priority A channel at hanger-off.
+-------+---------------------------------------------------
+#049L
+//// Hanger Action ////
+
+Several functions are available for the hanger function when
+taking the microphone from its hanger (hanger-off) and/or
+returning it to the hanger (hanger-on).
+
+-------+---------------------------------------------------
+Moni   | [] Turns the CTCSS or DTCS OFF at hanger-off
+       | [] Turns the CTCSS or DTCS ON at hanger-on
+-------+---------------------------------------------------
+Scan   | Starts scan at hanger-on.
+-------+---------------------------------------------------
+Prio A | Selects priority A channel at hanger-off.
+-------+---------------------------------------------------
+#051
+//// Beep ON/OFF ////
+
+The confirmation beeps can be turned ON and OFF.
+
+Note that some beeps, such as for the lockout timer, cannot
+be turned OFF.
+
+NOTE: The beep level can be preset to turn the trimmer volume in the
+Mic connector on the front panel.
+This setting affects the 5-tone/DTMF encoder monitor level and
+caution beeps, such as the TOT beep.
+#052
+//// Light ////
+
+Push to select the backlight condition.
+ ON  : Turns ON the backlight continuously.
+ OFF : Turns OFF the backlight.
+ AUTO: Turns ON/OFF depends on the ACC socket pin 1 voltage.
+       ON: low(0 V), OFF: high(12 V)
+#053
+//// RF Power Selection ////
+
+-------------+----------------------------------------------
+MR CH        | Output power keys, [High], [Low1] and [Low2],
+ individual  | select power temporarily.
+             | Returns to the previous power when changing
+             | the channel.
+-------------+----------------------------------------------
+Override     | [] Output power keys select the power
+             |    permanently.
+-------------+----------------------------------------------
+
+
+
+RELATED SETTINGS:
+------------------------+-----------------------------------
+[High], [Low1], [Low2]  | [P0] to [P3], [UP] and [DOWN]
+ key assignment         | in this screen.
+------------------------+-----------------------------------
+Channel individual power| RF PWR column
+setting                 | in the Memory CH screen.
+------------------------+-----------------------------------
+#054
+//// M-CH Bank/Free ////
+
+This item selects the channel separation style, "Bank" type
+or "Non-bank" (Free) type.
+
+When "Bank" type is selected, the following number of banks
+are available:
+  []  2 banks for the  32 ch models
+
+
+NOTE: When selecting the "Bank" type, one of the
+[Bank] keys must be assigned to the transceiver.
+#056
+//// Opening Text ////
+
+This set text appears for 2 sec. when turning the
+transceiver ON.
+
+To turn power ON without text indication, set this item to
+blank.
+
+       ** USABLE CHARACTERS                      **
+       **                                        **
+       **     A to Z (upper- and lowercase)      **
+       **     0 to 9                             **
+       **     $ % ' ( ) * + , - / < = > ? @      **
+       **     [ \ ] ^ _ ` { | } ~                **
+       **     ":" = transmit mark (upper arrow)  **
+       **     ";" = receive mark  (lower arrow)  **
+       **                                        **
+
+NOTE:
+1.Some lowercase letters may be difficult to read on the transceiver's
+  display.
+
+2.The programmable character generator's character can not be used for
+  the 1st and 2nd text letters. (See Expert screen; Character Editor)
+  In such cases no character appears in the above positions.
+#057
+//// MR/Code Display ////
+
+Selects the indication text (or channel number).
+-----------+------------------------------------------------
+MR CH      | Operating channel's text (or channel number
+           | when text is not programmed).
+-----------+------------------------------------------------
+TX code CH | TX Code channel's text (or code digits when
+           | text is not programmed).
+-----------+------------------------------------------------
+MR CH +    | Operating channel number and 5 letters of TX
+TX code CH | Code channel's text (or 5 digits of code
+           | contents when text is not programmed).
+-----------+------------------------------------------------
+
+
+NOTES:
+
+[] When "TX Code CH" or "MR CH + TX Code CH" is selected,
+   operating channel appears briefly when selecting a
+   channel.
+
+[] When "MR CH + TX Code CH" is selected
+   spaces in the left side are removed for maximum digit
+   indication.
+#060P
+//// DTMF Code Channels ////
+
+[] The programmed DTMF codes are transmitted when the [DTMF]
+   key is pushed and held.
+
+[] 7 DTMF channels can be selected by:
+     pushing [DTMF] momentarily, then pushing [CH Up] or
+     [CH Dn].
+#060L
+//// DTMF Code Channels ////
+
+[] The programmed DTMF codes are transmitted when the [DTMF]
+   key is pushed and held.
+
+[] 7 DTMF channels can be selected by:
+     pushing [DTMF] momentarily, then pushing [CH Up] or
+     [CH Dn].
+
+  (Channels "Emergency" and "Log/ID" can be used as channels
+   6 and 7 respectively.)
+#061
+//// DTMF Timer ////
+
+Sets the tone period for each code emission and interval.
+#062
+//// 1st Timer ////
+
+Sets the tone period for the 1st DTMF code
+corresponding to a scanning transceiver
+or the power saver function of a portable transceiver.
+#063
+//// [*] [#] Timer ////
+
+Sets the tone period for [*] (same as "E") and [#] (same as
+"F").
+
+These codes may be used for control codes depending on
+signaling system.
+
+
+* NOTE: When these special codes are used for the 1st code,
+       the "1st Timer" has priority over this setting.
+#156
+//// Continuous Tone ////
+
+The programmed continuous tone is used for encoder and/or
+decoder.
+
+Push the [C.Tone CH Ent] key, then push a [UP]/[DOWN] key
+(continuous tone memory channel number) to selects the tone.
+
+
+In addition, pushing [C.Tone CH Ent] then [Tone-M] selects the
+channel independent tone (programmed in the Memory CH screen).
+#222
+//// Scan Mode List ////
+
+---------+--------------------------------------------------
+Scan OFF | Deactivates the selected list.  The list cannot
+         | be selected from the transceiver front panel.
+---------+--------------------------------------------------
+Mode 1   | Scan proceeds in sequence from lower to higher
+(Normal) | channel numbers.
+---------+--------------------------------------------------
+Mode 2   | Busy channel selection when scan is canceled.
+(Prio A) | [] Scan proceeds in sequence while checking
+         |    priority A channel.
+         | [] When scan is canceled during signal reception
+         |    the paused channel is retained.
+---------+--------------------------------------------------
+Mode 3   |Priority channel selection when scan is canceled.
+(Prio A) | [] Scan proceeds in sequence while checking
+         |    priority A channel.
+         | [] When scan is canceled during signal reception
+         |    the priority A channel is selected.
+---------+--------------------------------------------------
+
+
+RELATED SETTINGS:
+-------------------+----------------------------------------
+To make scan list  | "Scan" column in the Memory CH screen.
+-------------------+----------------------------------------
+[SCAN] key assign  | Key & Display Assign screen
+-------------------+----------------------------------------
+Hanger function    | Key & Display Assign screen
+ (SCAN)            |
+-------------------+----------------------------------------
+Scan start/stop    | "Scan" column in the RX Code CH
+at receiving a call|  screen.
+-------------------+----------------------------------------
+Scan speed         | Expert screen
+-------------------+----------------------------------------
+#223
+//// Text ////
+
+[] This set text appears when selecting scan lists
+   (when the [SCAN] key is pushed and held).
+
+[] When "ON" is selected in the column to the right of the
+   text, the set text appears during scan.
+
+       ** USABLE CHARACTERS                      **
+       **                                        **
+       **     A to Z (upper- and lowercase)      **
+       **     0 to 9                             **
+       **     $ % ' ( ) * + , - / < = > ? @      **
+       **     [ \ ] ^ _ ` { | } ~                **
+       **     ":" = transmit mark (upper arrow)  **
+       **     ";" = receive mark  (lower arrow)  **
+       **                                        **
+
+NOTE:
+1.Some lowercase letters may be difficult to read on the transceiver's
+  display.
+
+2.The programmable character generator's character can not be used for
+  the 1st and 2nd text letters. (See Expert screen; Character Editor)
+  In such cases no character appears in the above positions.
+#224
+//// Text ON ////
+
+------+-----------------------------------------------------
+ON    | [] The set text appears during scan.
+      | [] Operating channel's text (or number) appears
+      |    while scan is paused.
+------+-----------------------------------------------------
+OFF   | [] Operating channel's text (or number) appears
+      |    while scanning and scan is paused.
+------+-----------------------------------------------------
+#225
+//// Stop Timer ////
+
+This setting is effective only when a priority scan, Mode-2
+or Mode-3, is selected.
+
+When the priority scan is paused on a busy channel, the scan
+becomes priority watch to check the priority A channel.
+This item sets the period paused on a busy channel (watching
+interval).
+#226
+//// Resume Timer ////
+
+Scan pauses on a busy channel and resumes when the signal
+disappears.
+
+This item sets the period from when the signal disappears to
+when the scan resumes.
+#227
+//// Power ON Scan ////
+
+The scan function is started automatically when the
+transceiver power is turned ON.
+
+NOTE: The scan function is activated only when the
+      microphone is placed on the its hanger.
+
+
+The hanger function (Scan) in the Key & Display Assign
+screen should be turned ON when using the "Power ON Scan"
+function.
+#228
+//// Auto Channel Call ////
+
+When pushing the [Call] key:
+[] The transceiver starts scan, then
+[] detects an empty channel (non-busy channel), then
+[] transmits the 5-tone codes.
+
+
+
+NOTES:
+
+[] The previously transmitted 'station code' is used in the
+   5-tone encoder sequence.
+
+[] An empty channel is detected from the selected scan list.
+
+[] [Call A] and [Call B] keys have no relation with this
+   function.
+#030
+//// RX Freq(Hz) 1st and 2nd ////
+
+[] When UT-96 is installed:
+Sets the receive 1st and 2nd tone frequencies from 250 to
+3300 Hz (nearest available frequency is selected).
+#HrxfG
+//// RX Freq for Group Call Channel ////
+
+Tone frequencies cannot be set since the same tones are used
+for other channels.  Group call is detected for tone length
+according to the following "Group Timer" item.
+#032
+//// Group Call ////
+
+Specifies which tones, 1st or 2nd, are used for the group
+code.
+#033
+//// Text ////
+
+The set text appears when a matched 2-tone code is received.
+
+
+       ** USABLE CHARACTERS                      **
+       **                                        **
+       **     A to Z (upper- and lowercase)      **
+       **     0 to 9                             **
+       **     $ % ' ( ) * + , - / < = > ? @      **
+       **     [ \ ] ^ _ ` { | } ~                **
+       **     ":" = transmit mark (upper arrow)  **
+       **     ";" = receive mark  (lower arrow)  **
+       **                                        **
+
+NOTE:
+1.Some lowercase letters may be difficult to read on the
+        transceiver's display.
+
+2.The programmable character generator's character can not be used for
+  the 1st and 2nd text letters. (See Expert screen; Character Editor)
+  In such cases no character appears in the above positions.
+#084L
+//// Bell ////
+
+Selects the bell indicator condition when receiving a
+matched 2-tone.
+
+------+-----------------------------------------------------
+Null  | The bell indicator condition is not changed even
+      | when a matched code is received.
+------+-----------------------------------------------------
+OFF   | The bell indicator goes off.
+------+-----------------------------------------------------
+ON    | The bell indicator appears until operating a key.
+------+-----------------------------------------------------
+Blink | The bell indicator blinks until operating a key.
+------+-----------------------------------------------------
+#034L
+//// Answer Back ////
+
+Turns the answer back function ON and OFF.
+
+The function transmits 1 kHz single tone for 2 sec. when
+receiving a matched 2-tone.
+#087L
+//// External Output ////
+
+An optional cable, OPC-617 and external connection is
+necessary.
+
+Activates an external buzzer, horn honk, etc., when
+receiving a matched 2-tone.
+
+The activation time can be set in the EXO timer item below.
+#088L
+//// Beep ////
+
+Emits (or turns OFF) the following beeps when receiving a
+matched 2-tone.
+-------------+----------------------------------------------
+Null         | Beep emission (or non emission) is retained
+             | even when receiving a matched 2-tone.
+-------------+----------------------------------------------
+OFF          | Repeated beep emission is turned OFF.
+-------------+----------------------------------------------
+Pi   (single)| 1 high beep once.
+-------------+----------------------------------------------
+PiPi (single)| 2 high beeps once.
+-------------+----------------------------------------------
+PiRo (single)| 1 high and 1 low beep 3 times.
+-------------+----------------------------------------------
+Pi   (repeat)| 1 high beep repeated at the selected
+             | intervals.
+-------------+----------------------------------------------
+PiPi (repeat)| 2 high beeps repeated at the selected
+             | intervals.
+-------------+----------------------------------------------
+PiRo (repeat)| 1 high, 1 low beep 3 times, repeated at
+             | the selected intervals.
+-------------+----------------------------------------------
+#089L
+//// Auto Transmit ////
+
+Sets the transceiver to the transmit condition (by
+activating the microphone) when receiving a matched 2-tone.
+
+This transmit time can be set in the auto TX timer item
+below.
+#091L
+//// Stun ////
+
+Sets the transceiver to following condition when receiving a
+matched 2-tone.
+-----+------------------------------------------------------
+OFF  | The transceiver can be used continuously.
+-----+------------------------------------------------------
+Kill | The transceiver cannot be used.
+     | Cloning is necessary to activate the transceiver.
+-----+------------------------------------------------------
+Stun | User password prompt appears.
+     | When user does not know the password, the transceiver
+     | cannot be used.
+-----+------------------------------------------------------
+
+
+
+RELATED SETTINGS:
+----------------+-------------------------------------------
+User password   | Common screen (upper left)
+----------------+-------------------------------------------
+PWR ON password | Common screen (upper right)
+                |  *Password input is necessary regardless
+                |   of this setting.
+----------------+-------------------------------------------
+#092L
+//// Scan ////
+
+Selects the following scan condition when receiving a
+matched 2-tone:
+--------+---------------------------------------------------
+Null    | Scan condition is unaffected.
+--------+---------------------------------------------------
+Cancel  | Cancels the scan.
+--------+---------------------------------------------------
+Start   | Starts the scan.
+--------+---------------------------------------------------
+
+
+RELATED SETTINGS:
+-----------------------+------------------------------------
+Power ON scan          | Scan List screen
+-----------------------+------------------------------------
+Hanger function (Scan) | Key & Display Assign screen
+-----------------------+------------------------------------
+#099
+//// Notone Timer ////
+
+This item sets the acceptable period between 2 tones.
+
+When received tones are interrupted for longer than this
+setting, the transceiver does not detect the code.
+#100
+//// Group Timer ////
+
+This item sets the 2-tone decoding period.
+
+When the received tone is longer than this setting, the
+transceiver detects the tone as a group code.
+#096L
+//// External Output Timer ////
+
+When the EXO function is turned ON, the EXO terminal of the
+optional ACC cable is grounded for this period when
+receiving a matched 2-tone.
+#097L
+//// Beep Repeat Timer ////
+
+When "Repeat" is selected in the "Beep" column above, beeps
+are repeated at this set interval.
+#098L
+//// Auto TX Timer ////
+
+When the Auto TX function is turned ON, the transceiver
+transmits for this set period when receiving a matched
+2-tone.
+#035
+//// Code Type ////
+
+This item selects "individual code" type or "Group code" type.
+#036
+//// 1st Tone Frequency ////
+
+Sets the transmit 1st frequencies from 250 to 3300 Hz
+(nearest available frequency is selected).
+#037
+//// 1st Tone Period ////
+
+Sets the tone period for the 1st tone code.
+#038
+//// 2nd Tone Frequency ////
+
+Sets the transmit 2nd frequencies from 250 to 3300 Hz
+(nearest available frequency is selected).
+#039
+//// 2nd Tone Period ////
+
+Sets the tone period for the 2nd tone code.
+#082
+//// RX Code ////
+
+Prepare RX 5-tone codes for assignment to each operating
+channel.
+
+Up to 7 digits can be programmed.
+
+
+[] STATUS FUNCTION
+When inputting "+" instead of number(s), the digits are used
+for the status function, which indicates a number message.
+
+Any number is accepted for decoding and is indicated on the
+display instead of programmed text or decoded ID when
+receiving the call.
+#HrxcG
+//// RX Code for Group Call Channel ////
+
+Group code number cannot be set since the 5-tone decoder
+detects the other RX codes for a group code when the
+received 5-tone contains one or more group code characters
+(G or *).
+#083
+//// Text or ID Decode ////
+
+The set text or received ID code appears when a matched
+5-tone code is received.
+
+Input the desired text using the following letters
+or push [Space] to select the ID decode function.
+
+
+       ** USABLE CHARACTERS                      **
+       **                                        **
+       **     A to Z (upper- and lowercase)      **
+       **     0 to 9                             **
+       **     $ % ' ( ) * + , - / < = > ? @      **
+       **     [ \ ] ^ _ ` { | } ~                **
+       **     ":" = transmit mark (upper arrow)  **
+       **     ";" = receive mark  (lower arrow)  **
+       **                                        **
+
+NOTES:
+1.Some lowercase letters may be difficult to read on the transceiver's
+  display.
+
+2.The programmable character generator's character can not be used for
+  the 1st and 2nd text letters. (See Expert screen; Character Editor)
+  In such cases no character appears in the above positions.
+
+
+
+
+RELATED SETTINGS:
+----------------+-------------------------------------------
+Status function | "RX Code" column in this screen.
+                | (when using "+", this setting is ignored.)
+----------------+-------------------------------------------
+[ID-MR select]  | Key & Display Assign screen
+                | for recalling previously received IDs.
+----------------+-------------------------------------------
+#084P
+//// Bell ////
+
+Selects the bell indicator condition when receiving a
+matched 5-tone.
+
+------+-----------------------------------------------------
+Null  | The bell indicator condition is not changed even
+      | when a matched code is received.
+------+-----------------------------------------------------
+OFF   | The bell indicator goes off.
+------+-----------------------------------------------------
+ON    | The bell indicator appears until operating a key.
+------+-----------------------------------------------------
+Blink | The bell indicator blinks until operating a key.
+------+-----------------------------------------------------
+#085
+//// Emergency Cancel ////
+
+When the "emergency repeat" call is performed, the
+transceiver repeatedly transmits the emergency call at
+specified intervals.
+
+The emergency call is continued until:
+[] Receiving an "emergency cancel" call or
+[] Turning power OFF.
+
+
+
+RELATED SETTINGS:
+--------------------+---------------------------------------
+[Emergency Repeat]  |  Key & Display Assign screen
+  key assignment    |
+--------------------+---------------------------------------
+Emergency code set  |  TX Code CH screen
+--------------------+---------------------------------------
+Emergency channel   |  Memory CH screen
+ assign             |
+--------------------+---------------------------------------
+Emergency function  |  Expert screen
+ (detail setting)   |
+--------------------+---------------------------------------
+Emergency cancel    |  in this screen
+function setting    |
+--------------------+---------------------------------------
+#086
+//// Answer Back Call ////
+
+Turns the answer back call ON and OFF and selects a type of
+call.
+------------+-----------------------------------------------
+OFF         | No answer back operation
+------------+-----------------------------------------------
+Station code| Transmits the station code which is assigned
+ channel    | to the operating channel.
+------------+-----------------------------------------------
+Single tone | Transmits a 1 kHz single tone for 2 sec.
+------------+-----------------------------------------------
+Each code   | Transmits the specified TX code channel number
+            | regardless of the operating channel.
+------------+-----------------------------------------------
+
+
+
+RELATED SETTINGS:
+--------------------+---------------------------------------
+TX Code setting     | TX Code CH screen
+--------------------+---------------------------------------
+Station code assign | Memory CH screen
+--------------------+---------------------------------------
+Answer back decode, | TX Code CH screen
+ "Audible" selection|
+--------------------+---------------------------------------
+#087P
+//// External Output ////
+
+An optional cable, OPC-617 and external connection is
+necessary.
+
+Activates an external buzzer, horn honk, etc., when
+receiving a matched 5-tone.
+
+The activation time can be set in the EXO timer item below.
+#088P
+//// Beep ////
+
+Emits (or turns OFF) the following beeps when receiving a
+matched 5-tone.
+-------------+----------------------------------------------
+Null         | Beep emission (or non emission) is retained
+             | even when receiving a matched 5-tone.
+-------------+----------------------------------------------
+OFF          | Repeated beep emission is turned OFF.
+-------------+----------------------------------------------
+Pi   (single)| 1 high beep once.
+-------------+----------------------------------------------
+PiPi (single)| 2 high beeps once.
+-------------+----------------------------------------------
+PiRo (single)| 1 high and 1 low beep 3 times.
+-------------+----------------------------------------------
+Pi   (repeat)| 1 high beep repeated at the selected
+             | intervals.
+-------------+----------------------------------------------
+PiPi (repeat)| 2 high beeps repeated at the selected
+             | intervals.
+-------------+----------------------------------------------
+PiRo (repeat)| 1 high, 1 low beep 3 times, repeated at
+             | the selected intervals.
+-------------+----------------------------------------------
+#089P
+//// Auto Transmit ////
+
+Sets the transceiver to the transmit condition (by
+activating the microphone) when receiving a matched 5-tone.
+
+This transmit time can be set in the "Auto TX timer" item
+below.
+#090
+//// Audible Mode ////
+
+This item sets a channel to "Audible" or "Inaudible" mode
+when receiving a matched 5-tone or does nothing (Null).
+
+
+RELATED SETTINGS:
+Inaudible mode selection method
+(When selecting "Audible" mode in this column.)
+-----------------+------------------------------------------
+Auto reset timer | [] Function setting in Memory CH screen
+                 | [] Reset time setting in Common screen
+-----------------+------------------------------------------
+"Reset" code     | "SW Action Moni" in Memory CH screen
+-----------------+------------------------------------------
+[Moni] key       | [] Function setting in Memory CH screen
+                 | [] Function assignment in KEY & DISPLAY
+                 |    ASSIGN screen
+-----------------+------------------------------------------
+Hanger function  | [] Function setting in Memory CH screen
+ (Moni)          | [] Function assignment in KEY & DISPLAY
+                 |     ASSIGN screen
+-----------------+------------------------------------------
+#091P
+//// Stun ////
+
+Sets the transceiver to the following condition when
+receiving a matched 5-tone.
+-----+------------------------------------------------------
+OFF  | The transceiver can be used continuously.
+-----+------------------------------------------------------
+Kill | The transceiver cannot be used.
+     | Cloning is necessary to activate the transceiver.
+-----+------------------------------------------------------
+Stun | User password prompt appears.
+     | When user does not know the password, the transceiver
+     | cannot be used.
+-----+------------------------------------------------------
+#092P
+//// Scan ////
+
+This item sets the scan condition to start or stop when
+receiving a matched 5-tone.
+--------+---------------------------------------------------
+Null    | Scan condition is not changed.
+--------+---------------------------------------------------
+Cancel  | The activated scan is canceled.
+--------+---------------------------------------------------
+Start   | Starts the scan.
+--------+---------------------------------------------------
+#093
+//// Link A Timer ////
+
+Sets the non-modulated time before transmitting an answer
+back call.
+
+                 Answer back call
+          +------////////////--+
+          |      .             |
+          |      .             |
+  --------+      .             +---------------
+          |<---->|             .
+          |Link A timer        .
+        Transmit             Receive
+#094
+//// Compare Digit ////
+
+5-tone decoder detects only specified digits (compare
+digits) and ignores other digits for the decode actions.
+
+
+NOTE: When a "+" (status code) is used in the RX Code
+      column, the digit is not compared even if this item
+      sets the digit.
+#095
+//// ID Decode Timer ////
+
+This item is effective when "ID-Dec" is selected in the
+"Text or ID-Dec" column.
+
+The ID decode timer is the transceiver accept period to
+decode a complete ID code received after the station code.
+
+
+            Repeater    Station code   ID code
+            code        (or ID code)   (or station code)
+     +------////////-----////////------/////////-----+
+     |     .       .     .       .              .    |
+     |     .       .     .       .              .    |
+-----+     .       .     .       |<------------>|    +---
+     .     .       .     .       [ID decode timer]   .
+     .     .       .     .       .     .        .    .
+<Related setting in the TX Code CH screen>      .    .
+     |<--->|       |<--->|       |<--->|        |<-->|
+      Link R        Link 1       Link 2      Lead out delay
+#096P
+//// External Output Timer ////
+
+When the EXO function is turned ON, the EXO terminal of the
+optional ACC cable is grounded for this period when
+receiving a matched 5-tone.
+#097P
+//// Beep Repeat Timer ////
+
+When "Repeat" is selected in the "Beep" column above,
+beeps are repeated at this set interval.
+#098P
+//// Auto TX Timer ////
+
+When the Auto TX function is turned ON, the transceiver
+transmits for this set period when receiving a matched
+5-tone.
+#064
+//// TX Code ////
+
+Prepare the transmit 5-tone codes for assignment to each
+operating channel's station, ID and repeater codes.
+
+
+USABLE KEYS: [0] to [9], [A] to [E]
+             and group code ([G] or [*])
+
+
+
+TX code channels 29 to 32 are used for station codes when
+the following operation is performed:
+
+[] CH 32 : when [Moni] key has reset code 1 (32) capability
+[] CH 31 : when [Moni] key has reset code 2 (31) capability
+[] CH 30 : when [Call A] key is pushed.
+[] CH 29 : when [Call B] key is pushed.
+#065
+//// Input Digit ////
+
+When the [Tx Code Enter] function is assigned to the
+transceiver, a transmit code can be input manually.  In this
+case, set the allowable digits for input using this item.
+
+
+
+SETTING METHOD:
+  Push a digit key (1-7) to toggle the corresponding input
+  digit ON and OFF.
+   * Indicated numbers mean key entry accept;
+     non-indicated numbers mean key entry inhibit.
+#066
+//// Text ////
+
+The set text appears when the TX code channel is selected.
+
+When no text is programmed (push [Space]),
+5-tone code number appears.
+
+
+       ** USABLE CHARACTERS                      **
+       **                                        **
+       **     A to Z (upper- and lowercase)      **
+       **     0 to 9                             **
+       **     $ % ' ( ) * + , - / < = > ? @      **
+       **     [ \ ] ^ _ ` { | } ~                **
+       **     ":" = transmit mark (upper arrow)  **
+       **     ";" = receive mark  (lower arrow)  **
+       **                                        **
+
+* NOTE:
+1.Some lowercase letters may be difficult to read on the transceiver's
+  display.
+
+2.The programmable character generator's character can not be used for
+  the 1st and 2nd text letters. (See Expert screen; Character Editor)
+  In such cases no character appears in the above positions.
+
+
+
+
+RELATED SETTINGS:
+  MR/TX Code display setting
+    in the Key & Display Assign screen
+-----------------------+-----------------------------------
+Operating channel text | This setting does not appear.
+(MR CH)                |
+-----------------------+-----------------------------------
+5-tone encoder text    | This setting appears after an
+                       | operating channel briefly appears.
+-----------------------+-----------------------------------
+Channel number plus    | This setting appears briefly
+5-tone encoder text    | after channel selection.
+-----------------------+-----------------------------------
+#067
+//// Update ////
+
+The contents of the TX Code can be overwritten when using
+the [Tx Code] function.
+
+----+-------------------------------------------------------
+ON  | The original contents are overwritten when using
+    | the [TX Code] key.
+----+-------------------------------------------------------
+OFF | Original contents are not changed and the
+    | [TX Code] key changes the code temporarily.
+----+-------------------------------------------------------
+#068
+//// Answer Back Code Decode ////
+
+This item turns the answer back decode/indication function
+ON and OFF.
+
+The answer back will be indicated when the specified TX
+code is used as the station code.
+
+
+RELATED SETTINGS:
+--------------------+---------------------------------------
+Displayed digit     | in this screen
+--------------------+---------------------------------------
+Answer back setting | RX Code CH screen
+--------------------+---------------------------------------
+ID decode           | RX Code CH screen
+--------------------+---------------------------------------
+#069
+//// Answer Back Audible ////
+
+This item sets the transceiver to "Audible" mode when this
+TX code channel is used, then an answer back code is
+received.
+
+
+RELATED SETTINGS:
+[] When "ON" is selected in this column:
+--------------------+---------------------------------------
+SW action (Call)    | MR Channel screen
+                    | (should be set to OFF)
+--------------------+---------------------------------------
+SW action (PTT)     | MR Channel screen
+                    | (should be set to OFF)
+--------------------+---------------------------------------
+#070
+//// Code Selection ////
+
+When TX code selection keys,
+[TX Code CH Up], [TX Code CH Down] or [TX Code],
+are assigned, a station code can be selected from the
+transceiver.
+
+This column specifies selectable channel with these keys.
+#071
+//// Long Tone Timer ////
+
+This setting is used when the long tone function is
+specified for a repeater, station or ID code in the Memory
+CH screen.
+#072
+//// Link R/1/2 Timers, Lead Out Delay Timers ////
+
+These timers set the no modulation period between each
+code and the period before returning to receive.
+
+            Repeater    Station code   ID code
+            code        (or ID code)   (or station code)
+     +------////////-----////////------/////////-----+
+     |     .       .     .       .     .        .    |
+     |     .       .     .       .     .        .    |
+-----+     .       .     .       .     .        .    +---
+     |<--->|       |<--->|       |<--->|        |<-->|
+      Link R        Link 1       Link 2      Lead out delay
+                                 .              .
+                                 |<------------>|
+                                   ID decode timer
+                               (for 5-tone decoder)
+                          (set in the RX Code CH screen)
+#076
+//// Answer Back Decode Timer ////
+
+When the "ABC Dec" or "ABC Aud" function is in use, the
+transceiver waits for an answer back call according to this
+setting.
+               RPT  STN    ID
+            +-////--////--/////-+
+            |                 . |
+Transmit ---+                 . +-----
+                              .
+                              .      Answer back call
+                              .       +--/////------
+                              .       |      .
+Receive ------------------------------+      .
+                              |<------------>|
+                         [Answer back decode timer]
+                          (must be longer than this.)
+#077
+//// Displayed Digit ////
+
+This item toggles the display digits ON and OFF.
+The display digits determine which digits appear on the
+display.
+
+
+RELATED SETTINGS
+[] This setting affects the following indications:
+-------------------+----------------------------------------
+Transmit code      | MR/TX Code Display
+(station code)     | in the Key & Display Assign screen
+-------------------+----------------------------------------
+ID decode          | RX Code CH screen
+-------------------+----------------------------------------
+Answer back decode | TX Code CH screen
+-------------------+----------------------------------------
+#078
+//// Special Tone ////
+
+--------+---------------------------------------------------
+Group   | The decoder accepts this code regardless of the
+        | programmed code.
+--------+---------------------------------------------------
+Repeat  | Used when the same codes are replaced.
+        | (e.g. 11111 -> 1E1E1)
+--------+---------------------------------------------------
+Link 2  | Emits the code instead of no modulation between
+        | station and ID codes (for link 2 timer).
+        | Usable [F] for no modulation.
+--------+---------------------------------------------------
+#081
+//// PTT Call at Inaudible ////
+
+This item sets the PTT switch for the [Call] function when
+"Inaudible" mode is selected.
+
+
+RELATED SETTINGS:
+----------------------+-------------------------------------
+SW action [Call]      | Setting affects this function
+                      | in the Memory CH screen.
+----------------------+-------------------------------------
+SW action [PTT]       | Must be set to OFF
+                      | in the Memory CH screen.
+----------------------+-------------------------------------
+Hanger function [Moni]| Set to "Inaudible" when taking
+SW action [Moni]      | microphone from its hanger.
+----------------------+-------------------------------------
+#150
+//// Encode Frequency ////
+
+The relationship between the tone number and tone frequency
+is fixed. In this screen, special tone frequencies can be
+programmed.
+
+
+Set the encode tone frequency from 400 to 2998 Hz.
+[] Nearest available frequency is selected automatically.
+[] Recommended decode frequencies are automatically set.
+#151
+//// Decode Frequencies Low/High ////
+
+Specify the lower and higher edge of the tone decode
+frequency range, if you want change from the recommended
+range.
+
+NOTE: When the "High" frequency is set lower than the "Low"
+      frequency, "*" appears on the right side of the "High"
+      frequency.  Re-set the frequencies in this case.
+#153
+//// Tone Period Timer ////
+
+Sets each tone period for a tone encoder.
+
+When a long tone is set, the 1st tone period becomes the
+long tone timer setting in the TX Code Channel screen.
+
+Set the tone periods from 0 to 0.255 sec. in 0.001 sec.
+steps.
+#154
+//// Notone Timer ////
+
+Sets the maximum acceptable tone interval for tone detection
+between each tone.
+
+When the receive tone interrupts for more than the set time,
+the continuing code is received as a different code.
+
+Recommended notone time is approx. 1.5 times the tone period
+time.
+#155
+//// Tone Length ////
+
+Sets the maximum acceptable length of the tone period for a
+tone decoder.
+
+Longer tones will not be detected correctly.
+
+Recommended tone length is approx. 1.5 times the tone period
+time.
+#101
+//// User Password ////
+
+Used for the power ON password or canceling the "stun"
+condition.  Set the desired 4-digit PIN code/number from
+0000 to 9999.
+
+
+The password can be entered using the front panel keys as
+follows:
+------------------+------+------+------+------+------------+
+Transceiver keys  | [P0] | [P1] | [P2] | [P3] |[Down arrow]|
+------------------+------+------+------+------+------------+
+Password No.      |  0   |  1   |  2   |  3   |     4      |
+                  |  5   |  6   |  7   |  8   |     9      |
+------------------+------+------+------+------+------------+
+#102
+//// Clone Comment ////
+
+This item allows you to program a comment for quick
+identification of a transceiver's contents.
+
+When you connect a transceiver to a PC using cloning cables,
+you can check the transceiver's comment without reading all
+programmed data.
+
+Two lines, "Comment (1) and (2), are available for your
+convenience.
+#104
+//// AF Minimum Level ////
+
+The AF minimum level can be set in 32 steps. This function
+prevents the user from accidentally muting audio output.
+#105
+//// Squelch Level ////
+
+Sets the noise squelch level in 255 steps.
+#106
+//// RX AF Switch (Low-cut) ////
+
+Turns the low-cut filter circuit (high-pass filter) in the
+receiver ON and OFF.
+
+This item should be turned ON when the CTCSS or DTCS is
+being used to filter out the superimposed frequencies.
+#107L
+//// Auto Reset Timer A/B ////
+
+These settings are needed for the "Auto Reset" setting in the Memory
+Channel screen.
+
+Set the time period to return to mute function mode after receiving
+(or key operation) is finished,
+then assign to each operating channel in the Memory Channel screen.
+
+ş To turn OFF the auto reset function:
+Set one of these to OFF (input 0).
+#107P
+//// Auto Reset Timer A/B ////
+
+These settings are needed for the "Auto Reset" setting in
+the Memory Channel screen.
+
+Set the time period to return to "Inaudible" mode after
+receiving (or key operation) is finished,
+then assign to each operating channel in the Memory Channel
+screen.
+
+
+ş To turn OFF the auto reset function:
+Set one of these setting to OFF (input 0).
+#109P
+//// Inactive Timer ////
+
+This setting is needed for the "Auto Reset" setting in the
+Memory Channel screen.
+
+Set the time period to return to "Inaudible" mode after
+"Audible" mode is selected.
+
+
+[] To turn OFF the inactive timer function:
+Do not assign "Inactive" in the Memory Channel screen.
+#109L
+//// Inactive Timer ////
+
+This function is available for European versions
+(PMR models) only.
+#111
+//// Time-out Timer ////
+
+The time-out time is the maximum allowable continuous
+transmit time.
+
+The time-out timer function can be turned ON or OFF for
+each operating channel in the Memory Channel screen.
+
+NOTE: DO NOT set to "0 sec.", otherwise transmitting will be
+      impossible.
+#112
+//// TOT Penalty Timer ////
+
+The TOT penalty time is the transmit inhibit period when the
+time-out timer is activated.
+#113P
+//// TOT ID Out ////
+
+The time-out ID out function automatically transmits an ID
+code when the time-out timer activates and just before
+transmission is inhibited.
+
+The ID code must be set to each channel in the Memory
+Channel screen.
+#113L
+//// TOT ID Out ////
+
+The time-out ID out function automatically transmits an ID
+code (DTMF code) when the time-out timer activates and just
+before transmission is inhibited.
+
+The ID code can be set in the DTMF autodialing screen.
+#114
+//// TOT Beep ////
+
+The transceiver emits warning beeps 10 sec. before, and the
+time-out timer activates when this setting is turned ON.
+#115
+//// Lockout Penalty Timer ////
+
+The lockout penalty time is the transmit inhibit period when
+the user attempts to transmit while in a lockout condition.
+
+The transmission is inhibited for the lockout penalty time
+even when the lockout condition is cleared.
+#116
+//// CTCSS Reverse Burst Timer ////
+
+This setting is effective when the CTCSS function is used.
+
+When the PTT is released, the transceiver still transmits
+for this set period without CTCSS encoder.
+This removes the transceiver's 'squelch tail.'
+#117
+//// Power ON Password ////
+
+This item turns the password function ON and OFF.
+
+When the function is turned ON, a 4-digit PIN code/number input
+is necessary at power ON.
+
+
+When the "Stun" function activates to disable the
+transceiver, password input is necessary regardless of this
+setting.
+#118
+//// Dealer Passcode ////
+
+This item sets the 6-digit PIN code/number to open the dealer set
+mode.
+
+The set passcode is used only when the "Set Mode Access" is
+set to "Enable"
+
+
+The password can be entered using the front panel keys as
+follows:
+------------------+------+------+------+------+------------+
+Transceiver keys  | [P0] | [P1] | [P2] | [P3] |[Down arrow]|
+------------------+------+------+------+------+------------+
+Password No.      |  0   |  1   |  2   |  3   |     4      |
+                  |  5   |  6   |  7   |  8   |     9      |
+------------------+------+------+------+------+------------+
+#119
+//// Dealer Set Mode Access ////
+
+This item selects Dealer Set mode enable or disable.
+
+When the function is set to "Enable", a 6-digit PIN code/number
+is necessary to enter dealer set mode.
+
+Dealer set mode allows you to set operating frequencies,
+tone frequencies, DTMF contents, etc.
+
+NOTE:
+Some versions may not enable this function, even though you can
+select "Enable mode".
+#121
+//// Transceiver Data Out ////
+
+This item enables or inhibits reading the transceiver's
+memory contents with both using this software and cloning
+between transceivers.
+
+This function does not inhibit data writing, therefore, data
+overwriting is still possible when this item is set to
+"Inhibit."
+#124
+//// Scrambler Group Code (UT-110 only) ////
+
+Set the scrambler group code.
+Selectable value; 1 to 4.
+Optional scrambler unit UT-110(#02) is required.
+NOTE: This setting is invalid for UT-109.
+#123
+//// Scrambler Type ////
+
+Set the UT-110 Rolling type scrambler as UT-109 Non-rolling type.
+As UT-110 and UT-109 have different code settings, they are not 
+compatible.
+By selecting Non-rolling type in this item, you can use UT-110 as UT-109.
+
+ Selectable value:Rolling type  (UT-110 normal)
+                  Non-rolling type (UT-110 works as UT-109)
+NOTE:
+1. This item is invalid for UT-109.
+2. The following setting will be invalid; Scrambler Group Code
+#125
+//// Synchronous Capture ////
+
+"Synchronous capture mode" is useful when communicating through a repeater.
+However, because of voice components, the transceiver can not maintain
+synchronous mode in rare cases.
+Normally it is best to set this item to "Standard".
+
+ Selectable value: Standard (normal operation)
+                   Continuous (repeater operation)
+#126
+//// Tone Start Timing ////
+
+Tone start timing selects the synchronous tone signal transmit delay time.
+Set the delay time when the other party's transceiver has power save mode.
+
+ Selectable value: OFF(default), 0.3 s, 0.6 s and 1.1 s.
+#133
+//// Fast Scan Timer ////
+
+Sets the scanning period for each channel without
+CTCSS/DTCS programming.
+
+An appropriate time is set by default and scan may not stop
+when setting a value less than the default.
+#134
+//// Slow Scan Timer ////
+
+Sets the scanning period for each channel with
+CTCSS/DTCS programming.
+
+An appropriate time is set by default and scan may not stop
+when setting a value less than the default.
+#135
+//// TX DTCS Inverse ////
+
+Selects the transmit DTCS code polarity.
+
+In order for transceivers to communicate using DTCS codes,
+the polarity of the transmitting transceiver's transmit code
+must be the same as the polarity of the receiving
+transceiver's receive code.
+#136
+//// RX DTCS Inverse ////
+
+Selects the receive DTCS code polarity.
+
+In order for transceivers to communicate using DTCS codes,
+the polarity of the receiving transceiver's receive code
+must be the same as the polarity of the transmitting
+transceiver's transmit code.
+#137
+//// User CTCSS Frequency (Hz) ////
+
+The transceiver has one programmable CTCSS tone frequency
+separately from standard 51 frequencies.
+
+When "USER" is selected in the Memory Channel screen,
+this set frequency is used for CTCSS encoder and/or
+decoder.
+
+
+SELECTABLE VALUE: 60.1 to 300.1
+                 (Nearest available frequency is selected
+                  automatically.)
+#138
+//// Emergency SW ON Timer ////
+
+This item sets the period for which the [EMER] key must be
+held to activate the emergency function.
+
+To transmit an emergency call, push and hold the [EMER] key
+for the set period.
+#139
+//// Emergency SW OFF Timer ////
+
+This item sets the period for which the [EMER] key must be
+held to cancel an emergency call.
+
+To cancel an emergency call, push and hold the [EMER] key
+for the set period before emergency transmission.
+However, once the emergency call is transmitted, the call
+cannot be canceled regardless of this setting.
+#140
+//// Emergency Start/Repeat Timer ////
+
+This item sets the delay and interval periods for the
+emergency call.
+
+When the [EMER] key is pushed and held, the transceiver
+transmits an emergency call after the set period.
+
+When the [Emergency Repeat] is used, the transceiver
+transmits repeatedly at this interval until an "emergency
+cancel" code is received.
+#141
+//// RX EXO ////
+
+This item sets the optional cable (OPC-617) [HORN] line condition.
+This item sets receiver side condition.
+
+------------------+----------------------------------------
+OFF               | Horn drive control out.
+------------------+----------------------------------------
+ON                | SEND
+                  | Goes to ground when receive the signal.
+------------------+----------------------------------------
+
+NOTE: RX EXO, RX EXO Delay Timer, EXPTT Delay Timer and Tone Mute EXPTT
+functions are prepared for simplified repeater system which constructed
+with 2xIC-F300(or IC-F400)series transceivers.
+#142
+//// RX EXO Delay Timer ////
+
+When the RX EXO function is turned ON, the RX EXO terminal of the optional
+ACC cable is grounded for this period when receiving a signal.
+Normally this item sets to "0".
+#143
+//// EXPTT Delay Timer ////
+
+This item sets the transmit time prolongation, after the received signal
+disappeared.
+#144
+//// Tone Mute EXPTT ////
+
+This item sets the CTCSS or DTCS tone on the transmit condition.
+
+------+-----------------------------------------
+ ON   | Cut the CTCSS or DTCS tone encoder.
+------+-----------------------------------------
+ OFF  | Tone encoder works as set condition.
+------+-----------------------------------------
+#145
+//// Low Beep Frequency ////
+
+Set the Low beep tone frequency from 400 to 2998 Hz.
+ş Nearest available frequency is selected automatically.
+#146
+//// High Beep Frequency ////
+
+Set the High beep tone frequency from 400 to 2998 Hz.
+ş Nearest available frequency is selected automatically.
+#147
+/// Mic Hanger hook ////
+
+Set the hanger hook function ON or OFF.
+
+------+-----------------------------------------
+ ON   | All hanger function will be cancelled.
+------+-----------------------------------------
+ OFF  | Hanger function will be activated.
+------+-----------------------------------------
+
+Related setting: Hanger Action
+#148
+//// Character Editor > ////
+
+[] The character editor is available to make special
+   characters for assigning any texts.
+    16 editor memories are available.
+
+[] To use the edited characters, use [Page UP]/[Page Down]
+   keys while text programming and cursor appears.
+    The purple inverted editor channel number, A to P,
+     appears instead of the character.
+#149
+//// Character Editor ////
+
+ş 14 segments are usable to make a character.
+
+ş Push "a" to "n" to toggle the indication ON and OFF.
+  Gray lines in the left window show the edited
+   character.
+#160
+//// Squelch Delay ////
+
+Turns the squelch delay function ON and OFF.
+
+When the function is turned ON, a delay time (varied
+depending on the signal condition) is added to the
+noise detect timer.
+
+              +------------+
+Receive       |            |
+signal  ------+            +--------
+              .            .
+              .            .
+       open   .  +------------+----------+
+Squelch       .  |         .  .          |
+       close ----+         .  .          +------
+              .  .         .  .    .     .
+ [Squelch delay function]  .  |<-------->|
+              .  .         .
+              |<>|         |<>|
+   [Signal detect timer]  [Noise detect timer]
+#161
+//// Squelch Delay Reset Timer ////
+
+CPU has "normal response mode" and "fast response mode"
+for listening received signals and checking signal during
+scan (and changing operating channels) respectively.
+
+This item sets the period for CPU entering into "fast
+response mode" to obtain fast scan speed.
+#162
+//// Signal Detect Timer ////
+
+This item sets the squelch attack period except during scan.
+
+Settings lower than default may result in unstable noise
+squelch and higher settings may cause the noise squelch to
+open slowly.
+
+              +------------+
+Receive       |            |
+signal  ------+            +--------
+              .            .
+              .            .
+       open   .  +------------+
+Squelch       .  |         .  |
+       close ----+         .  +-----
+              .  .         .  .
+              .  .         .  .
+              |<>|         |<>|
+   [Signal detect timer]  [Noise detect timer]
+#163
+//// Noise Detect Timer ////
+
+This item sets the squelch release period except during
+scan.
+
+Settings lower than default close the noise squelch during
+signal fading and higher settings cause the noise squelch
+to close slowly.
+
+              +------------+
+Receive       |            |
+signal  ------+            +--------
+              .            .
+              .            .
+       open   .  +------------+
+Squelch       .  |         .  |
+       close ----+         .  +-----
+              .  .         .  .
+              .  .         .  .
+              |<>|         |<>|
+   [Signal detect timer]  [Noise detect timer]
+#164
+//// CTCSS Tone Burst ////
+
+Selects the modulation for a period of "CTCSS Reverse
+Burst".
+
+-------+----------------------------------------------------
+Notone | No modulation during the period.
+-------+----------------------------------------------------
+Phase  | Reversed phase modulation during the period.
+-------+----------------------------------------------------
+#165
+//// CTCSS Decode Attack Level ////
+
+Sets the CTCSS decode attack period in 255 steps.
+
+Lower settings provide quick decode attack times for low
+tone frequencies, however, incorrect detection may occur
+at high tone frequencies.
+#166
+//// CTCSS Decode Release Level ////
+
+Sets the CTCSS decode release time in 255 steps.
+
+Higher settings result in faster closing of the CTCSS
+squelch.
+#167
+//// CTCSS Decode PS Level ////
+
+Sets the CTCSS decode threshold level in 255 steps.
+#168
+//// TX DTCS Polarity ////
+
+Selects the DTCS phase in the modulation circuit. Sets the
+transmit frequency shift in a higher direction when the DTCS
+signal changes in the plus direction. The setting is
+determined by the polarity of the transmitter amplifiers.
+#169
+//// RX DTCS Polarity ////
+
+Selects the DTCS phase in the demodulation circuit. Sets the
+decoded DTCS frequency shift in a higher direction when the
+receive frequency changes in the plus direction. The setting
+is determined by the receiver construction.
+#170
+//// DTCS Decode ////
+
+Sets the DTCS decoder threshold level(12 to 23).
+* Lower numbers result in lower threshold levels.
+#172
+/// BPF 1-4 Slant ///
+
+This item sets the correction control voltage for the varactor diodes
+use at the receiver's frontend.
+This item must be set according to the service manual, otherwise the
+receiving sensitivity will be degraded.
+#191
+//// IF Frequency ////
+
+Sets the 1st IF frequency from 0 MHz to 99.975 MHz.
+
+Enter a minus IF frequency for models which have a 1st LO
+frequency lower than the receive frequency. To reset the
+digits below 1 MHz, push [.] then enter the desired digits.
+#192
+//// PLL Reference ////
+
+Set the PLL reference frequency to 15.3 MHz.
+
+* Incorrect setting will result in inability to operate on desired
+  frequencies.
+#193
+//// TX PLL Fast Timer ////
+
+Sets the operating time of the transmit PLL acceleration
+circuit from 0 to 0.255 sec. in 0.001 sec. steps.
+
+The default setting is optimum. If this is changed, the PLL
+lockup time is increased.
+#194
+//// RX PLL Fast Timer ////
+
+Sets the operating time of the receive PLL acceleration
+circuit from 0 to 0.255 sec. in 0.001 sec. steps.
+
+The default setting is optimum. If this is changed, the PLL
+lockup time is increased.
+#195
+//// PLL Option ////
+
+This item sets some important parameters for the PLL circuit which are
+necessary for its proper operation.
+#196
+//// TX Mute Timer ////
+
+PLL output is unstable at the initial moment of
+transmission.  This item mutes the transmission from 0 to
+0.255 sec. in 0.001 sec. steps to prevent unstable
+oscillations.
+
+NEVER change this setting. Setting shorter times results in
+spurious emissions.
+#197
+//// RX Mute Timer ////
+
+PLL output is unstable when changing channels or returning
+to receive. This item mutes the "BUSY" signal from 0 to
+0.255 sec. in 0.001 sec. steps. to prevent the CPU from
+detecting adjacent channel conditions.
+
+Incorrect signal detection may occur when setting it lower
+than the default setting.
+#199
+//// Set Mode Access ////
+
+Turns the dealer set mode access ON and OFF.
+
+When OFF is selected, the dealer set mode access is
+inhibited and the dealer set mode item in the Common screen
+disappears.
+#201
+/// RF power Slant 1/2 ///
+
+This item sets the correction factor for the RF power output.
+These values are unique for each version, and may not be used
+interchangeably.
+#203
+/// Deviation Slant 1/2 ///
+
+This item sets the correction factor for deviation in transmit mode.
+These values are unique for each version, and may not be used
+interchangeably.
+#205
+/// DTCS Balance Slant 1/2 ///
+
+This item sets the correction factor for the DTCS circuit.
+These values are unique for each version, and may not be used
+interchangeably.
+#
+

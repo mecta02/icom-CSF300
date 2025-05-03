@@ -1,0 +1,9 @@
+si cles 1234 code 4040
+---------------
+
+pour la version portable sélectionnez : Suite_MS-DOS.exe dans le dossier SUITE MS-DOS portable
+
+Sur la version portable ou après installation :
+
+Pour lancer l'application DOS des radios de la sécurité civile, cliquez sur Selecionar Arquivo.exe, puis sélectionnez CS-F300 et enfin CSF300.exe.
+Il est possible d'ajouter d'autres applications DOS en ajoutant simplement leur fichier exécutable.
